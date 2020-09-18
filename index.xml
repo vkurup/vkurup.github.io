@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vinod Kurup</title>
+    <link>https://vkurup.github.io/</link>
+    <description>Recent content on Vinod Kurup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
+    <lastBuildDate>Fri, 21 Aug 2020 19:45:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using an OBi110 for VOIP service</title>
+      <link>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</link>
+      <pubDate>Fri, 21 Aug 2020 19:45:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;I set up an OBi110 device to provide a landline at home. OK, it&amp;rsquo;s not a land line, it&amp;rsquo;s
+a VOIP (Voice Over Internet Protocol) line, but it performs a similar function. We&amp;rsquo;ve
+always had a landline. Our cell phone coverage is spotty at times and ever since Mala
+started working from home, she needs to have a reliable phone line for her global
+conference calls.&lt;/p&gt;
+&lt;p&gt;The problem is that Spectrum was charging us $44.95 per month plus taxes, which took it
+near $50 every month. I considered a few options including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MagicJack&lt;/li&gt;
+&lt;li&gt;Ooma&lt;/li&gt;
+&lt;li&gt;I looked at a few others&amp;hellip; can&amp;rsquo;t remember them all&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the end, I settled on buying an &lt;a href=&#34;https://en.wikipedia.org/wiki/Analog_telephone_adapter&#34;&gt;ATA device&lt;/a&gt; and then connecting it
+to a cheaper VOIP service. I chose &lt;a href=&#34;https://voip.ms&#34;&gt;voip.ms&lt;/a&gt; which has been great so
+far.&lt;/p&gt;
+&lt;p&gt;One Time Costs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://amzn.to/2EivFuP&#34;&gt;OBi110&lt;/a&gt; ATA device: $19.90&lt;/li&gt;
+&lt;li&gt;voip.ms setup fee: $0.40&lt;/li&gt;
+&lt;li&gt;voip.ms e911 setup fee: $1.50&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Monthly Costs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;voip.ms fee for an incoming phone number: $0.85&lt;/li&gt;
+&lt;li&gt;voip.ms e911 monthly fee: $1.50&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Per-Minute Costs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;voip.ms incoming: $0.009 per minute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I&amp;rsquo;ll have to keep an eye on my monthly per-minute costs because there is an unlimited
+plan that is $4.25 per month, which I&amp;rsquo;ll switch to if I use more than that per month. In
+any case, this is MUCH cheaper than Spectrum.&lt;/p&gt;
+&lt;p&gt;Now, if you do any research about the OBi110 device, you&amp;rsquo;ll see everyone telling you not
+to buy it because it is out of service and doesn&amp;rsquo;t support Google Voice. This is true,
+ObiTalk doesn&amp;rsquo;t support the device anymore. When it was supported by the company, you
+could just dial a special code on your phone and it would do all the set up for you.
+Since it&amp;rsquo;s not supported, that procedure doesn&amp;rsquo;t work anymore. But you can &lt;a href=&#34;https://wiki.voip.ms/article/OBi_100/110_%26_OBi_200&#34;&gt;manually configure the device&lt;/a&gt; with the
+excellent docs from voip.ms, and for a geek like me that was not bad. And yes, you can&amp;rsquo;t
+link a Google Voice number to the device, but I didn&amp;rsquo;t want to do that anyway. I think
+if you wanted to keep using a google voice number, you could probably get pretty close
+by putting a different number on your device (through voip.ms) and then pointing Google
+Voice at that number. Incoming calls would work fine in that way, but I&amp;rsquo;m not sure about
+outgoing calls. If you want to seamlessly use Google Voice on an ATA device, then OBi110
+isn&amp;rsquo;t for you. You&amp;rsquo;ll need the OBI202 (which was out of stock when I was looking).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Django forms have 2 modes</title>
+      <link>https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/</link>
+      <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/</guid>
+      <description>&lt;p&gt;I worked on adding tests to some Django forms today and I was reminded that Django forms
+operate in two &lt;em&gt;modes&lt;/em&gt;. I think of them as the GET mode and the POST mode. The GET mode
+displays the form and the POST mode processes the data that you supply to the form. I
+don&amp;rsquo;t know why, but I often forget that. Instead, I sometimes treat them as a normal
+Python class, especially when I&amp;rsquo;m creating automated tests for them. I instantiate
+the class (&lt;code&gt;form = MyForm()&lt;/code&gt;) and then just call any of its methods and make sure they
+return the right values or achieve the correct side effects. The form that I was working
+with today had a couple features. The first was that it provided some helper functions
+to the template so that the template could display the form properly. Those are in the
+GET mode. So I did something like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user = create_my_special_user()
+form = MyForm(user=user)
+self.assertTrue(form.is_user_special())
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And that worked as I expected. The second feature of my custom form was that it cleaned
+the data in a particular way. So I did:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;form = MyForm(user=user)
+cleaned_data = form.clean()
+self.assertEqual(cleaned_data, expected_data)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Instead of passing, the test blew up:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AttributeError: &#39;MyForm&#39; object has no attribute &#39;cleaned_data&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Why? Because the &lt;code&gt;clean()&lt;/code&gt; method is called when you provide it with POST data
+(normally&amp;hellip; there are also other ways to populate forms). If you don&amp;rsquo;t supply it data,
+then &lt;code&gt;cleaned_data&lt;/code&gt; doesn&amp;rsquo;t get populated. The answer is to provide data to the form:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;form = MyForm(user=user, data={})
+cleaned_data = form.clean()
+self.assertEqual(cleaned_data, expected_data)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And that works as expected. The reminder to myself is to always identify which mode of
+the form you are testing, GET or POST.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>We have always lived in the castle</title>
+      <link>https://vkurup.github.io/blog/2019/12/11/we-have-always-lived-in-the-castle/</link>
+      <pubDate>Wed, 11 Dec 2019 20:00:44 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/12/11/we-have-always-lived-in-the-castle/</guid>
+      <description>&lt;p&gt;At school, Kavi is reading
+&lt;a href=&#34;https://amzn.to/2PctnQm&#34;&gt;&amp;ldquo;We have always lived in the castle&amp;rdquo;&lt;/a&gt;, by Shirley Jackson. I
+read her short story,
+&lt;a href=&#34;https://www.newyorker.com/magazine/1948/06/26/the-lottery&#34;&gt;&amp;ldquo;The Lottery&amp;rdquo;&lt;/a&gt;, in high school. I
+recall the main plot of the story, but I&amp;rsquo;m sure I have forgotten many details.
+What I &lt;strong&gt;haven&amp;rsquo;t&lt;/strong&gt; forgotten is the sense of shock I felt as the plot finally became
+clear. As I&amp;rsquo;m typing this, I wonder if that was more because I was young and new to
+being shocked, or whether it was really shocking. In any case, that feeling of being
+shocked by that story is deeply embedded inside me.&lt;/p&gt;
+&lt;p&gt;So I checked this book from the library and finished it today. It was dark and
+disturbing, reminiscent of &amp;ldquo;The Lottery&amp;rdquo;. There were many elements of foreshadowing.
+From the start, you wonder what Mary Katherine or her family did to sow such discontent
+among the villagers, and the answer comes slowly, in bits and pieces. I wondered why
+they had library books that they would never be able to return. In the end, I was sucked
+in and couldn&amp;rsquo;t put the book down until I figured it all out. Thankfully, it&amp;rsquo;s a short
+book.&lt;/p&gt;
+&lt;p&gt;Some random thoughts that my brain generated while reading this book (and that I&amp;rsquo;d
+prefer to remember someday):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When Merrikat and Connie first enter their house after it was trashed by the village,
+Merrikat is not surprised that the library books are intact because it&amp;rsquo;s against the law
+to damage library property. I smiled.&lt;/li&gt;
+&lt;li&gt;The absurdity of Merrikat&amp;rsquo;s behavior at times struck me hard. The first time was when
+she threw a glass pitcher on the floor because she was upset by a visitor talking to her
+sister too much. I had to re-read that section a few times because it was written in an
+almost off-hand way, as if this was normal behavior. She continues to behave like that
+in bursts, and then the more absurd part becomes Connie&amp;rsquo;s calm reaction to these
+behaviors. Piece by piece, you get to understand more about how disturbed they are, and
+why.&lt;/li&gt;
+&lt;li&gt;Merrikat&amp;rsquo;s belief in magical powers that keep her safe are both hard to believe and
+comforting. I kept waiting for someone to say one of her three magic words, as if that
+was the only way that anything could go wrong.&lt;/li&gt;
+&lt;li&gt;I wanted Charles to be taught a lesson. I guess it happened, but a part of me wanted
+it to be more dramatic and more crushing. I&amp;rsquo;m a sucker for an evil character doing
+clearly evil things and then getting caught red-handed and punished. I know that&amp;rsquo;s
+simplistic, but I still like it and am a little disappointed when I don&amp;rsquo;t get that
+satisfaction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I love the fact that I&amp;rsquo;m finding books to enjoy, thanks to my kids. Life is good.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Open Borders</title>
+      <link>https://vkurup.github.io/blog/2019/11/27/open-borders/</link>
+      <pubDate>Wed, 27 Nov 2019 19:01:59 -0500</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/11/27/open-borders/</guid>
+      <description>&lt;p&gt;I just finished &lt;a href=&#34;https://amzn.to/35FoTXV&#34;&gt;Open Borders&lt;/a&gt;, a graphic novel about immigration policy.
+(Not 2 things that normally occupy the same sentence)&lt;/p&gt;
+&lt;p&gt;It was an excellent presentation of a position that I&amp;rsquo;ve always felt to be morally correct, in my
+heart of hearts. I am one of the few lucky ones who gets to be an American citizen just because of
+the fact that my parents took it on themselves to forge a better life for us. Why shouldn&amp;rsquo;t everyone
+have this opportunity? This book shatters many of the myths that allowing open borders makes things
+&amp;ldquo;worse&amp;rdquo; in any way for natives.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Deep Survival Déjà Vu</title>
+      <link>https://vkurup.github.io/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</link>
+      <pubDate>Mon, 18 Nov 2019 19:16:24 -0500</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</guid>
+      <description>&lt;p&gt;Whenever I come across a book that I want to read, I add it to my &lt;a href=&#34;https://www.goodreads.com/user/show/3158304-vinod-kurup&#34;&gt;Goodreads&lt;/a&gt; to-read list. This list,
+of course, is always growing. I&amp;rsquo;m very slowly coming to terms with the fact that I will never make
+it through this list and that someday I will die, with unread books on my to-read list. Horrors! The
+other major problem with this simple approach to a reading list is that I can never remember why I
+added a book to my list. If it was a recent addition, I might recall, but in most cases I just can&amp;rsquo;t
+remember why I wanted to read the book in the first place.&lt;/p&gt;
+&lt;p&gt;In that way, the book Deep Survival made it to my to-read list last year, and I picked it up for my
+Kindle when it went on sale recently:&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/deep-forget.png&#34; title=&#34;Knocking off a to-read&#34; alt=&#34;Knocking off a to-read&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Knocking off a to-read&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;p&gt;I&amp;rsquo;ve gotten through the first few chapters so far. I have been enjoying it, but something about it
+is bothering me. It felt very &lt;em&gt;familiar&lt;/em&gt;. Maybe that is what happened&amp;hellip; I read a teaser for the book in
+a magazine article or something, and that is why I added it to my to-read list last year.&lt;/p&gt;
+&lt;p&gt;And then yesterday, while I was converting the blog from Octopress to Hugo, I had to fix up some
+posts, so I ended up looking through a bunch of my old posts, including&amp;hellip;. &lt;a href=&#34;https://vkurup.github.io/blog/2007/04/15/deep-survival/&#34;&gt;my book review of Deep Survival&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s a weird feeling to read a review about a book that I&amp;rsquo;ve been wanting to read for over a year,
+written by a 12 year younger version of yourself.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ports and networks</title>
+      <link>https://vkurup.github.io/blog/2019/11/17/ports-and-networks/</link>
+      <pubDate>Sun, 17 Nov 2019 18:48:24 -0500</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/11/17/ports-and-networks/</guid>
+      <description>&lt;p&gt;Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
+I&amp;rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&amp;rsquo;t seem
+to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
+(&amp;ldquo;localhost:1313&amp;rdquo;) and then I showed the results of &lt;code&gt;netstat -ant&lt;/code&gt; to prove that something should be
+listening on that port. And we got the IP address for google.com and then put that in Chrome&amp;rsquo;s URL
+bar with &lt;code&gt;:80&lt;/code&gt; at the end of it, and magically, it worked. (Other websites did not work, and I
+explained that most sites will not allow their sites to be accessed via IP address).&lt;/p&gt;
+&lt;p&gt;I still haven&amp;rsquo;t figured out why I can&amp;rsquo;t access the blog running in my container, but I think Kavi&amp;rsquo;s
+learning more about networking than I ever did (and I&amp;rsquo;m hoping that he&amp;rsquo;ll be able to debug these
+issues for me&amp;hellip; soon enough)&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;UPDATE: I figured it out. Hugo&amp;rsquo;s server was listening on localhost inside the container, when it
+needed to be listening on 0.0.0.0. Adding that as a &lt;code&gt;--bind&lt;/code&gt; parameter fixed the issue (though I had
+to also add &lt;code&gt;--baseURL&lt;/code&gt; and &lt;code&gt;--appendPort=false&lt;/code&gt; params, which saddened me.)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://vkurup.github.io/blog/2019/11/17/hugo/</link>
+      <pubDate>Sun, 17 Nov 2019 15:22:24 -0500</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/11/17/hugo/</guid>
+      <description>&lt;p&gt;I moved my blog from Octopress to &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; today. I had been &lt;a href=&#34;https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/&#34;&gt;slightly unhappy with Octopress for a while now&lt;/a&gt;, but
+mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vkurup@caktus020:~/dev/kurup.org&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;master&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; $ hugo
+
+                   | EN   
++------------------+-----+
+  Pages            | &lt;span style=&#34;color:#2aa198&#34;&gt;669&lt;/span&gt;  
+  Paginator pages  |  &lt;span style=&#34;color:#2aa198&#34;&gt;29&lt;/span&gt;  
+  Non-page files   |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
+  Static files     | &lt;span style=&#34;color:#2aa198&#34;&gt;426&lt;/span&gt;  
+  Processed images |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
+  Aliases          |   &lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;  
+  Sitemaps         |   &lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;  
+  Cleaned          |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
+
+Total in &lt;span style=&#34;color:#2aa198&#34;&gt;808&lt;/span&gt; ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is nice to generate my entire site in less than a second.&lt;/p&gt;
+&lt;p&gt;But I still liked the style and theme of my old site, so I was happy to find that &lt;a href=&#34;https://themes.gohugo.io/hugo-octopress/&#34;&gt;someone had already built an Octopress theme for Hugo&lt;/a&gt;. I promptly
+stole his work and customized a few things here and there to make it look (nearly) exactly like my
+old site did. Yay! Thanks to &lt;a href=&#34;https://parsiya.net/&#34;&gt;Parsia&lt;/a&gt; for building that theme. I&amp;rsquo;ve also
+subscribed to his RSS feed because his site looks pretty interesting.&lt;/p&gt;
+&lt;p&gt;Moving my content wasn&amp;rsquo;t easy, but it wasn&amp;rsquo;t hard. I mainly just copied the old markdown posts over,
+changed the front matter, and then fixed a few octopress plugins I was using to work with Hugo.&lt;/p&gt;
+&lt;p&gt;Future steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Switch from Disqus to something self-hosted&lt;/li&gt;
+&lt;li&gt;Generate the HTML on the server rather than having the HTML in git&lt;/li&gt;
+&lt;li&gt;Update my About page and Computers page&lt;/li&gt;
+&lt;li&gt;&amp;hellip; oh, maybe write more!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Running</title>
+      <link>https://vkurup.github.io/running/</link>
+      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/running/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m a runner and have been for almost 30 years now. I suppose I&amp;rsquo;m
+only going to get slower from here on in, so I thought I should list
+all my PR&amp;rsquo;s so that I can brag while I can.&lt;/p&gt;
+&lt;p&gt;Here are my &lt;a href=&#34;https://vkurup.github.io/categories/running/&#34;&gt;blog posts about running&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;prs&#34;&gt;PRs&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;           | Age &amp;lt;= 30 | Age &amp;gt; 30 |
+-----------+-----------+----------+
+ 800m      |      2:12 |      N/A |
+ 1 mile    |      5:07 |     5:44 |
+ 2 mile    |     11:06 |      N/A |
+ 5K        |     18:36 |    23:02 |
+ 13.1 mile |       N/A |  1:41:56 |
+ 26.2 mile |   5:13:30 |  4:28:09 |
+ ----------+-----------+----------+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;marathons&#34;&gt;Marathons:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2005 NYC: 4:28&lt;/li&gt;
+&lt;li&gt;2003 Marine Corps: 5:07&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.marathonguide.com/results/browse.cfm?MIDD=67001022&amp;amp;Gen=B&amp;amp;Begin=24183&amp;amp;End=24282&amp;amp;Max=27870&#34;&gt;2000 Chicago&lt;/a&gt;: 5:13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;most-miles-in-a&#34;&gt;Most miles in a:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;week:&lt;/li&gt;
+&lt;li&gt;month:&lt;/li&gt;
+&lt;li&gt;year:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;strava&#34;&gt;Strava:&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Avik 7:30</title>
+      <link>https://vkurup.github.io/blog/2019/04/08/avik-730/</link>
+      <pubDate>Mon, 08 Apr 2019 21:19:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2019/04/08/avik-730/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Here it comes!&amp;rdquo; His eyes light up.&lt;br&gt;
+Slurps one last sip from his small cup.&lt;/p&gt;
+&lt;p&gt;Then bounding from the kitchen table,&lt;br&gt;
+Fast as lighting, he is able&lt;/p&gt;
+&lt;p&gt;To trash his scraps and stow his dishes.&lt;br&gt;
+He yells to Mom, &amp;ldquo;It was delicious!&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;One more breath then on the couch he lands.&lt;br&gt;
+&amp;ldquo;What&amp;rsquo;s up?&amp;rdquo; says Mom. Dad shrugs his hands.&lt;/p&gt;
+&lt;p&gt;Big brother also has no idea.&lt;br&gt;
+Big sister sighs, &amp;ldquo;He&amp;rsquo;s a weird one I fear.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;We gather round to be sure he&amp;rsquo;s fine.&lt;br&gt;
+Eyes glued to his wrist, &amp;ldquo;It&amp;rsquo;s 7:29!&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;And then the beeping fills the room.&lt;br&gt;
+The smile confirms he&amp;rsquo;s over the moon.&lt;/p&gt;
+&lt;p&gt;The source of this happiness, on his arm,&lt;br&gt;
+His brand new watch, and a 7:30 alarm.&lt;/p&gt;
+&lt;p&gt;(A real-life story, barely embellished)&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/avik-watch.jpg&#34; title=&#34;A kid with a watch&#34; alt=&#34;A kid with a watch&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;A kid with a watch&lt;/span&gt;
+&lt;/span&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Triangle Race Series</title>
+      <link>https://vkurup.github.io/blog/2018/12/20/triangle-race-series/</link>
+      <pubDate>Thu, 20 Dec 2018 20:27:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/12/20/triangle-race-series/</guid>
+      <description>&lt;p&gt;When we made our 2018 goals last year, Kavi, Anika and I all had some running-related goals. I don&amp;rsquo;t
+remember offhand exactly what each of our goals were, but I think we all wanted to run more races,
+because well, races are fun! I somehow stumbled on the
+&lt;a href=&#34;http://www.precisionrace.com/triangle-race-series2/&#34;&gt;Triangle Race Series&lt;/a&gt;. It&amp;rsquo;s a series of a couple dozen races
+throughout the year around the Triangle, so we signed up for a few. They keep standings based on
+participation and placement. You get 5 points for running a race, and more if you place in your
+age/gender division. We ran about 4 or 5 of the races. I hadn&amp;rsquo;t really thought about the series at
+all recently since I injured my right Achilles in July and haven&amp;rsquo;t run at all since then. Getting
+old really is a bummer. Anyways, I checked the website today and they have posted the
+&lt;a href=&#34;http://www.precisionrace.com/s/Series_Rank_Report_Race25_Cash_v9_2Races-xzxt.pdf&#34;&gt;final 2018 results&lt;/a&gt;. I got
+6th place in my &amp;ldquo;not-quite-old-fogey&amp;rdquo; division! Not bad, huh? Yeah, I know&amp;hellip; it&amp;rsquo;s mostly a
+participation award, but still, I&amp;rsquo;m proud. But wait! That&amp;rsquo;s not even the best part. I&amp;rsquo;m even more
+proud of Kavi and Anika. They are both in the 0-19 age group, so get to compete against teenagers.
+Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the female 0-19 division!&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/oak-city-mile-2018.jpg&#34; title=&#34;Oak City Mile 2018&#34; alt=&#34;Oak City Mile 2018&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Oak City Mile 2018&lt;/span&gt;
+&lt;/span&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>My Nest Journey</title>
+      <link>https://vkurup.github.io/blog/2018/12/02/my-nest-journey/</link>
+      <pubDate>Sun, 02 Dec 2018 23:33:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/12/02/my-nest-journey/</guid>
+      <description>&lt;p&gt;I got 2 &lt;a href=&#34;https://amzn.to/2zE10T1&#34;&gt;Nest E thermostats&lt;/a&gt; because Duke Energy was having a sale around
+Black Friday. I didn&amp;rsquo;t have any strong motivation to have a Nest. The idea of a smart home is cool,
+but most &amp;lsquo;smart&amp;rsquo; things nowadays have ended up being more work than benefit. Anyway, for $75 each, I
+thought it was worth a try. We have 2 thermostats so I decided to install the upstairs thermostat
+first. The process started off smooth and easy. I like that they provide a back plate, which I
+didn&amp;rsquo;t even notice until my trusty assistant, Kavi, pointed it out. My existing Honeywell thermostat
+is rectangular and if I just put the small circular Nest in its place, there would be a big chunk of
+unpainted real estate on the wall. Having the back plate prevented this from being a &amp;lsquo;replace
+thermostat, and learn how to patch and paint the wall&amp;rsquo; project. The online
+&lt;a href=&#34;https://nest.com/support/article/How-to-tell-if-your-heating-and-cooling-system-will-work-with-the-Nest-Thermostat#works/?mode=guide&#34;&gt;Nest compatibility checker&lt;/a&gt;
+and the paper instruction manual (which includes stickers to label the existing wires) are also nice
+touches. That all gave me the (misguided?) confidence that even I could do this. A study confidence
+which lasted until I flipped the circuit breaker back on and &amp;hellip;. nothing happened. According to the
+manual, the Nest was supposed to turn on, say Hi, and then walk me through the set up process. But
+it remained dead as a doorknob. I pulled it off the wall and plugged it in via USB (a nice
+troubleshooting feauture). It turned on and then when I placed it back on the wall, it complained
+that it was not getting enough power from the R wire. The error code was E195. When I looked at the
+&amp;lsquo;Technical Info&amp;rsquo;, it reported that the R wire was only providing 2-3 volts, while it needed 24. I
+chatted up Nest support, which took about 30 minutes to connect on a Friday night. The
+representative was responsive and useful. They eventually recommended trying to disconnect the C
+(common) wire. For a reason I still can&amp;rsquo;t explain, this brought the voltage on the R wire from 2-3
+volts up to 35 volts, and my Nest was working.&lt;/p&gt;
+&lt;p&gt;Having tasted the sweet nectar of success, I then tried to swap my second Nest in for my downstairs
+thermostat. I made a huge mistake here. It had been easy to identify the circuit breaker for my
+upstairs furnance because it was labelled, &amp;ldquo;Up Furnace&amp;rdquo;. But there was nothing labelling the
+downstairs furnace. I switched off the circuit breaker that I thought was responsible for the
+downstairs HVAC, but in hindsight, I think I got the wrong one (and since it was warm out and the
+heater wasn&amp;rsquo;t running, I didn&amp;rsquo;t notice because nothing was running in the first place). Anyway, I
+walked through the rest of the instructions and again got to the point where the Nest was supposed
+to power on, but it didn&amp;rsquo;t. So I powered it on via USB and placed it back on the wall.
+Unfortunately, this time I was getting only 0.01 volts from the R line. Still, I was hoping that the
+&amp;lsquo;disconnect the C wire&amp;rsquo; trick would work again. Unfortunately, disconnecting the C wire did nothing.
+I walked through things with Customer Service chat. Again, they were helpful (rather than just
+spouting cookbook-type basic info), but in the end, they didn&amp;rsquo;t have a recommendation that would fix
+things. They suggested that I get a voltmeter and test the voltage output at the various wires. I do
+not have a voltmeter and felt that I was getting in over my head, so instead I put in some calls to
+HVAC service companies, but since it was the weekend and this wasn&amp;rsquo;t urgent, I was resigned to
+having no heat over the weekend. I watched a few Youtube videos of HVAC repairs, some of which were
+quite entertaining. Eventually, I tried to reconnect my old Honeywell thermostat and was surprised
+and intrigued when this ALSO failed. It made me think that I messed something up somehow. The only
+thing I could think of was that since I hit the wrong circuit breaker, there was live current in the
+wires. While moving them from the Honeywell to the Nest, perhaps I touched 2 wires together causing
+the system to short circuit. I don&amp;rsquo;t remember noticing a spark or anything, but that was my best
+guess. I eventually watched enough videos to give myself confidence that I could open up the HVAC
+and find the electrical panel. I did that successfully (after turning off the CORRECT circuit
+breaker, and also pulling out the pull out switch next to the furnace). After cleaning out a ton of
+cobwebs, I found the LED light on the electrical panel was off (even after connecting the circuits
+temporarily). I searched the panel and found a 3-amp E fuse (like the kind I&amp;rsquo;ve seen in automobile
+fuseboxes). I pulled it out and sure enough, it was blown. It looked like the &amp;lsquo;bad fuse&amp;rsquo; in this
+&lt;a href=&#34;https://www.yourmechanic.com/article/how-to-check-fuses-by-rocco-lovetere&#34;&gt;photo&lt;/a&gt;. Off to Home
+Depot, I purchased 2 replacements for 3 dollars, and then replaced the busted fuse with the new one.
+I flipped the circuit breaker and put the pull-in switch back in. The first encouraging sign was
+that the red LED light on the electrical panel turned on. I went inside and, joy of joys, the Nest
+was booting up and showed 35V via the R wire. So, I guess the bottom line is that I need to be more
+careful when I&amp;rsquo;m at the circuit breaker box.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Composting</title>
+      <link>https://vkurup.github.io/blog/2018/09/23/composting/</link>
+      <pubDate>Sun, 23 Sep 2018 20:50:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/09/23/composting/</guid>
+      <description>&lt;p&gt;Guess what, we&amp;rsquo;re composting now! I told you was
+&lt;a href=&#34;https://vkurup.github.io/blog/2018/09/22/starting-a-garden&#34;&gt;going to be a gardener&lt;/a&gt;, so now you know I&amp;rsquo;m serious. For oh so many years,
+every Friday, we&amp;rsquo;d haul the garbage and recycling out and I&amp;rsquo;d think to myself, &amp;ldquo;Wow, we&amp;rsquo;d have like no
+garbage at all if we were composting.&amp;rdquo; It&amp;rsquo;s only taken a few years of thinking that, week in and
+week out, to get me to try. Actually, that&amp;rsquo;s not even true. It was still way down on my future to-do
+list until I got a cheap copy of
+&lt;a href=&#34;https://amzn.to/2xyqbWb&#34;&gt;&amp;ldquo;The Complete Idiot&amp;rsquo;s Guide to Composting&amp;rdquo;&lt;/a&gt;. Thank you, &lt;a href=&#34;https://www.bookbub.com/welcome&#34;&gt;BookBub&lt;/a&gt;! (As if
+I needed any other incentive to buy and read more books). But honestly, the book was excellent in
+that it made me think that yes, even I could compost. So shortly after finishing it, I headed down
+to the Orange County Solid Waste Center and purchased an
+&lt;a href=&#34;https://www.earthmachine.com/contact.php&#34;&gt;Earth Machine compost bin&lt;/a&gt; for fifty bucks, and made the kids set it up near the
+screen porch. We&amp;rsquo;ve been throwing all our copious kitchen scraps for the past 2 weeks. So far, all
+that has happened is that a bunch of fruit flies think we&amp;rsquo;re awesome neighbors and seem to have
+moved in for the long haul. But I&amp;rsquo;m hoping that some composting starts happening soon. It&amp;rsquo;s supposed
+to be easy as pie, but I&amp;rsquo;m secretly worried that I&amp;rsquo;m missing something, oh, like maybe skills or
+talent. But our garbage bin sure is lighter!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Starting a garden</title>
+      <link>https://vkurup.github.io/blog/2018/09/22/starting-a-garden/</link>
+      <pubDate>Sat, 22 Sep 2018 20:50:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/09/22/starting-a-garden/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m going to be a gardener. Yup, just decided. Well, re-decided, I guess, since we already have a
+garden. It&amp;rsquo;s a strip of dirt on the side of our house and we&amp;rsquo;ve been trying to grow vegetables the
+past couple years. But it has some problems. It&amp;rsquo;s way out of the way, so it&amp;rsquo;s a pain to check on it
+(since I&amp;rsquo;m lazy). The ground just underneath the topsoil is hard clay. It&amp;rsquo;s shaded most of the day
+either by our house, or by the beautiful forest surrounding our house. And I haven&amp;rsquo;t figured out a
+way to keep the deer from eating the few vegetables that we are able to grow in there. And even
+despite all those problems we&amp;rsquo;ve been able to grow some zucchini, okra, tomatoes and basil, which
+has been super exciting, and makes us want more! Here&amp;rsquo;s a photo of the harvest that greeted us when
+we returned from a week-long trip to visit my parents in Dallas this summer:&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/august-harvest.jpg&#34; title=&#34;August Harvest&#34; alt=&#34;August Harvest&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;August Harvest&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;p&gt;But, in general, things end up getting eaten by the deer or overrun by weeds, so we&amp;rsquo;re trying a new
+approach now, based on the book, &lt;a href=&#34;https://amzn.to/2NzBVSg&#34;&gt;Square Foot Gardening&lt;/a&gt;. Kavi and Anika
+helped me build this raised bed, which is itself a huge accomplishment given how not-handy I am.&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/our-little-garden.jpg&#34; title=&#34;Our Little Garden&#34; alt=&#34;Our Little Garden&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Our Little Garden&lt;/span&gt;
+&lt;/span&gt;
+
+&lt;p&gt;This was my first time using a drill since shop class in high school! We&amp;rsquo;re going to try using a
+&lt;a href=&#34;http://vomitingchicken.com/deer-fencing-cheap-and-easy-and-effective/&#34;&gt;fishing line fence&lt;/a&gt; to keep
+the deer away. I&amp;rsquo;m not very optimistic about that, but fingers-crossed! We can also see the garden
+from our living room, so maybe I can just shoo them away any time they saunter by. The garden is
+looking quite pathetic because we bought some seedlings from the Carrboro Farmer&amp;rsquo;s Market but then
+all our garden plans got sidetracked by Hurricane Florence (which fortunately treated us very
+kindly, all things considered). So, the seedlings wilted away in our screen porch before we finally
+got a chance to plant them this week. We&amp;rsquo;re hoping there&amp;rsquo;s still some life left in them. Anyway, our
+expectations are low, especially given how late in the summer we&amp;rsquo;re starting, but it would be nice
+to get one head of lettuce or something to grow. I&amp;rsquo;ll be sure to let you know!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>History of Indian Civilization</title>
+      <link>https://vkurup.github.io/blog/2018/05/31/history-of-indian-civilization/</link>
+      <pubDate>Thu, 31 May 2018 20:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/05/31/history-of-indian-civilization/</guid>
+      <description>&lt;p&gt;I briefly mentioned finding the 2012 UCLA lecture series,
+&amp;ldquo;&lt;a href=&#34;https://www.youtube.com/watch?v=93JMjX1XECo&amp;amp;list=PLy3KRgc0HE8B4neta_B8LPM0G9UWy-Cqe&#34;&gt;History of Indian Civilization&lt;/a&gt;&amp;quot;,
+a &lt;a href=&#34;https://vkurup.github.io/blog/2018/05/29/renaissance-man&#34;&gt;couple days ago&lt;/a&gt;. I&amp;rsquo;m about halfway through
+and have found it thorougly illuminating. I learned a lot about India growing
+up, but never in a formal way, so it&amp;rsquo;s nice to have someone as skilled as Vinay
+Lal connect all the loose threads into a coherent history. One of the things
+that surprises me is that aside from the fact that classes are being streamed
+over the internet, there is nothing different than the lectures I skipped (I
+mean religiously attended!) about 20 years ago. It&amp;rsquo;s a large auditorium of
+students watching a very charismatic, knowledgeable speaker pacing at the front
+of the class, occasionally making mostly-legible markings on a chalkboard. Not
+that there&amp;rsquo;s anything wrong with that. I learned a lot back in college and I&amp;rsquo;m
+enjoying these lectures immensely. It just seems strange that so little has
+changed in the university clasroom (at least this one from 2012) when so much
+has changed in the world at large.&lt;/p&gt;
+&lt;p&gt;Actually, I find it reassuring that little has changed, at least in some
+classes. There was a time when the ability to download the audio of any
+university class was absolutely new. For me, that was around 2002 or so. I
+listened to CS61A (UC Berkley&amp;rsquo;s intro to CS course) and a few other similar
+courses back then. The limitations of internet bandwidth and storage made
+anything more than audio difficult back then. But now with those barriers
+crushed, I was afraid that everything would be &amp;ldquo;multimedia&amp;rdquo;, and not amenable to
+listening while I commute to work. So, it&amp;rsquo;s reassuring to find that audio-only
+dissemination of knowledge is still a thing.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Autovacuum not running</title>
+      <link>https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/</link>
+      <pubDate>Wed, 30 May 2018 21:26:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/</guid>
+      <description>&lt;p&gt;OK, this is a debug session in progress, so don&amp;rsquo;t expect a nice solution at the end. We&amp;rsquo;re working
+on a project that does analysis of some public voter registration data. The DB is hosted on Amazon
+RDS and I&amp;rsquo;ve been perplexed by how poorly queries are performing there, despite the tables only have
+about 10 million rows. Simple queries are taking many minutes, which is orders of magnitude slower
+than my laptop.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://mlavin.org/&#34;&gt;Mark&lt;/a&gt; suggested running &amp;lsquo;VACUUM ANALYZE&amp;rsquo;, which I didn&amp;rsquo;t think would help
+because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
+on a regular basis. These queries had been slow for days with no recent inserts or updates, so
+certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; voter_ncvoter;
+  &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;
+&lt;span style=&#34;color:#586e75&#34;&gt;----------
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;12336571&lt;/span&gt;
+(&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;row&lt;/span&gt;)
+Time: &lt;span style=&#34;color:#2aa198&#34;&gt;315777&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;051&lt;/span&gt; ms
+db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;vacuum&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;analyze&lt;/span&gt;;
+&lt;span style=&#34;color:#719e07&#34;&gt;VACUUM&lt;/span&gt;
+Time: &lt;span style=&#34;color:#2aa198&#34;&gt;11377035&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;096&lt;/span&gt; ms
+db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; voter_ncvoter;
+  &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;
+&lt;span style=&#34;color:#586e75&#34;&gt;----------
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;12336571&lt;/span&gt;
+(&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;row&lt;/span&gt;)
+Time: &lt;span style=&#34;color:#2aa198&#34;&gt;4300&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;107&lt;/span&gt; ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&amp;rsquo;t autovacuum
+automatically doing this for us. (I mean it has the phrase &amp;lsquo;auto&amp;rsquo; in its name!!!)&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve found this great article on
+&lt;a href=&#34;https://blog.2ndquadrant.com/autovacuum-tuning-basics/&#34;&gt;autovacuum basics&lt;/a&gt; which led me to do this query:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; relname, n_live_tup, last_autoanalyze &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; pg_stat_all_tables &lt;span style=&#34;color:#719e07&#34;&gt;where&lt;/span&gt; relname &lt;span style=&#34;color:#719e07&#34;&gt;like&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;voter_%&amp;#39;&lt;/span&gt;;
+       relname       &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; n_live_tup &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;       last_autoanalyze
+&lt;span style=&#34;color:#586e75&#34;&gt;---------------------+------------+------------+-------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; voter_changetracker &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;  &lt;span style=&#34;color:#2aa198&#34;&gt;306689271&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;04&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;08&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;503876&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
+ voter_filetracker   &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;         &lt;span style=&#34;color:#2aa198&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;02&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;47&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;802633&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
+ voter_ncvhis        &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;          &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;
+ voter_ncvoter       &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#2aa198&#34;&gt;12336616&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;06&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;30&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;073426&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
+ voter_badlinerange  &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;        &lt;span style=&#34;color:#2aa198&#34;&gt;404&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;04&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;44&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;39&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;949193&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
+(&lt;span style=&#34;color:#2aa198&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;rows&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So those 2 large tables haven&amp;rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
+row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&amp;rsquo;ll figure out
+what&amp;rsquo;s going on.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Renaissance Man</title>
+      <link>https://vkurup.github.io/blog/2018/05/29/renaissance-man/</link>
+      <pubDate>Tue, 29 May 2018 21:05:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2018/05/29/renaissance-man/</guid>
+      <description>&lt;p&gt;I love this
+&lt;a href=&#34;https://austinkleon.com/2018/05/29/wearing-many-hats/&#34;&gt;post by Austin Kleon&lt;/a&gt;.
+As someone who has found very few things that I don&amp;rsquo;t find intriguing in some
+way, it is nice to know that there are others like me and that maybe there&amp;rsquo;s
+nothing wrong with that. I love being a doctor and I love being a programmer,
+and I love honing both of those crafts.&lt;/p&gt;
+&lt;p&gt;He also links to a
+&lt;a href=&#34;https://www.nytimes.com/2012/01/22/education/edlife/renaissance-man.html&#34;&gt;2012 New York Times article about a UCLA sophomore&lt;/a&gt;
+who spends 1 hour each day learning something new, mainly by taking online
+courses from other universities or watching how-to videos on YouTube. We live in
+a golden age, don&amp;rsquo;t we? I mean, sure, people will look back at our period of
+history and cringe quite a bit, but the idea that I can search just about any
+term, and find information about it on Wikipedia, and probably find a course on
+it by an actual college professor&amp;hellip;. it&amp;rsquo;s just mind boggling. I&amp;rsquo;m lucky as it
+is, but I often think about if I was a kid growing up in this era. I&amp;rsquo;d be
+overwhelmed, sure, but I would totally be taking online courses left and right.&lt;/p&gt;
+&lt;p&gt;Actually, even if I weren&amp;rsquo;t a kid. I just googled the subject of that NYT
+article and found his twitter account. His
+&lt;a href=&#34;https://twitter.com/_TheDancingFox_/status/686341754262429696&#34;&gt;most recent post&lt;/a&gt;
+is from 2016 but links to a YouTube series from UCLA on the history of India. I
+am TOTALLY watching that.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using dynamic queries in a CBV</title>
+      <link>https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</link>
+      <pubDate>Mon, 28 Jul 2014 22:08:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s play &amp;lsquo;Spot the bug&amp;rsquo;. We&amp;rsquo;re building a simple system that shows photos. Each photo has a
+&lt;code&gt;publish_date&lt;/code&gt; and we should only show photos that have been published (i.e. their &lt;code&gt;publish_date&lt;/code&gt; is
+in the past).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;PhotoManager&lt;/span&gt;(models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;Manager):
+    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;live&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;, as_of&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;None&lt;/span&gt;):
+        &lt;span style=&#34;color:#719e07&#34;&gt;if&lt;/span&gt; as_of &lt;span style=&#34;color:#719e07&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;None&lt;/span&gt;:
+            as_of &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; timezone&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;now()
+        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b58900&#34;&gt;super&lt;/span&gt;()&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;get_query_set()&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;filter(publish_date__lte&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;as_of)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And the view to show those photos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ShowPhotosView&lt;/span&gt;(ListView):
+    queryset &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; Hero&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;live()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Can you spot the bug? I sure didn&amp;rsquo;t&amp;hellip; until the client complained that newly published photos never
+showed up on the site. Restarting the server fixed the problem temporarily. The newly published
+photos would show up, but then any photos published after the server restart again failed to
+display.&lt;/p&gt;
+&lt;p&gt;The problem is that the &lt;code&gt;ShowPhotosView&lt;/code&gt; class is instantiated when the server starts.
+&lt;code&gt;ShowPhotosView.queryset&lt;/code&gt; gets set to the value returned by &lt;code&gt;Hero.objects.live()&lt;/code&gt;. That, in turn, is a
+&lt;code&gt;QuerySet&lt;/code&gt;, but it&amp;rsquo;s a &lt;code&gt;QuerySet&lt;/code&gt; with &lt;code&gt;as_of&lt;/code&gt; set to &lt;code&gt;timezone.now()&lt;/code&gt; &lt;em&gt;WHEN THE SERVER STARTS UP&lt;/em&gt;. That
+&lt;code&gt;as_of&lt;/code&gt; value never gets updated, so newer photos never get captured in the query.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s probably multiple ways to fix this, but an easy one is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ShowPhotosView&lt;/span&gt;(ListView):
+    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;get_queryset&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
+        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; Hero&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;live()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, instead of the queryset being instantiated at server start-up, it&amp;rsquo;s instantiated only when
+&lt;code&gt;ShowPhotosView.get_queryset()&lt;/code&gt; is called, which is when a request is made.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Some Emacs Posts</title>
+      <link>https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/</link>
+      <pubDate>Wed, 23 Jul 2014 21:38:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/</guid>
+      <description>&lt;p&gt;A few cool Emacs posts have flown across my radar, so I&amp;rsquo;m noting them here for that time in the
+future when I have time to play with them.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html&#34;&gt;Get unicode glyphs to show properly&lt;/a&gt;. (╯°□°）╯︵ ┻━┻&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jr0cket.co.uk/2013/10/create-cool-slides--Org-mode-Revealjs.html/&#34;&gt;Creating slides with org-mode and Reveal.js&lt;/a&gt;.
+Finally, a sane way to create a presentation :)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/syohex/emacs-anzu&#34;&gt;Anzu&lt;/a&gt;: Improves incremental search. Anzu shows the number
+of matches found, and how many matches remain in the document.
+
+
+
+
+
+
+
+&lt;span class=&#34;caption-wrapper &#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://github.com/syohex/emacs-anzu/raw/master/image/anzu.gif&#34; title=&#34;Anzu in action&#34; alt=&#34;Anzu in action&#34;&gt;
+  &lt;span class=&#34;caption-text&#34;&gt;Anzu in action&lt;/span&gt;
+&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://from-the-cloud.com/en/emacs/2013/01/28_emacs-as-a-django-ide-with-python-djangoel.html&#34;&gt;Emacs as a Django IDE&lt;/a&gt;:
+I tried this out briefly, but didn&amp;rsquo;t end up sticking with it. It seemed too heavyweight.
+I&amp;rsquo;m probably just too used to my own workflow. I still think it&amp;rsquo;s an interesting idea and would
+like to try it again sometime.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://emacsredux.com/blog/2014/07/22/travel-back-and-forward-in-git-history/&#34;&gt;Travel back and forth in git history&lt;/a&gt;:
+I&amp;rsquo;m addicted to &lt;a href=&#34;http://www.emacswiki.org/emacs/Magit&#34;&gt;magit mode&lt;/a&gt;, to the point that the
+only git command I use manually nowadays is &lt;code&gt;git clone&lt;/code&gt;. I do everything else in magit. Magit has
+a &lt;code&gt;magit-blame-mode&lt;/code&gt; which shows when each line in a file was changed and by whom.
+&lt;code&gt;git-timemachine&lt;/code&gt; seems to take that a step further by visiting each revision, one by
+one. I can think of a few times where that would have been useful.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/omouse/emacs-sos&#34;&gt;Search StackOverflow from inside Emacs&lt;/a&gt;: Enough said.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/skeeto/elfeed&#34;&gt;Emacs RSS client&lt;/a&gt;: Still using NewsBlur, but totally miss
+Google Reader. Maybe I need to try this one out.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sachachua.com/blog/series/read-lisp-tweak-emacs/&#34;&gt;Sacha Chua&amp;rsquo;s minicourse on Elisp&lt;/a&gt;: Have
+to read through this someday!&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pygments on Arch Linux</title>
+      <link>https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/</link>
+      <pubDate>Tue, 22 Jul 2014 21:16:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/</guid>
+      <description>&lt;p&gt;I wrote my first blog post in a little while (ok, ok&amp;hellip; 18 months) yesterday and when I tried to
+generate the post, it failed. Silently failed, which is the worst kind of failure. I&amp;rsquo;m still not
+sure why it was silent, but I eventually was able to force it to show me an error message:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;popen&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;354&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`rescue in get_header&amp;#39;: Failed to get header. (MentosError)
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `&lt;/span&gt;get_header&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;timeout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;68&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`timeout&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:206:in `&lt;/span&gt;mentos&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:189:in `highlight&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments_code&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pygments&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/pygments_code.rb:14:in `&lt;/span&gt;highlight&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:37:in `block in render_code_block&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;backtick_code_block&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`gsub&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:13:in `&lt;/span&gt;render_code_block&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/octopress_filters.rb:12:in `pre_filter&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;octopress_filters&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pre_render&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:112:in `&lt;/span&gt;block &lt;span style=&#34;color:#719e07&#34;&gt;in&lt;/span&gt; pre_render&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:111:in `each&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;post_filters&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;111&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pre_render&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:166:in `&lt;/span&gt;do_layout&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:195:in `render&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`block in render&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `&lt;/span&gt;each&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `render&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;41&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`process&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/bin/jekyll:264:in `&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;top (required)&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/bin/jekyll:23:in `load&amp;#39;&lt;/span&gt;
+	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;bin&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;jekyll&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`&amp;lt;main&amp;gt;&amp;#39;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Professor Google tells me that this happens when you try to
+&lt;a href=&#34;https://github.com/tmm1/pygments.rb/issues/45&#34;&gt;run the pygments.rb library in a Python 3 environment&lt;/a&gt;.
+(pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
+Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
+default. No, I don&amp;rsquo;t want to check how long ago that was.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkvirtualenv -p &lt;span style=&#34;color:#586e75&#34;&gt;`&lt;/span&gt;which python2&lt;span style=&#34;color:#586e75&#34;&gt;`&lt;/span&gt; my_blog
+&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;my_blog&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt;$ bundle &lt;span style=&#34;color:#b58900&#34;&gt;exec&lt;/span&gt; rake generate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So now I&amp;rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
+it&amp;rsquo;s time to switch blog tools again&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to create test models in Django</title>
+      <link>https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/</link>
+      <pubDate>Mon, 21 Jul 2014 20:44:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s occasionally useful to be able to create a Django model class in your unit test suite. Let&amp;rsquo;s
+say you&amp;rsquo;re building a library which creates an
+&lt;a href=&#34;https://docs.djangoproject.com/en/dev/topics/db/models/#abstract-base-classes&#34;&gt;abstract model&lt;/a&gt;
+which your users will want to subclass. There&amp;rsquo;s no need for your library to subclass it, but your
+library should still test that you can create a subclass and test out its features. If you create
+that model in your &lt;code&gt;models.py&lt;/code&gt; file, then Django will think that it is a real part of your library and
+load it whenever you (or your users) call &lt;code&gt;syncdb&lt;/code&gt;. That&amp;rsquo;s bad.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;https://code.djangoproject.com/ticket/7835#comment:24&#34;&gt;solution&lt;/a&gt; is to create it in a &lt;code&gt;tests.py&lt;/code&gt;
+file within your Django app. If it&amp;rsquo;s not in &lt;code&gt;models.py&lt;/code&gt;, Django won&amp;rsquo;t load it during &lt;code&gt;syncdb&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.db &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; models
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.test &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; TestCase
+
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; .models &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; MyAbstractModel
+
+&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;MyTestModel&lt;/span&gt;(MyAbstractModel):
+    name &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;CharField(max_length&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;)
+
+&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;AbstractTest&lt;/span&gt;(TestCase):
+    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;test_my_test_model&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
+        &lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;assertTrue(MyTestModel&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;create(name&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;))
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A problem with this solution is that I rarely use a single &lt;code&gt;tests.py&lt;/code&gt; file. Instead we use multiple
+test files collected in a tests package. If you try to create a model in &lt;code&gt;tests/test_foo.py&lt;/code&gt;, then
+this approach fails because Django tries to create the model in an application named &lt;code&gt;tests&lt;/code&gt;, but
+there is no such app in INSTALLED_APPS. The solution is to set &lt;code&gt;app_label&lt;/code&gt; to the name of your app
+in an inner Meta class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.db &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; models
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.test &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; TestCase
+
+&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; ..models &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; MyAbstractModel
+
+&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;MyTestModel&lt;/span&gt;(MyAbstractModel):
+    name &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;CharField(max_length&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;)
+
+    &lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Meta&lt;/span&gt;:
+        app_label &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;myappname&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;AbstractTest&lt;/span&gt;(TestCase):
+    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;test_my_test_model&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
+        &lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;assertTrue(MyTestModel&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;create(name&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;))
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oh, and I almost forgot&amp;hellip; if you use &lt;a href=&#34;http://south.readthedocs.org/en/latest/index.html&#34;&gt;South&lt;/a&gt;,
+this might not work, unless you set &lt;code&gt;SOUTH_TESTS_MIGRATE&lt;/code&gt; to &lt;code&gt;False&lt;/code&gt; in your settings file.&lt;/p&gt;
+&lt;p&gt;Comments and corrections welcome!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

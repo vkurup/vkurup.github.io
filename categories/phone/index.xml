@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phone on Vinod Kurup</title>
+    <link>https://vkurup.github.io/categories/phone/</link>
+    <description>Recent content in phone on Vinod Kurup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
+    <lastBuildDate>Fri, 21 Aug 2020 19:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vkurup.github.io/categories/phone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using an OBi110 for VOIP service</title>
+      <link>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</link>
+      <pubDate>Fri, 21 Aug 2020 19:45:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</guid>
+      <description>I set up an OBi110 device to provide a landline at home. OK, it&amp;rsquo;s not a land line, it&amp;rsquo;s a VOIP (Voice Over Internet Protocol) line, but it performs a similar function. We&amp;rsquo;ve always had a landline. Our cell phone coverage is spotty at times and ever since Mala started working from home, she needs to have a reliable phone line for her global conference calls.
+The problem is that Spectrum was charging us $44.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>weird on Vinod Kurup</title>
+    <link>https://vkurup.github.io/categories/weird/</link>
+    <description>Recent content in weird on Vinod Kurup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
+    <lastBuildDate>Wed, 30 Mar 2005 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://vkurup.github.io/categories/weird/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I need a Clocky</title>
+      <link>https://vkurup.github.io/blog/2005/03/30/i-need-a-clocky/</link>
+      <pubDate>Wed, 30 Mar 2005 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2005/03/30/i-need-a-clocky/</guid>
+      <description>Clocky, an alarm clock that runs and hides, so you can&amp;rsquo;t hit snooze.</description>
+    </item>
+    
+    <item>
+      <title>Christmas Break</title>
+      <link>https://vkurup.github.io/blog/2004/02/08/christmas-break/</link>
+      <pubDate>Sun, 08 Feb 2004 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2004/02/08/christmas-break/</guid>
+      <description>I uploaded the pics from my trip home over Christmas. Nope, this is not our house. </description>
+    </item>
+    
+  </channel>
+</rss>
