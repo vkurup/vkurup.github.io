@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 21 Aug 2020 19:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 16:41:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deleting old snaps</title>
+      <link>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</link>
+      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</guid>
+      <description>Copy this script into ~/bin/:
+#!/bin/bash # Removes old revisions of snaps # CLOSE ALL SNAPS BEFORE RUNNING THIS set -ex LANG=en_US.UTF-8 snap list --all | awk &#39;/disabled/{print $1, $3}&#39; | while read snapname revision; do sudo snap remove &amp;quot;$snapname&amp;quot; --revision=&amp;quot;$revision&amp;quot; done Found on https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html and slightly edited.</description>
+    </item>
     
     <item>
       <title>Using an OBi110 for VOIP service</title>

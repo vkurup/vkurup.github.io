@@ -8,10 +8,32 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 21 Aug 2020 19:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 16:41:00 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deleting old snaps</title>
+      <link>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</link>
+      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</guid>
+      <description>&lt;p&gt;Copy this script into &lt;code&gt;~/bin/&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -ex
+
+LANG=en_US.UTF-8 snap list --all | awk &#39;/disabled/{print $1, $3}&#39; |
+    while read snapname revision; do
+        sudo snap remove &amp;quot;$snapname&amp;quot; --revision=&amp;quot;$revision&amp;quot;
+    done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Found on
+&lt;a href=&#34;https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html&#34;&gt;https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html&lt;/a&gt; and
+slightly edited.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using an OBi110 for VOIP service</title>
@@ -756,59 +778,6 @@ default. No, I don&amp;rsquo;t want to check how long ago that was.&lt;/p&gt;
 &lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;my_blog&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt;$ bundle &lt;span style=&#34;color:#b58900&#34;&gt;exec&lt;/span&gt; rake generate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So now I&amp;rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
 it&amp;rsquo;s time to switch blog tools again&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How to create test models in Django</title>
-      <link>https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/</link>
-      <pubDate>Mon, 21 Jul 2014 20:44:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/</guid>
-      <description>&lt;p&gt;It&amp;rsquo;s occasionally useful to be able to create a Django model class in your unit test suite. Let&amp;rsquo;s
-say you&amp;rsquo;re building a library which creates an
-&lt;a href=&#34;https://docs.djangoproject.com/en/dev/topics/db/models/#abstract-base-classes&#34;&gt;abstract model&lt;/a&gt;
-which your users will want to subclass. There&amp;rsquo;s no need for your library to subclass it, but your
-library should still test that you can create a subclass and test out its features. If you create
-that model in your &lt;code&gt;models.py&lt;/code&gt; file, then Django will think that it is a real part of your library and
-load it whenever you (or your users) call &lt;code&gt;syncdb&lt;/code&gt;. That&amp;rsquo;s bad.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://code.djangoproject.com/ticket/7835#comment:24&#34;&gt;solution&lt;/a&gt; is to create it in a &lt;code&gt;tests.py&lt;/code&gt;
-file within your Django app. If it&amp;rsquo;s not in &lt;code&gt;models.py&lt;/code&gt;, Django won&amp;rsquo;t load it during &lt;code&gt;syncdb&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.db &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; models
-&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.test &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; TestCase
-
-&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; .models &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; MyAbstractModel
-
-&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;MyTestModel&lt;/span&gt;(MyAbstractModel):
-    name &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;CharField(max_length&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;)
-
-&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;AbstractTest&lt;/span&gt;(TestCase):
-    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;test_my_test_model&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
-        &lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;assertTrue(MyTestModel&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;create(name&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;))
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A problem with this solution is that I rarely use a single &lt;code&gt;tests.py&lt;/code&gt; file. Instead we use multiple
-test files collected in a tests package. If you try to create a model in &lt;code&gt;tests/test_foo.py&lt;/code&gt;, then
-this approach fails because Django tries to create the model in an application named &lt;code&gt;tests&lt;/code&gt;, but
-there is no such app in INSTALLED_APPS. The solution is to set &lt;code&gt;app_label&lt;/code&gt; to the name of your app
-in an inner Meta class.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.db &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; models
-&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; django.test &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; TestCase
-
-&lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; ..models &lt;span style=&#34;color:#719e07&#34;&gt;import&lt;/span&gt; MyAbstractModel
-
-&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;MyTestModel&lt;/span&gt;(MyAbstractModel):
-    name &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;CharField(max_length&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;)
-
-    &lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Meta&lt;/span&gt;:
-        app_label &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;myappname&amp;#39;&lt;/span&gt;
-
-&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;AbstractTest&lt;/span&gt;(TestCase):
-    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;test_my_test_model&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
-        &lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;assertTrue(MyTestModel&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;create(name&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;))
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Oh, and I almost forgot&amp;hellip; if you use &lt;a href=&#34;http://south.readthedocs.org/en/latest/index.html&#34;&gt;South&lt;/a&gt;,
-this might not work, unless you set &lt;code&gt;SOUTH_TESTS_MIGRATE&lt;/code&gt; to &lt;code&gt;False&lt;/code&gt; in your settings file.&lt;/p&gt;
-&lt;p&gt;Comments and corrections welcome!&lt;/p&gt;
 </description>
     </item>
     

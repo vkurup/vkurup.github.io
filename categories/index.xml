@@ -8,10 +8,37 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 21 Aug 2020 19:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2020 16:41:00 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cheatsheet</title>
+      <link>https://vkurup.github.io/categories/cheatsheet/</link>
+      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/cheatsheet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://vkurup.github.io/categories/linux/</link>
+      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://vkurup.github.io/categories/ubuntu/</link>
+      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/ubuntu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>home</title>
@@ -307,15 +334,6 @@
       <pubDate>Sat, 12 Nov 2011 21:39:34 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://vkurup.github.io/categories/linux/</link>
-      <pubDate>Thu, 08 Sep 2011 21:58:48 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
