@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Wed, 09 Dec 2020 16:41:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 16:48:35 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>cheatsheet</title>
       <link>https://vkurup.github.io/categories/cheatsheet/</link>
-      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/cheatsheet/</guid>
       <description></description>
@@ -25,7 +25,7 @@
     <item>
       <title>linux</title>
       <link>https://vkurup.github.io/categories/linux/</link>
-      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/linux/</guid>
       <description></description>
@@ -34,7 +34,7 @@
     <item>
       <title>ubuntu</title>
       <link>https://vkurup.github.io/categories/ubuntu/</link>
-      <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
+      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/ubuntu/</guid>
       <description></description>
@@ -82,6 +82,15 @@
       <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://vkurup.github.io/categories/aws/</link>
+      <pubDate>Mon, 27 Jan 2020 17:00:32 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/aws/</guid>
       <description></description>
     </item>
     

@@ -8,10 +8,24 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Wed, 09 Dec 2020 16:41:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Dec 2020 16:48:35 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disk Space Hogs</title>
+      <link>https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/</link>
+      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/</guid>
+      <description>&lt;p&gt;Find disk space hogs:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo du -h -d 3 / | grep &amp;quot;^[0-9.]*G&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; which helped me find the command in
+&lt;a href=&#34;https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/&#34;&gt;yesterday&amp;rsquo;s post&lt;/a&gt;. You can add directories
+after the slash to drill down to your heart&amp;rsquo;s content.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Deleting old snaps</title>
@@ -125,6 +139,39 @@ self.assertEqual(cleaned_data, expected_data)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And that works as expected. The reminder to myself is to always identify which mode of
 the form you are testing, GET or POST.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>AWS Xray brain dump</title>
+      <link>https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/</link>
+      <pubDate>Mon, 27 Jan 2020 17:00:32 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/</guid>
+      <description>&lt;p&gt;These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
+Posting this mainly for my auxiliary brain.&lt;/p&gt;
+&lt;p&gt;First, set up an IAM role that allows nodes to access xray.&lt;/p&gt;
+&lt;p&gt;Following this blog post:
+&lt;a href=&#34;https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/&#34;&gt;https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I cloned this repo:
+&lt;a href=&#34;https://github.com/aws-samples/aws-xray-kubernetes&#34;&gt;https://github.com/aws-samples/aws-xray-kubernetes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Build the AWS Xray image:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd xray-daemon/
+docker build -t xray-daemon:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;THIS OUT OF DATE! try this: &lt;a href=&#34;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image&#34;&gt;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Create an AWS ECR repo:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aws ecr create-repository --repository-name xray-daemon
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Login via docker:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aws ecr get-login --no-include-email
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That command spits out a command which you can run that will log you into docker ^&lt;/p&gt;
+&lt;p&gt;Tag and push the image there:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should now be able to see the image in the AWS ECR console&lt;/p&gt;
+&lt;p&gt;Update &lt;code&gt;aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Change the image value to the image you just pushed&lt;/p&gt;
+&lt;p&gt;deploy it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kubectl apply -f xray-k8s-daemonset.yaml
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -687,97 +734,6 @@ display.&lt;/p&gt;
         &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; Hero&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;live()
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, instead of the queryset being instantiated at server start-up, it&amp;rsquo;s instantiated only when
 &lt;code&gt;ShowPhotosView.get_queryset()&lt;/code&gt; is called, which is when a request is made.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Some Emacs Posts</title>
-      <link>https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/</link>
-      <pubDate>Wed, 23 Jul 2014 21:38:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/</guid>
-      <description>&lt;p&gt;A few cool Emacs posts have flown across my radar, so I&amp;rsquo;m noting them here for that time in the
-future when I have time to play with them.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html&#34;&gt;Get unicode glyphs to show properly&lt;/a&gt;. (╯°□°）╯︵ ┻━┻&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://jr0cket.co.uk/2013/10/create-cool-slides--Org-mode-Revealjs.html/&#34;&gt;Creating slides with org-mode and Reveal.js&lt;/a&gt;.
-Finally, a sane way to create a presentation :)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/syohex/emacs-anzu&#34;&gt;Anzu&lt;/a&gt;: Improves incremental search. Anzu shows the number
-of matches found, and how many matches remain in the document.
-
-
-
-
-
-
-
-&lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://github.com/syohex/emacs-anzu/raw/master/image/anzu.gif&#34; title=&#34;Anzu in action&#34; alt=&#34;Anzu in action&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Anzu in action&lt;/span&gt;
-&lt;/span&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://from-the-cloud.com/en/emacs/2013/01/28_emacs-as-a-django-ide-with-python-djangoel.html&#34;&gt;Emacs as a Django IDE&lt;/a&gt;:
-I tried this out briefly, but didn&amp;rsquo;t end up sticking with it. It seemed too heavyweight.
-I&amp;rsquo;m probably just too used to my own workflow. I still think it&amp;rsquo;s an interesting idea and would
-like to try it again sometime.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://emacsredux.com/blog/2014/07/22/travel-back-and-forward-in-git-history/&#34;&gt;Travel back and forth in git history&lt;/a&gt;:
-I&amp;rsquo;m addicted to &lt;a href=&#34;http://www.emacswiki.org/emacs/Magit&#34;&gt;magit mode&lt;/a&gt;, to the point that the
-only git command I use manually nowadays is &lt;code&gt;git clone&lt;/code&gt;. I do everything else in magit. Magit has
-a &lt;code&gt;magit-blame-mode&lt;/code&gt; which shows when each line in a file was changed and by whom.
-&lt;code&gt;git-timemachine&lt;/code&gt; seems to take that a step further by visiting each revision, one by
-one. I can think of a few times where that would have been useful.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/omouse/emacs-sos&#34;&gt;Search StackOverflow from inside Emacs&lt;/a&gt;: Enough said.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/skeeto/elfeed&#34;&gt;Emacs RSS client&lt;/a&gt;: Still using NewsBlur, but totally miss
-Google Reader. Maybe I need to try this one out.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://sachachua.com/blog/series/read-lisp-tweak-emacs/&#34;&gt;Sacha Chua&amp;rsquo;s minicourse on Elisp&lt;/a&gt;: Have
-to read through this someday!&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pygments on Arch Linux</title>
-      <link>https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/</link>
-      <pubDate>Tue, 22 Jul 2014 21:16:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/</guid>
-      <description>&lt;p&gt;I wrote my first blog post in a little while (ok, ok&amp;hellip; 18 months) yesterday and when I tried to
-generate the post, it failed. Silently failed, which is the worst kind of failure. I&amp;rsquo;m still not
-sure why it was silent, but I eventually was able to force it to show me an error message:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;popen&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;354&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`rescue in get_header&amp;#39;: Failed to get header. (MentosError)
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `&lt;/span&gt;get_header&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;timeout&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;68&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`timeout&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:206:in `&lt;/span&gt;mentos&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:189:in `highlight&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;pygments_code&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;24&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pygments&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/pygments_code.rb:14:in `&lt;/span&gt;highlight&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:37:in `block in render_code_block&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;backtick_code_block&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`gsub&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:13:in `&lt;/span&gt;render_code_block&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/octopress_filters.rb:12:in `pre_filter&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;octopress_filters&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pre_render&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:112:in `&lt;/span&gt;block &lt;span style=&#34;color:#719e07&#34;&gt;in&lt;/span&gt; pre_render&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:111:in `each&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;dev&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;kurup&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;org&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;plugins&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;post_filters&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;111&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`pre_render&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:166:in `&lt;/span&gt;do_layout&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:195:in `render&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`block in render&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `&lt;/span&gt;each&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `render&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;ruby&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;gems&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;lib&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;jekyll&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;site&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;rb:&lt;span style=&#34;color:#2aa198&#34;&gt;41&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`process&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/bin/jekyll:264:in `&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&amp;lt;&lt;/span&gt;top (required)&lt;span style=&#34;color:#719e07&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;	from /home/vinod/.rbenv/versions/1.9.3-p286/bin/jekyll:23:in `load&amp;#39;&lt;/span&gt;
-	from &lt;span style=&#34;color:#dc322f&#34;&gt;/home/&lt;/span&gt;vinod&lt;span style=&#34;color:#719e07&#34;&gt;/.&lt;/span&gt;rbenv&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;versions&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;p286&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;bin&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;jekyll&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;23&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;:in&lt;/span&gt; &lt;span style=&#34;color:#586e75&#34;&gt;`&amp;lt;main&amp;gt;&amp;#39;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Professor Google tells me that this happens when you try to
-&lt;a href=&#34;https://github.com/tmm1/pygments.rb/issues/45&#34;&gt;run the pygments.rb library in a Python 3 environment&lt;/a&gt;.
-(pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
-Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
-default. No, I don&amp;rsquo;t want to check how long ago that was.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ mkvirtualenv -p &lt;span style=&#34;color:#586e75&#34;&gt;`&lt;/span&gt;which python2&lt;span style=&#34;color:#586e75&#34;&gt;`&lt;/span&gt; my_blog
-&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;my_blog&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt;$ bundle &lt;span style=&#34;color:#b58900&#34;&gt;exec&lt;/span&gt; rake generate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So now I&amp;rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
-it&amp;rsquo;s time to switch blog tools again&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     

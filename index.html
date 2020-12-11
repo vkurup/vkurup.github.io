@@ -144,6 +144,35 @@
         
 
 <header>
+  <p class="meta">Dec 10, 2020
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/ubuntu/">ubuntu </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+  </h1>
+</header>
+
+        
+          <p>Find disk space hogs:</p>
+<pre><code>sudo du -h -d 3 / | grep &quot;^[0-9.]*G&quot;
+</code></pre><p>&hellip; which helped me find the command in
+<a href="/blog/2020/12/09/deleting-old-snaps/">yesterday&rsquo;s post</a>. You can add directories
+after the slash to drill down to your heart&rsquo;s content.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Dec 9, 2020
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/#disqus_thread">Comments</a>
@@ -295,6 +324,54 @@ self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
 the form you are testing, GET or POST.</p>
 
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jan 27, 2020
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/aws/">aws </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
+  </h1>
+</header>
+
+        
+          <p>These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
+Posting this mainly for my auxiliary brain.</p>
+<p>First, set up an IAM role that allows nodes to access xray.</p>
+<p>Following this blog post:
+<a href="https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/">https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/</a></p>
+<p>I cloned this repo:
+<a href="https://github.com/aws-samples/aws-xray-kubernetes">https://github.com/aws-samples/aws-xray-kubernetes</a></p>
+<p>Build the AWS Xray image:</p>
+<pre><code>cd xray-daemon/
+docker build -t xray-daemon:latest .
+</code></pre><p>THIS OUT OF DATE! try this: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image">https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image</a></p>
+<p>Create an AWS ECR repo:</p>
+<pre><code>aws ecr create-repository --repository-name xray-daemon
+</code></pre><p>Login via docker:</p>
+<pre><code>aws ecr get-login --no-include-email
+</code></pre><p>That command spits out a command which you can run that will log you into docker ^</p>
+<p>Tag and push the image there:</p>
+<pre><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+</code></pre><p>You should now be able to see the image in the AWS ECR console</p>
+<p>Update <code>aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml</code>:</p>
+<p>Change the image value to the image you just pushed</p>
+<p>deploy it:</p>
+<pre><code>kubectl apply -f xray-k8s-daemonset.yaml
+</code></pre>
         
       </article>
       
@@ -535,109 +612,6 @@ changed the front matter, and then fixed a few octopress plugins I was using to 
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Apr 8, 2019
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2019/04/08/avik-730/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/poetry/">poetry </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2019/04/08/avik-730/">Avik 7:30</a>
-  </h1>
-</header>
-
-        
-          <p>&ldquo;Here it comes!&rdquo; His eyes light up.<br>
-Slurps one last sip from his small cup.</p>
-<p>Then bounding from the kitchen table,<br>
-Fast as lighting, he is able</p>
-<p>To trash his scraps and stow his dishes.<br>
-He yells to Mom, &ldquo;It was delicious!&rdquo;</p>
-<p>One more breath then on the couch he lands.<br>
-&ldquo;What&rsquo;s up?&rdquo; says Mom. Dad shrugs his hands.</p>
-<p>Big brother also has no idea.<br>
-Big sister sighs, &ldquo;He&rsquo;s a weird one I fear.&rdquo;</p>
-<p>We gather round to be sure he&rsquo;s fine.<br>
-Eyes glued to his wrist, &ldquo;It&rsquo;s 7:29!&rdquo;</p>
-<p>And then the beeping fills the room.<br>
-The smile confirms he&rsquo;s over the moon.</p>
-<p>The source of this happiness, on his arm,<br>
-His brand new watch, and a 7:30 alarm.</p>
-<p>(A real-life story, barely embellished)</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/avik-watch.jpg" title="A kid with a watch" alt="A kid with a watch">
-  <span class="caption-text">A kid with a watch</span>
-</span>
-
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 20, 2018
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/">Triangle Race Series</a>
-  </h1>
-</header>
-
-        
-          <p>When we made our 2018 goals last year, Kavi, Anika and I all had some running-related goals. I don&rsquo;t
-remember offhand exactly what each of our goals were, but I think we all wanted to run more races,
-because well, races are fun! I somehow stumbled on the
-<a href="http://www.precisionrace.com/triangle-race-series2/">Triangle Race Series</a>. It&rsquo;s a series of a couple dozen races
-throughout the year around the Triangle, so we signed up for a few. They keep standings based on
-participation and placement. You get 5 points for running a race, and more if you place in your
-age/gender division. We ran about 4 or 5 of the races. I hadn&rsquo;t really thought about the series at
-all recently since I injured my right Achilles in July and haven&rsquo;t run at all since then. Getting
-old really is a bummer. Anyways, I checked the website today and they have posted the
-<a href="http://www.precisionrace.com/s/Series_Rank_Report_Race25_Cash_v9_2Races-xzxt.pdf">final 2018 results</a>. I got
-6th place in my &ldquo;not-quite-old-fogey&rdquo; division! Not bad, huh? Yeah, I know&hellip; it&rsquo;s mostly a
-participation award, but still, I&rsquo;m proud. But wait! That&rsquo;s not even the best part. I&rsquo;m even more
-proud of Kavi and Anika. They are both in the 0-19 age group, so get to compete against teenagers.
-Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the female 0-19 division!</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/oak-city-mile-2018.jpg" title="Oak City Mile 2018" alt="Oak City Mile 2018">
-  <span class="caption-text">Oak City Mile 2018</span>
-</span>
-
-
-        
-      </article>
-      
       
       
 
@@ -718,6 +692,8 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
   
   
   
+  
+  
 
   
   
@@ -726,7 +702,7 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
 
   
   
-  <a href="/page/30/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -785,10 +761,16 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
       
       
       <li class="post">
-        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+      </li>
       
       
       
@@ -800,6 +782,12 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
       </li>
       
       
@@ -884,18 +872,6 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
       
       <li class="post">
         <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/23/some-emacs-posts/">Some Emacs Posts</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/22/pygments-on-arch-linux/">Pygments on Arch Linux</a>
       </li>
       
       

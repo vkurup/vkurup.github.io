@@ -144,6 +144,162 @@
         
 
 <header>
+  <p class="meta">Sep 8, 2011
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2011/09/08/fixing-wireless-on-eeepc/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2011/09/08/fixing-wireless-on-eeepc/">Fixing wireless on eeePC</a>
+  </h1>
+</header>
+
+        
+          <p>I have an ASUS eeePC 1000, running Ubuntu 10.10. Wireless worked
+flawlessly at home, which is where I use it 99% of the time. On our
+most recent trip, however, it wasn&rsquo;t working. It couldn&rsquo;t connect to a
+WPA-secured network. Here are the relevant error messages:</p>
+<pre><code>NetworkManager[770]: &lt;warn&gt; Activation (wlan0/wireless): association took too long.
+NetworkManager[770]: &lt;warn&gt; (wlan0): link timed out.
+NetworkManager[770]: &lt;warn&gt; Activation (wlan0) failed for access point (linksys)
+NetworkManager[770]: &lt;warn&gt; Activation (wlan0) failed.
+NetworkManager[770]: &lt;info&gt; (wlan0): deactivating device (reason: 0).
+</code></pre>
+<p>After a little googling on my phone, I found out that <a href="http://www.ctbarker.info/2010/05/ubuntu-1004-wireless-chipsets-and-wpa.html">others had this problem with the rt2860sta wireless driver</a>. Fortunately,
+there is a solution, which involved downloading the source code for
+the latest driver, modifying it a bit and rebuilding the driver. Here
+are the instructions:</p>
+<h3 id="step-1-download-the-driver">Step 1: Download the driver</h3>
+<p>Download the <a href="http://www.ralinktech.com/license_us.php?n=2&amp;p=0&amp;t=U0wyRnpjMlYwY3k4eU1ERXdMekEzTHpFMkwyUnZkMjVzYjJGa05qZ3hPRFUwTmpBd05DNWllakk5UFQweU1ERXdYekEzWHpFMlgxSlVNamcyTUY5TWFXNTFlRjlUVkVGZmRqSXVOQzR3TGpBdWRHRnlD">latest rt2860sta driver</a>.</p>
+<h3 id="step-2-rename-and-extract-the-downloaded-file">Step 2: Rename and extract the downloaded file</h3>
+<p>Mine was named <code>download.php</code>, but it&rsquo;s really a tar file:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~ $ mkdir <span style="color:#b58900">test</span>
+vinod@ike:~ $ mv download.php test/driver.tar
+vinod@ike:~ $ <span style="color:#b58900">cd</span> test/
+vinod@ike:~/test $ tar xf driver.tar 
+vinod@ike:~/test $ mv 2010_07_16_RT2860_Linux_STA_v2.4.0.0 driver
+vinod@ike:~/test $ <span style="color:#b58900">cd</span> driver
+</code></pre></div><h3 id="step-3-apply-patch">Step 3: Apply patch</h3>
+<script type="application/javascript" src="https://gist.github.com/vkurup/1205291.js"></script>
+
+<h3 id="step-4-backup-old-driver">Step 4: Backup old driver</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike~/test/driver/ $ sudo ifconfig wlan0 down
+vinod@ike~/test/driver/ $ sudo rmmod rt2860sta
+vinod@ike~/test/driver/ $ mkdir backup
+vinod@ike~/test/driver/ $ sudo mv /etc/Wireless/RT2860STA backup/
+vinod@ike~/test/driver/ $ sudo mv /lib/modules/2.6.35-30-generic/kernel/drivers/staging/rt2860/rt2860sta.ko backup/
+</code></pre></div><h3 id="step-5-install-and-activate-new-driver">Step 5: Install and activate new driver</h3>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~/test/driver $ sudo make install
+vinod@ike:~/test/driver $ sudo depmod -a
+vinod@ike:~/test/driver $ sudo modprobe rt2860sta
+<span style="color:#586e75">```</span>
+
+<span style="color:#586e75">### Step 6: Fix problems with hibernation</span>
+
+A separate problem is that wireless has been flaky when the computer
+wakes from hibernation, but <span style="color:#719e07">[</span>it&#39;s also fixable<span style="color:#719e07">](</span>http://www.twentyways.com/2010/11/19/fixing-wireless-issues-with-asus-eeepc-1000he-running-ubuntu-10-10/<span style="color:#719e07">)</span>.
+
+Add the following lines to <span style="color:#586e75">`</span>/etc/modprobe.d/blacklist.conf<span style="color:#586e75">`</span>:
+
+    blacklist rt2800pci
+    blacklist rt2800lib
+    blacklist rt2x00usb
+    blacklist rt2x00pci
+    blacklist rt2x00lib
+ 
+Create a new file called <span style="color:#586e75">`</span>/etc/pm/config.d/unload_wireless<span style="color:#586e75">`</span> with the following line:
+
+    <span style="color:#268bd2">SUSPEND_MODULES</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;rt2860sta&#34;</span>
+
+Reboot and you should have WPA-compatible, hibernatable wireless.
+
+<span style="color:#586e75">### References:</span>
+
+1. <span style="color:#719e07">[</span>rt2860sta driver installation<span style="color:#719e07">](</span>http://www.ctbarker.info/2010/05/ubuntu-1004-wireless-chipsets-and-wpa.html<span style="color:#719e07">)</span>
+2. <span style="color:#719e07">[</span>Proper hibernation<span style="color:#719e07">](</span>http://www.twentyways.com/2010/11/19/fixing-wireless-issues-with-asus-eeepc-1000he-running-ubuntu-10-10/<span style="color:#719e07">)</span>
+3. <span style="color:#719e07">[</span>Ubuntu Forums thread<span style="color:#719e07">](</span>http://ubuntuforums.org/showthread.php?t<span style="color:#719e07">=</span>1476007<span style="color:#719e07">)</span>
+</code></pre></div>
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Sep 6, 2011
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2011/09/06/surprise-im-40/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/friends/">friends </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2011/09/06/surprise-im-40/">Surprise, I&#39;m 40!</a>
+  </h1>
+</header>
+
+        
+          
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/vinod40-1.jpg" title="Vinod is surprised" alt="Vinod is surprised">
+  <span class="caption-text">Vinod is surprised</span>
+</span>
+
+<p>Have you ever been in one of those dreams where everything seems
+normal and then a flying car (or something equally crazy) comes out of
+nowhere? I&rsquo;m used to having experiences like that when I&rsquo;m dreaming,
+but it was quite surreal to have it during waking hours.</p>
+<p>Mala and Kavi had gone ahead (surreptiously to plan a surprise party
+for someone else!). We were to meet at the ferris wheel at the Navy
+Pier. I found her and she took my hand. She started leading me through
+the crowds of tourists. I could sense excitement in her demeanor, but
+didn&rsquo;t think anything of it. She led me towards a group of people and
+I caught a glimpse of someone who looked like my Dad. That&rsquo;s
+weird&hellip; why would he be here? It&rsquo;s at that point that neurons started
+to malfunction and I began to feel like I was in a dream. Then I saw
+Mala&rsquo;s mom and got even more confused. Slowly the group of strangers
+came into focus and revealed themselves as my friends and family from
+around the country. It was, without a doubt, the best birthday present
+that I have ever received, or expect to receive. Thanks to Mala for
+months of planning, and for wanting to make me feel special even
+though I feel this way every day when I wake up next to her. Thanks to
+all my friends and family who could make it and to the ones who
+couldn&rsquo;t. If this is the culmination of 40 years on this earth, I
+can&rsquo;t wait for the next 40!</p>
+
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/vinod40-2.jpg" title="Vinod is 40" alt="Vinod is 40">
+  <span class="caption-text">Vinod is 40</span>
+</span>
+
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 16, 2011
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2011/08/16/malas-bolognese/#disqus_thread">Comments</a>
@@ -748,186 +904,6 @@ fails, accept that maybe you&rsquo;ll do better next time.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 20, 2011
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2011/07/20/daivame-kaithozham/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2011/07/20/daivame-kaithozham/">Daivame Kaithozham</a>
-  </h1>
-</header>
-
-        
-          <p>Ever since I was a boy, I have been singing a song called &lsquo;Daivame
-Kaithozham&rsquo;, which is pronounced &lsquo;Dave-O-May Kie-Tho-Ram&rsquo;. My parents
-taught it to me when I was about 5 years old, so I learned it by
-learning the syllables in the song. I know bits and pieces of
-Malayalam, but not enough to know what the words of the song
-mean. Whenever I&rsquo;m feeling stressed, I sing it under my breath and it
-makes me feel better. Kavi wasn&rsquo;t the best sleeper as a baby, so we
-spent a lot of time singing him back to sleep. Daivame Kaithozham was
-one of my standbys and he has heard it literally thousands of
-times. Even now, I sing it to him and Anika almost daily, though he
-has requested that I cut it down to weekly. (He likes Laurie Berkner&rsquo;s
-&ldquo;Moon, moon, moon&rdquo; better. Oh well.) Both Anika and Kavi have heard it
-enough that they can mimic me singing it, though they don&rsquo;t know the
-words&hellip;  mostly just the rhythm. But, it&rsquo;s the cutest thing in the
-world to see Anika pick up her doll, put it on the floor and start
-singing &ldquo;Daivame&hellip;&rdquo;</p>
-<p>Anyway, I finally (after 30 something years) asked my parents what the
-song means, so here is the translation. I&rsquo;m not the most religious
-person in the world, but if you replace God with whatever supernatural
-force you believe in, I think it&rsquo;s a nice simple prayer.</p>
-<h2 id="daivame-kaithozham">Daivame Kaithozham</h2>
-<p>Daivame kaithozham kelkumarakanam <!-- raw HTML omitted -->
-Pavamamenne nee kakkumarakanam <!-- raw HTML omitted -->
-Ennullil bhaktiyundakumarakanam <!-- raw HTML omitted -->
-Ninne jnanennume kanumarakanam <!-- raw HTML omitted --></p>
-<p>Nervazhikkenne nee kondupoyeedanam <!-- raw HTML omitted -->
-Nervarum sankadam bhasmamayeedanam <!-- raw HTML omitted -->
-Dushtasamsargam varatheyayeedanam <!-- raw HTML omitted -->
-Shishtarayullavar thozharayeedanam <!-- raw HTML omitted --></p>
-<p>Nalla karyangalil premamundakanam <!-- raw HTML omitted -->
-Nalla vakkothuvan thraniyundakanam <!-- raw HTML omitted -->
-Kruthyangal cheyyuvan sradhayundakanam <!-- raw HTML omitted -->
-Satyam paranjeedan saktiyundakana <!-- raw HTML omitted --></p>
-<h2 id="translated">Translated</h2>
-<p>O’Almighty God my humble salutation, may you kindly listen to my prayers <!-- raw HTML omitted -->
-May you always protect this poor innocent one from all my sufferings. <!-- raw HTML omitted -->
-May my devotion to you flourish in my heart without any interruptions <!-- raw HTML omitted -->
-May I always visualize your eternal divine form within and without. <!-- raw HTML omitted --></p>
-<p>O’ God lead me through the right path  <!-- raw HTML omitted -->
-Annihilate all obstructions facing me  <!-- raw HTML omitted -->
-And protect me from evil interactions <!-- raw HTML omitted -->
-Provide me with serene and sober friends. <!-- raw HTML omitted --></p>
-<p>May I always impart compassion and love to all <!-- raw HTML omitted -->
-O’ Lord provide me courage to talk only good words <!-- raw HTML omitted -->
-May I be provided with the right convictions to do my duties <!-- raw HTML omitted -->
-And give me your blessed strength to tell always the truth alone. <!-- raw HTML omitted --></p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 4, 2011
-     - 5 minute read 
-     - <a href="https://vkurup.github.io/blog/2011/07/04/anything-you-want-review/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/business/">business </a><a class="label" href="https://vkurup.github.io/categories/book-review/">book-review </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2011/07/04/anything-you-want-review/">Anything You Want Review</a>
-  </h1>
-</header>
-
-        
-          <!-- raw HTML omitted -->
-<p>I don&rsquo;t know why I keep reading books about entrepreneurship. I like
-the idea of building a business, having passion for something, and
-most importantly, living life on your own terms. I just <a href="/blog/2010/11/07/growing-a-business">don&rsquo;t think I&rsquo;m cut out for it</a>. But see if
-that will stop me from devouring <a href="http://news.ycombinator.com">Hacker News</a>, <a href="http://mixergy.com">startup podcasts</a> and books like <a href="http://sivers.org">Derek Sivers&rsquo;</a> <a href="http://t.co/rdADtHa">Anything You Want</a>.</p>
-<p>Derek was a musician who started selling his own CDs online in the
-days before Paypal. He agreed to help a friend by selling his friend&rsquo;s
-CDs as well, and eventually CD Baby was born. He built it into a
-successful business and sold it for $22 million. This book is a set of
-stories of how that happened. An <a href="http://onstartups.com/tabid/3339/bid/57644/Anything-You-Want-21-Inspiring-Ideas-From-Derek-Sivers.aspx">excellent bullet point summary</a>
-of the book is available. This short book was filled with interesting
-advice and stories, but here&rsquo;s my main takeaways.</p>
-<h3 id="focus-on-helping-people">Focus on helping people</h3>
-<p>It would seem like the way to build a successful business would be to
-focus on things like profits, or markets, or costs, but Derek says to
-ignore all that and focus on helping people. He started by helping out
-a fellow musician, and he made sure that every decision he made was in
-the name of helping independent musicians. If big labels asked to be
-added to CD Baby, he said no. If people recommended placing ads on his
-site, he said no. If a business offered some kind of big money
-partnership which required him to change the way he ran his business,
-he said no. Find someone you can help and provide enough value to that
-person to make them happy to pay you for the help and you will have a
-successful business.</p>
-<h3 id="make-something-perfect-not-big">Make something perfect, not big</h3>
-<blockquote>
-<p>So, I thought that by taking an unrealistically utopian approach, I could keep the business from growing too much. Instead of trying to make it big, I was going to make it small. It was the opposite of ambition, so I had to think in a way that was the opposite of ambitious.</p>
-<p>The key point is that I wasn&rsquo;t trying to make a big business. I was just daydreaming about how one little thing would look in a perfect world.</p>
-</blockquote>
-<p>Derek actively tried to keep his business from growing. At some point,
-he was making enough money that he felt the growth of the business
-would only create more headaches for him. Instead of trying to get
-more business, he would try to make his current business
-perfect. Focus on ways to make the business run the way you want the
-world to work. Build your utopia. If you are always focused on growing
-the business, you eventually have to make compromises between what
-your current customers want and what &ldquo;potential&rdquo; customers want. But,
-if your current customers are the ones who you&rsquo;re passionate about
-serving, then making their experience even better will paradoxically
-bring growth, while also making your life as a business owner more
-fulfilling.</p>
-<h3 id="this-book-is-not-about-business">This book is not about business</h3>
-<blockquote>
-<p>It&rsquo;s important to know in advance, to make sure you&rsquo;re staying focused on what&rsquo;s honestly important to you, instead of doing what others think you should.</p>
-</blockquote>
-<p>It&rsquo;s really a book about life. Focus on helping people and good things
-will happen to you. Figure out what makes you tick, what makes you
-happy, and what drains you. Adjust your life to give you more time to
-do what makes you happy and stop doing the things that drain
-you. Derek&rsquo;s rule about this is &ldquo;HELL, YEAH!&rdquo; or &ldquo;no&rdquo;. If someone
-offers you an opportunity and you don&rsquo;t say &ldquo;HELL, YEAH!&quot;, then say
-&ldquo;no&rdquo;. Don&rsquo;t go halfway. Do things that you love. (His actual rule is a
-little more &lsquo;explicit&rsquo;, as he describes in this
-<a href="http://mixergy.com/derek-sivers-blog-interview/">podcast</a>)</p>
-<h3 id="a-few-other-quotes-that-i-loved">A few other quotes that I loved</h3>
-<!-- raw HTML omitted -->
-<h5 id="getting-things-done-isnt-the-only-goal">Getting things done isn&rsquo;t the only goal</h5>
-<blockquote>
-<p>[Other people] assume the only reason we do anything is to get it done, and doing it yourself is not the most efficient way. But that&rsquo;s forgetting about the joy of learning and doing.</p>
-</blockquote>
-<h5 id="know-thyself">Know thyself</h5>
-<blockquote>
-<p>Just pay close attention to what excites you and what drains you. Pay close attention to when you&rsquo;re being the real you and when you&rsquo;re trying to impress the invisible jury.</p>
-</blockquote>
-<h5 id="unexpected-twist">Unexpected twist</h5>
-<blockquote>
-<p>So I considered firing everyone and hiring a whole new crew. &hellip; I never saw or spoke to my employees again. Never saw the office again.</p>
-</blockquote>
-<p>Wasn&rsquo;t expecting to read that. Thought that he would find a way to
-patch things up, but stuff like this happens in the real world.</p>
-<h3 id="how-to-do-customer-service">How to do customer service</h3>
-<p>This wasn&rsquo;t from the book, but was in a <a href="http://mixergy.com/derek-sivers-blog-interview/">great Mixergy interview</a> that I
-heard after finishing the book. He describes his customer service
-philosophy as the <strong>Mick Jagger philosophy</strong>. Pretend that every customer
-service request you get is from Mick Jagger. (Assuming your company is
-in the music business). If someone emails you a request about how they
-can&rsquo;t access a PDF file on your site, that might seem like an annoying
-complaint. But if you pretend that it&rsquo;s coming from Mick Jagger, you&rsquo;d
-respond &ldquo;Wow, thanks for emailing me. Here, let me just get that PDF
-for you and attach it to this email. Again, please let me know if
-there&rsquo;s anything else I can do for you!&rdquo; And if that is heartfelt,
-customers will love you.</p>
-<h3 id="bottom-line">Bottom line</h3>
-<p>I enjoyed this book. It&rsquo;s a quick read, it&rsquo;s cheap (I read the Kindle
-version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
-<!-- raw HTML omitted -->recommend it<!-- raw HTML omitted -->.</p>
-
-        
-      </article>
-      
       
       
 
@@ -1011,6 +987,8 @@ version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
   
   
   
+  
+  
 
   
   
@@ -1019,7 +997,7 @@ version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
 
   
   
-  <a href="/page/30/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -1078,10 +1056,16 @@ version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
       
       
       <li class="post">
-        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+      </li>
       
       
       
@@ -1093,6 +1077,12 @@ version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
       </li>
       
       
@@ -1177,18 +1167,6 @@ version on my Android tablet for $7.99) and it&rsquo;s inspirational. I
       
       <li class="post">
         <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/23/some-emacs-posts/">Some Emacs Posts</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/22/pygments-on-arch-linux/">Pygments on Arch Linux</a>
       </li>
       
       

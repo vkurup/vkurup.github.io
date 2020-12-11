@@ -144,6 +144,75 @@
         
 
 <header>
+  <p class="meta">Jul 5, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/07/05/more-mail-woes/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a><a class="label" href="https://vkurup.github.io/categories/mail/">mail </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/07/05/more-mail-woes/">More Mail Woes</a>
+  </h1>
+</header>
+
+        
+          <p>I spent most of this afternoon struggling with a mail issue and I didn&rsquo;t find it documented well anywhere else, so I&rsquo;m going to write about it here in the hopes that it might help someone else.</p>
+<p><strong>What I was trying to do:</strong> Setup qmail + vpopmail + courier imap for imap and pop3d</p>
+<p><strong>Problem I was having:</strong> For some users, checking POP3 mail would work for a while (about 5 minutes), but then would fail:</p>
+<pre><code>      Jul  5 00:30:34 vkurup pop3d: LOGIN FAILED, ip=[::ffff:68.173.27.35]
+      Jul  5 00:30:34 vkurup pop3d: Disconnected, ip=[::ffff:68.173.27.35]
+</code></pre>
+<p>The failure would only happen for users who had vpopmail accounts <strong>and</strong> shell accounts. Users who have only vpopmail accounts were fine.</p>
+<p>Eventually, after much searching, I found this <a href="http://bluedot.net/mail/archive/read.php?f=2&amp;i=10881&amp;t=10880">message</a> which advised to configure courier-imap with <code>--without-authdaemon</code>. This solved my problem.</p>
+<p>According to the author of courier-imap, <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=2388144&amp;forum_id=33081">this problem is solved in newer versions of vpopmail</a>, but he mentions version 5.3.38 and I could only find version 5.3.20, so I didn&rsquo;t try that fix.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jul 2, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/07/02/core-mac-os-x-and-unix-programming/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/mac-os-x/">mac-os-x </a><a class="label" href="https://vkurup.github.io/categories/bork/">bork </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/07/02/core-mac-os-x-and-unix-programming/">Core Mac OS X and UNIX Programming</a>
+  </h1>
+</header>
+
+        
+          <p>Not only has <a href="http://badgertronics.com/blog">MarkD</a> produced a <a href="http://borkware.com/corebook/">book</a>, but he&rsquo;s made <a href="http://slashdot.org/article.pl?sid=03/07/01/1636204">SlashDot</a> as well. Guess it&rsquo;s about time to retire now&hellip;</p>
+<p>I&rsquo;m going to get it eventually, but I&rsquo;m still working my way through
+<a href="http://www.amazon.com/gp/product/0321503619?ie=UTF8&amp;tag=vinodkurupshomep&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321503619">Cocoa Programming for Mac OS X</a></p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jun 29, 2003
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2003/06/29/do-not-call/#disqus_thread">Comments</a>
@@ -577,69 +646,6 @@ don&rsquo;t-make-me-think usability of the Mac.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Mar 3, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/03/03/my-brother-is-so-cool/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/03/03/my-brother-is-so-cool/">My brother is so cool</a>
-  </h1>
-</header>
-
-        
-          <p>I&rsquo;ve been meaning to put this pic up for a while. That&rsquo;s me in back,
-with my super-cool brother and his even-cooler Harley Davidson
-VRod. It was about 40 degrees F and despite sitting in back and
-despite having the warm helmet, I was still freezing. I can&rsquo;t imagine
-what Manu was feeling. Halfway through the ride, I asked him, but his
-face was too frozen to talk. :-)</p>
-<p><!-- raw HTML omitted --></p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Feb 20, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/02/20/borkdrip/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/mac-os-x/">mac-os-x </a><a class="label" href="https://vkurup.github.io/categories/cocoa/">cocoa </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/02/20/borkdrip/">BorkDrip!</a>
-  </h1>
-</header>
-
-        
-          <p>Got Mac OS X? Want a cool screensaver? I stole this from
-<a href="http://badgertronics.com/blog">MarkD</a> over at
-<a href="http://borkware.com/products/borkware-drip/">BorkWare</a> and then
-modified it to allow multiple drips and configurable block sizes.</p>
-<ul>
-<li>Get the <a href="http://kurup.org/files/Borkware_Drip.saver.sit">ScreenSaver</a>  (expand archive and put it in &ldquo;~/Library/Screen Savers&rdquo;).</li>
-<li>Get the <a href="http://kurup.org/files/borkware-drip-vkurup-11.tar.gz">source code</a>.</li>
-</ul>
-
-        
-      </article>
-      
       
       
 
@@ -723,6 +729,8 @@ modified it to allow multiple drips and configurable block sizes.</p>
   
   
   
+  
+  
 
   
   
@@ -731,7 +739,7 @@ modified it to allow multiple drips and configurable block sizes.</p>
 
   
   
-  <a href="/page/30/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -790,10 +798,16 @@ modified it to allow multiple drips and configurable block sizes.</p>
       
       
       <li class="post">
-        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+      </li>
       
       
       
@@ -805,6 +819,12 @@ modified it to allow multiple drips and configurable block sizes.</p>
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
       </li>
       
       
@@ -889,18 +909,6 @@ modified it to allow multiple drips and configurable block sizes.</p>
       
       <li class="post">
         <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/23/some-emacs-posts/">Some Emacs Posts</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/22/pygments-on-arch-linux/">Pygments on Arch Linux</a>
       </li>
       
       
