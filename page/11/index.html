@@ -144,6 +144,70 @@
         
 
 <header>
+  <p class="meta">Jul 4, 2009
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2009/07/04/clamz-to-the-rescue/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/free-software/">free-software </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/music/">music </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2009/07/04/clamz-to-the-rescue/">clamz to the rescue</a>
+  </h1>
+</header>
+
+        
+          <p><a href="http://kottke.org/09/05/99-classical-mp3s-for-8">Kottke</a> linked to some great deals on <a href="http://www.amazon.com/gp/product/B001U1J2S4?ie=UTF8&amp;tag=vinodkurupshomep&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B001U1J2S4">classical music at amazon</a><!-- raw HTML omitted -->. In order to download them, you need to have the amazon mp3 downloader installed. They now offer a Debian (linux) version, but I couldn&rsquo;t get it working. It&rsquo;s meant for an older version of Debian, but it doesn&rsquo;t recognize the newer versions of the libraries installed on my system. I thought about doing some fancy apt-getting to try to get the right versions, but just thinking about that made my head throb. Then I heard about <a href="http://code.google.com/p/clamz/">clamz</a>, an open source project to replicate the amazon mp3 downloader. I installed the library packages they recommended (libgcrypt11-dev, libcurl4-openssl-dev, and libexpat1-dev) and then installed it.</p>
+<p>I&rsquo;m always a little leary to install packages from source, because then they&rsquo;re not managed by the package manager (apt-get). It becomes more of a tedious process to keep them updated or to uninstall them. To partially workaround that problem, I use a program called <a href="http://www.asic-linux.com.mx/~izto/checkinstall/">checkinstall</a>. It basically creates a package for any program that you want to install from source. So, instead of :</p>
+<pre><code>./configure
+make
+sudo make install
+</code></pre>
+<p>you do:</p>
+<pre><code>./configure
+make
+sudo checkinstall
+</code></pre>
+<p>It then creates a .deb and installs it. It asks you for some basic info about the program, but guesses as much as it can and does a decent job. I haven&rsquo;t delved into anything more involved than that, but there are ways to document dependencies which would allow it to be even more integrated into the package management system.</p>
+<p>Anyway, it installed perfectly and within seconds I was downloading the music that I had purchased.</p>
+<pre><code>vinod@ike:~/Music $ clamz &quot;Desktop/The 99 Most Essential Mozart Masterpieces.amz&quot;
+</code></pre>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jun 30, 2009
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2009/06/30/ooohh...-gross/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/gross/">gross </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2009/06/30/ooohh...-gross/">Ooohh... gross!</a>
+  </h1>
+</header>
+
+        
+          <p>In order to lose any remaining readers, I am very proud to announce that Kavi made a poopy in his potty. First time! It may well have been a lucky accident, but I&rsquo;m happy about it. In other news, Anika is 1 week old and doing great.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jun 23, 2009
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2009/06/23/anika-puri-kurup/#disqus_thread">Comments</a>
@@ -383,61 +447,6 @@ home. (Well&hellip; 3 miles long).</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Aug 21, 2007
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2007/08/21/more-kavi-videos/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2007/08/21/more-kavi-videos/">More Kavi videos</a>
-  </h1>
-</header>
-
-        
-          <p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p>There are more videos on <a href="http://youtube.com/user/vkurup1">my youtube page</a> and I&rsquo;m uploading pics as often as I can at <a href="http://kurup.org/kavi/photo/?folder_id=92968">Kavi&rsquo;s Photo Album</a>. <strong>UPDATE</strong>: I&rsquo;m outsourcing photo management now. Go to <a href="http://picasaweb.google.com/vvkurup">Picasa</a></p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 19, 2007
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2007/06/19/introducing-kavi/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2007/06/19/introducing-kavi/">Introducing Kavi</a>
-  </h1>
-</header>
-
-        
-          <p>And here&rsquo;s his <a href="http://www.youtube.com/watch?v=RsVY5y9_fdM">first video</a>.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-        
-      </article>
-      
       
       
 
@@ -590,10 +599,22 @@ home. (Well&hellip; 3 miles long).</p>
       
       
       <li class="post">
-        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/11/install-multiple-python-versions-using-pyenv/">Install multiple python versions using pyenv</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+      </li>
       
       
       
@@ -689,18 +710,6 @@ home. (Well&hellip; 3 miles long).</p>
       
       <li class="post">
         <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/05/29/renaissance-man/">Renaissance Man</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
       </li>
       
       

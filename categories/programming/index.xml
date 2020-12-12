@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 17 Aug 2020 16:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Advent of Code Elixir Day 1</title>
+      <link>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</link>
+      <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</guid>
+      <description>There&amp;rsquo;s this cool thing called Advent of Code, described best here. I found out about it while reading my favorite weekly weblog and so I&amp;rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills on it. There are 2 puzzles each day (day_1_0 and day_1_1 are my solutions). Here&amp;rsquo;s my code for Day 1:
+@doc &amp;#34;&amp;#34;&amp;#34; Find 2 numbers in file that sum to 2020 and return their product.</description>
+    </item>
     
     <item>
       <title>Django forms have 2 modes</title>

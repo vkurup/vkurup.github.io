@@ -144,6 +144,112 @@
         
 
 <header>
+  <p class="meta">Aug 6, 2010
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/08/06/primary-care-doctors/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/medicine/">medicine </a><a class="label" href="https://vkurup.github.io/categories/hospitalist/">hospitalist </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/08/06/primary-care-doctors/">Primary Care Doctors</a>
+  </h1>
+</header>
+
+        
+          <p>I used to be a primary care physician, but switched to being a hospitalist
+in 2007. I loved parts about being a PCP, namely the relationship that I
+developed with the patient over many years. I miss that. I think PCPs offer
+huge value in providing low cost, quality care, especially if they can stay
+engaged throughout the hospitalization process. Atul Gawande recently wrote
+<a href="http://www.newyorker.com/reporting/2010/08/02/100802fa_fact_gawande?currentPage=all">a powerful article on the Hospice system</a>. It&rsquo;s
+worth reading to being to understand the complex issues involved in
+end-of-life care, not to mention for the emotional storytelling that is his
+strength. But, to me, the unsung hero in that story was Chuck Morris, the
+primary care physician, who came in at the proper moment and provided
+perspective to the patient that he knew so well, allowing them to make the
+sane, yet horribly difficult decision to pursue a palliative path. Reading
+that made me miss primary care medicine a little. I perform much more
+actual &ldquo;medical&rdquo; work as a hospitalist than I ever did as a PCP. But, when
+I think of the concept of a <em>doctor</em>, in my head, I&rsquo;m thinking of a primary
+care doc.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Aug 5, 2010
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/08/05/maps-are-functions-too/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/08/05/maps-are-functions-too/">Maps are functions, too</a>
+  </h1>
+</header>
+
+        
+          <p>Braindump time. Here&rsquo;s what I&rsquo;ve read about clojure in the past few days. I don&rsquo;t understand what this means yet, but maybe someday I will:</p>
+<blockquote>
+<p>Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure
+that calls to Java can avoid reflection.</p>
+</blockquote>
+<p>There are multiple languages that target the JVM (besides Java, of
+course). It seems that there are 2 classes of languages. Ported languages
+such as JRuby and Jython aim to be identical to their base languages
+(Ruby &amp; Python). Native languages such as Clojure and Groovy are meant to
+target the JVM natively without satisfying any desire to be identical to
+another language. Native languages have the advantage that they only have 1
+set of libraries to use, so you don&rsquo;t get stuck between two languages.</p>
+<p>I installed clojure 1.0 from the ubuntu repositories, but promptly
+uninstalled it once I found
+<a href="http://github.com/technomancy/leiningen">leiningen</a>. Leiningen is a build
+tool for clojure. You can easily create a new project and specify its
+dependencies and leiningen will download those dependencies, including a
+full version of clojure for each project. You can have 1 project using
+leiningen 1.0 and another using version 1.2 sitting right next to it. That
+seems smart!</p>
+<p>I installed <a href="http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Emacs">clojure-mode on emacs</a>.</p>
+<p>Right now, I&rsquo;m working my way through the
+<a href="http://github.com/relevance/labrepl">labrepl</a> project. It&rsquo;s an interactive
+tutorial and REPL (read-eval-print-loop) where you can run the examples in
+the tutotial.</p>
+<p>It&rsquo;s always important to know how to find help:</p>
+<ul>
+<li><code>(doc blah)</code> gives documentation about blah.</li>
+<li><code>(find-doc &quot;blah&quot;)</code> searches for documentation.</li>
+<li><code>(javadoc blah)</code> opens Java docs in your browser</li>
+<li><code>(show java.util.Date)</code> shows method signatures</li>
+</ul>
+<p>Here&rsquo;s something cool: Maps are associative arrays. Here&rsquo;s a simple one:</p>
+<pre><code>(def me {:first-name &quot;Vinod&quot;, :last-name &quot;Kurup&quot;})
+</code></pre>
+<p>To get the data, you use the <code>get</code> function, like you would in other languages:</p>
+<pre><code>(get me :first-name) -&gt; &quot;Vinod&quot;
+</code></pre>
+<p>But, maps and keywords are functions as well, so you can do:</p>
+<pre><code>(me :first-name) -&gt; &quot;Vinod&quot;
+(:last-name me) -&gt; &quot;Kurup&quot;
+</code></pre>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 2, 2010
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2010/08/02/ubuntu-bluetooth-workaround/#disqus_thread">Comments</a>
@@ -721,106 +827,6 @@ GNOME notification using <code>notify-send</code>:</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 15, 2010
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/15/playdoh/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/parenting/">parenting </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/15/playdoh/">PlayDoh</a>
-  </h1>
-</header>
-
-        
-          <h4 id="kavis-bedroom---8pm">Kavi&rsquo;s bedroom - 8PM</h4>
-<p>DADDY and KAVI are lying next to each other in KAVI&rsquo;s bed doing their
-bedtime ritual. They have finished singing a song and are recapping the
-day.</p>
-<p>DADDY: Did you play with playdoh today?</p>
-<p>KAVI: No.</p>
-<p>DADDY: Are you sure? Did you play with playdoh this morning before going to
-the Puffin room?</p>
-<p>(KAVI thinks)</p>
-<p>KAVI: Yes. I did. Why did I play with playdoh?</p>
-<p>DADDY: Because you wanted to. You asked me if you could play with it.</p>
-<p>KAVI: Why did I want to play with the playdoh?</p>
-<p>DADDY: I don&rsquo;t know.</p>
-<p>KAVI: Why you don&rsquo;t know?</p>
-<p>DADDY: Because. I can&rsquo;t answer that question.</p>
-<p>KAVI: Why you can&rsquo;t answer that question?</p>
-<p>DADDY: It&rsquo;s a question of your motivation, KAVI. I can speculate about why
-you wanted to play with the playdoh, but I can&rsquo;t tell you why you wanted
-to.</p>
-<p>(pause)</p>
-<p>KAVI: Why?</p>
-<p>DADDY: I can tell you what I want, but I can&rsquo;t tell you what you want.</p>
-<p>KAVI: What do you want DADDY?</p>
-<p>(DADDY takes a deep breath)</p>
-<p>DADDY: A lot of things. I want you to grow up to be a strong, intelligent,
-loving, happy boy. I want Anika to grow up to be a strong, intelligent,
-loving, happy girl. I want Mommy to be able to do what she wants in life. I
-want all of us to travel, spend time with family, and enjoy the world. That&rsquo;s
-what I want.</p>
-<p>KAVI: oh.</p>
-<p>DADDY: What do you want?</p>
-<p>KAVI: Playdoh.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 3, 2010
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/01/03/happy-new-year/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/life/">life </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/01/03/happy-new-year/">Happy New Year</a>
-  </h1>
-</header>
-
-        
-          <p>This is going to be a great year. I was working on New Year&rsquo;s Eve. My shift
-was supposed to end at midnight, which meant that I would normally be home
-around 12:30 AM, but my colleague let me out early since the ER was
-unusually light. I got home at 11:55 PM, so I was able to kiss my beautiful
-wife as the new year began. If that&rsquo;s not an auspicious start to a year, I
-don&rsquo;t know what one would be.</p>
-<p>I am so lucky. I have a great job, which is getting better all the time. I
-work hard, but I get some pretty good karmic rewards. It&rsquo;s not perfect and
-maybe someday I&rsquo;ll rant about the pitfalls of being a hospitalist, but it&rsquo;s
-certainly better than my life was as a primary care doctor.</p>
-<p>I live in a beautiful house where I feel comfortable and &ldquo;at home&rdquo;. I have
-a loving extended family who, thankfully, are all pretty happy and healthy.</p>
-<p>Most importantly, I have an amazing wife and 2 darling children who can
-lift my heart into the heavens just by looking at me a certain way. They
-can also make me feel completely unfit to be a father sometimes, but I
-guess that&rsquo;s part of being a father. I have so much to teach them and they
-have so much to teach me.</p>
-<p>This is starting to feel like a &ldquo;Thanksgiving&rdquo; post rather than a &ldquo;New
-Year&rsquo;s&rdquo; post. The bottom line is that I have a great feeling that this is
-going to be a great year for me and my family.</p>
-
-        
-      </article>
-      
       
       
 
@@ -973,10 +979,22 @@ going to be a great year for me and my family.</p>
       
       
       <li class="post">
-        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/11/install-multiple-python-versions-using-pyenv/">Install multiple python versions using pyenv</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+      </li>
       
       
       
@@ -1072,18 +1090,6 @@ going to be a great year for me and my family.</p>
       
       <li class="post">
         <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/05/29/renaissance-man/">Renaissance Man</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
       </li>
       
       

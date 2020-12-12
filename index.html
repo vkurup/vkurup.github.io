@@ -144,6 +144,141 @@
         
 
 <header>
+  <p class="meta">Dec 12, 2020
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/elixir/">elixir </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+  </h1>
+</header>
+
+        
+          <p>There&rsquo;s this cool thing called Advent of Code, described best
+<a href="https://adventofcode.com/2020/about">here</a>. I found out about it while reading my
+<a href="https://cpbotha.net/2020/12/12/weekly-head-voices-211-table-mountain-run-ish/">favorite weekly weblog</a>
+and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
+on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
+my code for Day 1:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
+</span><span style="color:#2aa198">
+</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
+</span><span style="color:#2aa198">      633216
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  def day_1_0 do
+    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+
+    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
+    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
+  end
+
+  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
+</span><span style="color:#2aa198">
+</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
+</span><span style="color:#2aa198">      68348924
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  def day_1_1 do
+    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+
+    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
+    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, fn x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) end)
+    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
+
+    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
+  end
+
+  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
+</span><span style="color:#2aa198">  partner in the list that sums to `goal`.
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  def find_first_partner(list, goal) do
+    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, fn x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) end)
+  end
+
+  defp get_file do
+    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
+  end
+
+  defp get_list_of_nums do
+    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
+    get_file()
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(fn x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> end)
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
+  end
+</code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
+<a href="https://github.com/vkurup/aoc-elixir/">https://github.com/vkurup/aoc-elixir/</a> I feel like this could have been done more
+efficiently with recursion, but I am not comfortable enough with recursion to know
+how&hellip;</p>
+<p>A sincere thanks to <a href="http://was.tl/">Eric Wastl</a> for spending the enormous time and energy
+to create cool puzzles like this.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Dec 11, 2020
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/python/">python </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/bash/">bash </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/">Install multiple python versions using pyenv</a>
+  </h1>
+</header>
+
+        
+          <p><a href="https://github.com/pyenv/pyenv">pyenv</a> is awesome and has changed the way that I manage
+my Python environments. One tiny annoyance is that it takes a looong time to install
+each Python version, which of course makes sense, since it has to download and compile
+each version on your machine. But it&rsquo;s not a big deal, since you generally just do this
+once and then not again until you really need to upgrade to a different Python version.</p>
+<p>Recently, though, I was working on a project that uses tox to make sure that the project
+runs on multiple Python versions, in this case 3.6, 3.7, 3.8, 3.9. The specific versions
+were included in the <code>.python-version</code> file, which looked like this:</p>
+<pre><code>3.9.0
+3.8.6
+3.7.9
+3.6.12
+</code></pre><p>I didn&rsquo;t have all of these installed, so rather than doing <code>pyenv install 3.9.0</code> and
+then waiting a few minutes, and then repeating the process for each version, I wrote up
+this little script, which I named <code>pyinstall.sh</code>:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+</span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
+<span style="color:#b58900">set</span> -ex
+
+<span style="color:#719e07">while</span> <span style="color:#b58900">read</span> version; <span style="color:#719e07">do</span>
+    pyenv install -s <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$version</span><span style="color:#2aa198">&#34;</span>
+<span style="color:#719e07">done</span> &lt;.python-version
+</code></pre></div><p>Since <code>pyenv</code> is nice enough to include the <code>-s</code> flag which means &ldquo;skip if already
+installed&rdquo;, this can be run as many times as you want and it will only install the
+version if it&rsquo;s not already installed</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Dec 10, 2020
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/#disqus_thread">Comments</a>
@@ -520,98 +655,6 @@ written by a 12 year younger version of yourself.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Nov 17, 2019
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2019/11/17/ports-and-networks/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-  </h1>
-</header>
-
-        
-          <p>Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
-I&rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&rsquo;t seem
-to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
-(&ldquo;localhost:1313&rdquo;) and then I showed the results of <code>netstat -ant</code> to prove that something should be
-listening on that port. And we got the IP address for google.com and then put that in Chrome&rsquo;s URL
-bar with <code>:80</code> at the end of it, and magically, it worked. (Other websites did not work, and I
-explained that most sites will not allow their sites to be accessed via IP address).</p>
-<p>I still haven&rsquo;t figured out why I can&rsquo;t access the blog running in my container, but I think Kavi&rsquo;s
-learning more about networking than I ever did (and I&rsquo;m hoping that he&rsquo;ll be able to debug these
-issues for me&hellip; soon enough)</p>
-<!-- raw HTML omitted -->
-<p>UPDATE: I figured it out. Hugo&rsquo;s server was listening on localhost inside the container, when it
-needed to be listening on 0.0.0.0. Adding that as a <code>--bind</code> parameter fixed the issue (though I had
-to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, which saddened me.)</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Nov 17, 2019
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2019/11/17/hugo/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/blog/">blog </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2019/11/17/hugo/">Hugo</a>
-  </h1>
-</header>
-
-        
-          <p>I moved my blog from Octopress to <a href="https://gohugo.io/">Hugo</a> today. I had been <a href="https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/">slightly unhappy with Octopress for a while now</a>, but
-mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vkurup@caktus020:~/dev/kurup.org<span style="color:#719e07">(</span>master<span style="color:#719e07">)</span> $ hugo
-
-                   | EN   
-+------------------+-----+
-  Pages            | <span style="color:#2aa198">669</span>  
-  Paginator pages  |  <span style="color:#2aa198">29</span>  
-  Non-page files   |   <span style="color:#2aa198">0</span>  
-  Static files     | <span style="color:#2aa198">426</span>  
-  Processed images |   <span style="color:#2aa198">0</span>  
-  Aliases          |   <span style="color:#2aa198">1</span>  
-  Sitemaps         |   <span style="color:#2aa198">1</span>  
-  Cleaned          |   <span style="color:#2aa198">0</span>  
-
-Total in <span style="color:#2aa198">808</span> ms
-</code></pre></div><p>It is nice to generate my entire site in less than a second.</p>
-<p>But I still liked the style and theme of my old site, so I was happy to find that <a href="https://themes.gohugo.io/hugo-octopress/">someone had already built an Octopress theme for Hugo</a>. I promptly
-stole his work and customized a few things here and there to make it look (nearly) exactly like my
-old site did. Yay! Thanks to <a href="https://parsiya.net/">Parsia</a> for building that theme. I&rsquo;ve also
-subscribed to his RSS feed because his site looks pretty interesting.</p>
-<p>Moving my content wasn&rsquo;t easy, but it wasn&rsquo;t hard. I mainly just copied the old markdown posts over,
-changed the front matter, and then fixed a few octopress plugins I was using to work with Hugo.</p>
-<p>Future steps:</p>
-<ul>
-<li>Switch from Disqus to something self-hosted</li>
-<li>Generate the HTML on the server rather than having the HTML in git</li>
-<li>Update my About page and Computers page</li>
-<li>&hellip; oh, maybe write more!</li>
-</ul>
-
-        
-      </article>
-      
       
       
 
@@ -761,10 +804,22 @@ changed the front matter, and then fixed a few octopress plugins I was using to 
       
       
       <li class="post">
-        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/11/install-multiple-python-versions-using-pyenv/">Install multiple python versions using pyenv</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+      </li>
       
       
       
@@ -860,18 +915,6 @@ changed the front matter, and then fixed a few octopress plugins I was using to 
       
       <li class="post">
         <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/05/29/renaissance-man/">Renaissance Man</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
       </li>
       
       

@@ -8,10 +8,115 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Thu, 10 Dec 2020 16:48:35 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Advent of Code Elixir Day 1</title>
+      <link>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</link>
+      <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s this cool thing called Advent of Code, described best
+&lt;a href=&#34;https://adventofcode.com/2020/about&#34;&gt;here&lt;/a&gt;. I found out about it while reading my
+&lt;a href=&#34;https://cpbotha.net/2020/12/12/weekly-head-voices-211-table-mountain-run-ish/&#34;&gt;favorite weekly weblog&lt;/a&gt;
+and so I&amp;rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
+on it. There are 2 puzzles each day (&lt;code&gt;day_1_0&lt;/code&gt; and &lt;code&gt;day_1_1&lt;/code&gt; are my solutions). Here&amp;rsquo;s
+my code for Day 1:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-elixir&#34; data-lang=&#34;elixir&#34;&gt;  @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Find 2 numbers in file that sum to 2020 and return their product.
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      iex&amp;gt; Aoc.day_1_0()
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      633216
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+  def day_1_0 do
+    goal &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2020&lt;/span&gt;
+    list_of_nums &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get_list_of_nums()
+
+    first_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; find_first_partner(list_of_nums, goal)
+    first_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; (goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num)
+  end
+
+  @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Find 3 numbers in file that sum to 2020 and return their product.
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      iex&amp;gt; Aoc.day_1_1()
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      68348924
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+  def day_1_1 do
+    goal &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2020&lt;/span&gt;
+    list_of_nums &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get_list_of_nums()
+
+    &lt;span style=&#34;color:#586e75&#34;&gt;# find first number where there exists 2 other numbers that sum to `goal - x`&lt;/span&gt;
+    first_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list_of_nums, fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; find_first_partner(list_of_nums, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) end)
+    second_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; find_first_partner(list_of_nums, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num)
+
+    first_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; second_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; (goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; second_num)
+  end
+
+  @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Given a `list` of integers, return the first number in that list which has a
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  partner in the list that sums to `goal`.
+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+  def find_first_partner(list, goal) do
+    &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list, fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;member?(list, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) end)
+  end
+
+  defp get_file do
+    &lt;span style=&#34;color:#268bd2&#34;&gt;Path&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;day1.txt&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;read!()
+  end
+
+  defp get_list_of_nums do
+    &lt;span style=&#34;color:#586e75&#34;&gt;# Split into lines, filter out empty lines, convert each to an integer&lt;/span&gt;
+    get_file()
+    &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;)
+    &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;filter(fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;trim(x) &lt;span style=&#34;color:#719e07&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; end)
+    &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color:#719e07&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;to_integer&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;)
+  end
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code is also available in Github, which I&amp;rsquo;ll update if I do find time to keep going:
+&lt;a href=&#34;https://github.com/vkurup/aoc-elixir/&#34;&gt;https://github.com/vkurup/aoc-elixir/&lt;/a&gt; I feel like this could have been done more
+efficiently with recursion, but I am not comfortable enough with recursion to know
+how&amp;hellip;&lt;/p&gt;
+&lt;p&gt;A sincere thanks to &lt;a href=&#34;http://was.tl/&#34;&gt;Eric Wastl&lt;/a&gt; for spending the enormous time and energy
+to create cool puzzles like this.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Install multiple python versions using pyenv</title>
+      <link>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</link>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv&lt;/a&gt; is awesome and has changed the way that I manage
+my Python environments. One tiny annoyance is that it takes a looong time to install
+each Python version, which of course makes sense, since it has to download and compile
+each version on your machine. But it&amp;rsquo;s not a big deal, since you generally just do this
+once and then not again until you really need to upgrade to a different Python version.&lt;/p&gt;
+&lt;p&gt;Recently, though, I was working on a project that uses tox to make sure that the project
+runs on multiple Python versions, in this case 3.6, 3.7, 3.8, 3.9. The specific versions
+were included in the &lt;code&gt;.python-version&lt;/code&gt; file, which looked like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;3.9.0
+3.8.6
+3.7.9
+3.6.12
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I didn&amp;rsquo;t have all of these installed, so rather than doing &lt;code&gt;pyenv install 3.9.0&lt;/code&gt; and
+then waiting a few minutes, and then repeating the process for each version, I wrote up
+this little script, which I named &lt;code&gt;pyinstall.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;# Install all versions specified in .python-version&lt;/span&gt;
+&lt;span style=&#34;color:#b58900&#34;&gt;set&lt;/span&gt; -ex
+
+&lt;span style=&#34;color:#719e07&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#b58900&#34;&gt;read&lt;/span&gt; version; &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
+    pyenv install -s &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;$version&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#719e07&#34;&gt;done&lt;/span&gt; &amp;lt;.python-version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since &lt;code&gt;pyenv&lt;/code&gt; is nice enough to include the &lt;code&gt;-s&lt;/code&gt; flag which means &amp;ldquo;skip if already
+installed&amp;rdquo;, this can be run as many times as you want and it will only install the
+version if it&amp;rsquo;s not already installed&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Disk Space Hogs</title>
@@ -670,70 +775,6 @@ automatically doing this for us. (I mean it has the phrase &amp;lsquo;auto&amp;r
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So those 2 large tables haven&amp;rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
 row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&amp;rsquo;ll figure out
 what&amp;rsquo;s going on.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Renaissance Man</title>
-      <link>https://vkurup.github.io/blog/2018/05/29/renaissance-man/</link>
-      <pubDate>Tue, 29 May 2018 21:05:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2018/05/29/renaissance-man/</guid>
-      <description>&lt;p&gt;I love this
-&lt;a href=&#34;https://austinkleon.com/2018/05/29/wearing-many-hats/&#34;&gt;post by Austin Kleon&lt;/a&gt;.
-As someone who has found very few things that I don&amp;rsquo;t find intriguing in some
-way, it is nice to know that there are others like me and that maybe there&amp;rsquo;s
-nothing wrong with that. I love being a doctor and I love being a programmer,
-and I love honing both of those crafts.&lt;/p&gt;
-&lt;p&gt;He also links to a
-&lt;a href=&#34;https://www.nytimes.com/2012/01/22/education/edlife/renaissance-man.html&#34;&gt;2012 New York Times article about a UCLA sophomore&lt;/a&gt;
-who spends 1 hour each day learning something new, mainly by taking online
-courses from other universities or watching how-to videos on YouTube. We live in
-a golden age, don&amp;rsquo;t we? I mean, sure, people will look back at our period of
-history and cringe quite a bit, but the idea that I can search just about any
-term, and find information about it on Wikipedia, and probably find a course on
-it by an actual college professor&amp;hellip;. it&amp;rsquo;s just mind boggling. I&amp;rsquo;m lucky as it
-is, but I often think about if I was a kid growing up in this era. I&amp;rsquo;d be
-overwhelmed, sure, but I would totally be taking online courses left and right.&lt;/p&gt;
-&lt;p&gt;Actually, even if I weren&amp;rsquo;t a kid. I just googled the subject of that NYT
-article and found his twitter account. His
-&lt;a href=&#34;https://twitter.com/_TheDancingFox_/status/686341754262429696&#34;&gt;most recent post&lt;/a&gt;
-is from 2016 but links to a YouTube series from UCLA on the history of India. I
-am TOTALLY watching that.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Using dynamic queries in a CBV</title>
-      <link>https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</link>
-      <pubDate>Mon, 28 Jul 2014 22:08:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</guid>
-      <description>&lt;p&gt;Let&amp;rsquo;s play &amp;lsquo;Spot the bug&amp;rsquo;. We&amp;rsquo;re building a simple system that shows photos. Each photo has a
-&lt;code&gt;publish_date&lt;/code&gt; and we should only show photos that have been published (i.e. their &lt;code&gt;publish_date&lt;/code&gt; is
-in the past).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;PhotoManager&lt;/span&gt;(models&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;Manager):
-    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;live&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;, as_of&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;None&lt;/span&gt;):
-        &lt;span style=&#34;color:#719e07&#34;&gt;if&lt;/span&gt; as_of &lt;span style=&#34;color:#719e07&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;None&lt;/span&gt;:
-            as_of &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; timezone&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;now()
-        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b58900&#34;&gt;super&lt;/span&gt;()&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;get_query_set()&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;filter(publish_date__lte&lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt;as_of)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And the view to show those photos:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ShowPhotosView&lt;/span&gt;(ListView):
-    queryset &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; Hero&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;live()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Can you spot the bug? I sure didn&amp;rsquo;t&amp;hellip; until the client complained that newly published photos never
-showed up on the site. Restarting the server fixed the problem temporarily. The newly published
-photos would show up, but then any photos published after the server restart again failed to
-display.&lt;/p&gt;
-&lt;p&gt;The problem is that the &lt;code&gt;ShowPhotosView&lt;/code&gt; class is instantiated when the server starts.
-&lt;code&gt;ShowPhotosView.queryset&lt;/code&gt; gets set to the value returned by &lt;code&gt;Hero.objects.live()&lt;/code&gt;. That, in turn, is a
-&lt;code&gt;QuerySet&lt;/code&gt;, but it&amp;rsquo;s a &lt;code&gt;QuerySet&lt;/code&gt; with &lt;code&gt;as_of&lt;/code&gt; set to &lt;code&gt;timezone.now()&lt;/code&gt; &lt;em&gt;WHEN THE SERVER STARTS UP&lt;/em&gt;. That
-&lt;code&gt;as_of&lt;/code&gt; value never gets updated, so newer photos never get captured in the query.&lt;/p&gt;
-&lt;p&gt;There&amp;rsquo;s probably multiple ways to fix this, but an easy one is:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;ShowPhotosView&lt;/span&gt;(ListView):
-    &lt;span style=&#34;color:#719e07&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;get_queryset&lt;/span&gt;(&lt;span style=&#34;color:#268bd2&#34;&gt;self&lt;/span&gt;):
-        &lt;span style=&#34;color:#719e07&#34;&gt;return&lt;/span&gt; Hero&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;objects&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;live()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now, instead of the queryset being instantiated at server start-up, it&amp;rsquo;s instantiated only when
-&lt;code&gt;ShowPhotosView.get_queryset()&lt;/code&gt; is called, which is when a request is made.&lt;/p&gt;
 </description>
     </item>
     

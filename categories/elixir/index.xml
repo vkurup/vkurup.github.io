@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>elixir on Vinod Kurup</title>
+    <link>https://vkurup.github.io/categories/elixir/</link>
+    <description>Recent content in elixir on Vinod Kurup</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
+    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://vkurup.github.io/categories/elixir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Advent of Code Elixir Day 1</title>
+      <link>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</link>
+      <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</guid>
+      <description>There&amp;rsquo;s this cool thing called Advent of Code, described best here. I found out about it while reading my favorite weekly weblog and so I&amp;rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills on it. There are 2 puzzles each day (day_1_0 and day_1_1 are my solutions). Here&amp;rsquo;s my code for Day 1:
+@doc &amp;#34;&amp;#34;&amp;#34; Find 2 numbers in file that sum to 2020 and return their product.</description>
+    </item>
+    
+  </channel>
+</rss>

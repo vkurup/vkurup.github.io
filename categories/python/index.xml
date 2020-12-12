@@ -8,10 +8,19 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Wed, 24 Oct 2012 16:45:49 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Dec 2020 20:57:39 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Install multiple python versions using pyenv</title>
+      <link>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</link>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</guid>
+      <description>pyenv is awesome and has changed the way that I manage my Python environments. One tiny annoyance is that it takes a looong time to install each Python version, which of course makes sense, since it has to download and compile each version on your machine. But it&amp;rsquo;s not a big deal, since you generally just do this once and then not again until you really need to upgrade to a different Python version.</description>
+    </item>
     
     <item>
       <title>Emacs for Python Programming</title>

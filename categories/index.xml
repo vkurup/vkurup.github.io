@@ -8,15 +8,42 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Thu, 10 Dec 2020 16:48:35 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
     
 	<atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>elixir</title>
+      <link>https://vkurup.github.io/categories/elixir/</link>
+      <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/elixir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://vkurup.github.io/categories/programming/</link>
+      <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://vkurup.github.io/categories/bash/</link>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>cheatsheet</title>
       <link>https://vkurup.github.io/categories/cheatsheet/</link>
-      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/cheatsheet/</guid>
       <description></description>
@@ -25,9 +52,18 @@
     <item>
       <title>linux</title>
       <link>https://vkurup.github.io/categories/linux/</link>
-      <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://vkurup.github.io/categories/python/</link>
+      <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/python/</guid>
       <description></description>
     </item>
     
@@ -73,15 +109,6 @@
       <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://vkurup.github.io/categories/programming/</link>
-      <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/programming/</guid>
       <description></description>
     </item>
     
@@ -253,15 +280,6 @@
       <pubDate>Mon, 05 Nov 2012 10:38:09 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/openacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://vkurup.github.io/categories/python/</link>
-      <pubDate>Wed, 24 Oct 2012 16:45:49 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/python/</guid>
       <description></description>
     </item>
     

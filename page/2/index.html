@@ -144,6 +144,98 @@
         
 
 <header>
+  <p class="meta">Nov 17, 2019
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2019/11/17/ports-and-networks/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
+  </h1>
+</header>
+
+        
+          <p>Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
+I&rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&rsquo;t seem
+to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
+(&ldquo;localhost:1313&rdquo;) and then I showed the results of <code>netstat -ant</code> to prove that something should be
+listening on that port. And we got the IP address for google.com and then put that in Chrome&rsquo;s URL
+bar with <code>:80</code> at the end of it, and magically, it worked. (Other websites did not work, and I
+explained that most sites will not allow their sites to be accessed via IP address).</p>
+<p>I still haven&rsquo;t figured out why I can&rsquo;t access the blog running in my container, but I think Kavi&rsquo;s
+learning more about networking than I ever did (and I&rsquo;m hoping that he&rsquo;ll be able to debug these
+issues for me&hellip; soon enough)</p>
+<!-- raw HTML omitted -->
+<p>UPDATE: I figured it out. Hugo&rsquo;s server was listening on localhost inside the container, when it
+needed to be listening on 0.0.0.0. Adding that as a <code>--bind</code> parameter fixed the issue (though I had
+to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, which saddened me.)</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Nov 17, 2019
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2019/11/17/hugo/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/blog/">blog </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2019/11/17/hugo/">Hugo</a>
+  </h1>
+</header>
+
+        
+          <p>I moved my blog from Octopress to <a href="https://gohugo.io/">Hugo</a> today. I had been <a href="https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/">slightly unhappy with Octopress for a while now</a>, but
+mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vkurup@caktus020:~/dev/kurup.org<span style="color:#719e07">(</span>master<span style="color:#719e07">)</span> $ hugo
+
+                   | EN   
++------------------+-----+
+  Pages            | <span style="color:#2aa198">669</span>  
+  Paginator pages  |  <span style="color:#2aa198">29</span>  
+  Non-page files   |   <span style="color:#2aa198">0</span>  
+  Static files     | <span style="color:#2aa198">426</span>  
+  Processed images |   <span style="color:#2aa198">0</span>  
+  Aliases          |   <span style="color:#2aa198">1</span>  
+  Sitemaps         |   <span style="color:#2aa198">1</span>  
+  Cleaned          |   <span style="color:#2aa198">0</span>  
+
+Total in <span style="color:#2aa198">808</span> ms
+</code></pre></div><p>It is nice to generate my entire site in less than a second.</p>
+<p>But I still liked the style and theme of my old site, so I was happy to find that <a href="https://themes.gohugo.io/hugo-octopress/">someone had already built an Octopress theme for Hugo</a>. I promptly
+stole his work and customized a few things here and there to make it look (nearly) exactly like my
+old site did. Yay! Thanks to <a href="https://parsiya.net/">Parsia</a> for building that theme. I&rsquo;ve also
+subscribed to his RSS feed because his site looks pretty interesting.</p>
+<p>Moving my content wasn&rsquo;t easy, but it wasn&rsquo;t hard. I mainly just copied the old markdown posts over,
+changed the front matter, and then fixed a few octopress plugins I was using to work with Hugo.</p>
+<p>Future steps:</p>
+<ul>
+<li>Switch from Disqus to something self-hosted</li>
+<li>Generate the HTML on the server rather than having the HTML in git</li>
+<li>Update my About page and Computers page</li>
+<li>&hellip; oh, maybe write more!</li>
+</ul>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Apr 8, 2019
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2019/04/08/avik-730/#disqus_thread">Comments</a>
@@ -588,115 +680,6 @@ am TOTALLY watching that.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 28, 2014
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/django/">django </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
-  </h1>
-</header>
-
-        
-          <p>Let&rsquo;s play &lsquo;Spot the bug&rsquo;. We&rsquo;re building a simple system that shows photos. Each photo has a
-<code>publish_date</code> and we should only show photos that have been published (i.e. their <code>publish_date</code> is
-in the past).</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#268bd2">None</span>):
-        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#268bd2">None</span>:
-            as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
-        <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
-</code></pre></div><p>And the view to show those photos:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
-showed up on the site. Restarting the server fixed the problem temporarily. The newly published
-photos would show up, but then any photos published after the server restart again failed to
-display.</p>
-<p>The problem is that the <code>ShowPhotosView</code> class is instantiated when the server starts.
-<code>ShowPhotosView.queryset</code> gets set to the value returned by <code>Hero.objects.live()</code>. That, in turn, is a
-<code>QuerySet</code>, but it&rsquo;s a <code>QuerySet</code> with <code>as_of</code> set to <code>timezone.now()</code> <em>WHEN THE SERVER STARTS UP</em>. That
-<code>as_of</code> value never gets updated, so newer photos never get captured in the query.</p>
-<p>There&rsquo;s probably multiple ways to fix this, but an easy one is:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
-<code>ShowPhotosView.get_queryset()</code> is called, which is when a request is made.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 23, 2014
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/emacs/">emacs </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2014/07/23/some-emacs-posts/">Some Emacs Posts</a>
-  </h1>
-</header>
-
-        
-          <p>A few cool Emacs posts have flown across my radar, so I&rsquo;m noting them here for that time in the
-future when I have time to play with them.</p>
-<ul>
-<li><a href="http://endlessparentheses.com/manually-choose-a-fallback-font-for-unicode.html">Get unicode glyphs to show properly</a>. (╯°□°）╯︵ ┻━┻</li>
-<li><a href="http://jr0cket.co.uk/2013/10/create-cool-slides--Org-mode-Revealjs.html/">Creating slides with org-mode and Reveal.js</a>.
-Finally, a sane way to create a presentation :)</li>
-<li><a href="https://github.com/syohex/emacs-anzu">Anzu</a>: Improves incremental search. Anzu shows the number
-of matches found, and how many matches remain in the document.
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="https://github.com/syohex/emacs-anzu/raw/master/image/anzu.gif" title="Anzu in action" alt="Anzu in action">
-  <span class="caption-text">Anzu in action</span>
-</span>
-</li>
-<li><a href="http://from-the-cloud.com/en/emacs/2013/01/28_emacs-as-a-django-ide-with-python-djangoel.html">Emacs as a Django IDE</a>:
-I tried this out briefly, but didn&rsquo;t end up sticking with it. It seemed too heavyweight.
-I&rsquo;m probably just too used to my own workflow. I still think it&rsquo;s an interesting idea and would
-like to try it again sometime.</li>
-<li><a href="http://emacsredux.com/blog/2014/07/22/travel-back-and-forward-in-git-history/">Travel back and forth in git history</a>:
-I&rsquo;m addicted to <a href="http://www.emacswiki.org/emacs/Magit">magit mode</a>, to the point that the
-only git command I use manually nowadays is <code>git clone</code>. I do everything else in magit. Magit has
-a <code>magit-blame-mode</code> which shows when each line in a file was changed and by whom.
-<code>git-timemachine</code> seems to take that a step further by visiting each revision, one by
-one. I can think of a few times where that would have been useful.</li>
-<li><a href="https://github.com/omouse/emacs-sos">Search StackOverflow from inside Emacs</a>: Enough said.</li>
-<li><a href="https://github.com/skeeto/elfeed">Emacs RSS client</a>: Still using NewsBlur, but totally miss
-Google Reader. Maybe I need to try this one out.</li>
-<li><a href="http://sachachua.com/blog/series/read-lisp-tweak-emacs/">Sacha Chua&rsquo;s minicourse on Elisp</a>: Have
-to read through this someday!</li>
-</ul>
-
-        
-      </article>
-      
       
       
 
@@ -849,10 +832,22 @@ to read through this someday!</li>
       
       
       <li class="post">
-        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/11/install-multiple-python-versions-using-pyenv/">Install multiple python versions using pyenv</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/10/disk-space-hogs/">Disk Space Hogs</a>
+      </li>
       
       
       
@@ -948,18 +943,6 @@ to read through this someday!</li>
       
       <li class="post">
         <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/05/29/renaissance-man/">Renaissance Man</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
       </li>
       
       
