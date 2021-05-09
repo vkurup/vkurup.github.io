@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 19 Mar 2007 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/literature/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 19 Mar 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/literature/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Literature delivered to your inbox</title>
       <link>https://vkurup.github.io/blog/2007/03/19/literature-delivered-to-your-inbox/</link>

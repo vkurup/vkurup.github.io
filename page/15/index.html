@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -138,6 +138,62 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">May 14, 2006
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2006/05/14/new-features-coming-in-tcl-8.5/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/tcl/">tcl </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2006/05/14/new-features-coming-in-tcl-8.5/">New Features coming in Tcl 8.5</a>
+  </h1>
+</header>
+
+        
+          <p>I was looking at the <a href="http://www.tcl.tk/man/tcl8.4/TclCmd/split.htm">Tcl 8.4 man page for &lsquo;split&rsquo;</a> and saw this example code:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#586e75">## Split into fields on colons
+</span><span style="color:#586e75"></span><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
+<span style="color:#586e75">## Assign fields to variables and print some out...
+</span><span style="color:#586e75"></span><span style="color:#b58900">lassign</span> <span style="color:#268bd2">$fields</span> userName password uid grp longName homeDir shell
+</code></pre></div><p>It shows how to split a string using &lsquo;:&rsquo; as the delimiter. The interesting part is the &lsquo;lassign&rsquo; statement. I&rsquo;d never seen that before. I&rsquo;ve always done something annoying like this:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> userName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">0</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> password <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">1</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> uid <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">2</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> grp <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">3</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> longName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">4</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> homeDir <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">5</span><span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> shell <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">6</span><span style="color:#719e07">]</span>
+</code></pre></div><p>How could I have overlooked &lsquo;lassign&rsquo; all these years? After berating my idiocy for a few minutes, I tried &lsquo;lassign&rsquo; out and Tcl replied &lsquo;invalid command name&rsquo; . Turns out I&rsquo;m not as stupid as I thought. :-) &lsquo;lassign&rsquo; is new in Tcl 8.5 (but seems to have snuck in the backdoor of the 8.4 docs). I decided to see what else was <a href="http://www.tcl.tk/software/tcltk/8.5.html">coming in 8.5</a>.</p>
+<ul>
+<li>Dictionaries. These are associative arrays which reportedly are better than Tcl arrays, but I&rsquo;m not sure why.</li>
+<li>** as an exponentiation operator</li>
+<li>Instead of doing: <!-- raw HTML omitted -->if {[lsearch -exact $list $item] != -1}<!-- raw HTML omitted -->, the new &lsquo;in&rsquo; operator lets you do <!-- raw HTML omitted -->if {$item in $list}<!-- raw HTML omitted -->. There&rsquo;s also a &lsquo;ni&rsquo; operator for &lsquo;not in&rsquo;.</li>
+<li>Plenty of other stuff, none of which really caught my eye.</li>
+</ul>
+<p>Tcl 8.5 is still alpha, so I&rsquo;m sticking with 8.4 (and my annoying
+code) for the moment.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
       
       <article>
         
@@ -456,31 +512,6 @@ out.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Mar 9, 2006
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2006/03/09/tcl-a-short-introduction/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/tcl/">tcl </a><a class="label" href="https://vkurup.github.io/categories/openacs/">openacs </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2006/03/09/tcl-a-short-introduction/">Tcl, a short introduction</a>
-  </h1>
-</header>
-
-        
-          <p>The scripting language used in most of <a href="http://openacs.org">OpenACS</a> is <a href="http://tcl.tk">Tcl</a>. It doesn&rsquo;t receive a lot of press. When people talk about scripting languages, they mean Perl or Python (and now Ruby). Tcl is not considered in the same category, but it should be. I&rsquo;m not smart enough to explain why, but Salvatore Sanfilippo is and has written a <a href="http://antirez.com/articoli/tclmisunderstood.html">gentle introduction to both the basic and powerful features of Tcl</a>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -633,10 +664,16 @@ out.</p>
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -741,12 +778,6 @@ out.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -775,7 +806,7 @@ out.</p>
   </div>
 </div>
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

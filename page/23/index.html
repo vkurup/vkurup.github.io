@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -138,6 +138,35 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Feb 8, 2004
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2004/02/08/christmas-break/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/weird/">weird </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2004/02/08/christmas-break/">Christmas Break</a>
+  </h1>
+</header>
+
+        
+          <p>I uploaded the <a href="http://kurup.org/photo/album?album_id=13244">pics from my trip home over Christmas</a>. Nope, this is not our house.  <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
       
       <article>
         
@@ -525,7 +554,7 @@ be happy to hear any comments or questions.</p>
 <pre><code>command=&quot;rsync --server --sender -vlogDtpr --delete-excluded --numeric-ids . /&quot;  
 ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local. 
 </code></pre>
-<p>To get the proper command to put in your command=&rdquo;&rdquo; statement, run your rsync command with an unrestricted SSH key first (i.e. just copy the id_rsa.pub to authorized_keys2). When you run the rsync command on your Mac, do a <code>ps auxw | grep rsync</code> on the server machine. The command that you see listed is the command that goes in the key.</p>
+<p>To get the proper command to put in your command=&quot;&quot; statement, run your rsync command with an unrestricted SSH key first (i.e. just copy the id_rsa.pub to authorized_keys2). When you run the rsync command on your Mac, do a <code>ps auxw | grep rsync</code> on the server machine. The command that you see listed is the command that goes in the key.</p>
 <p>After reading MarkD&rsquo;s article, the one thing I might change is to tar up the data on the Linux server that needs its user/group info preserved (<code>/etc</code>, <code>/root</code>, and <code>/usr/local</code>) and then store that on the server in my user&rsquo;s home directory. I then wouldn&rsquo;t have to rsync as root, so it would simplify things. The drawback is that anytime anything changed in any of those directories, I&rsquo;d be backing up the entire directories again. Hopefully this would be mitigated by the fact that they wouldn&rsquo;t change often and since they&rsquo;re mostly text files, they compress well.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -560,7 +589,7 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 </header>
 
         
-          <p>This site was down for the past few days due to a <a href="http://openacs.org/forums/message-view?message_id=152527">SNAFU with acornhosting&rsquo;s upstream provider</a>. You&rsquo;d think I&rsquo;d have learned to have a backup strategy in place by now, but you&rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers&rsquo;) data back. After this episode, I promise to backup religiously and I&rsquo;m even more sold on <a href="http://acornhosting.net">acornhosting</a> as a solid web hosting provider.</p>
+          <p>This site was down for the past few days due to a <a href="http://openacs.org/forums/message-view?message_id=152527">SNAFU with acornhosting&rsquo;s upstream provider</a>. You&rsquo;d think I&rsquo;d have learned to have a backup strategy in place by now, but you&rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers') data back. After this episode, I promise to backup religiously and I&rsquo;m even more sold on <a href="http://acornhosting.net">acornhosting</a> as a solid web hosting provider.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -659,36 +688,6 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 
         
           <p>Ooops - I just realized that I forgot to link to the <a href="http://kurup.org/photo/album?album_id=7436">pics from our Reunion</a> back in August. At least I got them posted before the end of the year.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 4, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/12/04/running-is-addictive/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/12/04/running-is-addictive/">Running is addictive</a>
-  </h1>
-</header>
-
-        
-          <p>Researchers at my alma mater have shown that <a href="http://www.news.wisc.edu/9208.html">mice who have been bred to run long distances show increased activity in &lsquo;craving&rsquo; regions of the brain when they&rsquo;re denied access to their running wheel</a> (Be sure to check out the Quicktime video on that page). The addiction of running is physiologically similar to other addictions. Maybe that explains why I was out on the East River Path in 29 degree weather tonight.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -848,10 +847,16 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -956,12 +961,6 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -990,7 +989,7 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
   </div>
 </div>
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

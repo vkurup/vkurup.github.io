@@ -8,10 +8,41 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 May 2021 19:14:52 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>First Post of 2021</title>
+      <link>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</link>
+      <pubDate>Sun, 09 May 2021 19:14:52 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</guid>
+      <description>&lt;p&gt;Hi loyal reader(s)! It is nearly halfway through 2021 and this is my first post of the
+year. And writing on this here blog was one of my 2021 resolutions, so I guess that was
+a complete failure. Although, maybe I can make up for it by actually writing more
+regularly over the next few months. It has been a whirlwind of a year for just about
+everyone, right? When the pandemic started, I remember making a list of the things that
+I might want to blog about and the only thing I remember from that list was that I
+wanted to blog about &amp;ldquo;not wanting to blog about the pandemic&amp;rdquo;. It was just too
+exhausting to think about. And I think I still feel that way. I have written some
+private thoughts about things, but I&amp;rsquo;ll leave them under wraps.&lt;/p&gt;
+&lt;p&gt;The biggest change in my life is that I am starting a new job tomorrow. I&amp;rsquo;ll be a
+Software Engineer at Kevel, programming in Clojure (among other languages). I&amp;rsquo;ve been
+infatuated with Clojure (and functional programming in general) for a long time, so I am
+beyond excited to be able to use it professionally. This is also the first job that I&amp;rsquo;ll
+be starting as a &amp;ldquo;remote-only&amp;rdquo; worker. Normally, I&amp;rsquo;d walk into the office and introduce
+myself to someone and then start to get oriented. It will be weird to do that via an
+online chat of some sort. Am I showing my age?&lt;/p&gt;
+&lt;p&gt;What else is going on? Well I&amp;rsquo;m not going to talk about the pandemic, but I do encourage
+people to go &lt;a href=&#34;https://aif.org/donate/covid-19-response/&#34;&gt;help out people in India&lt;/a&gt; (or
+wherever else people need help.) We are luckily healthy and vaccinated. The kids have
+survived remote schooling and two of them have returned to school partly in-person. I&amp;rsquo;ve
+been running and meditating and gardening, all with minimal success.&lt;/p&gt;
+&lt;p&gt;So, what is up with you all? Hope to write again before the end of the year.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Advent of Code Elixir Day 1</title>
@@ -31,13 +62,13 @@ my code for Day 1:&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      iex&amp;gt; Aoc.day_1_0()
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      633216
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-  def day_1_0 do
+  &lt;span style=&#34;color:#268bd2&#34;&gt;def&lt;/span&gt; day_1_0 &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
     goal &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2020&lt;/span&gt;
     list_of_nums &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get_list_of_nums()
 
     first_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; find_first_partner(list_of_nums, goal)
     first_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; (goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num)
-  end
+  &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;
 
   @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Find 3 numbers in file that sum to 2020 and return their product.
@@ -45,36 +76,36 @@ my code for Day 1:&lt;/p&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      iex&amp;gt; Aoc.day_1_1()
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      68348924
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-  def day_1_1 do
+  &lt;span style=&#34;color:#268bd2&#34;&gt;def&lt;/span&gt; day_1_1 &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
     goal &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2020&lt;/span&gt;
     list_of_nums &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; get_list_of_nums()
 
     &lt;span style=&#34;color:#586e75&#34;&gt;# find first number where there exists 2 other numbers that sum to `goal - x`&lt;/span&gt;
-    first_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list_of_nums, fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; find_first_partner(list_of_nums, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) end)
+    first_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list_of_nums, &lt;span style=&#34;color:#719e07&#34;&gt;fn&lt;/span&gt; x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; find_first_partner(list_of_nums, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;)
     second_num &lt;span style=&#34;color:#719e07&#34;&gt;=&lt;/span&gt; find_first_partner(list_of_nums, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num)
 
     first_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; second_num &lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt; (goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; first_num &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; second_num)
-  end
+  &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;
 
   @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Given a `list` of integers, return the first number in that list which has a
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  partner in the list that sums to `goal`.
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
-  def find_first_partner(list, goal) do
-    &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list, fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;member?(list, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) end)
-  end
+  &lt;span style=&#34;color:#268bd2&#34;&gt;def&lt;/span&gt; find_first_partner(list, goal) &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;find(list, &lt;span style=&#34;color:#719e07&#34;&gt;fn&lt;/span&gt; x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;member?(list, goal &lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt; x) &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;)
+  &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;
 
-  defp get_file do
+  &lt;span style=&#34;color:#268bd2&#34;&gt;defp&lt;/span&gt; get_file &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
     &lt;span style=&#34;color:#268bd2&#34;&gt;Path&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;join(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;data&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;day1.txt&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;File&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;read!()
-  end
+  &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;
 
-  defp get_list_of_nums do
+  &lt;span style=&#34;color:#268bd2&#34;&gt;defp&lt;/span&gt; get_list_of_nums &lt;span style=&#34;color:#719e07&#34;&gt;do&lt;/span&gt;
     &lt;span style=&#34;color:#586e75&#34;&gt;# Split into lines, filter out empty lines, convert each to an integer&lt;/span&gt;
     get_file()
     &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&lt;/span&gt;)
-    &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;filter(fn x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;trim(x) &lt;span style=&#34;color:#719e07&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; end)
+    &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;filter(&lt;span style=&#34;color:#719e07&#34;&gt;fn&lt;/span&gt; x &lt;span style=&#34;color:#719e07&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;trim(x) &lt;span style=&#34;color:#719e07&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;)
     &lt;span style=&#34;color:#719e07&#34;&gt;|&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#268bd2&#34;&gt;Enum&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;map(&lt;span style=&#34;color:#719e07&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;.&lt;/span&gt;to_integer&lt;span style=&#34;color:#719e07&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;)
-  end
+  &lt;span style=&#34;color:#719e07&#34;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The code is also available in Github, which I&amp;rsquo;ll update if I do find time to keep going:
 &lt;a href=&#34;https://github.com/vkurup/aoc-elixir/&#34;&gt;https://github.com/vkurup/aoc-elixir/&lt;/a&gt; I feel like this could have been done more
 efficiently with recursion, but I am not comfortable enough with recursion to know
@@ -703,7 +734,7 @@ to get one head of lettuce or something to grow. I&amp;rsquo;ll be sure to let y
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2018/05/31/history-of-indian-civilization/</guid>
       <description>&lt;p&gt;I briefly mentioned finding the 2012 UCLA lecture series,
-&amp;ldquo;&lt;a href=&#34;https://www.youtube.com/watch?v=93JMjX1XECo&amp;amp;list=PLy3KRgc0HE8B4neta_B8LPM0G9UWy-Cqe&#34;&gt;History of Indian Civilization&lt;/a&gt;&amp;quot;,
+&amp;ldquo;&lt;a href=&#34;https://www.youtube.com/watch?v=93JMjX1XECo&amp;amp;list=PLy3KRgc0HE8B4neta_B8LPM0G9UWy-Cqe&#34;&gt;History of Indian Civilization&lt;/a&gt;&amp;rdquo;,
 a &lt;a href=&#34;https://vkurup.github.io/blog/2018/05/29/renaissance-man&#34;&gt;couple days ago&lt;/a&gt;. I&amp;rsquo;m about halfway through
 and have found it thorougly illuminating. I learned a lot about India growing
 up, but never in a formal way, so it&amp;rsquo;s nice to have someone as skilled as Vinay
@@ -726,55 +757,6 @@ anything more than audio difficult back then. But now with those barriers
 crushed, I was afraid that everything would be &amp;ldquo;multimedia&amp;rdquo;, and not amenable to
 listening while I commute to work. So, it&amp;rsquo;s reassuring to find that audio-only
 dissemination of knowledge is still a thing.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Autovacuum not running</title>
-      <link>https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/</link>
-      <pubDate>Wed, 30 May 2018 21:26:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/</guid>
-      <description>&lt;p&gt;OK, this is a debug session in progress, so don&amp;rsquo;t expect a nice solution at the end. We&amp;rsquo;re working
-on a project that does analysis of some public voter registration data. The DB is hosted on Amazon
-RDS and I&amp;rsquo;ve been perplexed by how poorly queries are performing there, despite the tables only have
-about 10 million rows. Simple queries are taking many minutes, which is orders of magnitude slower
-than my laptop.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://mlavin.org/&#34;&gt;Mark&lt;/a&gt; suggested running &amp;lsquo;VACUUM ANALYZE&amp;rsquo;, which I didn&amp;rsquo;t think would help
-because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
-on a regular basis. These queries had been slow for days with no recent inserts or updates, so
-certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; voter_ncvoter;
-  &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;
-&lt;span style=&#34;color:#586e75&#34;&gt;----------
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;12336571&lt;/span&gt;
-(&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;row&lt;/span&gt;)
-Time: &lt;span style=&#34;color:#2aa198&#34;&gt;315777&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;051&lt;/span&gt; ms
-db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;vacuum&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;analyze&lt;/span&gt;;
-&lt;span style=&#34;color:#719e07&#34;&gt;VACUUM&lt;/span&gt;
-Time: &lt;span style=&#34;color:#2aa198&#34;&gt;11377035&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;096&lt;/span&gt; ms
-db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;(&lt;span style=&#34;color:#719e07&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; voter_ncvoter;
-  &lt;span style=&#34;color:#719e07&#34;&gt;count&lt;/span&gt;
-&lt;span style=&#34;color:#586e75&#34;&gt;----------
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;12336571&lt;/span&gt;
-(&lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;row&lt;/span&gt;)
-Time: &lt;span style=&#34;color:#2aa198&#34;&gt;4300&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;107&lt;/span&gt; ms
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&amp;rsquo;t autovacuum
-automatically doing this for us. (I mean it has the phrase &amp;lsquo;auto&amp;rsquo; in its name!!!)&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve found this great article on
-&lt;a href=&#34;https://blog.2ndquadrant.com/autovacuum-tuning-basics/&#34;&gt;autovacuum basics&lt;/a&gt; which led me to do this query:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;db&lt;span style=&#34;color:#719e07&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;select&lt;/span&gt; relname, n_live_tup, last_autoanalyze &lt;span style=&#34;color:#719e07&#34;&gt;from&lt;/span&gt; pg_stat_all_tables &lt;span style=&#34;color:#719e07&#34;&gt;where&lt;/span&gt; relname &lt;span style=&#34;color:#719e07&#34;&gt;like&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#39;voter_%&amp;#39;&lt;/span&gt;;
-       relname       &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; n_live_tup &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;       last_autoanalyze
-&lt;span style=&#34;color:#586e75&#34;&gt;---------------------+------------+------------+-------------------------------
-&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;&lt;/span&gt; voter_changetracker &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;  &lt;span style=&#34;color:#2aa198&#34;&gt;306689271&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;04&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;59&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;08&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;503876&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
- voter_filetracker   &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;         &lt;span style=&#34;color:#2aa198&#34;&gt;41&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;02&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;47&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;802633&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
- voter_ncvhis        &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;          &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;
- voter_ncvoter       &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;   &lt;span style=&#34;color:#2aa198&#34;&gt;12336616&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;06&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;13&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;20&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;30&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;073426&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
- voter_badlinerange  &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt;        &lt;span style=&#34;color:#2aa198&#34;&gt;404&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;2018&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;04&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#2aa198&#34;&gt;05&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;44&lt;/span&gt;:&lt;span style=&#34;color:#2aa198&#34;&gt;39&lt;/span&gt;.&lt;span style=&#34;color:#2aa198&#34;&gt;949193&lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;00&lt;/span&gt;
-(&lt;span style=&#34;color:#2aa198&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#719e07&#34;&gt;rows&lt;/span&gt;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So those 2 large tables haven&amp;rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
-row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&amp;rsquo;ll figure out
-what&amp;rsquo;s going on.&lt;/p&gt;
 </description>
     </item>
     

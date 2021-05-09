@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Wed, 02 Jul 2003 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/bork/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 02 Jul 2003 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/bork/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Core Mac OS X and UNIX Programming</title>
       <link>https://vkurup.github.io/blog/2003/07/02/core-mac-os-x-and-unix-programming/</link>

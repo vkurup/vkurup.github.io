@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 19 Jun 2001 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 Jun 2001 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PhotoDB fixed</title>
       <link>https://vkurup.github.io/blog/2001/06/19/photodb-fixed/</link>

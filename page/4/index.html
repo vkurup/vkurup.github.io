@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -144,6 +144,80 @@
         
 
 <header>
+  <p class="meta">Dec 30, 2012
+     - 3 minute read 
+     - <a href="https://vkurup.github.io/blog/2012/12/30/how-to-change-the-rear-tire-on-a-12-inch-bicycle/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/howto/">howto </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2012/12/30/how-to-change-the-rear-tire-on-a-12-inch-bicycle/">How to change the rear tire on a 12 inch bicycle</a>
+  </h1>
+</header>
+
+        
+          <p>I&rsquo;m not the handiest guy in the world, so I&rsquo;m pretty proud that I was
+able to fix a flat tire on Kavi&rsquo;s 12&quot; bicycle.</p>
+<p>DISCLAIMER: I have almost no idea what I&rsquo;m doing. Follow my
+instructions at your peril.</p>
+<p>I&rsquo;ve fixed flats before, but it&rsquo;s been a long time. Fixing it on such
+a tiny bike was a lot harder than I thought. The manual makes it seem
+so simple. &ldquo;Remove the wheel, take the tube out, patch the tube and
+then replace the tube and tire.&rdquo; Right&hellip; I got stuck at step 1.
+Removing the wheel isn&rsquo;t straightforward. Most of the videos available
+online focus on adult-sized bikes which have quick-release tires. You
+pull a release lever back and then pull the tire off. Kids bikes have
+bolts instead of quick-release levers. You have to loosen the bolts,
+but you don&rsquo;t have to take the bolts completely off. You also have to
+take off the plastic chain guard that prevents kids from rubbing their
+legs against the chain. Finally, there&rsquo;s this little metal piece that
+attaches the wheel to the frame. I think it&rsquo;s there for the
+pedal-brake to work. In any case, you have to take that off. Once the
+wheel is loosened, you have to unhook the wheel from the chain. This
+is also easier in big bikes which have multiple gears, making it
+possible to place the chain in a position to easily get it off the
+wheel. In a kid&rsquo;s bike, it&rsquo;s harder. Once I loosened the bolts on both
+sides of the wheel, I pushed the wheel a little forward, which
+loosened the chain and made it easy to release from the chain.</p>
+<p>The next difficulty was getting the tube out of the tire. All the
+videos make this seem so easy. Place a tire lever in the tire to pull
+it over the rim. Put another tire lever in and slide it around the rim
+to get the rest of the tire out. Kavi&rsquo;s tires are so tight that this
+was impossible. I could get the first tire lever in, but when I put
+the second tire lever in, it was completely immovable. There was no
+way that I was going to be able to slide it anywhere. I finally found
+a website where they recommended using a third tire lever. Put the
+first two in a few inches apart. Then put the third one in another
+inch away from the second one. Finally remove the middle one and move
+it an inch past the third one. In this way, I was able to get the tire
+off eventually.</p>
+<p>I then got the tube out and found the leak. I placed a patch on it,
+but when I reinflated the tire, the leaking air just pushed it&rsquo;s way
+through the patch. I tried roughing up the area with the roughing
+tool, but that didn&rsquo;t help. Finally, I resorted to the layman&rsquo;s
+favorite tool: duct tape. I placed the patch, then wrapped it with
+duct tape. It&rsquo;s held together for a few months now.</p>
+<p>Hopefully Kavi will graduate to the next size bike before my handiwork
+breaks down. On another note, Kavi was easily able to pick up the
+basics of riding a bike by following the
+<a href="http://www.rei.com/learn/expert-advice/teach-child-to-ride-a-bike.html">REI guide</a>.
+I took off the training wheels and the pedals, which allowed him to
+get the feeling of balancing the bike without having to keep his feet
+on the pedals. Once he got that part, it was relatively easy for him
+to balance with the pedals on. He also proved to be a much tougher kid
+than I was. Everytime he fell, he got right back on.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Nov 5, 2012
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2012/11/05/nsbrief-gets-the-best-guests/#disqus_thread">Comments</a>
@@ -217,7 +291,7 @@ talk at the inaugural <a href="http://pycarolinas.org">PyCarolinas</a>
 conference. The conference was a huge success in every way, thanks to
 the efforts of <a href="http://www.ironfroggy.com/">Calvin Spealman</a>, et. al.
 I promised that I would post my Emacs setup, so here it is.</p>
-<h2 id="step-0-prerequisites-">Step 0: Prerequisites</h2>
+<h2 id="step-0-prerequisites">Step 0: Prerequisites</h2>
 <p>This may work with other setups, but here&rsquo;s what I tested:</p>
 <ul>
 <li>Linux</li>
@@ -228,7 +302,7 @@ I promised that I would post my Emacs setup, so here it is.</p>
 <li><a href="http://virtualenvwrapper.readthedocs.org/">virtualenvwrapper</a></li>
 <li>git</li>
 </ul>
-<h2 id="step-1-clear-out-any-previous-customization-">Step 1: Clear out any previous customization</h2>
+<h2 id="step-1-clear-out-any-previous-customization">Step 1: Clear out any previous customization</h2>
 <p>As evidenced by the numerous blog posts documenting how to set this
 up, it&rsquo;s not straightforward. I recommend starting from scratch to
 make sure everything is set up properly. Once you have it working,
@@ -236,7 +310,7 @@ then you can customize it. Make sure to start these commands in your
 home directory.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkdir old-emacs
 vinod:~$ mv .emacs .emacs.d old-emacs/
-</code></pre></div><h2 id="step-2-set-up-initial-emacs-configuration-">Step 2: Set up initial Emacs configuration</h2>
+</code></pre></div><h2 id="step-2-set-up-initial-emacs-configuration">Step 2: Set up initial Emacs configuration</h2>
 <p>Create an empty <code>.emacs.d</code> directory and a subdirectory named with your
 username. My username is <code>vinod</code>, so we&rsquo;ll create a directory
 structure called <code>.emacs.d/vinod/</code>. The emacs-starter-kit tells emacs
@@ -246,7 +320,7 @@ you&rsquo;ll always have a place to drop custom elisp files.</p>
 </code></pre></div><p>Create a file named <code>.emacs.d/init.el</code> with the following contents:</p>
 <script type="application/javascript" src="https://gist.github.com/vkurup/3948955.js"></script>
 
-<h2 id="step-3-create-a-python-virtualenv-">Step 3: Create a python virtualenv</h2>
+<h2 id="step-3-create-a-python-virtualenv">Step 3: Create a python virtualenv</h2>
 <p>We&rsquo;ll keep all the python-side customization in a virtualenv named
 <code>default</code>. It&rsquo;s important that the name you choose is the same as the
 name in the <code>(virtualenv-workon)</code> command in line 45 of Step 2.</p>
@@ -254,7 +328,7 @@ name in the <code>(virtualenv-workon)</code> command in line 45 of Step 2.</p>
 </code></pre></div><p>After it does its thing, your shell prompt should change, indicating
 that your new virtualenv is activated</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$
-</code></pre></div><h2 id="step-4-install-pymacs-">Step 4: Install Pymacs</h2>
+</code></pre></div><h2 id="step-4-install-pymacs">Step 4: Install Pymacs</h2>
 <p><a href="http://pymacs.progiciels-bpi.ca/index.html">Pymacs</a> is a really cool
 piece of software that sets up a 2 way communication between Emacs and
 Python, allowing you to control Emacs with python commands rather than
@@ -274,14 +348,14 @@ or <code>package.el</code>, but installation is easy enough.</p>
 
 <span style="color:#586e75"># install the emacs extension</span>
 <span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ cp pymacs.el ~/.emacs.d/<span style="color:#268bd2">$USER</span>/
-</code></pre></div><h2 id="step-5-install-other-python-packages-">Step 5: Install other python packages</h2>
+</code></pre></div><h2 id="step-5-install-other-python-packages">Step 5: Install other python packages</h2>
 <p>These helper packages are easier to install:</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ pip install pyflakes pep8
 </code></pre></div><p>The pyflakes and pep8 packages check your code as you type using
-Emacs&rsquo; flymake mode. Now, deactivate your virtualenv.</p>
+Emacs' flymake mode. Now, deactivate your virtualenv.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ deactivate
 vinod:~$
-</code></pre></div><h2 id="step-6-install-pycheckers-">Step 6: Install pycheckers</h2>
+</code></pre></div><h2 id="step-6-install-pycheckers">Step 6: Install pycheckers</h2>
 <p>Flymake is the part of Emacs that checks your code for errors on the
 fly. It calls a shell script called <code>pycheckers</code>, so you need to have
 a script by that name in your shell&rsquo;s <code>PATH</code>. Here&rsquo;s mine
@@ -291,7 +365,7 @@ a script by that name in your shell&rsquo;s <code>PATH</code>. Here&rsquo;s mine
 pyflakes <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
 pep8 --repeat <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
 <span style="color:#b58900">true</span>
-</code></pre></div><h2 id="step-7-install-python-modeel-">Step 7: Install python-mode.el</h2>
+</code></pre></div><h2 id="step-7-install-python-modeel">Step 7: Install python-mode.el</h2>
 <p>As I mentioned in my talk, there are multiple Python modes available,
 but I recommend using the one named python-mode.el, which is developed
 at
@@ -306,7 +380,7 @@ a stable working version gets uploaded to
 <a href="http://melpa.milkbox.net/">Melpa</a>.</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ <span style="color:#b58900">cd</span> ~/.emacs.d/<span style="color:#268bd2">$USER</span>
 vinod:~/.emacs.d/vinod$ curl -L https://launchpad.net/python-mode/trunk/6.0.12/+download/python-mode.el-6.0.12.tar.gz | tar xz
-</code></pre></div><h2 id="step-8-test-it-all-out-">Step 8: Test it all out</h2>
+</code></pre></div><h2 id="step-8-test-it-all-out">Step 8: Test it all out</h2>
 <p>Launch emacs and open a python file named <code>test.py</code>. Type the following:</p>
 <pre><code>import os
 os.path.jo
@@ -328,42 +402,42 @@ you&rsquo;ll be dropped in the REPL after the code has been loaded. Any
 errors in the code will be reported.</p>
 <p>If all of this works, then CONGRATULATIONS!!! If not, let me know and
 I&rsquo;ll see if I can help debug.</p>
-<h2 id="step-9-customize-">Step 9: Customize</h2>
+<h2 id="step-9-customize">Step 9: Customize</h2>
 <p>All of this is customizable in hundreds of ways. Try <code>M-x customize-group RET python-mode RET</code> to see how.</p>
-<h2 id="step-10-how-to-create-a-new-python-project-">Step 10: How to create a new python project</h2>
+<h2 id="step-10-how-to-create-a-new-python-project">Step 10: How to create a new python project</h2>
 <p>Whenever you want to create a new Python project, you have do the
 following:</p>
-<h3 id="create-a-new-virtualenv-">Create a new virtualenv</h3>
+<h3 id="create-a-new-virtualenv">Create a new virtualenv</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkvirtualenv newproject
-</code></pre></div><h3 id="install-pymacs-into-that-virtualenv-">Install pymacs into that virtualenv</h3>
+</code></pre></div><h3 id="install-pymacs-into-that-virtualenv">Install pymacs into that virtualenv</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~$ <span style="color:#b58900">cd</span> ~/src/Pymacs
 <span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ make install
-</code></pre></div><h3 id="install-the-other-pip-modules-">Install the other pip modules</h3>
+</code></pre></div><h3 id="install-the-other-pip-modules">Install the other pip modules</h3>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ pip install pyflakes pep8
-</code></pre></div><h3 id="switch-to-that-virtualenv-in-emacs-">Switch to that virtualenv in emacs</h3>
+</code></pre></div><h3 id="switch-to-that-virtualenv-in-emacs">Switch to that virtualenv in emacs</h3>
 <pre><code>M-x virtualenv-workon RET newproject/ RET
 </code></pre>
-<h2 id="issues-">Issues</h2>
-<h3 id="changing-virtualenvs-doesnt-restart-pymacs-">Changing virtualenvs doesn&rsquo;t restart Pymacs</h3>
+<h2 id="issues">Issues</h2>
+<h3 id="changing-virtualenvs-doesnt-restart-pymacs">Changing virtualenvs doesn&rsquo;t restart Pymacs</h3>
 <p>For the most part, this won&rsquo;t affect much, but if you move from a
 Python2 project to a Python3 project, you may have problems. The
 workaround is to call <code>M-x pymacs-terminate-services</code>, then <code>M-x virtualenv-workon</code> to change your virtualenv, and then finally
 <code>M-x load-pycomplete</code> to restart pymacs and pycomplete.</p>
-<h3 id="latest-stable-version-of-python-modeel-isnt-on-melpa-">Latest stable version of python-mode.el isn&rsquo;t on Melpa</h3>
+<h3 id="latest-stable-version-of-python-modeel-isnt-on-melpa">Latest stable version of python-mode.el isn&rsquo;t on Melpa</h3>
 <p>I&rsquo;d much prefer to just load python-mode using the built-in Emacs
 package manager.</p>
-<h3 id="pymacs-installation-is-harder-than-it-needs-to-be-">Pymacs installation is harder than it needs to be</h3>
+<h3 id="pymacs-installation-is-harder-than-it-needs-to-be">Pymacs installation is harder than it needs to be</h3>
 <p>I wish Pymacs could be installed by a 2 step process</p>
 <ol>
 <li>pip install Pymacs</li>
 <li>M-x package-install RET pymacs RET</li>
 </ol>
-<h3 id="which-pycheckers-to-use-">Which pycheckers to use?</h3>
+<h3 id="which-pycheckers-to-use">Which pycheckers to use?</h3>
 <p>My script uses pep8 and pyflakes. There are a lot of other options out
 there and I do not know which is best. See
 <a href="http://stackoverflow.com/questions/1428872/pylint-pychecker-or-pyflakes">this post</a>
 for more details.</p>
-<h3 id="not-using-ropemacs-any-more-">Not using ropemacs any more</h3>
+<h3 id="not-using-ropemacs-any-more">Not using ropemacs any more</h3>
 <p>In my talk, I used ropemacs. In this setup, I have decided against it.
 I was mostly using it for code-completion and documentation lookup,
 but I like pycomplete.el better for those purposes. It&rsquo;s included in
@@ -372,11 +446,11 @@ have other features such as project management (easily jumping to
 files in the same project), and refactoring (changing variable names
 throughout project). I haven&rsquo;t used those, so I decided not to install
 ropemacs.</p>
-<h3 id="project-management-not-included-">Project management not included</h3>
+<h3 id="project-management-not-included">Project management not included</h3>
 <p>I haven&rsquo;t yet decided which package to use for this. I&rsquo;ll probably try
 projectile, but there are many other options, some lightweight
 (ropemacs, eproject, pony-mode) and some heavyweight (ecb, CEDET).</p>
-<h2 id="references-">References</h2>
+<h2 id="references">References</h2>
 <p>I gleaned knowledge from all of the following, in no particular order.</p>
 <ul>
 <li><a href="http://slacy.com/blog/2011/03/pymacs-ropemacs-and-virtualenv-all-at-the-same-time/">Using Pymacs and virtualenv together (slacy.com)</a></li>
@@ -401,8 +475,8 @@ use it.</li>
 <li><a href="http://www.enigmacurry.com/2009/01/21/autocompleteel-python-code-completion-in-emacs/">AutoComplete for Python (enigmacurry.com)</a></li>
 <li><a href="http://www.enigmacurry.com/2008/05/09/emacs-as-a-powerful-python-ide/">The original Python IDE post (enigmacurry.com)</a></li>
 </ul>
-<h2 id="updates-">Updates</h2>
-<h4 id="2012-10-27-">2012-10-27</h4>
+<h2 id="updates">Updates</h2>
+<h4 id="2012-10-27">2012-10-27</h4>
 <p>Thanks to <a href="https://twitter.com/danpoirier">@danpoirier</a> and
 <a href="http://twitter.com/gregnewman">@gregnewman</a> for testing. I initially
 recommended using the master branch of python-mode.el, but now I
@@ -860,58 +934,6 @@ think I just convinced myself to <a href="http://www.udacity.com/overview/Course
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Aug 3, 2012
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2012/08/03/blogging-again/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/blog/">blog </a><a class="label" href="https://vkurup.github.io/categories/writing/">writing </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2012/08/03/blogging-again/">Blogging Again</a>
-  </h1>
-</header>
-
-        
-          <p>I&rsquo;m going to start blogging more. I know I&rsquo;ve said that before, so
-take it for what it&rsquo;s worth. I think there is value in blogging. I&rsquo;ve
-been thinking about my life a lot lately, trying to find what makes me
-tick. One of those things that gets me excited is programming. I
-started thinking about that and remembered this meme that had passed
-around the blog world a few years back. It was a list of questions
-related to how you got started programming. I remember it especially
-because I remember reading MarkD&rsquo;s version and thinking how similar it
-was to my own beginnings. Then, because I love going off on tangents,
-I googled for &lsquo;How I got started in programming&rsquo; to read other
-responses. Many of the posts I found were on abandoned blogs. And now,
-for the &lsquo;causal relationship not supported by data&rsquo; statement. This is
-because of Facebook and Twitter. OK, maybe it&rsquo;s just the natural decay
-of blogs. But I am concerned about the fact that most people write in
-forums that are controlled by other people rather in their own forum.
-That was one of the cool promises of the web. A little place of your
-own that you controlled. Facebook and Twitter and Google+ are all cool
-services, but the more time I spend on them, the less time I spend
-here. I&rsquo;m sure other people have written about this with more
-eloquence than I could, but the bottom line is that I want to keep
-writing. I want to learn more about myself, I want to teach others
-what little I know, and I want to learn from others. I&rsquo;ve been
-journalling a lot lately and that has been useful, but the act of
-hitting &lsquo;publish&rsquo; will make my writing better. That&rsquo;s what this blog
-is for and I&rsquo;m going to start using it again.</p>
-<p>Maybe one of these days, I&rsquo;ll even put up my own answers to &lsquo;How I Got
-Started in Programming&rsquo;, but in the meantime, go read
-<a href="http://borkwarellc.wordpress.com/2008/07/01/how-i-got-started-in-programming/">MarkD&rsquo;s</a></p>
-
-        
-      </article>
-      
       
       
 
@@ -1064,10 +1086,16 @@ Started in Programming&rsquo;, but in the meantime, go read
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -1172,12 +1200,6 @@ Started in Programming&rsquo;, but in the meantime, go read
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1206,7 +1228,7 @@ Started in Programming&rsquo;, but in the meantime, go read
   </div>
 </div>
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

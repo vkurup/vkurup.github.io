@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -138,6 +138,36 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Dec 4, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/12/04/running-is-addictive/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/12/04/running-is-addictive/">Running is addictive</a>
+  </h1>
+</header>
+
+        
+          <p>Researchers at my alma mater have shown that <a href="http://www.news.wisc.edu/9208.html">mice who have been bred to run long distances show increased activity in &lsquo;craving&rsquo; regions of the brain when they&rsquo;re denied access to their running wheel</a> (Be sure to check out the Quicktime video on that page). The addiction of running is physiologically similar to other addictions. Maybe that explains why I was out on the East River Path in 29 degree weather tonight.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
       
       <article>
         
@@ -429,219 +459,6 @@ sendmail)</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Sep 14, 2003
-     - 3 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/09/14/another-mac-os-x-openacs-installation-guide/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/mac-os-x/">mac-os-x </a><a class="label" href="https://vkurup.github.io/categories/openacs/">openacs </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/09/14/another-mac-os-x-openacs-installation-guide/">Another Mac OS X OpenACS Installation Guide</a>
-  </h1>
-</header>
-
-        
-          <h2 id="another-mac-os-x-openacs-installation-guide">Another Mac OS X OpenACS Installation Guide</h2>
-<p><a href="http://kurup.org" title="Vinod Kurup's site">by Vinod Kurup</a></p>
-<hr>
-<p>I installed OpenACS 5.0 on my PowerBook G4. Everyone should read <a href="http://borkware.com/rants/openacs/" title="MarkD's guide">MarkD&rsquo;s guide</a> since it&rsquo;s more comprehensive and explains a lot of the changes
-that I don&rsquo;t explain. I used some different software versions which made my
-experience different enough to document.</p>
-<p>This is a quick and dirty document for people who have installed OpenACS
-4. If I haven&rsquo;t been clear enough or if I&rsquo;ve made mistakes, please let me
-know.</p>
-<p>Apparently, these instructions may also help you install OpenACS on FreeBSD</p>
-<ul>
-<li>look at <a href="http://openacs.org/forums/message-view?message_id=136910" title="Andrei's instructions">Andrei&rsquo;s instructions</a> if you&rsquo;re doing that.</li>
-</ul>
-<h3 id="software-versions">Software Versions</h3>
-<p>All of the AOLserver modules were obtained from CVS (2003-09-14).</p>
-<ul>
-<li>Postgresql 7.3.4</li>
-<li><a href="http://sourceforge.net/cvs/?group_id=3152" title="Aolserver">AOLserver 4.0b14</a>
-<ul>
-<li>nscache CVS</li>
-<li>nsrewrite CVS</li>
-<li>nssha1 CVS</li>
-<li>nspostgres CVS</li>
-<li><a href="http://www.tdom.org/#SECTid960" title="tDOM">tDom 0.78</a></li>
-</ul>
-</li>
-<li><a href="http://openacs.org/4/checkout" title="OpenACS CVS">OpenACS CVS</a></li>
-</ul>
-<h4 id="install-postgresql">Install Postgresql</h4>
-<ol>
-<li>
-<p><code>./configure</code> - fails on readline not being installed</p>
-</li>
-<li>
-<p>Install readline:</p>
-<pre><code> $ fink install readline
-</code></pre>
-</li>
-<li>
-<p>Configure</p>
-<pre><code> $ ./configure --with-includes=/sw/include --with-libs=/sw/lib
-</code></pre>
-</li>
-<li>
-<p>Compile</p>
-<pre><code> $ make
- $ sudo make install
-</code></pre>
-</li>
-<li>
-<p>Create the database directory and give yourself permission over it.</p>
-<pre><code> $ sudo mkdir /usr/local/pgsql/data
- $ sudo chown vinod.staff /usr/local/pgsql/data
-</code></pre>
-</li>
-<li>
-<p>change <code>$PATH</code>. Add <code>/usr/local/pgsql/bin</code> to the PATH variable in your <code>~/.profile</code></p>
-</li>
-<li>
-<p>I tried doing an initdb next and it worked, but then I got the following error when starting PG.</p>
-<pre><code> FATAL:  invalid value for option 'LC_TIME': 'en_US'
-</code></pre>
-</li>
-<li>
-<p>I found <a href="http://archives.postgresql.org/pgsql-novice/2003-01/msg00099.php" title="Tom Lane's answer">Tom Lane&rsquo;s answer</a>:</p>
-<pre><code> $ /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data --no-locale
-</code></pre>
-</li>
-<li>
-<p>Start it.</p>
-<pre><code> $ pg_ctl -D /usr/local/pgsql/data -l /usr/local/pgsql/server.log start
- $ createlang plpgsql template1
- $ createdb openacs
- $ createuser openacs
- (Answer 'Y' twice)
-</code></pre>
-</li>
-</ol>
-<h4 id="install-aolserver">Install AOLserver</h4>
-<p>I&rsquo;m going to use AOLserver 4. Previous versions of AOLserver came bundled
-with a customized version of TCL, but AOLserver 4 can use the standard TCL
-releases, as long as TCL was built with thread support. Mac OS X 10.2 comes
-with TCL 8.3.x, but without thread support. Fink currently has TCL 8.4.1,
-but also without thread support. So, the right solution is to download TCL
-and build it manually. But I had already downloaded Fink&rsquo;s version, so I
-just manually edited the .info file that specifies how to build TCL and
-added <code>--enable-threads</code>. Of course, when the next version of TCL gets
-uploaded to the Fink repository, I&rsquo;ll be screwed, but I&rsquo;m too lazy to
-compile TCL again right now.</p>
-<ol>
-<li>
-<p>Configure and Compile AOLserver</p>
-<pre><code> /usr/local/src/aolserver/aolserver$ ./configure --with-tcl=/sw/lib
- /usr/local/src/aolserver/aolserver$ sudo make install
-</code></pre>
-</li>
-<li>
-<p>Install nscache and nsrewrite</p>
-<pre><code> /usr/local/src/aolserver/nscache$ sudo make install
- /usr/local/src/aolserver/nsrewrite$ sudo make install
-</code></pre>
-</li>
-<li>
-<p>nssha1 doesn&rsquo;t compile without editing nssha1.c. Comment out the
-following 2 lines (lines 139-140):</p>
-<pre><code> // typedef unsigned int u_int32_t;
- // typedef unsigned char u_int8_t;
-</code></pre>
-</li>
-<li>
-<p>Compile nssha1</p>
-<pre><code> /usr/local/src/aolserver/nssha1$ sudo make install
-</code></pre>
-</li>
-<li>
-<p>nspostgres doesn&rsquo;t link outta the box. Add <code>-lnsdb</code> to the
-MODLIBS var in the Makefile:</p>
-<pre><code> MODLIBS   = -L$(PGLIB) -lpq &lt;b&gt;-lnsdb&lt;/b&gt;
-</code></pre>
-</li>
-<li>
-<p>Compile nspostgres</p>
-<pre><code> /usr/local/src/aolserver/nspostgres$ sudo make install POSTGRES=/usr/local/pgsql ACS=1 
-</code></pre>
-</li>
-</ol>
-<h4 id="install-tdom-078">Install tDom 0.78</h4>
-<ol>
-<li>
-<p>Edit <code>/usr/local/src/tDOM-0.7.8/unix/CONFIG</code></p>
-</li>
-<li>
-<p>Uncomment the instructions meant for AOLserver 4, but edit it to look
-like this:</p>
-<pre><code> ../configure --enable-threads --disable-tdomalloc \
-   --prefix=/usr/local/aolserver --with-tcl=/sw/lib
-</code></pre>
-</li>
-<li>
-<p>OpenACS 5 will notice that you&rsquo;re using AOLserver 4 and will
-automatically call &lsquo;package require tdom&rsquo;. You shouldn&rsquo;t have to do
-anything special to get tDOM working with OpenACS 5.</p>
-</li>
-</ol>
-<h4 id="get-ready-to-start">Get ready to start</h4>
-<ol>
-<li>
-<p>Get OpenACS CVS.</p>
-</li>
-<li>
-<p>Edit config.tcl (a.k.a. nsd.tcl).</p>
-<ol>
-<li>
-<p>Change <code>server</code> to <code>openacs</code>.</p>
-</li>
-<li>
-<p>Set <code>serverroot</code> to wherever you put your OpenACS CVS</p>
-</li>
-<li>
-<p>The config.tcl file that comes with OpenACS 5 will properly load
-nsdb.so (and ignore libtdom.so) if you&rsquo;re using AOLserver 4.</p>
-</li>
-<li>
-<p>Change the <code>stacksize</code> to <code>2048000</code>. If the number you choose is
-not divisible by 4096, then you get:</p>
-<pre><code>  \[15/Sep/2003:19:08:02\]\[1997.2684358124\]\[-main-\] Notice: PostgreSQL loaded.
-  nsthreads: pthread_attr_setstacksize failed in NsCreateThread: Invalid argument
-  Abort trap
-</code></pre>
-</li>
-</ol>
-</li>
-<li>
-<p>Set some permissions:</p>
-<pre><code> chmod 755 /usr/local/aolserver/log
-</code></pre>
-</li>
-<li>
-<p>Start it!</p>
-<pre><code> $ /usr/local/aolserver/bin/nsd -ft /web/openacs/etc/config.tcl
-</code></pre>
-</li>
-</ol>
-<h4 id="changelog">Changelog</h4>
-<ul>
-<li>2004-01-23 - Pointed to Andrei&rsquo;s FreeBSD document. Simplified instructions which are automatically taken care of by OpenACS 5</li>
-<li>2004-01-05 - Added fixes from <a href="http://xarg.net/" title="Jeff Davis">Jeff Davis</a>.</li>
-<li>2003-09-14 - Initial Revision</li>
-</ul>
-
-        
-      </article>
-      
       
       
 
@@ -794,10 +611,16 @@ not divisible by 4096, then you get:</p>
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -902,12 +725,6 @@ not divisible by 4096, then you get:</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -936,7 +753,7 @@ not divisible by 4096, then you get:</p>
   </div>
 </div>
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

@@ -8,10 +8,15 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 09 May 2021 19:14:52 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>life</title>
+      <link>https://vkurup.github.io/categories/life/</link>
+      <pubDate>Sun, 09 May 2021 19:14:52 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/life/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>elixir</title>
@@ -73,15 +78,6 @@
       <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>home</title>
-      <link>https://vkurup.github.io/categories/home/</link>
-      <pubDate>Fri, 21 Aug 2020 19:45:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/home/</guid>
       <description></description>
     </item>
     
@@ -163,6 +159,15 @@
       <pubDate>Mon, 08 Apr 2019 21:19:53 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/poetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>home</title>
+      <link>https://vkurup.github.io/categories/home/</link>
+      <pubDate>Sun, 02 Dec 2018 23:33:53 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/home/</guid>
       <description></description>
     </item>
     
@@ -455,15 +460,6 @@
     </item>
     
     <item>
-      <title>podcast</title>
-      <link>https://vkurup.github.io/categories/podcast/</link>
-      <pubDate>Mon, 23 May 2011 21:51:46 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/podcast/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>podcasts</title>
       <link>https://vkurup.github.io/categories/podcasts/</link>
       <pubDate>Mon, 23 May 2011 21:51:46 +0000</pubDate>
@@ -496,15 +492,6 @@
       <pubDate>Mon, 14 Mar 2011 20:01:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://vkurup.github.io/categories/life/</link>
-      <pubDate>Thu, 03 Mar 2011 21:11:24 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/life/</guid>
       <description></description>
     </item>
     
@@ -626,15 +613,6 @@
     </item>
     
     <item>
-      <title>finance</title>
-      <link>https://vkurup.github.io/categories/finance/</link>
-      <pubDate>Sun, 04 Oct 2009 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/finance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>finances</title>
       <link>https://vkurup.github.io/categories/finances/</link>
       <pubDate>Sun, 04 Oct 2009 00:00:00 +0000</pubDate>
@@ -667,15 +645,6 @@
       <pubDate>Sat, 19 Sep 2009 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>free</title>
-      <link>https://vkurup.github.io/categories/free/</link>
-      <pubDate>Sat, 04 Jul 2009 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/free/</guid>
       <description></description>
     </item>
     
@@ -968,6 +937,15 @@
     </item>
     
     <item>
+      <title>podcast</title>
+      <link>https://vkurup.github.io/categories/podcast/</link>
+      <pubDate>Fri, 04 Aug 2006 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/podcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>magazine</title>
       <link>https://vkurup.github.io/categories/magazine/</link>
       <pubDate>Mon, 12 Jun 2006 00:00:00 +0000</pubDate>
@@ -1072,6 +1050,15 @@
       <pubDate>Tue, 28 Mar 2006 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/permalink/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>finance</title>
+      <link>https://vkurup.github.io/categories/finance/</link>
+      <pubDate>Tue, 21 Mar 2006 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/finance/</guid>
       <description></description>
     </item>
     
@@ -1414,6 +1401,15 @@
       <pubDate>Mon, 07 Feb 2005 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/guidelines/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>free</title>
+      <link>https://vkurup.github.io/categories/free/</link>
+      <pubDate>Tue, 25 Jan 2005 00:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/free/</guid>
       <description></description>
     </item>
     

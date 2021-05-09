@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 19 Sep 2009 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 19 Sep 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bye Bye Wordpress</title>
       <link>https://vkurup.github.io/blog/2009/09/19/bye-bye-wordpress/</link>
@@ -28,7 +24,7 @@
       <pubDate>Mon, 14 Nov 2005 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2005/11/14/lists-in-css/</guid>
-      <description>A-ha! This article by Eric Meyer explains why &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt;&#39;s can appear differently in MSIE and Mozilla browsers. Both indent the list items, but MSIE does so by setting the padding to 2.5 em, while Mozilla does so by setting the margin to 2.5 em. These are on the &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt; selectors, not the &amp;lt;li&amp;gt;. So, in order to get consistent display on both browsers, you need to set both padding-left and margin-left to whatever you want.</description>
+      <description>A-ha! This article by Eric Meyer explains why &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt;&amp;rsquo;s can appear differently in MSIE and Mozilla browsers. Both indent the list items, but MSIE does so by setting the padding to 2.5 em, while Mozilla does so by setting the margin to 2.5 em. These are on the &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt; selectors, not the &amp;lt;li&amp;gt;. So, in order to get consistent display on both browsers, you need to set both padding-left and margin-left to whatever you want.</description>
     </item>
     
   </channel>

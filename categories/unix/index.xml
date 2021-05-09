@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 16 Jul 2010 21:01:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/unix/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 16 Jul 2010 21:01:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/unix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>inotify</title>
       <link>https://vkurup.github.io/blog/2010/07/16/inotify/</link>

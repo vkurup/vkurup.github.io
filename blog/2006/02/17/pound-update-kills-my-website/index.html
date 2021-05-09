@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -161,7 +161,7 @@
           <p>No one but me noticed, I&rsquo;m sure, but my website was down for part of yesterday. Don&rsquo;t worry, refunds to paying customers are on their way :-)</p>
 <p>What happened? I was doing my regular debian <!-- raw HTML omitted -->apt-get upgrade<!-- raw HTML omitted --> and the reverse proxy that I use, <a href="http://www.apsis.ch/pound/">pound</a>, got updated. The upgrade was a pretty significant one. Pound 2.0 changed the way that it expects configuration files to be formatted. Unfortunately, the Debian update didn&rsquo;t mention this, so the new version of pound tried to read my old config file, got confused and shut down. Without a reverse proxy, there&rsquo;s no way to get to my site from the outside.</p>
 <p>I thought it would be simple to rewrite the config file to match the new format, but it took longer than I expected. Most of the changes were easy. The new format requires string parameters to be enclosed in double-quotes. Some of the parameters which used to be global (like ExtendedHTTP and WebDAV) were renamed and moved into non-global sections. There were a few other minor changes which make the config file easier to understand.</p>
-<p>Unfortunately, fixing all of that still didn&rsquo;t get Pound working. There were still 2 problems. First was that the internal port number was being shown to the web browser. If you typed in &ldquo;<a href="http://kurup.org">http://kurup.org</a>&rdquo;, the browser would show &ldquo;<a href="http://kurup.org">http://kurup.org</a>:8001/&rdquo; in the Location bar. This only occured when the backend server returned 30x redirection status&rsquo;s. Based on my config, Pound was supposed to be rewriting the Location header to avoid this problem. I found the solution to this one <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-01/1136458627000#1136458627000">here</a>. Scroll down to Robert Segall&rsquo;s (the author of Pound) second reply. He says:</p>
+<p>Unfortunately, fixing all of that still didn&rsquo;t get Pound working. There were still 2 problems. First was that the internal port number was being shown to the web browser. If you typed in &ldquo;<a href="http://kurup.org">http://kurup.org</a>&rdquo;, the browser would show &ldquo;<a href="http://kurup.org:8001/%22">http://kurup.org:8001/&quot;</a> in the Location bar. This only occured when the backend server returned 30x redirection status&rsquo;s. Based on my config, Pound was supposed to be rewriting the Location header to avoid this problem. I found the solution to this one <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-01/1136458627000#1136458627000">here</a>. Scroll down to Robert Segall&rsquo;s (the author of Pound) second reply. He says:</p>
 <blockquote>
 <p>The conditions for changing the Location header are:</p>
 <ul>
@@ -278,10 +278,16 @@
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -386,12 +392,6 @@
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -421,7 +421,7 @@
 </div>
 
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

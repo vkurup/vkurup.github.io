@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 13 Dec 2008 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/informatics/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Dec 2008 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/informatics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Starting again</title>
       <link>https://vkurup.github.io/blog/2008/12/13/starting-again/</link>

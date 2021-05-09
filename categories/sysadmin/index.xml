@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Thu, 08 Sep 2011 21:58:48 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/sysadmin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 08 Sep 2011 21:58:48 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fixing wireless on eeePC</title>
       <link>https://vkurup.github.io/blog/2011/09/08/fixing-wireless-on-eeepc/</link>
@@ -68,7 +64,7 @@ The canonical standard for doing backups on UNIX systems is tar (short for tape 
       <pubDate>Wed, 17 Dec 2003 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2003/12/17/im-back/</guid>
-      <description>This site was down for the past few days due to a SNAFU with acornhosting&amp;rsquo;s upstream provider. You&amp;rsquo;d think I&amp;rsquo;d have learned to have a backup strategy in place by now, but you&amp;rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers&amp;rsquo;) data back. After this episode, I promise to backup religiously and I&amp;rsquo;m even more sold on acornhosting as a solid web hosting provider.</description>
+      <description>This site was down for the past few days due to a SNAFU with acornhosting&amp;rsquo;s upstream provider. You&amp;rsquo;d think I&amp;rsquo;d have learned to have a backup strategy in place by now, but you&amp;rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers&#39;) data back. After this episode, I promise to backup religiously and I&amp;rsquo;m even more sold on acornhosting as a solid web hosting provider.</description>
     </item>
     
     <item>

@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 29 Nov 2005 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/service/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 29 Nov 2005 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/service/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MTA sucks</title>
       <link>https://vkurup.github.io/blog/2005/11/29/mta-sucks/</link>

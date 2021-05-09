@@ -8,10 +8,15 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 12 Dec 2020 12:11:04 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 09 May 2021 19:14:52 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Post of 2021</title>
+      <link>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</link>
+      <pubDate>Sun, 09 May 2021 19:14:52 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</guid>
+      <description>Hi loyal reader(s)! It is nearly halfway through 2021 and this is my first post of the year. And writing on this here blog was one of my 2021 resolutions, so I guess that was a complete failure. Although, maybe I can make up for it by actually writing more regularly over the next few months. It has been a whirlwind of a year for just about everyone, right? When the pandemic started, I remember making a list of the things that I might want to blog about and the only thing I remember from that list was that I wanted to blog about &amp;ldquo;not wanting to blog about the pandemic&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>Advent of Code Elixir Day 1</title>
@@ -194,7 +199,7 @@ Big sister sighs, &amp;ldquo;He&amp;rsquo;s a weird one I fear.</description>
       <pubDate>Thu, 31 May 2018 20:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2018/05/31/history-of-indian-civilization/</guid>
-      <description>I briefly mentioned finding the 2012 UCLA lecture series, &amp;ldquo;History of Indian Civilization&amp;quot;, a couple days ago. I&amp;rsquo;m about halfway through and have found it thorougly illuminating. I learned a lot about India growing up, but never in a formal way, so it&amp;rsquo;s nice to have someone as skilled as Vinay Lal connect all the loose threads into a coherent history. One of the things that surprises me is that aside from the fact that classes are being streamed over the internet, there is nothing different than the lectures I skipped (I mean religiously attended!</description>
+      <description>I briefly mentioned finding the 2012 UCLA lecture series, &amp;ldquo;History of Indian Civilization&amp;rdquo;, a couple days ago. I&amp;rsquo;m about halfway through and have found it thorougly illuminating. I learned a lot about India growing up, but never in a formal way, so it&amp;rsquo;s nice to have someone as skilled as Vinay Lal connect all the loose threads into a coherent history. One of the things that surprises me is that aside from the fact that classes are being streamed over the internet, there is nothing different than the lectures I skipped (I mean religiously attended!</description>
     </item>
     
     <item>
@@ -299,7 +304,7 @@ class ShowPhotosView(ListView): queryset = Hero.objects.live() Can you spot the 
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2013/01/09/steal-my-web-app-idea/</guid>
       <description>Now that we have 3 kids, I&amp;rsquo;m always internally comparing one to the other. Sure that&amp;rsquo;s not healthy and will probably breed resentment in them during their teenage years, but what&amp;rsquo;s a bad parent to do?
-I need an app that takes 2 kids&amp;rsquo; birthdays and then shows me what day it was when the older kid was the age that the younger kid is now. Wow, that&amp;rsquo;s a confusing sentence.</description>
+I need an app that takes 2 kids&#39; birthdays and then shows me what day it was when the older kid was the age that the younger kid is now. Wow, that&amp;rsquo;s a confusing sentence.</description>
     </item>
     
     <item>
@@ -308,7 +313,7 @@ I need an app that takes 2 kids&amp;rsquo; birthdays and then shows me what day 
       <pubDate>Sun, 30 Dec 2012 15:00:40 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2012/12/30/how-to-change-the-rear-tire-on-a-12-inch-bicycle/</guid>
-      <description>I&amp;rsquo;m not the handiest guy in the world, so I&amp;rsquo;m pretty proud that I was able to fix a flat tire on Kavi&amp;rsquo;s 12&amp;rdquo; bicycle.
+      <description>I&amp;rsquo;m not the handiest guy in the world, so I&amp;rsquo;m pretty proud that I was able to fix a flat tire on Kavi&amp;rsquo;s 12&amp;quot; bicycle.
 DISCLAIMER: I have almost no idea what I&amp;rsquo;m doing. Follow my instructions at your peril.
 I&amp;rsquo;ve fixed flats before, but it&amp;rsquo;s been a long time. Fixing it on such a tiny bike was a lot harder than I thought. The manual makes it seem so simple.</description>
     </item>
@@ -517,7 +522,7 @@ Hungry yet?</description>
       <pubDate>Wed, 10 Aug 2011 15:30:08 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2011/08/10/openshot-video-editor/</guid>
-      <description>Ever since my Dad brought home an Apple IIe back in 1980, I&amp;rsquo;ve been a huge Apple fan. The design of my website back in the mid 90&amp;rsquo;s was a ripoff of the Mac OS 9 System menu. (I found a later version on the Wayback Machine. I had swapped out the Apple icon for the icon of the startup I was working with at the time.) I loved OS X for a while, especially on my 12&amp;rdquo; Aluminum powerbook.</description>
+      <description>Ever since my Dad brought home an Apple IIe back in 1980, I&amp;rsquo;ve been a huge Apple fan. The design of my website back in the mid 90&amp;rsquo;s was a ripoff of the Mac OS 9 System menu. (I found a later version on the Wayback Machine. I had swapped out the Apple icon for the icon of the startup I was working with at the time.) I loved OS X for a while, especially on my 12&amp;quot; Aluminum powerbook.</description>
     </item>
     
     <item>
@@ -548,7 +553,7 @@ And that has made all the difference.
       <pubDate>Mon, 04 Jul 2011 21:12:11 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2011/07/04/anything-you-want-review/</guid>
-      <description>I don&amp;rsquo;t know why I keep reading books about entrepreneurship. I like the idea of building a business, having passion for something, and most importantly, living life on your own terms. I just don&amp;rsquo;t think I&amp;rsquo;m cut out for it. But see if that will stop me from devouring Hacker News, startup podcasts and books like Derek Sivers&amp;rsquo; Anything You Want.
+      <description>I don&amp;rsquo;t know why I keep reading books about entrepreneurship. I like the idea of building a business, having passion for something, and most importantly, living life on your own terms. I just don&amp;rsquo;t think I&amp;rsquo;m cut out for it. But see if that will stop me from devouring Hacker News, startup podcasts and books like Derek Sivers&#39; Anything You Want.
 Derek was a musician who started selling his own CDs online in the days before Paypal.</description>
     </item>
     
@@ -558,7 +563,7 @@ Derek was a musician who started selling his own CDs online in the days before P
       <pubDate>Thu, 30 Jun 2011 11:50:22 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2011/06/30/boston-with-little-kids/</guid>
-      <description>I&amp;rsquo;m sorry, but I just can&amp;rsquo;t believe it&amp;rsquo;s been almost 10 years since I left Boston. Mala had a meeting there and we love to take advantage of our employers&amp;rsquo; generosity 1, so I TrippedIt 2 back to Boston for some nostalgia with 2 kids in tow (Ages 4 and 2). Buildings and restaurants have come and gone 3, but it seems like so little has changed in 10+ years. I forgot how &amp;ldquo;unfriendly&amp;rdquo; the city was.</description>
+      <description>I&amp;rsquo;m sorry, but I just can&amp;rsquo;t believe it&amp;rsquo;s been almost 10 years since I left Boston. Mala had a meeting there and we love to take advantage of our employers&#39; generosity 1, so I TrippedIt 2 back to Boston for some nostalgia with 2 kids in tow (Ages 4 and 2). Buildings and restaurants have come and gone 3, but it seems like so little has changed in 10+ years. I forgot how &amp;ldquo;unfriendly&amp;rdquo; the city was.</description>
     </item>
     
     <item>
@@ -694,7 +699,7 @@ I&amp;rsquo;ll probably wait until the spring to buy. That&amp;rsquo;s when the 
       <pubDate>Fri, 18 Feb 2011 14:57:09 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2011/02/18/medical-student-oral-presentations/</guid>
-      <description>I enjoyed @FutureDocs&amp;rsquo; guide to medical student oral presentations, so I thought I&amp;rsquo;d share the cheat sheet that I give to the medical students and PA students when I start each teaching block. As she mentioned, presentations always have to be tailored to the listener, and each attending is different, so you&amp;rsquo;ll see minor differences in what I recommend.
+      <description>I enjoyed @FutureDocs&#39; guide to medical student oral presentations, so I thought I&amp;rsquo;d share the cheat sheet that I give to the medical students and PA students when I start each teaching block. As she mentioned, presentations always have to be tailored to the listener, and each attending is different, so you&amp;rsquo;ll see minor differences in what I recommend.
 To me, the most important aspects are organization and preparation. I don&amp;rsquo;t like to have the sense that the student is &amp;ldquo;winging it&amp;rdquo;.</description>
     </item>
     
@@ -775,7 +780,7 @@ Automatically preparing build ... Warning: autoreconf failed  Then, I ran autoge
       <pubDate>Thu, 04 Nov 2010 07:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2010/11/04/advice-on-writing/</guid>
-      <description>I just found this great article on writing by Sebastian Marshall. His basic advice boils down to &amp;ldquo;just do it!&amp;quot;, but he makes some interesting points along the way. I had never heard of the Equal-Odds rule. Read more details at his blog, but basically, in order to do great work, you have to do a lot of &amp;ldquo;not-great&amp;rdquo; work. No one just does great work. So, let go and just write.</description>
+      <description>I just found this great article on writing by Sebastian Marshall. His basic advice boils down to &amp;ldquo;just do it!&amp;rdquo;, but he makes some interesting points along the way. I had never heard of the Equal-Odds rule. Read more details at his blog, but basically, in order to do great work, you have to do a lot of &amp;ldquo;not-great&amp;rdquo; work. No one just does great work. So, let go and just write.</description>
     </item>
     
     <item>
@@ -971,7 +976,7 @@ It wasn&amp;rsquo;t until the 2005 New York Marathon though, that I really felt 
       <pubDate>Mon, 21 Sep 2009 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2009/09/21/speed-up-firefox-on-eeepc/</guid>
-      <description>I&amp;rsquo;m too weak to lug around my monstrous 7 pound laptop, so I bought a netbook. It&amp;rsquo;s an eeepc 1000 and I love it. I use it for everything, except for processing the kids&amp;rsquo; videos and photos. I still use the desktop for that.
+      <description>I&amp;rsquo;m too weak to lug around my monstrous 7 pound laptop, so I bought a netbook. It&amp;rsquo;s an eeepc 1000 and I love it. I use it for everything, except for processing the kids&#39; videos and photos. I still use the desktop for that.
 The major issue that I&amp;rsquo;ve had with it is that firefox seemed so slow. I tried other browsers, some which seemed faster, but I missed my firefox extensions.</description>
     </item>
     
@@ -1738,7 +1743,7 @@ You&amp;rsquo;re welcome :-)</description>
       <pubDate>Mon, 14 Nov 2005 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2005/11/14/lists-in-css/</guid>
-      <description>A-ha! This article by Eric Meyer explains why &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt;&#39;s can appear differently in MSIE and Mozilla browsers. Both indent the list items, but MSIE does so by setting the padding to 2.5 em, while Mozilla does so by setting the margin to 2.5 em. These are on the &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt; selectors, not the &amp;lt;li&amp;gt;. So, in order to get consistent display on both browsers, you need to set both padding-left and margin-left to whatever you want.</description>
+      <description>A-ha! This article by Eric Meyer explains why &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt;&amp;rsquo;s can appear differently in MSIE and Mozilla browsers. Both indent the list items, but MSIE does so by setting the padding to 2.5 em, while Mozilla does so by setting the margin to 2.5 em. These are on the &amp;lt;ul&amp;gt; and &amp;lt;ol&amp;gt; selectors, not the &amp;lt;li&amp;gt;. So, in order to get consistent display on both browsers, you need to set both padding-left and margin-left to whatever you want.</description>
     </item>
     
     <item>
@@ -2228,7 +2233,7 @@ The canonical standard for doing backups on UNIX systems is tar (short for tape 
       <pubDate>Wed, 17 Dec 2003 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2003/12/17/im-back/</guid>
-      <description>This site was down for the past few days due to a SNAFU with acornhosting&amp;rsquo;s upstream provider. You&amp;rsquo;d think I&amp;rsquo;d have learned to have a backup strategy in place by now, but you&amp;rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers&amp;rsquo;) data back. After this episode, I promise to backup religiously and I&amp;rsquo;m even more sold on acornhosting as a solid web hosting provider.</description>
+      <description>This site was down for the past few days due to a SNAFU with acornhosting&amp;rsquo;s upstream provider. You&amp;rsquo;d think I&amp;rsquo;d have learned to have a backup strategy in place by now, but you&amp;rsquo;d be overestimating my intelligence. Luckily, Cathy was somehow able to negotiate with her failed upstream provider to get my (and other acornhosting customers&#39;) data back. After this episode, I promise to backup religiously and I&amp;rsquo;m even more sold on acornhosting as a solid web hosting provider.</description>
     </item>
     
     <item>
@@ -2474,7 +2479,7 @@ It&amp;rsquo;s been a weird couple of days. The power went out around 4:15 PM ye
       <pubDate>Wed, 13 Aug 2003 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2003/08/13/6-degrees/</guid>
-      <description>An article in the NY Times claims that &amp;lsquo;6 degrees of separation&amp;rsquo; is an exaggeration. They tested it by asking people to forward emails to people that they knew in hopes that the chain would eventually lead to 1 of the researchers&amp;rsquo; destinations. I know that I delete any chain mail that I get, so I&amp;rsquo;m not sure that the study&amp;rsquo;s results are valid.
+      <description>An article in the NY Times claims that &amp;lsquo;6 degrees of separation&amp;rsquo; is an exaggeration. They tested it by asking people to forward emails to people that they knew in hopes that the chain would eventually lead to 1 of the researchers&#39; destinations. I know that I delete any chain mail that I get, so I&amp;rsquo;m not sure that the study&amp;rsquo;s results are valid.
 Let me provide an anecdotal rebuttal. I went to Subha and Archana&amp;rsquo;s wedding in Chicago last weekend and I&amp;rsquo;m guessing there were 400 people there.</description>
     </item>
     

@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 28 Mar 2006 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/permalink/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 28 Mar 2006 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/permalink/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prettier permalinks</title>
       <link>https://vkurup.github.io/blog/2006/03/28/prettier-permalinks/</link>

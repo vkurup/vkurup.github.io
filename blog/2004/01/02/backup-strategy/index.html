@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     
     
@@ -196,7 +196,7 @@
 <pre><code>command=&quot;rsync --server --sender -vlogDtpr --delete-excluded --numeric-ids . /&quot;  
 ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local. 
 </code></pre>
-<p>To get the proper command to put in your command=&rdquo;&rdquo; statement, run your rsync command with an unrestricted SSH key first (i.e. just copy the id_rsa.pub to authorized_keys2). When you run the rsync command on your Mac, do a <code>ps auxw | grep rsync</code> on the server machine. The command that you see listed is the command that goes in the key.</p>
+<p>To get the proper command to put in your command=&quot;&quot; statement, run your rsync command with an unrestricted SSH key first (i.e. just copy the id_rsa.pub to authorized_keys2). When you run the rsync command on your Mac, do a <code>ps auxw | grep rsync</code> on the server machine. The command that you see listed is the command that goes in the key.</p>
 <p>After reading MarkD&rsquo;s article, the one thing I might change is to tar up the data on the Linux server that needs its user/group info preserved (<code>/etc</code>, <code>/root</code>, and <code>/usr/local</code>) and then store that on the server in my user&rsquo;s home directory. I then wouldn&rsquo;t have to rsync as root, so it would simplify things. The drawback is that anytime anything changed in any of those directories, I&rsquo;d be backing up the entire directories again. Hopefully this would be mitigated by the fact that they wouldn&rsquo;t change often and since they&rsquo;re mostly text files, they compress well.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -309,10 +309,16 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       
       
       <li class="post">
-        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+      </li>
       
       
       
@@ -417,12 +423,6 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -452,7 +452,7 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 </div>
 
     <footer role="contentinfo">
-      <p>Copyright &copy; 2020 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
         <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
       </p>
     </footer>

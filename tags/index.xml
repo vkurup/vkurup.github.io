@@ -7,10 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    
-	<atom:link href="https://vkurup.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster><atom:link href="https://vkurup.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

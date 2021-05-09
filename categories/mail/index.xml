@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 05 Jul 2003 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://vkurup.github.io/categories/mail/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 05 Jul 2003 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/mail/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>More Mail Woes</title>
       <link>https://vkurup.github.io/blog/2003/07/05/more-mail-woes/</link>
