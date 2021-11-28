@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.84.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
 
     
     
@@ -138,6 +138,37 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Nov 27, 2019
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2019/11/27/open-borders/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/book-review/">book-review </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2019/11/27/open-borders/">Open Borders</a>
+  </h1>
+</header>
+
+        
+          <p>I just finished <a href="https://amzn.to/35FoTXV">Open Borders</a>, a graphic novel about immigration policy.
+(Not 2 things that normally occupy the same sentence)</p>
+<p>It was an excellent presentation of a position that I&rsquo;ve always felt to be morally correct, in my
+heart of hearts. I am one of the few lucky ones who gets to be an American citizen just because of
+the fact that my parents took it on themselves to forge a better life for us. Why shouldn&rsquo;t everyone
+have this opportunity? This book shatters many of the myths that allowing open borders makes things
+&ldquo;worse&rdquo; in any way for natives.</p>
+
+        
+      </article>
       
       <article>
         
@@ -622,70 +653,6 @@ dissemination of knowledge is still a thing.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">May 30, 2018
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/postgresql/">postgresql </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2018/05/30/autovacuum-not-running/">Autovacuum not running</a>
-  </h1>
-</header>
-
-        
-          <p>OK, this is a debug session in progress, so don&rsquo;t expect a nice solution at the end. We&rsquo;re working
-on a project that does analysis of some public voter registration data. The DB is hosted on Amazon
-RDS and I&rsquo;ve been perplexed by how poorly queries are performing there, despite the tables only have
-about 10 million rows. Simple queries are taking many minutes, which is orders of magnitude slower
-than my laptop.</p>
-<p><a href="http://mlavin.org/">Mark</a> suggested running &lsquo;VACUUM ANALYZE&rsquo;, which I didn&rsquo;t think would help
-because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
-on a regular basis. These queries had been slow for days with no recent inserts or updates, so
-certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">315777</span>.<span style="color:#2aa198">051</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">vacuum</span> <span style="color:#719e07">analyze</span>;
-<span style="color:#719e07">VACUUM</span>
-Time: <span style="color:#2aa198">11377035</span>.<span style="color:#2aa198">096</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</span> ms
-</code></pre></div><p>Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&rsquo;t autovacuum
-automatically doing this for us. (I mean it has the phrase &lsquo;auto&rsquo; in its name!!!)</p>
-<p>I&rsquo;ve found this great article on
-<a href="https://blog.2ndquadrant.com/autovacuum-tuning-basics/">autovacuum basics</a> which led me to do this query:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
-       relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
-<span style="color:#586e75">---------------------+------------+------------+-------------------------------
-</span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_filetracker   <span style="color:#719e07">|</span>         <span style="color:#2aa198">41</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">13</span> <span style="color:#2aa198">02</span>:<span style="color:#2aa198">00</span>:<span style="color:#2aa198">47</span>.<span style="color:#2aa198">802633</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_ncvhis        <span style="color:#719e07">|</span>          <span style="color:#2aa198">0</span> <span style="color:#719e07">|</span>
- voter_ncvoter       <span style="color:#719e07">|</span>   <span style="color:#2aa198">12336616</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">06</span> <span style="color:#2aa198">13</span>:<span style="color:#2aa198">20</span>:<span style="color:#2aa198">30</span>.<span style="color:#2aa198">073426</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_badlinerange  <span style="color:#719e07">|</span>        <span style="color:#2aa198">404</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">04</span><span style="color:#719e07">-</span><span style="color:#2aa198">10</span> <span style="color:#2aa198">05</span>:<span style="color:#2aa198">44</span>:<span style="color:#2aa198">39</span>.<span style="color:#2aa198">949193</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
-(<span style="color:#2aa198">5</span> <span style="color:#719e07">rows</span>)
-</code></pre></div><p>So those 2 large tables haven&rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
-row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&rsquo;ll figure out
-what&rsquo;s going on.</p>
-
-        
-      </article>
-      
       
       
 
@@ -838,10 +805,16 @@ what&rsquo;s going on.</p>
       
       
       <li class="post">
-        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+      </li>
       
       
       
@@ -946,12 +919,6 @@ what&rsquo;s going on.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/31/history-of-indian-civilization/">History of Indian Civilization</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -979,26 +946,26 @@ what&rsquo;s going on.</p>
     
   </div>
 </div>
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+<footer role="contentinfo">
+  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+    <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+  </p>
+</footer>
 
-    
-    
-    
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
+
+
+
+<script>
+ var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
+ (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
   </body>
 </html>
    

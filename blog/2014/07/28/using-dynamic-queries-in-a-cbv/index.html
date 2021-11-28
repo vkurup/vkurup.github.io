@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.84.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
 
     
     
@@ -149,7 +149,7 @@
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2014/07/28/using-dynamic-queries-in-a-cbv/">Using dynamic queries in a CBV</a>
+     Using dynamic queries in a CBV 
   </h1>
 </header>
 
@@ -162,8 +162,8 @@
 <code>publish_date</code> and we should only show photos that have been published (i.e. their <code>publish_date</code> is
 in the past).</p>
 <div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
-        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
+    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#268bd2">None</span>):
+        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#268bd2">None</span>:
             as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
         <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
 </code></pre></div><p>And the view to show those photos:</p>
@@ -285,10 +285,16 @@ display.</p>
       
       
       <li class="post">
-        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+      </li>
       
       
       
@@ -393,12 +399,6 @@ display.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/31/history-of-indian-civilization/">History of Indian Civilization</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -427,26 +427,26 @@ display.</p>
   </div>
 </div>
 
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+<footer role="contentinfo">
+  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+    <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+  </p>
+</footer>
 
-    
-    
-    
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
+
+
+
+<script>
+ var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
+ (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
   </body>
 </html>
 

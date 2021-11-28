@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.84.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
 
     
     
@@ -138,6 +138,52 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Sep 16, 2010
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/09/16/rotating-videos/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/video/">video </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/09/16/rotating-videos/">Rotating videos</a>
+  </h1>
+</header>
+
+        
+          <p>I found out how to rotate video today. I often take video with my
+Canon SD870, but I mistakenly take it in portrait mode. I don&rsquo;t
+realize this until I&rsquo;m editing the video and then I have to decide if
+I want to subject my adoring youtube fans to the torture of having to
+turn their heads sideways to see how cute Kavi and Anika are.</p>
+<p>I found <a href="http://www.hanselman.com/blog/HowToRotateAnAVIOrMPEGFileTakenInPortrait.aspx">this link</a>
+which gives the <code>mencoder</code> command to rotate the video. Unfortunately,
+it didn&rsquo;t work with the AVI files that my Canon SD870 create. I think
+this camera creates slightly corrupt AVI files. I say &ldquo;slightly&rdquo;
+because they&rsquo;re still viewable, but mplayer always reports the total
+time as &ldquo;0:00&rdquo;, even while the elapsed time marches along
+correctly. Well, today, I found a way to fix the AVI files.</p>
+<pre><code>mencoder -ovc copy -oac copy input.avi -o output.avi
+</code></pre>
+<p>This just creates a new AVI, copying the video and audio from the
+original. Now, mplayer reports the correct total time. Then, to rotate
+the video:</p>
+<pre><code>mencoder -ovc lavc -lavcopts vcodec=mjpeg -vf rotate=1 \
+         -oac copy output.avi -o rotated.avi
+</code></pre>
+<p>And here&rsquo;s your reward for reading along:</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+
+        
+      </article>
       
       <article>
         
@@ -663,7 +709,7 @@ in buy mode or sell mode. It uses the excellent <a href="http://www.goldb.org/ys
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>A much more <a href="http://boards.fool.com/Message.asp?mid=27035352">detailed description of the rule and its background</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>A much more <a href="http://boards.fool.com/Message.asp?mid=27035352">detailed description of the rule and its background</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -745,58 +791,10 @@ has pointed to me to a few options. I&rsquo;ll probably read one of these next:<
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>I later read that this tutorial is out of date, so I may have to &ldquo;unlearn&rdquo; things later. It still comes up as the first hit on <a href="http://www.google.com/search?q=clojure+tutorial">Google for &ldquo;clojure tutorial&rdquo;</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>I later read that this tutorial is out of date, so I may have to &ldquo;unlearn&rdquo; things later. It still comes up as the first hit on <a href="http://www.google.com/search?q=clojure+tutorial">Google for &ldquo;clojure tutorial&rdquo;</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 17, 2010
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/17/getting-some-clojure/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/17/getting-some-clojure/">Getting some clojure</a>
-  </h1>
-</header>
-
-        
-          <p>Steve Yegge is one of my favorite bloggers. I read <a href="http://sites.google.com/site/steveyegge2/you-should-write-blogs">&ldquo;You Should Write Blogs&rdquo;</a> a
-long time ago and it is one of the main reasons that I still try to keep
-this blog going at all. He recently took a blogging hiatus and in his
-<a href="http://steve-yegge.blogspot.com/2010/07/blogger-finger.html">return post</a>,
-he left a little hint that he was interested in a programming language
-called <a href="http://clojure.org">clojure</a>.</p>
-<p>My programming skills have been rusting away (Darn those patients, always
-getting sick and stuff!), so I&rsquo;ve been looking for a little
-inspiration. I&rsquo;m hoping that clojure is it. I&rsquo;ve always wanted to learn
-lisp. I know a little elisp and scheme, but I&rsquo;ve never gotten comfortable
-with them. Clojure compiles code that runs on a JVM (java virtual
-machine). This gives you a lot of the &ldquo;power&rdquo; of java, namely the extensive
-libraries and the widespread platforms on which it will run. But instead of
-having to write java, you get to write in a dynamic, lisp-like language. At
-least that&rsquo;s how I understand it.</p>
-<p>Specifically, I hope that I&rsquo;ll eventually be able to create applications
-that run on android phones, which is a java environment. Smartphones are
-clearly going to be a huge part of the future, if not <strong>the way</strong> of the
-future. I don&rsquo;t see myself ever buying an iPhone and Mala already has a
-Droid Eris that I&rsquo;d be able to play with if I needed. (Didn&rsquo;t tell you
-that, did I Mala?) So&hellip; Android it is.</p>
-<p>Starting today, I&rsquo;m going to start reading about clojure and taking notes
-(and maybe even posting them!). I&rsquo;ve never been very good about taking
-notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/03/how-to-brain-dump-what-you-know/">need to learn</a>.</p>
 
         
       </article>
@@ -953,10 +951,16 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
       
       
       <li class="post">
-        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+      </li>
       
       
       
@@ -1061,12 +1065,6 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/31/history-of-indian-civilization/">History of Indian Civilization</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1094,26 +1092,26 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
     
   </div>
 </div>
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+<footer role="contentinfo">
+  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+    <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+  </p>
+</footer>
 
-    
-    
-    
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
+
+
+
+<script>
+ var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
+ (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
   </body>
 </html>
    

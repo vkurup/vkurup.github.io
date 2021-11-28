@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.84.4" />
+    <meta name="generator" content="Hugo 0.80.0" />
 
     
     
@@ -138,6 +138,100 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jul 20, 2003
+     - 3 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/07/20/updating-from-cvs/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/openacs/">openacs </a><a class="label" href="https://vkurup.github.io/categories/version-control/">version-control </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/07/20/updating-from-cvs/">Updating from CVS</a>
+  </h1>
+</header>
+
+        
+          <p>Here&rsquo;s the steps I take in order to update my site from the latest OpenACS CVS. All of this info comes from <a href="http://piskorski.com/docs/cvs-conventions.html">Andrew Piskorski&rsquo;s great CVS page</a> or from pages listed in his document.</p>
+<ol>
+<li>
+<p>Make sure that I&rsquo;ve committed all the local changes that I&rsquo;ve made.</p>
+<p>vinod:~$ cd web/kurup
+vinod:~/web/kurup$ cvs commit -m &ldquo;Fixed foo, bar and blah&rdquo;</p>
+</li>
+<li>
+<p>Go into the directory containing my OpenACS CVS checkout and grab the latest sources. I&rsquo;m using the <code>oacs-4-6</code> branch.</p>
+<p>vinod:~/web/kurup$ cd ~/web/openacs-4
+vinod:~/web/openacs-4$ cvs update -r oacs-4-6</p>
+</li>
+<li>
+<p>Import the code into a vendor branch. My repository name is <code>kurup</code>. <code>OpenACS</code> is the vendor tag.</p>
+<p>vinod:~/web/openacs-4$ cvs -d /var/lib/cvs \
+import -m &ldquo;importing latest OpenACS 4.6 branch&rdquo;<br>
+kurup OpenACS openacs-4-6-3-20030719</p>
+</li>
+<li>
+<p>This produces the usual CVS scroll and then a message like this:</p>
+<p>7 conflicts created by this import. Use the following command to help the merge:
+cvs -d /var/lib/cvs checkout -j&lt;prev_rel_tag&gt; \
+jopenacs-4-6-3-20030719 kurup</p>
+</li>
+<li>
+<p>Follow the instructions just given above. This will checkout a full set of code into the <code>kurup</code> directory, while simultaneously merging the new imported code in.</p>
+<p>vinod@vkurup:~/web/openacs-4$ cd
+vinod@vkurup:~$ mkdir tmp
+vinod@vkurup:~$ cd tmp
+vinod@vkurup:~/tmp$ cvs -d /var/lib/cvs checkout \
+-jOpenACS:yesterday<br>
+jopenacs-4-6-3-20030719 kurup</p>
+</li>
+<li>
+<p>Go through and fix all the conflicts. This is the part that I sometimes find confusing. How to find the files that have conflicts? The command in instruction #3 above will list conflict files with a C in front of the filename. Check each file that has a C in front of it. This is why I like to do this process inside an emacs shell, so that I can look over the output as needed. For example, one piece of my listing looked like this:</p>
+<p>U kurup/packages/lars-blogger/www/blog-oracle.xql
+U kurup/packages/lars-blogger/www/blog.adp
+C kurup/packages/lars-blogger/www/blog.tcl
+U kurup/packages/lars-blogger/www/calendar-oracle.xql</p>
+</li>
+</ol>
+<p>So, I need to check ~/tmp/kurup/packages/lars-blogger/www/blog.tcl, look for conflict markers and resolve any conflicts. Do this for every file marked &lsquo;C&rsquo; in your listing.</p>
+<ol start="7">
+<li>
+<p>Commit my work.</p>
+<p>vinod:~/tmp$ cd kurup
+vinod:~/tmp/kurup$ cvs commit<br>
+-m &ldquo;merged with openacs-4-6-3-20030719, conflicts resolved&rdquo;</p>
+</li>
+<li>
+<p>Blow away that tmp checkout</p>
+<p>vinod:~/tmp/kurup$ cd
+vinod:~$ rm -r tmp</p>
+</li>
+<li>
+<p>Update my local checkout</p>
+<p>vinod:~$ cd web/kurup
+vinod:~/web/kurup$ cvs update</p>
+</li>
+<li>
+<p>Restart my server.</p>
+<p>vinod:~$ svc -t /service/master</p>
+</li>
+<li>
+<p>Once the server is back up, I visit <code>http://kurup.org/acs-admin/apm</code> with my broswer and click on &lsquo;Install Packages&rsquo;. I look for any packages that are listed as &lsquo;Upgrade&rsquo;. Click on these packages and follow the instructions to perform any needed upgrades. This is always a touchy process because if the upgrade script errors out, your server may be left in an in-between state. Hope and pray liberally.</p>
+</li>
+<li>
+<p>Repeat as needed, maybe monthly, or whenever there&rsquo;s a new feature/bugfix available that you need.</p>
+</li>
+</ol>
+
+        
+      </article>
       
       <article>
         
@@ -492,31 +586,6 @@ You may need to add explicit typecasts
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 24, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/06/24/psql-doesnt-like-tabs/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/postgresql/">postgresql </a><a class="label" href="https://vkurup.github.io/categories/emacs/">emacs </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/06/24/psql-doesnt-like-tabs/">psql doesn&#39;t like tabs</a>
-  </h1>
-</header>
-
-        
-          <p>psql doesn&rsquo;t deal well with tabs. If you feed it a function that has tabs  in it, and then call that function, you&rsquo;ll often get this:  <code>ERROR:  parser: parse error at or near &quot;for&quot; at character 15</code>.  Thus, if you ever see this in your error log, it&rsquo;s time to <code>M-x untabify</code>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -669,10 +738,16 @@ You may need to add explicit typecasts
       
       
       <li class="post">
-        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2021/05/09/first-post-of-2021/">First Post of 2021</a>
+      </li>
       
       
       
@@ -777,12 +852,6 @@ You may need to add explicit typecasts
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/05/31/history-of-indian-civilization/">History of Indian Civilization</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -810,26 +879,26 @@ You may need to add explicit typecasts
     
   </div>
 </div>
-    <footer role="contentinfo">
-      <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
-        <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
-      </p>
-    </footer>
+<footer role="contentinfo">
+  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+    <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
+  </p>
+</footer>
 
-    
-    
-    
 
-    
-      <script>
-        var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
-    
 
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
+
+
+
+<script>
+ var _gaq=[['_setAccount','UA-79447-1'],['_trackPageview']];
+ (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+   g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+   s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2f7b54393e3c4799ab8f37fcaf97e029"}'></script>
   </body>
 </html>
    
