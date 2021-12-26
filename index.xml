@@ -8,10 +8,57 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 27 Nov 2021 19:52:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 08:36:00 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>USB-C lint</title>
+      <link>https://vkurup.github.io/blog/2021/12/26/usb-c-lint/</link>
+      <pubDate>Sun, 26 Dec 2021 08:36:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2021/12/26/usb-c-lint/</guid>
+      <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+&lt;p&gt;The USB-C cord kept falling out of my Android phone. It started happening in the car. A
+little bump while driving would make the cord fall out. Then it started happening even
+when I just had it plugged in on a table. I&amp;rsquo;d come down in the morning and the charge
+would be drained because it hadn&amp;rsquo;t been fully plugged in. Finally, I couldn&amp;rsquo;t even get
+it to charge unless I plugged it in forcefully, and put a book under the cord at a
+certain angle to keep it plugged in.&lt;/p&gt;
+&lt;h2 id=&#34;the-googling&#34;&gt;The googling&lt;/h2&gt;
+&lt;p&gt;Googling for this problem didn&amp;rsquo;t find anything specific to my phone, but I did find
+people complaining of this issue and other people telling them that this was because of
+lint in the USB-C port.
+&lt;a href=&#34;https://www.reddit.com/r/nexus5x/comments/4morbk/comment/d3xaqew/&#34;&gt;[1]&lt;/a&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=bNlM0i9PUTQ&#34;&gt;[2]&lt;/a&gt;
+&lt;a href=&#34;https://www.ifixit.com/Answers/View/382427/Whats+the+best+way+to+clean+and+maintain+the+USB-C+port&#34;&gt;[3]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I just needed to get that lint out somehow.&lt;/p&gt;
+&lt;h2 id=&#34;what-didnt-work&#34;&gt;What didn&amp;rsquo;t work&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Compressed air&lt;/li&gt;
+&lt;li&gt;A toothpick (it was too thick)&lt;/li&gt;
+&lt;li&gt;A plastic zip tie (It was too flimsy)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;what-did-work&#34;&gt;What did work&lt;/h2&gt;
+&lt;p&gt;A SIM card removal tool. You know, one of those things that they send you with a new
+phone to poke into the SIM card housing to get it to eject? It was the perfect size and
+depth to be able to get all the way around the SIM card and get copious amounts of lint
+(ewww!) out of the port. Now my USB-C cord plugs in with a satisfying click and stays
+connected.&lt;/p&gt;
+&lt;h2 id=&#34;philosophical-musings&#34;&gt;Philosophical musings&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s weird that this three year old phone now feels new to me. For a while now, I would
+have a little dread every time I went to plug in this phone, knowing that it would be
+fiddly and that I might come down to a dead phone in the morning. Now, with this little
+improvement, I feel a weird warmth towards the phone again, similar to that feeling I
+had when it was a new phone. I cleaned out the lint a few weeks ago, and I still have
+this warm sensation towards it. Every time I plug it in, I get a little burst of
+happiness when it clicks in satisfyingly. It&amp;rsquo;s almost as if seeing a problem with the
+phone that I didn&amp;rsquo;t think would exist, and then seeing a solution to that problem, makes
+me appreciate the phone more than if it had never had that problem. That just feels
+weird and revelatory to me.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Loving the frame.work laptop</title>
@@ -746,61 +793,6 @@ that has happened is that a bunch of fruit flies think we&amp;rsquo;re awesome n
 moved in for the long haul. But I&amp;rsquo;m hoping that some composting starts happening soon. It&amp;rsquo;s supposed
 to be easy as pie, but I&amp;rsquo;m secretly worried that I&amp;rsquo;m missing something, oh, like maybe skills or
 talent. But our garbage bin sure is lighter!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Starting a garden</title>
-      <link>https://vkurup.github.io/blog/2018/09/22/starting-a-garden/</link>
-      <pubDate>Sat, 22 Sep 2018 20:50:53 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2018/09/22/starting-a-garden/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m going to be a gardener. Yup, just decided. Well, re-decided, I guess, since we already have a
-garden. It&amp;rsquo;s a strip of dirt on the side of our house and we&amp;rsquo;ve been trying to grow vegetables the
-past couple years. But it has some problems. It&amp;rsquo;s way out of the way, so it&amp;rsquo;s a pain to check on it
-(since I&amp;rsquo;m lazy). The ground just underneath the topsoil is hard clay. It&amp;rsquo;s shaded most of the day
-either by our house, or by the beautiful forest surrounding our house. And I haven&amp;rsquo;t figured out a
-way to keep the deer from eating the few vegetables that we are able to grow in there. And even
-despite all those problems we&amp;rsquo;ve been able to grow some zucchini, okra, tomatoes and basil, which
-has been super exciting, and makes us want more! Here&amp;rsquo;s a photo of the harvest that greeted us when
-we returned from a week-long trip to visit my parents in Dallas this summer:&lt;/p&gt;
-
-
-
-
-
-
-
-&lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/august-harvest.jpg&#34; title=&#34;August Harvest&#34; alt=&#34;August Harvest&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;August Harvest&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;p&gt;But, in general, things end up getting eaten by the deer or overrun by weeds, so we&amp;rsquo;re trying a new
-approach now, based on the book, &lt;a href=&#34;https://amzn.to/2NzBVSg&#34;&gt;Square Foot Gardening&lt;/a&gt;. Kavi and Anika
-helped me build this raised bed, which is itself a huge accomplishment given how not-handy I am.&lt;/p&gt;
-
-
-
-
-
-
-
-&lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/our-little-garden.jpg&#34; title=&#34;Our Little Garden&#34; alt=&#34;Our Little Garden&#34;&gt;
-  &lt;span class=&#34;caption-text&#34;&gt;Our Little Garden&lt;/span&gt;
-&lt;/span&gt;
-
-&lt;p&gt;This was my first time using a drill since shop class in high school! We&amp;rsquo;re going to try using a
-&lt;a href=&#34;http://vomitingchicken.com/deer-fencing-cheap-and-easy-and-effective/&#34;&gt;fishing line fence&lt;/a&gt; to keep
-the deer away. I&amp;rsquo;m not very optimistic about that, but fingers-crossed! We can also see the garden
-from our living room, so maybe I can just shoo them away any time they saunter by. The garden is
-looking quite pathetic because we bought some seedlings from the Carrboro Farmer&amp;rsquo;s Market but then
-all our garden plans got sidetracked by Hurricane Florence (which fortunately treated us very
-kindly, all things considered). So, the seedlings wilted away in our screen porch before we finally
-got a chance to plant them this week. We&amp;rsquo;re hoping there&amp;rsquo;s still some life left in them. Anyway, our
-expectations are low, especially given how late in the summer we&amp;rsquo;re starting, but it would be nice
-to get one head of lettuce or something to grow. I&amp;rsquo;ll be sure to let you know!&lt;/p&gt;
 </description>
     </item>
     

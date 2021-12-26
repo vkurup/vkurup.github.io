@@ -144,6 +144,89 @@
         
 
 <header>
+  <p class="meta">Sep 25, 2006
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2006/09/25/working-with-collections/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/tcl/">tcl </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2006/09/25/working-with-collections/">Working with collections</a>
+  </h1>
+</header>
+
+        
+          <p>Steve Yegge wrote about the <a href="http://steve.yegge.googlepages.com/ruby-tour">expressiveness of Ruby</a> as compared to
+Java. He used this simple problem as an example:</p>
+<blockquote>
+<p>How about if we write a program that will print out all the words in the dictionary starting with the letter &lsquo;Q&rsquo; (case-insensitive), grouped by increasing length, and sorted alphabetically within each group.</p>
+</blockquote>
+<p>The Ruby version was about 12 lines of code and Java version about
+43. Of course, the point of the exercise wasn&rsquo;t simply the difference
+in LOCs, but in the overall simplicity of dealing with collections of
+data. Still, I wanted to see how Tcl would deal with the same
+problem. Here&rsquo;s the simplest version I could come up with:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> f <span style="color:#719e07">[</span><span style="color:#b58900">open</span> <span style="color:#719e07">/</span>usr<span style="color:#719e07">/</span>share<span style="color:#719e07">/</span>dict<span style="color:#719e07">/</span>words r<span style="color:#719e07">]</span>
+<span style="color:#719e07">set</span> words <span style="color:#719e07">[</span><span style="color:#b58900">read</span> <span style="color:#719e07">-</span>nonewline <span style="color:#268bd2">$f</span><span style="color:#719e07">]</span>
+<span style="color:#b58900">close</span> <span style="color:#268bd2">$f</span>
+<span style="color:#719e07">set</span> qwords <span style="color:#719e07">[</span><span style="color:#b58900">lsearch</span> <span style="color:#719e07">-</span>all <span style="color:#719e07">-</span>inline <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$words</span> \n<span style="color:#719e07">]</span> <span style="color:#719e07">{[</span><span style="color:#268bd2">Qq</span><span style="color:#719e07">]</span><span style="color:#719e07">*</span><span style="color:#719e07">}]</span>
+
+<span style="color:#719e07">proc</span> compare_length <span style="color:#719e07">{</span><span style="color:#268bd2">a</span> b<span style="color:#719e07">}</span> <span style="color:#719e07">{</span>
+    <span style="color:#719e07">if</span> <span style="color:#719e07">{</span> <span style="color:#719e07">[</span><span style="color:#b58900">string</span> length <span style="color:#268bd2">$a</span><span style="color:#719e07">]</span> <span style="color:#719e07">&lt;=</span> <span style="color:#719e07">[</span><span style="color:#b58900">string</span> length <span style="color:#268bd2">$b</span><span style="color:#719e07">]</span> <span style="color:#719e07">}</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">return</span> <span style="color:#719e07">-</span><span style="color:#2aa198">1</span>
+    <span style="color:#719e07">}</span> <span style="color:#719e07">else</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">return</span> <span style="color:#2aa198">1</span> 
+    <span style="color:#719e07">}</span> 
+<span style="color:#719e07">}</span>
+
+<span style="color:#719e07">set</span> sorted_qwords <span style="color:#719e07">[</span><span style="color:#b58900">lsort</span> <span style="color:#719e07">-</span>command compare_length <span style="color:#719e07">[</span><span style="color:#b58900">lsort</span> <span style="color:#268bd2">$qwords</span><span style="color:#719e07">]]</span>
+<span style="color:#719e07">set</span> max <span style="color:#719e07">-</span><span style="color:#2aa198">1</span> foreach qword <span style="color:#268bd2">$sorted_qwords</span> <span style="color:#719e07">{</span>
+    <span style="color:#719e07">if</span> <span style="color:#719e07">{</span> <span style="color:#719e07">[</span><span style="color:#b58900">string</span> length <span style="color:#268bd2">$qword</span><span style="color:#719e07">]</span> <span style="color:#719e07">&gt;</span> <span style="color:#268bd2">$max</span> <span style="color:#719e07">}</span> <span style="color:#719e07">{</span>
+        <span style="color:#719e07">set</span> max <span style="color:#719e07">[</span><span style="color:#b58900">string</span> length <span style="color:#268bd2">$qword</span><span style="color:#719e07">]</span>
+        <span style="color:#b58900">puts</span> <span style="color:#2aa198">&#34;Words of length $max:&#34;</span>
+    <span style="color:#719e07">}</span>
+    <span style="color:#b58900">puts</span> <span style="color:#2aa198">&#34;  $qword&#34;</span>
+<span style="color:#719e07">}</span>
+</code></pre></div><p>About 19 lines and pretty simple to write and read. Can this be
+improved?</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Sep 9, 2006
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2006/09/09/beautiful-mind/#disqus_thread">Comments</a>
@@ -470,38 +553,6 @@ thank you Mala, for the best year of my life (so far!)</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 12, 2006
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2006/06/12/doc-on-board/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/medicine/">medicine </a><a class="label" href="https://vkurup.github.io/categories/magazine/">magazine </a><a class="label" href="https://vkurup.github.io/categories/running/">running </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2006/06/12/doc-on-board/">Doc on Board</a>
-  </h1>
-</header>
-
-        
-          <p>Stop what you&rsquo;re doing and go buy the July 2006 issue of <a href="http://www.runnersworld.com">Runner&rsquo;s World</a>. Flip to page 49 and read the fine article by Scott Douglas on things a runner should discuss with their physician.</p>
-<p>Yep, the &ldquo;Vinod Kurup&rdquo; quoted is yours truly! I&rsquo;m really grateful to Scott for using me as a source and thus making my dream of being in Runner&rsquo;s World come true. :)</p>
-<p>Here&rsquo;s the <a href="http://www.runnersworld.com/article/0,5033,s6-78-0-0-9823,00.html">online version of the article</a>, but go check out the magazine because it&rsquo;s, you know, much cooler.</p>
-<p>Also check out <a href="http://www.scottdouglas.biz">Scott&rsquo;s site</a> for more
-interesting articles about running.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-
-        
-      </article>
-      
       
       
 
@@ -653,11 +704,17 @@ interesting articles about running.</p>
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+        <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+      </li>
       
       
       
@@ -759,12 +816,6 @@ interesting articles about running.</p>
       
       <li class="post">
         <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
       </li>
       
       

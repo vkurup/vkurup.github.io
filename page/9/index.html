@@ -144,6 +144,51 @@
         
 
 <header>
+  <p class="meta">Nov 3, 2010
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/11/03/a-sad-day-for-this-wisconsinite/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/news/">news </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/11/03/a-sad-day-for-this-wisconsinite/">A sad day for this Wisconsinite</a>
+  </h1>
+</header>
+
+        
+          <p><a href="http://www.russfeingold.org/">Russ Feingold</a> lost his U.S. Senate
+race. I haven&rsquo;t been following Wisconsin politics since I left 14
+years ago, but this makes me sad. The last time that I really cared
+about the U.S. political landscape was 1992. I was 21 and in college
+at the University of Wisconsin and was voting for the first time. Bill
+Clinton was generating excitement, especially on college campuses, but
+I was more interested in Russ Feingold&rsquo;s campaign. He was a no-name
+state senator, running against incumbent Bob Kasten. He seemed honest,
+funny and down-to-earth. He painted his campaign promises on his
+garage door so that everyone would be able to hold him to them. I
+remember people saying that if he won, he&rsquo;d change. The amazing thing
+is that he didn&rsquo;t. In 3 terms in the Senate, he has continued to stay
+humble, while also crossing the aisle at times and voting against
+popular, but misguided policies like the Patriot Act.</p>
+<p>After the 1992 election, I remember thinking that real change was
+coming. I know that the main reason that I was so excited in 1992 was
+because it was my first time being a part of the political process. Of
+course, as we all know, not much ever changes in U.S. politics. I&rsquo;ve
+come to realize and accept that. Russ Feingold was an exception and
+seeing him lose, despite having lived up to his high standards, makes
+me sad.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Sep 16, 2010
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2010/09/16/rotating-videos/#disqus_thread">Comments</a>
@@ -717,88 +762,6 @@ in buy mode or sell mode. It uses the excellent <a href="http://www.goldb.org/ys
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 18, 2010
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/18/first-steps-with-clojure/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/18/first-steps-with-clojure/">First Steps with Clojure</a>
-  </h1>
-</header>
-
-        
-          <p>As mentioned yesterday, I&rsquo;m teaching myself clojure. I started by trying to
-install it.</p>
-<pre><code>vinod@ike$ aptitude install clojure
-</code></pre>
-<p>Ubuntu has packaged version 1.0.0 of clojure. I always default to the
-OS-installed version of programs, just for ease of maintenance. The current
-stable version of clojure is 1.1 and it appears that 1.2 is in beta. I have
-no idea what has been changed in 1.1 or 1.2, but I&rsquo;m going to try to get
-along using 1.0.0 and update only if I need to for a specific reason.</p>
-<p>I then read through the
-<a href="http://www.moxleystratton.com/article/clojure/for-non-lisp-programmers">tutorial for non-lisp programmers</a>,
-which succinctly describes the basics of the language.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Everything in
-lisp is either an atom or a list. Atoms include numbers, booleans, strings,
-symbols, keywords and the nil value. Lists (delimited by parentheses <code>()</code>)
-are the basic data structure, but include representations such as vectors
-(delimited by square brackets <code>[]</code>) and maps (delimited by curly brackets
-<code>{}</code>). Clojure programs are themselves simply lists, which leads to the
-power of lisp-like languages because code and data are interchangeable.</p>
-<p>You use <code>def</code> to create variables and <code>defn</code> to create functions. The
-language includes loops and conditional statements, just like any other
-useful language. Only <code>false</code> and <code>nil</code> are <em>false</em> in clojure; zero (0),
-and the empty string (&quot;&quot;) are <em>true</em>, unlike a lot of languages.</p>
-<p>The interesting part is the integration with Java. To instantiate a java
-object, simply call <code>new</code>:</p>
-<pre><code>user=&gt; (new java.util.Date)
-#&lt;Date Sun Jul 18 16:20:54 EDT 2010&gt;
-</code></pre>
-<p>To call object methods or get instance/class variables, use the dot &ldquo;.&rdquo;
-method.</p>
-<pre><code>user=&gt; (. (new java.util.Date) (toString))
-&quot;Sun Jul 18 16:24:09 EDT 2010&quot;
-
-user=&gt; (. Integer MAX_VALUE)
-2147483647
-</code></pre>
-<p>The article contains this interesting quote:</p>
-<blockquote>
-<p>Sequences are in a sense, the core of idiomatic Clojure
-programming. Understand sequences and the forms that work with them, and
-you will have cleared one of the biggest hurdles in writing significant
-Clojure programs.</p>
-</blockquote>
-<p>So, add that to my to-do list. Where to go next? A
-<a href="http://stackoverflow.com/questions/599519/which-tutorial-on-clojure-is-best">StackOverflow thread</a>
-has pointed to me to a few options. I&rsquo;ll probably read one of these next:</p>
-<ul>
-<li><a href="http://en.wikibooks.org/wiki/Learning_Clojure">http://en.wikibooks.org/wiki/Learning_Clojure</a></li>
-<li><a href="http://github.com/relevance/labrepl">http://github.com/relevance/labrepl</a></li>
-<li><a href="http://java.ociweb.com/mark/clojure/article.html">http://java.ociweb.com/mark/clojure/article.html</a></li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>I later read that this tutorial is out of date, so I may have to &ldquo;unlearn&rdquo; things later. It still comes up as the first hit on <a href="http://www.google.com/search?q=clojure+tutorial">Google for &ldquo;clojure tutorial&rdquo;</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
-        
-      </article>
-      
       
       
 
@@ -950,11 +913,17 @@ has pointed to me to a few options. I&rsquo;ll probably read one of these next:<
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+        <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+      </li>
       
       
       
@@ -1056,12 +1025,6 @@ has pointed to me to a few options. I&rsquo;ll probably read one of these next:<
       
       <li class="post">
         <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
       </li>
       
       

@@ -145,6 +145,51 @@
 
 <header>
   <p class="meta">Jul 20, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/07/20/aolserver-cgi-errors/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/aolserver/">aolserver </a><a class="label" href="https://vkurup.github.io/categories/web/">web </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/07/20/aolserver-cgi-errors/">AOLserver CGI errors</a>
+  </h1>
+</header>
+
+        
+          <p>Scenario: You&rsquo;re trying to run a CGI program under AOLserver and you see this in your error log:</p>
+<pre><code>19/Jul/2003:00:00:23     Error: exec /home/vinod/cgi-bin/mt: execve() failed: Permission denied
+19/Jul/2003:00:00:23     Error: waitpid(-3) failed: No child processes
+19/Jul/2003:00:00:23     Error: nscgi: wait for /home/vinod/cgi-bin/mt failed: No child processes
+</code></pre>
+<p>I&rsquo;m trying to run <code>/home/vinod/cgi-bin/mt/mt.cgi</code>. Why isn&rsquo;t this working? Because I need to tell AOLserver about each and every directory which might contain CGI programs.</p>
+<p>So I need to change my <code>nsd.tcl</code> from:</p>
+<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
+ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot; 
+ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot; 
+ns_param   Interps CGIinterps
+</code></pre>
+<p>to</p>
+<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
+ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot;
+ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot;
+ns_param   map &quot;GET  /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
+ns_param   map &quot;POST /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
+ns_param   Interps CGIinterps
+</code></pre>
+<p>Problem solved. Further reading: <a href="http://jongriffin.com/static/consultant/nscgi">http://jongriffin.com/static/consultant/nscgi</a> -  sure wish I had read that before I started messing with ns_cgi.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jul 20, 2003
      - 3 minute read 
      - <a href="https://vkurup.github.io/blog/2003/07/20/updating-from-cvs/#disqus_thread">Comments</a>
 
@@ -555,37 +600,6 @@ make: *** [all-recursive-am] Error 2
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 24, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/06/24/pg-7.2-to-7.3/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/openacs/">openacs </a><a class="label" href="https://vkurup.github.io/categories/postgresql/">postgresql </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/06/24/pg-7.2-to-7.3/">PG 7.2 to 7.3</a>
-  </h1>
-</header>
-
-        
-          <p>Not all of OpenACS is Postgres 7.3 compliant yet. OpenACS 5 is compliant and the core packages in OpenACS 4.6 are compliant, but some non-core packages haven&rsquo;t been fixed yet. Noncompliant packages will complain:</p>
-<pre><code>[24/Jun/2003:15:21:36][26623.196621][-conn:kurup::4] Error:  Ns_PgExec: result status: 7 message: ERROR:  Function  pa_collection__new(&quot;unknown&quot;, &quot;unknown&quot;, &quot;unknown&quot;, timestamp with time zone,  &quot;unknown&quot;, &quot;unknown&quot;, &quot;unknown&quot;) does not exist
-Unable to identify a function that satisfies the given argument types
-You may need to add explicit typecasts
-</code></pre>
-<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &lsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &lsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
-<p>Read more at <a href="http://openacs.org/forums/message-view?message_id=64527">Bart&rsquo;s posts in this thread</a>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -737,11 +751,17 @@ You may need to add explicit typecasts
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+        <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+      </li>
       
       
       
@@ -843,12 +863,6 @@ You may need to add explicit typecasts
       
       <li class="post">
         <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
       </li>
       
       

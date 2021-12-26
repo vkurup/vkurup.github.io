@@ -144,6 +144,31 @@
         
 
 <header>
+  <p class="meta">Aug 17, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/08/17/marathon-story/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/funny/">funny </a><a class="label" href="https://vkurup.github.io/categories/marathon/">marathon </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/08/17/marathon-story/">Marathon Story</a>
+  </h1>
+</header>
+
+        
+          <p>Kevin Kling of NPR gives a <a href="http://www.npr.org/ramarchives/nc6J1101-7.ram">highly accurate recollection of a marathon experience</a> (RealAudio).</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 16, 2003
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2003/08/16/happy-indian-independence-day/#disqus_thread">Comments</a>
@@ -430,51 +455,6 @@ people just sitting on the sidewalk waiting to be tripped over.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 20, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/07/20/aolserver-cgi-errors/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/aolserver/">aolserver </a><a class="label" href="https://vkurup.github.io/categories/web/">web </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/07/20/aolserver-cgi-errors/">AOLserver CGI errors</a>
-  </h1>
-</header>
-
-        
-          <p>Scenario: You&rsquo;re trying to run a CGI program under AOLserver and you see this in your error log:</p>
-<pre><code>19/Jul/2003:00:00:23     Error: exec /home/vinod/cgi-bin/mt: execve() failed: Permission denied
-19/Jul/2003:00:00:23     Error: waitpid(-3) failed: No child processes
-19/Jul/2003:00:00:23     Error: nscgi: wait for /home/vinod/cgi-bin/mt failed: No child processes
-</code></pre>
-<p>I&rsquo;m trying to run <code>/home/vinod/cgi-bin/mt/mt.cgi</code>. Why isn&rsquo;t this working? Because I need to tell AOLserver about each and every directory which might contain CGI programs.</p>
-<p>So I need to change my <code>nsd.tcl</code> from:</p>
-<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
-ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot; 
-ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot; 
-ns_param   Interps CGIinterps
-</code></pre>
-<p>to</p>
-<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
-ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot;
-ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot;
-ns_param   map &quot;GET  /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
-ns_param   map &quot;POST /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
-ns_param   Interps CGIinterps
-</code></pre>
-<p>Problem solved. Further reading: <a href="http://jongriffin.com/static/consultant/nscgi">http://jongriffin.com/static/consultant/nscgi</a> -  sure wish I had read that before I started messing with ns_cgi.</p>
-
-        
-      </article>
-      
       
       
 
@@ -626,11 +606,17 @@ ns_param   Interps CGIinterps
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+        <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2021/11/27/loving-the-frame.work-laptop/">Loving the frame.work laptop</a>
+      </li>
       
       
       
@@ -732,12 +718,6 @@ ns_param   Interps CGIinterps
       
       <li class="post">
         <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
       </li>
       
       
