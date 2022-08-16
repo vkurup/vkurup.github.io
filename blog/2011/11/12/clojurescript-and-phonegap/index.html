@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -201,7 +201,7 @@ Imperial (i.e. American) units and calculates a Body Mass Index. BMI
 is simply weight divided by the square of height, with units of
 kg/m<!-- raw HTML omitted -->2<!-- raw HTML omitted -->.</p>
 <p>Here&rsquo;s the CLJS file:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#268bd2">ns </span><span style="color:#268bd2">bmi</span>)
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#268bd2">ns </span><span style="color:#268bd2">bmi</span>)
     
     (<span style="color:#268bd2">defn </span><span style="color:#268bd2">height</span> [<span style="color:#268bd2">feet</span> <span style="color:#268bd2">inches</span>]
       (<span style="color:#b58900">-&gt; </span><span style="color:#268bd2">feet</span> (<span style="color:#b58900">* </span><span style="color:#2aa198">12</span>) (<span style="color:#b58900">+ </span><span style="color:#268bd2">inches</span>) (<span style="color:#b58900">* </span><span style="color:#2aa198">2.54</span>) (<span style="color:#b58900">/ </span><span style="color:#2aa198">100</span>)))
@@ -233,7 +233,7 @@ refer to the global JavaScript namespace. If you didn&rsquo;t include that
 prefix, the compiler would assume you meant a call in the local
 <code>bmi</code> namespace, which would obviously fail.</p>
 <p>Here&rsquo;s the HTML file (in <code>HelloPhoneGap/assets/www/</code>):</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#719e07">&lt;!DOCTYPE HTML&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#719e07">&lt;!DOCTYPE HTML&gt;</span>
 &lt;<span style="color:#268bd2">html</span>&gt;
   &lt;<span style="color:#268bd2">head</span>&gt;
     &lt;<span style="color:#268bd2">title</span>&gt;BMI calculator&lt;/<span style="color:#268bd2">title</span>&gt;
@@ -386,6 +386,12 @@ provide.</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -492,12 +498,6 @@ provide.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -527,7 +527,7 @@ provide.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

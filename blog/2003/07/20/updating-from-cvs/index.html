@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -173,7 +173,7 @@ vinod:~/web/openacs-4$ cvs update -r oacs-4-6</p>
 <li>
 <p>Import the code into a vendor branch. My repository name is <code>kurup</code>. <code>OpenACS</code> is the vendor tag.</p>
 <p>vinod:~/web/openacs-4$ cvs -d /var/lib/cvs \
-import -m &ldquo;importing latest OpenACS 4.6 branch&rdquo;<br>
+import -m &ldquo;importing latest OpenACS 4.6 branch&rdquo; <br>
 kurup OpenACS openacs-4-6-3-20030719</p>
 </li>
 <li>
@@ -188,7 +188,7 @@ jopenacs-4-6-3-20030719 kurup</p>
 vinod@vkurup:~$ mkdir tmp
 vinod@vkurup:~$ cd tmp
 vinod@vkurup:~/tmp$ cvs -d /var/lib/cvs checkout \
--jOpenACS:yesterday<br>
+-jOpenACS:yesterday <br>
 jopenacs-4-6-3-20030719 kurup</p>
 </li>
 <li>
@@ -204,7 +204,7 @@ U kurup/packages/lars-blogger/www/calendar-oracle.xql</p>
 <li>
 <p>Commit my work.</p>
 <p>vinod:~/tmp$ cd kurup
-vinod:~/tmp/kurup$ cvs commit<br>
+vinod:~/tmp/kurup$ cvs commit <br>
 -m &ldquo;merged with openacs-4-6-3-20030719, conflicts resolved&rdquo;</p>
 </li>
 <li>
@@ -332,6 +332,12 @@ vinod:~/web/kurup$ cvs update</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -438,12 +444,6 @@ vinod:~/web/kurup$ cvs update</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -473,7 +473,7 @@ vinod:~/web/kurup$ cvs update</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

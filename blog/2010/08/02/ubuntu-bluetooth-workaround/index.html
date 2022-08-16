@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -173,7 +173,7 @@ yet. <a href="https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/589464">(blue
 <p>My workaround is a shell script which starts those those daemons if they
 are not running:</p>
 <h4 id="vk-bluetooth-startsh">vk-bluetooth-start.sh</h4>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>    
 <span style="color:#268bd2">BLUETOOTH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;bluetoothd&#39;</span>
 <span style="color:#268bd2">DUN</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;dund&#39;</span>
@@ -203,7 +203,7 @@ compile from source due to a
 <a href="https://bugs.launchpad.net/ubuntu/+source/pilot-link/+bug/592916">bug in the way that the Ubuntu version addresses large SD cards</a>. This
 should be fixed in the next version of Ubuntu.</p>
 <h4 id="vk-transfer-podcastssh">vk-transfer-podcasts.sh</h4>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>    
 <span style="color:#268bd2">output</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span>pilot-xfer -p net:any -D /Kingston/AUDIO -i *.mp3 2&gt;&amp;1<span style="color:#719e07">)</span>
 <span style="color:#268bd2">errors</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span> | grep -c <span style="color:#2aa198">&#34;ERROR:&#34;</span><span style="color:#719e07">)</span>
@@ -324,6 +324,12 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -430,12 +436,6 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -465,7 +465,7 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

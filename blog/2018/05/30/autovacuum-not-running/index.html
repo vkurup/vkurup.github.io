@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -167,7 +167,7 @@ than my laptop.</p>
 because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
 on a regular basis. These queries had been slow for days with no recent inserts or updates, so
 certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
   <span style="color:#719e07">count</span>
 <span style="color:#586e75">----------
 </span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
@@ -186,7 +186,7 @@ Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</s
 automatically doing this for us. (I mean it has the phrase &lsquo;auto&rsquo; in its name!!!)</p>
 <p>I&rsquo;ve found this great article on
 <a href="https://blog.2ndquadrant.com/autovacuum-tuning-basics/">autovacuum basics</a> which led me to do this query:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
        relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
 <span style="color:#586e75">---------------------+------------+------------+-------------------------------
 </span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
@@ -302,6 +302,12 @@ what&rsquo;s going on.</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -408,12 +414,6 @@ what&rsquo;s going on.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -443,7 +443,7 @@ what&rsquo;s going on.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

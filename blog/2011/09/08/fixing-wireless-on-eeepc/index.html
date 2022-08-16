@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -176,7 +176,7 @@ are the instructions:</p>
 <p>Download the <a href="http://www.ralinktech.com/license_us.php?n=2&amp;p=0&amp;t=U0wyRnpjMlYwY3k4eU1ERXdMekEzTHpFMkwyUnZkMjVzYjJGa05qZ3hPRFUwTmpBd05DNWllakk5UFQweU1ERXdYekEzWHpFMlgxSlVNamcyTUY5TWFXNTFlRjlUVkVGZmRqSXVOQzR3TGpBdWRHRnlD">latest rt2860sta driver</a>.</p>
 <h3 id="step-2-rename-and-extract-the-downloaded-file">Step 2: Rename and extract the downloaded file</h3>
 <p>Mine was named <code>download.php</code>, but it&rsquo;s really a tar file:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~ $ mkdir <span style="color:#b58900">test</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~ $ mkdir <span style="color:#b58900">test</span>
 vinod@ike:~ $ mv download.php test/driver.tar
 vinod@ike:~ $ <span style="color:#b58900">cd</span> test/
 vinod@ike:~/test $ tar xf driver.tar 
@@ -186,13 +186,13 @@ vinod@ike:~/test $ <span style="color:#b58900">cd</span> driver
 <script type="application/javascript" src="https://gist.github.com/vkurup/1205291.js"></script>
 
 <h3 id="step-4-backup-old-driver">Step 4: Backup old driver</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike~/test/driver/ $ sudo ifconfig wlan0 down
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike~/test/driver/ $ sudo ifconfig wlan0 down
 vinod@ike~/test/driver/ $ sudo rmmod rt2860sta
 vinod@ike~/test/driver/ $ mkdir backup
 vinod@ike~/test/driver/ $ sudo mv /etc/Wireless/RT2860STA backup/
 vinod@ike~/test/driver/ $ sudo mv /lib/modules/2.6.35-30-generic/kernel/drivers/staging/rt2860/rt2860sta.ko backup/
 </code></pre></div><h3 id="step-5-install-and-activate-new-driver">Step 5: Install and activate new driver</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~/test/driver $ sudo make install
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vinod@ike:~/test/driver $ sudo make install
 vinod@ike:~/test/driver $ sudo depmod -a
 vinod@ike:~/test/driver $ sudo modprobe rt2860sta
 <span style="color:#586e75">```</span>
@@ -325,6 +325,12 @@ Reboot and you should have WPA-compatible, hibernatable wireless.
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -431,12 +437,6 @@ Reboot and you should have WPA-compatible, hibernatable wireless.
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -466,7 +466,7 @@ Reboot and you should have WPA-compatible, hibernatable wireless.
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

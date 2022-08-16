@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -159,12 +159,12 @@
           
           
           <p>I was looking at the <a href="http://www.tcl.tk/man/tcl8.4/TclCmd/split.htm">Tcl 8.4 man page for &lsquo;split&rsquo;</a> and saw this example code:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#586e75">## Split into fields on colons
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#586e75">## Split into fields on colons
 </span><span style="color:#586e75"></span><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
 <span style="color:#586e75">## Assign fields to variables and print some out...
 </span><span style="color:#586e75"></span><span style="color:#b58900">lassign</span> <span style="color:#268bd2">$fields</span> userName password uid grp longName homeDir shell
 </code></pre></div><p>It shows how to split a string using &lsquo;:&rsquo; as the delimiter. The interesting part is the &lsquo;lassign&rsquo; statement. I&rsquo;d never seen that before. I&rsquo;ve always done something annoying like this:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
 <span style="color:#719e07">set</span> userName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">0</span><span style="color:#719e07">]</span>
 <span style="color:#719e07">set</span> password <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">1</span><span style="color:#719e07">]</span>
 <span style="color:#719e07">set</span> uid <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">2</span><span style="color:#719e07">]</span>
@@ -294,6 +294,12 @@ code) for the moment.</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -400,12 +406,6 @@ code) for the moment.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -435,7 +435,7 @@ code) for the moment.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

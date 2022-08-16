@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -168,20 +168,20 @@ return the right values or achieve the correct side effects. The form that I was
 with today had a couple features. The first was that it provided some helper functions
 to the template so that the template could display the form properly. Those are in the
 GET mode. So I did something like:</p>
-<pre><code>user = create_my_special_user()
+<pre tabindex="0"><code>user = create_my_special_user()
 form = MyForm(user=user)
 self.assertTrue(form.is_user_special())
 </code></pre><p>And that worked as I expected. The second feature of my custom form was that it cleaned
 the data in a particular way. So I did:</p>
-<pre><code>form = MyForm(user=user)
+<pre tabindex="0"><code>form = MyForm(user=user)
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>Instead of passing, the test blew up:</p>
-<pre><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
+<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
 </code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
 (normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
 then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
-<pre><code>form = MyForm(user=user, data={})
+<pre tabindex="0"><code>form = MyForm(user=user, data={})
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
@@ -286,6 +286,12 @@ the form you are testing, GET or POST.</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
       
       
       
@@ -396,12 +402,6 @@ the form you are testing, GET or POST.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -431,7 +431,7 @@ the form you are testing, GET or POST.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -161,7 +161,7 @@
           <p>I wrote my first blog post in a little while (ok, ok&hellip; 18 months) yesterday and when I tried to
 generate the post, it failed. Silently failed, which is the worst kind of failure. I&rsquo;m still not
 sure why it was silent, but I eventually was able to force it to show me an error message:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
 </span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `</span>get_header<span style="color:#2aa198">&#39;
 </span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&#39;</span>
 	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>timeout<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">68</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`timeout&#39;
@@ -191,7 +191,7 @@ sure why it was silent, but I eventually was able to force it to show me an erro
 (pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
 Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
 default. No, I don&rsquo;t want to check how long ago that was.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
 <span style="color:#719e07">(</span>my_blog<span style="color:#719e07">)</span>$ bundle <span style="color:#b58900">exec</span> rake generate
 </code></pre></div><p>So now I&rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
 it&rsquo;s time to switch blog tools again&hellip;</p>
@@ -295,6 +295,12 @@ it&rsquo;s time to switch blog tools again&hellip;</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
       
       
       
@@ -405,12 +411,6 @@ it&rsquo;s time to switch blog tools again&hellip;</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -440,7 +440,7 @@ it&rsquo;s time to switch blog tools again&hellip;</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

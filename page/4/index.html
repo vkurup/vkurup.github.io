@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -138,6 +138,64 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jan 16, 2013
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2013/01/16/gtd-again/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/gtd/">gtd </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2013/01/16/gtd-again/">GTD again?</a>
+  </h1>
+</header>
+
+        
+          <p>Thanks to
+<a href="http://5by5.tv/b2w/95">Merlin Mann&rsquo;s recent series of podcasts on GTD</a>,
+I&rsquo;m getting back on the GTD wagon (for about the 100th time). I read
+<a href="http://www.davidco.com/">Getting Things Done</a> in 2002 and have been
+trying to implement it ever since. I&rsquo;ve had periods where I followed
+it religiously for a month at a time, but it&rsquo;s never completely stuck.
+From what I hear, this is normal and I accept it now. This won&rsquo;t be
+the last time that I restart GTD. Even when I&rsquo;m not actively using
+GTD, I think in GTD terms, thinking about next actions and projects
+and ruthlessly placing projects on the backburner. I just have trouble
+sticking with the entire GTD workflow, especially the ubiquitous
+capture (I trust my brain too much) and the weekly reviews (they just
+seem too painful). I&rsquo;ve used every online and offline tool in the
+book, too. Despite not doing so great with GTD, I&rsquo;d say my life is an
+overwhelming success.</p>
+<p>So why try again? Each time I have gotten back on the bandwagon, I&rsquo;ve
+had a surge in productivity. I wrote more. I made some clear decisions
+on issues that I had been procrastinating on. I wouldn&rsquo;t be surprised
+if each of my major life improvements over the past 10 years was
+associated with a time where I got back on the GTD wagon. I can&rsquo;t
+prove that, because I don&rsquo;t keep enough details, but I always feel
+better and think clearer when I&rsquo;m on GTD.</p>
+<p>But, I&rsquo;ve failed so many times&hellip; what kind of hubris makes me think
+I&rsquo;ll get it this time?
+<a href="http://www.quotationspage.com/quote/36285.html">&ldquo;Fall down seven times, get up eight.&quot;</a>
+Parenthood has taught this to me. Of course we don&rsquo;t expect our kids
+to learn each skill the first time they try. We expect that walking
+and reading and writing and bike-riding will take time, multiple
+efforts, and multiple failures. But eventually they will get it. Yet,
+with each failure, kids get upset (to varying degrees). The answer at
+that point is not to tell them to give up. Yet, that&rsquo;s what I do to
+myself. So, I&rsquo;m going to treat myself like a kid and let myself fail,
+understanding that each failure will get me closer to that one time
+where I will succeed.</p>
+
+        
+      </article>
       
       <article>
         
@@ -413,7 +471,7 @@ up, it&rsquo;s not straightforward. I recommend starting from scratch to
 make sure everything is set up properly. Once you have it working,
 then you can customize it. Make sure to start these commands in your
 home directory.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkdir old-emacs
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkdir old-emacs
 vinod:~$ mv .emacs .emacs.d old-emacs/
 </code></pre></div><h2 id="step-2-set-up-initial-emacs-configuration">Step 2: Set up initial Emacs configuration</h2>
 <p>Create an empty <code>.emacs.d</code> directory and a subdirectory named with your
@@ -421,7 +479,7 @@ username. My username is <code>vinod</code>, so we&rsquo;ll create a directory
 structure called <code>.emacs.d/vinod/</code>. The emacs-starter-kit tells emacs
 to automatically load any elisp files from that special directory, so
 you&rsquo;ll always have a place to drop custom elisp files.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkdir -p ~/.emacs.d/<span style="color:#268bd2">$USER</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkdir -p ~/.emacs.d/<span style="color:#268bd2">$USER</span>
 </code></pre></div><p>Create a file named <code>.emacs.d/init.el</code> with the following contents:</p>
 <script type="application/javascript" src="https://gist.github.com/vkurup/3948955.js"></script>
 
@@ -429,10 +487,10 @@ you&rsquo;ll always have a place to drop custom elisp files.</p>
 <p>We&rsquo;ll keep all the python-side customization in a virtualenv named
 <code>default</code>. It&rsquo;s important that the name you choose is the same as the
 name in the <code>(virtualenv-workon)</code> command in line 45 of Step 2.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkvirtualenv -p python2 default
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkvirtualenv -p python2 default
 </code></pre></div><p>After it does its thing, your shell prompt should change, indicating
 that your new virtualenv is activated</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$
 </code></pre></div><h2 id="step-4-install-pymacs">Step 4: Install Pymacs</h2>
 <p><a href="http://pymacs.progiciels-bpi.ca/index.html">Pymacs</a> is a really cool
 piece of software that sets up a 2 way communication between Emacs and
@@ -440,7 +498,7 @@ Python, allowing you to control Emacs with python commands rather than
 elisp commands. It requires a python piece (<code>Pymacs.py</code>) and an Emacs
 piece (<code>pymacs.el</code>). Unfortunately, they&rsquo;re not installable via <code>pip</code>
 or <code>package.el</code>, but installation is easy enough.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ mkdir src
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ mkdir src
 <span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~/src$ <span style="color:#b58900">cd</span> src
 <span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~/src$ git clone git://github.com/pinard/Pymacs.git
 <span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~/src$ <span style="color:#b58900">cd</span> Pymacs
@@ -455,17 +513,17 @@ or <code>package.el</code>, but installation is easy enough.</p>
 <span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ cp pymacs.el ~/.emacs.d/<span style="color:#268bd2">$USER</span>/
 </code></pre></div><h2 id="step-5-install-other-python-packages">Step 5: Install other python packages</h2>
 <p>These helper packages are easier to install:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ pip install pyflakes pep8
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ pip install pyflakes pep8
 </code></pre></div><p>The pyflakes and pep8 packages check your code as you type using
 Emacs' flymake mode. Now, deactivate your virtualenv.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ deactivate
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>default<span style="color:#719e07">)</span>vinod:~$ deactivate
 vinod:~$
 </code></pre></div><h2 id="step-6-install-pycheckers">Step 6: Install pycheckers</h2>
 <p>Flymake is the part of Emacs that checks your code for errors on the
 fly. It calls a shell script called <code>pycheckers</code>, so you need to have
 a script by that name in your shell&rsquo;s <code>PATH</code>. Here&rsquo;s mine
 (<code>~/bin/pycheckers</code>):</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#719e07">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span>
 pyflakes <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
 pep8 --repeat <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$1</span><span style="color:#2aa198">&#34;</span>
@@ -483,7 +541,7 @@ install the latest stable version (6.0.12). I&rsquo;ll update this post once
 a stable working version gets uploaded to
 <a href="http://marmalade-repo.org/">Marmalade</a> or
 <a href="http://melpa.milkbox.net/">Melpa</a>.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ <span style="color:#b58900">cd</span> ~/.emacs.d/<span style="color:#268bd2">$USER</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ <span style="color:#b58900">cd</span> ~/.emacs.d/<span style="color:#268bd2">$USER</span>
 vinod:~/.emacs.d/vinod$ curl -L https://launchpad.net/python-mode/trunk/6.0.12/+download/python-mode.el-6.0.12.tar.gz | tar xz
 </code></pre></div><h2 id="step-8-test-it-all-out">Step 8: Test it all out</h2>
 <p>Launch emacs and open a python file named <code>test.py</code>. Type the following:</p>
@@ -513,12 +571,12 @@ I&rsquo;ll see if I can help debug.</p>
 <p>Whenever you want to create a new Python project, you have do the
 following:</p>
 <h3 id="create-a-new-virtualenv">Create a new virtualenv</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkvirtualenv newproject
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vinod:~$ mkvirtualenv newproject
 </code></pre></div><h3 id="install-pymacs-into-that-virtualenv">Install pymacs into that virtualenv</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~$ <span style="color:#b58900">cd</span> ~/src/Pymacs
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~$ <span style="color:#b58900">cd</span> ~/src/Pymacs
 <span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ make install
 </code></pre></div><h3 id="install-the-other-pip-modules">Install the other pip modules</h3>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ pip install pyflakes pep8
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">(</span>newproject<span style="color:#719e07">)</span>vinod:~/src/Pymacs$ pip install pyflakes pep8
 </code></pre></div><h3 id="switch-to-that-virtualenv-in-emacs">Switch to that virtualenv in emacs</h3>
 <pre><code>M-x virtualenv-workon RET newproject/ RET
 </code></pre>
@@ -905,44 +963,6 @@ I highly recommend it.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Aug 19, 2012
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2012/08/19/facebook-is-killing-blogging/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/blog/">blog </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2012/08/19/facebook-is-killing-blogging/">Facebook is killing blogging</a>
-  </h1>
-</header>
-
-        
-          <p>Looks like August 18th was
-International-Prominent-Bloggers-Complain-About-Facebook-Killing-Blogging
-Day. I was just <a href="http://www.kurup.org/blog/2012/08/03/blogging-again/">two weeks too early</a>.</p>
-<ul>
-<li>Tim Bray: <a href="http://www.tbray.org/ongoing/When/201x/2012/08/18/Blogodammerung">Blogodammerung</a></li>
-<li>Scott Hanselman: <a href="http://www.hanselman.com/blog/YourWordsAreWasted.aspx">Your words are wasted</a></li>
-<li>Jon Udell: <a href="http://blog.jonudell.net/2012/08/10/where-have-all-the-bloggers-gone/">Where have all the bloggers gone?</a></li>
-</ul>
-<p>On a side note, I&rsquo;m really enjoying Scott Hanselman&rsquo;s podcast <a href="http://thisdeveloperslife.com/">This Developer&rsquo;s Life</a>. It&rsquo;s an homage to
-the awesome <a href="http://www.thisamericanlife.org">This American Life</a>, but
-focused on programming issues. They interview interesting programmers,
-but they carefully edit the interviews to focus on the parts that are
-the most interesting, interspersing them with music and effects. It&rsquo;s
-really well done.</p>
-
-        
-      </article>
-      
       
       
 
@@ -1097,6 +1117,12 @@ really well done.</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -1203,12 +1229,6 @@ really well done.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1237,7 +1257,7 @@ really well done.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

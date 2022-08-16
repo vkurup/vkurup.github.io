@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -138,6 +138,37 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Aug 16, 2022
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/travel/">travel </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+  </h1>
+</header>
+
+        
+          <p>Today, I have a guest post for you from a <a href="/blog/2019/04/08/avik-730/">very famous author</a>.</p>
+<h3 id="by-avik-kurup">By: Avik Kurup</h3>
+<p>If you&rsquo;re going to visit Italy, I believe that these three tips will make you have an amazing trip.</p>
+<p>First and foremost, visit Florence, Rome, Venice, and Cinque Terre. Florence has delicious food and the best gelato out of all of these places. Rome has the best pizza and the colosseum and the forum are important and fun sites to see. In Venice they have great pasta and seafood and a lot of places to ride on boats.</p>
+<p>Secondly, don’t use cars to get around the city. Cars are difficult to use because there are a lot of one way roads and confusing traffic lights. You will enjoy walking or going on a bike tour more. You can also use the train for longer distances.</p>
+<p>Lastly, you have to have pizza, pasta, and gelato every day. Pizza in Italy has a crunchier crust and they put a ton of cheese. When you order pasta the bowl is so big, but there is a small hole in the middle that is filled with pasta. It is way more than you think. I recommend the pasta bolognese. Italian gelato is fresh and inexpensive. You can get 2 flavors in a cup for $2.50!</p>
+<p>Clearly, Italy has fantastic sights to see and food to eat. If you follow these 3 tips you will have a great trip!</p>
+
+        
+      </article>
       
       <article>
         
@@ -365,7 +396,7 @@ been running and meditating and gardening, all with minimal success.</p>
 and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
 on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
 my code for Day 1:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
 </span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
 </span><span style="color:#2aa198">
 </span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
@@ -453,14 +484,14 @@ once and then not again until you really need to upgrade to a different Python v
 <p>Recently, though, I was working on a project that uses tox to make sure that the project
 runs on multiple Python versions, in this case 3.6, 3.7, 3.8, 3.9. The specific versions
 were included in the <code>.python-version</code> file, which looked like this:</p>
-<pre><code>3.9.0
+<pre tabindex="0"><code>3.9.0
 3.8.6
 3.7.9
 3.6.12
 </code></pre><p>I didn&rsquo;t have all of these installed, so rather than doing <code>pyenv install 3.9.0</code> and
 then waiting a few minutes, and then repeating the process for each version, I wrote up
 this little script, which I named <code>pyinstall.sh</code>:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
 </span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
 <span style="color:#b58900">set</span> -ex
 
@@ -495,7 +526,7 @@ version if it&rsquo;s not already installed</p>
 
         
           <p>Find disk space hogs:</p>
-<pre><code>sudo du -h -d 3 / | grep &quot;^[0-9.]*G&quot;
+<pre tabindex="0"><code>sudo du -h -d 3 / | grep &quot;^[0-9.]*G&quot;
 </code></pre><p>&hellip; which helped me find the command in
 <a href="/blog/2020/12/09/deleting-old-snaps/">yesterday&rsquo;s post</a>. You can add directories
 after the slash to drill down to your heart&rsquo;s content.</p>
@@ -524,7 +555,7 @@ after the slash to drill down to your heart&rsquo;s content.</p>
 
         
           <p>Copy this script into <code>~/bin/</code>:</p>
-<pre><code>#!/bin/bash
+<pre tabindex="0"><code>#!/bin/bash
 # Removes old revisions of snaps
 # CLOSE ALL SNAPS BEFORE RUNNING THIS
 set -ex
@@ -640,73 +671,25 @@ return the right values or achieve the correct side effects. The form that I was
 with today had a couple features. The first was that it provided some helper functions
 to the template so that the template could display the form properly. Those are in the
 GET mode. So I did something like:</p>
-<pre><code>user = create_my_special_user()
+<pre tabindex="0"><code>user = create_my_special_user()
 form = MyForm(user=user)
 self.assertTrue(form.is_user_special())
 </code></pre><p>And that worked as I expected. The second feature of my custom form was that it cleaned
 the data in a particular way. So I did:</p>
-<pre><code>form = MyForm(user=user)
+<pre tabindex="0"><code>form = MyForm(user=user)
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>Instead of passing, the test blew up:</p>
-<pre><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
+<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
 </code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
 (normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
 then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
-<pre><code>form = MyForm(user=user, data={})
+<pre tabindex="0"><code>form = MyForm(user=user, data={})
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
 the form you are testing, GET or POST.</p>
 
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 27, 2020
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/aws/">aws </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
-  </h1>
-</header>
-
-        
-          <p>These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
-Posting this mainly for my auxiliary brain.</p>
-<p>First, set up an IAM role that allows nodes to access xray.</p>
-<p>Following this blog post:
-<a href="https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/">https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/</a></p>
-<p>I cloned this repo:
-<a href="https://github.com/aws-samples/aws-xray-kubernetes">https://github.com/aws-samples/aws-xray-kubernetes</a></p>
-<p>Build the AWS Xray image:</p>
-<pre><code>cd xray-daemon/
-docker build -t xray-daemon:latest .
-</code></pre><p>THIS OUT OF DATE! try this: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image">https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image</a></p>
-<p>Create an AWS ECR repo:</p>
-<pre><code>aws ecr create-repository --repository-name xray-daemon
-</code></pre><p>Login via docker:</p>
-<pre><code>aws ecr get-login --no-include-email
-</code></pre><p>That command spits out a command which you can run that will log you into docker ^</p>
-<p>Tag and push the image there:</p>
-<pre><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
-docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
-</code></pre><p>You should now be able to see the image in the AWS ECR console</p>
-<p>Update <code>aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml</code>:</p>
-<p>Change the image value to the image you just pushed</p>
-<p>deploy it:</p>
-<pre><code>kubectl apply -f xray-k8s-daemonset.yaml
-</code></pre>
         
       </article>
       
@@ -861,6 +844,12 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -967,12 +956,6 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1001,7 +984,7 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -144,6 +144,76 @@
         
 
 <header>
+  <p class="meta">Sep 22, 2018
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2018/09/22/starting-a-garden/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/garden/">garden </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
+  </h1>
+</header>
+
+        
+          <p>I&rsquo;m going to be a gardener. Yup, just decided. Well, re-decided, I guess, since we already have a
+garden. It&rsquo;s a strip of dirt on the side of our house and we&rsquo;ve been trying to grow vegetables the
+past couple years. But it has some problems. It&rsquo;s way out of the way, so it&rsquo;s a pain to check on it
+(since I&rsquo;m lazy). The ground just underneath the topsoil is hard clay. It&rsquo;s shaded most of the day
+either by our house, or by the beautiful forest surrounding our house. And I haven&rsquo;t figured out a
+way to keep the deer from eating the few vegetables that we are able to grow in there. And even
+despite all those problems we&rsquo;ve been able to grow some zucchini, okra, tomatoes and basil, which
+has been super exciting, and makes us want more! Here&rsquo;s a photo of the harvest that greeted us when
+we returned from a week-long trip to visit my parents in Dallas this summer:</p>
+
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/august-harvest.jpg" title="August Harvest" alt="August Harvest">
+  <span class="caption-text">August Harvest</span>
+</span>
+
+<p>But, in general, things end up getting eaten by the deer or overrun by weeds, so we&rsquo;re trying a new
+approach now, based on the book, <a href="https://amzn.to/2NzBVSg">Square Foot Gardening</a>. Kavi and Anika
+helped me build this raised bed, which is itself a huge accomplishment given how not-handy I am.</p>
+
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/our-little-garden.jpg" title="Our Little Garden" alt="Our Little Garden">
+  <span class="caption-text">Our Little Garden</span>
+</span>
+
+<p>This was my first time using a drill since shop class in high school! We&rsquo;re going to try using a
+<a href="http://vomitingchicken.com/deer-fencing-cheap-and-easy-and-effective/">fishing line fence</a> to keep
+the deer away. I&rsquo;m not very optimistic about that, but fingers-crossed! We can also see the garden
+from our living room, so maybe I can just shoo them away any time they saunter by. The garden is
+looking quite pathetic because we bought some seedlings from the Carrboro Farmer&rsquo;s Market but then
+all our garden plans got sidetracked by Hurricane Florence (which fortunately treated us very
+kindly, all things considered). So, the seedlings wilted away in our screen porch before we finally
+got a chance to plant them this week. We&rsquo;re hoping there&rsquo;s still some life left in them. Anyway, our
+expectations are low, especially given how late in the summer we&rsquo;re starting, but it would be nice
+to get one head of lettuce or something to grow. I&rsquo;ll be sure to let you know!</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">May 31, 2018
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2018/05/31/history-of-indian-civilization/#disqus_thread">Comments</a>
@@ -216,7 +286,7 @@ than my laptop.</p>
 because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
 on a regular basis. These queries had been slow for days with no recent inserts or updates, so
 certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
   <span style="color:#719e07">count</span>
 <span style="color:#586e75">----------
 </span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
@@ -235,7 +305,7 @@ Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</s
 automatically doing this for us. (I mean it has the phrase &lsquo;auto&rsquo; in its name!!!)</p>
 <p>I&rsquo;ve found this great article on
 <a href="https://blog.2ndquadrant.com/autovacuum-tuning-basics/">autovacuum basics</a> which led me to do this query:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
        relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
 <span style="color:#586e75">---------------------+------------+------------+-------------------------------
 </span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
@@ -319,13 +389,13 @@ am TOTALLY watching that.</p>
           <p>Let&rsquo;s play &lsquo;Spot the bug&rsquo;. We&rsquo;re building a simple system that shows photos. Each photo has a
 <code>publish_date</code> and we should only show photos that have been published (i.e. their <code>publish_date</code> is
 in the past).</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#268bd2">None</span>):
-        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#268bd2">None</span>:
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
+    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
+        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
             as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
         <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
 </code></pre></div><p>And the view to show those photos:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
     queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
 </code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
 showed up on the site. Restarting the server fixed the problem temporarily. The newly published
@@ -336,7 +406,7 @@ display.</p>
 <code>QuerySet</code>, but it&rsquo;s a <code>QuerySet</code> with <code>as_of</code> set to <code>timezone.now()</code> <em>WHEN THE SERVER STARTS UP</em>. That
 <code>as_of</code> value never gets updated, so newer photos never get captured in the query.</p>
 <p>There&rsquo;s probably multiple ways to fix this, but an easy one is:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
     <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
         <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
 </code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
@@ -428,7 +498,7 @@ to read through this someday!</li>
           <p>I wrote my first blog post in a little while (ok, ok&hellip; 18 months) yesterday and when I tried to
 generate the post, it failed. Silently failed, which is the worst kind of failure. I&rsquo;m still not
 sure why it was silent, but I eventually was able to force it to show me an error message:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
 </span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `</span>get_header<span style="color:#2aa198">&#39;
 </span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&#39;</span>
 	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>timeout<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">68</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`timeout&#39;
@@ -458,7 +528,7 @@ sure why it was silent, but I eventually was able to force it to show me an erro
 (pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
 Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
 default. No, I don&rsquo;t want to check how long ago that was.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
 <span style="color:#719e07">(</span>my_blog<span style="color:#719e07">)</span>$ bundle <span style="color:#b58900">exec</span> rake generate
 </code></pre></div><p>So now I&rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
 it&rsquo;s time to switch blog tools again&hellip;</p>
@@ -495,7 +565,7 @@ that model in your <code>models.py</code> file, then Django will think that it i
 load it whenever you (or your users) call <code>syncdb</code>. That&rsquo;s bad.</p>
 <p>The <a href="https://code.djangoproject.com/ticket/7835#comment:24">solution</a> is to create it in a <code>tests.py</code>
 file within your Django app. If it&rsquo;s not in <code>models.py</code>, Django won&rsquo;t load it during <code>syncdb</code>.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
 <span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
 
 <span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
@@ -512,7 +582,7 @@ test files collected in a tests package. If you try to create a model in <code>t
 this approach fails because Django tries to create the model in an application named <code>tests</code>, but
 there is no such app in INSTALLED_APPS. The solution is to set <code>app_label</code> to the name of your app
 in an inner Meta class.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
 <span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
 
 <span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
@@ -745,64 +815,6 @@ thing done on each of those days.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 16, 2013
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2013/01/16/gtd-again/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/gtd/">gtd </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2013/01/16/gtd-again/">GTD again?</a>
-  </h1>
-</header>
-
-        
-          <p>Thanks to
-<a href="http://5by5.tv/b2w/95">Merlin Mann&rsquo;s recent series of podcasts on GTD</a>,
-I&rsquo;m getting back on the GTD wagon (for about the 100th time). I read
-<a href="http://www.davidco.com/">Getting Things Done</a> in 2002 and have been
-trying to implement it ever since. I&rsquo;ve had periods where I followed
-it religiously for a month at a time, but it&rsquo;s never completely stuck.
-From what I hear, this is normal and I accept it now. This won&rsquo;t be
-the last time that I restart GTD. Even when I&rsquo;m not actively using
-GTD, I think in GTD terms, thinking about next actions and projects
-and ruthlessly placing projects on the backburner. I just have trouble
-sticking with the entire GTD workflow, especially the ubiquitous
-capture (I trust my brain too much) and the weekly reviews (they just
-seem too painful). I&rsquo;ve used every online and offline tool in the
-book, too. Despite not doing so great with GTD, I&rsquo;d say my life is an
-overwhelming success.</p>
-<p>So why try again? Each time I have gotten back on the bandwagon, I&rsquo;ve
-had a surge in productivity. I wrote more. I made some clear decisions
-on issues that I had been procrastinating on. I wouldn&rsquo;t be surprised
-if each of my major life improvements over the past 10 years was
-associated with a time where I got back on the GTD wagon. I can&rsquo;t
-prove that, because I don&rsquo;t keep enough details, but I always feel
-better and think clearer when I&rsquo;m on GTD.</p>
-<p>But, I&rsquo;ve failed so many times&hellip; what kind of hubris makes me think
-I&rsquo;ll get it this time?
-<a href="http://www.quotationspage.com/quote/36285.html">&ldquo;Fall down seven times, get up eight.&quot;</a>
-Parenthood has taught this to me. Of course we don&rsquo;t expect our kids
-to learn each skill the first time they try. We expect that walking
-and reading and writing and bike-riding will take time, multiple
-efforts, and multiple failures. But eventually they will get it. Yet,
-with each failure, kids get upset (to varying degrees). The answer at
-that point is not to tell them to give up. Yet, that&rsquo;s what I do to
-myself. So, I&rsquo;m going to treat myself like a kid and let myself fail,
-understanding that each failure will get me closer to that one time
-where I will succeed.</p>
-
-        
-      </article>
-      
       
       
 
@@ -957,6 +969,12 @@ where I will succeed.</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -1063,12 +1081,6 @@ where I will succeed.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1097,7 +1109,7 @@ where I will succeed.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

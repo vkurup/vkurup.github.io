@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -168,7 +168,7 @@ Java. He used this simple problem as an example:</p>
 in LOCs, but in the overall simplicity of dealing with collections of
 data. Still, I wanted to see how Tcl would deal with the same
 problem. Here&rsquo;s the simplest version I could come up with:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> f <span style="color:#719e07">[</span><span style="color:#b58900">open</span> <span style="color:#719e07">/</span>usr<span style="color:#719e07">/</span>share<span style="color:#719e07">/</span>dict<span style="color:#719e07">/</span>words r<span style="color:#719e07">]</span>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> f <span style="color:#719e07">[</span><span style="color:#b58900">open</span> <span style="color:#719e07">/</span>usr<span style="color:#719e07">/</span>share<span style="color:#719e07">/</span>dict<span style="color:#719e07">/</span>words r<span style="color:#719e07">]</span>
 <span style="color:#719e07">set</span> words <span style="color:#719e07">[</span><span style="color:#b58900">read</span> <span style="color:#719e07">-</span>nonewline <span style="color:#268bd2">$f</span><span style="color:#719e07">]</span>
 <span style="color:#b58900">close</span> <span style="color:#268bd2">$f</span>
 <span style="color:#719e07">set</span> qwords <span style="color:#719e07">[</span><span style="color:#b58900">lsearch</span> <span style="color:#719e07">-</span>all <span style="color:#719e07">-</span>inline <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$words</span> \n<span style="color:#719e07">]</span> <span style="color:#719e07">{[</span><span style="color:#268bd2">Qq</span><span style="color:#719e07">]</span><span style="color:#719e07">*</span><span style="color:#719e07">}]</span>
@@ -321,6 +321,12 @@ improved?</p>
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -427,12 +433,6 @@ improved?</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -462,7 +462,7 @@ improved?</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

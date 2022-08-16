@@ -8,10 +8,26 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 26 Dec 2021 08:36:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Aug 2022 18:36:00 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Three tips on visiting Italy!</title>
+      <link>https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/</link>
+      <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/</guid>
+      <description>&lt;p&gt;Today, I have a guest post for you from a &lt;a href=&#34;https://vkurup.github.io/blog/2019/04/08/avik-730/&#34;&gt;very famous author&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;by-avik-kurup&#34;&gt;By: Avik Kurup&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re going to visit Italy, I believe that these three tips will make you have an amazing trip.&lt;/p&gt;
+&lt;p&gt;First and foremost, visit Florence, Rome, Venice, and Cinque Terre. Florence has delicious food and the best gelato out of all of these places. Rome has the best pizza and the colosseum and the forum are important and fun sites to see. In Venice they have great pasta and seafood and a lot of places to ride on boats.&lt;/p&gt;
+&lt;p&gt;Secondly, don’t use cars to get around the city. Cars are difficult to use because there are a lot of one way roads and confusing traffic lights. You will enjoy walking or going on a bike tour more. You can also use the train for longer distances.&lt;/p&gt;
+&lt;p&gt;Lastly, you have to have pizza, pasta, and gelato every day. Pizza in Italy has a crunchier crust and they put a ton of cheese. When you order pasta the bowl is so big, but there is a small hole in the middle that is filled with pasta. It is way more than you think. I recommend the pasta bolognese. Italian gelato is fresh and inexpensive. You can get 2 flavors in a cup for $2.50!&lt;/p&gt;
+&lt;p&gt;Clearly, Italy has fantastic sights to see and food to eat. If you follow these 3 tips you will have a great trip!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>USB-C lint</title>
@@ -180,7 +196,7 @@ been running and meditating and gardening, all with minimal success.&lt;/p&gt;
 and so I&amp;rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
 on it. There are 2 puzzles each day (&lt;code&gt;day_1_0&lt;/code&gt; and &lt;code&gt;day_1_1&lt;/code&gt; are my solutions). Here&amp;rsquo;s
 my code for Day 1:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-elixir&#34; data-lang=&#34;elixir&#34;&gt;  @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-elixir&#34; data-lang=&#34;elixir&#34;&gt;  @doc &lt;span style=&#34;color:#2aa198&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;  Find 2 numbers in file that sum to 2020 and return their product.
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#2aa198&#34;&gt;      iex&amp;gt; Aoc.day_1_0()
@@ -253,14 +269,14 @@ once and then not again until you really need to upgrade to a different Python v
 &lt;p&gt;Recently, though, I was working on a project that uses tox to make sure that the project
 runs on multiple Python versions, in this case 3.6, 3.7, 3.8, 3.9. The specific versions
 were included in the &lt;code&gt;.python-version&lt;/code&gt; file, which looked like this:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;3.9.0
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;3.9.0
 3.8.6
 3.7.9
 3.6.12
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I didn&amp;rsquo;t have all of these installed, so rather than doing &lt;code&gt;pyenv install 3.9.0&lt;/code&gt; and
 then waiting a few minutes, and then repeating the process for each version, I wrote up
 this little script, which I named &lt;code&gt;pyinstall.sh&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;#!/bin/bash
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#719e07&#34;&gt;#!/bin/bash
 &lt;/span&gt;&lt;span style=&#34;color:#719e07&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#586e75&#34;&gt;# Install all versions specified in .python-version&lt;/span&gt;
 &lt;span style=&#34;color:#b58900&#34;&gt;set&lt;/span&gt; -ex
 
@@ -280,7 +296,7 @@ version if it&amp;rsquo;s not already installed&lt;/p&gt;
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/</guid>
       <description>&lt;p&gt;Find disk space hogs:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo du -h -d 3 / | grep &amp;quot;^[0-9.]*G&amp;quot;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo du -h -d 3 / | grep &amp;quot;^[0-9.]*G&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; which helped me find the command in
 &lt;a href=&#34;https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/&#34;&gt;yesterday&amp;rsquo;s post&lt;/a&gt;. You can add directories
 after the slash to drill down to your heart&amp;rsquo;s content.&lt;/p&gt;
@@ -294,7 +310,7 @@ after the slash to drill down to your heart&amp;rsquo;s content.&lt;/p&gt;
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</guid>
       <description>&lt;p&gt;Copy this script into &lt;code&gt;~/bin/&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
 # Removes old revisions of snaps
 # CLOSE ALL SNAPS BEFORE RUNNING THIS
 set -ex
@@ -380,20 +396,20 @@ return the right values or achieve the correct side effects. The form that I was
 with today had a couple features. The first was that it provided some helper functions
 to the template so that the template could display the form properly. Those are in the
 GET mode. So I did something like:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;user = create_my_special_user()
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;user = create_my_special_user()
 form = MyForm(user=user)
 self.assertTrue(form.is_user_special())
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And that worked as I expected. The second feature of my custom form was that it cleaned
 the data in a particular way. So I did:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;form = MyForm(user=user)
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;form = MyForm(user=user)
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Instead of passing, the test blew up:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;AttributeError: &#39;MyForm&#39; object has no attribute &#39;cleaned_data&#39;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;AttributeError: &#39;MyForm&#39; object has no attribute &#39;cleaned_data&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Why? Because the &lt;code&gt;clean()&lt;/code&gt; method is called when you provide it with POST data
 (normally&amp;hellip; there are also other ways to populate forms). If you don&amp;rsquo;t supply it data,
 then &lt;code&gt;cleaned_data&lt;/code&gt; doesn&amp;rsquo;t get populated. The answer is to provide data to the form:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;form = MyForm(user=user, data={})
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;form = MyForm(user=user, data={})
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And that works as expected. The reminder to myself is to always identify which mode of
@@ -415,22 +431,22 @@ Posting this mainly for my auxiliary brain.&lt;/p&gt;
 &lt;p&gt;I cloned this repo:
 &lt;a href=&#34;https://github.com/aws-samples/aws-xray-kubernetes&#34;&gt;https://github.com/aws-samples/aws-xray-kubernetes&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Build the AWS Xray image:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd xray-daemon/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cd xray-daemon/
 docker build -t xray-daemon:latest .
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;THIS OUT OF DATE! try this: &lt;a href=&#34;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image&#34;&gt;https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Create an AWS ECR repo:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;aws ecr create-repository --repository-name xray-daemon
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;aws ecr create-repository --repository-name xray-daemon
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Login via docker:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;aws ecr get-login --no-include-email
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;aws ecr get-login --no-include-email
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That command spits out a command which you can run that will log you into docker ^&lt;/p&gt;
 &lt;p&gt;Tag and push the image there:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should now be able to see the image in the AWS ECR console&lt;/p&gt;
 &lt;p&gt;Update &lt;code&gt;aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml&lt;/code&gt;:&lt;/p&gt;
 &lt;p&gt;Change the image value to the image you just pushed&lt;/p&gt;
 &lt;p&gt;deploy it:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;kubectl apply -f xray-k8s-daemonset.yaml
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl apply -f xray-k8s-daemonset.yaml
 &lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
@@ -565,7 +581,7 @@ to also add &lt;code&gt;--baseURL&lt;/code&gt; and &lt;code&gt;--appendPort=fals
       <guid>https://vkurup.github.io/blog/2019/11/17/hugo/</guid>
       <description>&lt;p&gt;I moved my blog from Octopress to &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; today. I had been &lt;a href=&#34;https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/&#34;&gt;slightly unhappy with Octopress for a while now&lt;/a&gt;, but
 mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vkurup@caktus020:~/dev/kurup.org&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;master&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; $ hugo
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vkurup@caktus020:~/dev/kurup.org&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;master&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; $ hugo
 
                    | EN   
 +------------------+-----+
@@ -768,31 +784,6 @@ I flipped the circuit breaker and put the pull-in switch back in. The first enco
 that the red LED light on the electrical panel turned on. I went inside and, joy of joys, the Nest
 was booting up and showed 35V via the R wire. So, I guess the bottom line is that I need to be more
 careful when I&amp;rsquo;m at the circuit breaker box.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Composting</title>
-      <link>https://vkurup.github.io/blog/2018/09/23/composting/</link>
-      <pubDate>Sun, 23 Sep 2018 20:50:53 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2018/09/23/composting/</guid>
-      <description>&lt;p&gt;Guess what, we&amp;rsquo;re composting now! I told you was
-&lt;a href=&#34;https://vkurup.github.io/blog/2018/09/22/starting-a-garden&#34;&gt;going to be a gardener&lt;/a&gt;, so now you know I&amp;rsquo;m serious. For oh so many years,
-every Friday, we&amp;rsquo;d haul the garbage and recycling out and I&amp;rsquo;d think to myself, &amp;ldquo;Wow, we&amp;rsquo;d have like no
-garbage at all if we were composting.&amp;rdquo; It&amp;rsquo;s only taken a few years of thinking that, week in and
-week out, to get me to try. Actually, that&amp;rsquo;s not even true. It was still way down on my future to-do
-list until I got a cheap copy of
-&lt;a href=&#34;https://amzn.to/2xyqbWb&#34;&gt;&amp;ldquo;The Complete Idiot&amp;rsquo;s Guide to Composting&amp;rdquo;&lt;/a&gt;. Thank you, &lt;a href=&#34;https://www.bookbub.com/welcome&#34;&gt;BookBub&lt;/a&gt;! (As if
-I needed any other incentive to buy and read more books). But honestly, the book was excellent in
-that it made me think that yes, even I could compost. So shortly after finishing it, I headed down
-to the Orange County Solid Waste Center and purchased an
-&lt;a href=&#34;https://www.earthmachine.com/contact.php&#34;&gt;Earth Machine compost bin&lt;/a&gt; for fifty bucks, and made the kids set it up near the
-screen porch. We&amp;rsquo;ve been throwing all our copious kitchen scraps for the past 2 weeks. So far, all
-that has happened is that a bunch of fruit flies think we&amp;rsquo;re awesome neighbors and seem to have
-moved in for the long haul. But I&amp;rsquo;m hoping that some composting starts happening soon. It&amp;rsquo;s supposed
-to be easy as pie, but I&amp;rsquo;m secretly worried that I&amp;rsquo;m missing something, oh, like maybe skills or
-talent. But our garbage bin sure is lighter!&lt;/p&gt;
 </description>
     </item>
     

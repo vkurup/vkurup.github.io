@@ -8,7 +8,25 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 26 Dec 2021 08:36:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Aug 2022 18:36:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>family</title>
+      <link>https://vkurup.github.io/categories/family/</link>
+      <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/family/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travel</title>
+      <link>https://vkurup.github.io/categories/travel/</link>
+      <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/categories/travel/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tech support</title>
       <link>https://vkurup.github.io/categories/tech-support/</link>
@@ -141,15 +159,6 @@
       <pubDate>Wed, 11 Dec 2019 20:00:44 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/book-review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>family</title>
-      <link>https://vkurup.github.io/categories/family/</link>
-      <pubDate>Sun, 17 Nov 2019 18:48:24 -0500</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/family/</guid>
       <description></description>
     </item>
     
@@ -456,15 +465,6 @@
       <pubDate>Thu, 30 Jun 2011 11:50:22 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://vkurup.github.io/categories/boston/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://vkurup.github.io/categories/travel/</link>
-      <pubDate>Thu, 30 Jun 2011 11:50:22 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/categories/travel/</guid>
       <description></description>
     </item>
     

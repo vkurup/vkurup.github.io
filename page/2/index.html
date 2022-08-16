@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -138,6 +138,54 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jan 27, 2020
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/aws/">aws </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
+  </h1>
+</header>
+
+        
+          <p>These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
+Posting this mainly for my auxiliary brain.</p>
+<p>First, set up an IAM role that allows nodes to access xray.</p>
+<p>Following this blog post:
+<a href="https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/">https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/</a></p>
+<p>I cloned this repo:
+<a href="https://github.com/aws-samples/aws-xray-kubernetes">https://github.com/aws-samples/aws-xray-kubernetes</a></p>
+<p>Build the AWS Xray image:</p>
+<pre tabindex="0"><code>cd xray-daemon/
+docker build -t xray-daemon:latest .
+</code></pre><p>THIS OUT OF DATE! try this: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image">https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image</a></p>
+<p>Create an AWS ECR repo:</p>
+<pre tabindex="0"><code>aws ecr create-repository --repository-name xray-daemon
+</code></pre><p>Login via docker:</p>
+<pre tabindex="0"><code>aws ecr get-login --no-include-email
+</code></pre><p>That command spits out a command which you can run that will log you into docker ^</p>
+<p>Tag and push the image there:</p>
+<pre tabindex="0"><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+</code></pre><p>You should now be able to see the image in the AWS ECR console</p>
+<p>Update <code>aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml</code>:</p>
+<p>Change the image value to the image you just pushed</p>
+<p>deploy it:</p>
+<pre tabindex="0"><code>kubectl apply -f xray-k8s-daemonset.yaml
+</code></pre>
+        
+      </article>
       
       <article>
         
@@ -344,7 +392,7 @@ to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, w
         
           <p>I moved my blog from Octopress to <a href="https://gohugo.io/">Hugo</a> today. I had been <a href="https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/">slightly unhappy with Octopress for a while now</a>, but
 mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vkurup@caktus020:~/dev/kurup.org<span style="color:#719e07">(</span>master<span style="color:#719e07">)</span> $ hugo
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vkurup@caktus020:~/dev/kurup.org<span style="color:#719e07">(</span>master<span style="color:#719e07">)</span> $ hugo
 
                    | EN   
 +------------------+-----+
@@ -598,76 +646,6 @@ talent. But our garbage bin sure is lighter!</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Sep 22, 2018
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2018/09/22/starting-a-garden/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/garden/">garden </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2018/09/22/starting-a-garden/">Starting a garden</a>
-  </h1>
-</header>
-
-        
-          <p>I&rsquo;m going to be a gardener. Yup, just decided. Well, re-decided, I guess, since we already have a
-garden. It&rsquo;s a strip of dirt on the side of our house and we&rsquo;ve been trying to grow vegetables the
-past couple years. But it has some problems. It&rsquo;s way out of the way, so it&rsquo;s a pain to check on it
-(since I&rsquo;m lazy). The ground just underneath the topsoil is hard clay. It&rsquo;s shaded most of the day
-either by our house, or by the beautiful forest surrounding our house. And I haven&rsquo;t figured out a
-way to keep the deer from eating the few vegetables that we are able to grow in there. And even
-despite all those problems we&rsquo;ve been able to grow some zucchini, okra, tomatoes and basil, which
-has been super exciting, and makes us want more! Here&rsquo;s a photo of the harvest that greeted us when
-we returned from a week-long trip to visit my parents in Dallas this summer:</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/august-harvest.jpg" title="August Harvest" alt="August Harvest">
-  <span class="caption-text">August Harvest</span>
-</span>
-
-<p>But, in general, things end up getting eaten by the deer or overrun by weeds, so we&rsquo;re trying a new
-approach now, based on the book, <a href="https://amzn.to/2NzBVSg">Square Foot Gardening</a>. Kavi and Anika
-helped me build this raised bed, which is itself a huge accomplishment given how not-handy I am.</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/our-little-garden.jpg" title="Our Little Garden" alt="Our Little Garden">
-  <span class="caption-text">Our Little Garden</span>
-</span>
-
-<p>This was my first time using a drill since shop class in high school! We&rsquo;re going to try using a
-<a href="http://vomitingchicken.com/deer-fencing-cheap-and-easy-and-effective/">fishing line fence</a> to keep
-the deer away. I&rsquo;m not very optimistic about that, but fingers-crossed! We can also see the garden
-from our living room, so maybe I can just shoo them away any time they saunter by. The garden is
-looking quite pathetic because we bought some seedlings from the Carrboro Farmer&rsquo;s Market but then
-all our garden plans got sidetracked by Hurricane Florence (which fortunately treated us very
-kindly, all things considered). So, the seedlings wilted away in our screen porch before we finally
-got a chance to plant them this week. We&rsquo;re hoping there&rsquo;s still some life left in them. Anyway, our
-expectations are low, especially given how late in the summer we&rsquo;re starting, but it would be nice
-to get one head of lettuce or something to grow. I&rsquo;ll be sure to let you know!</p>
-
-        
-      </article>
-      
       
       
 
@@ -822,6 +800,12 @@ to get one head of lettuce or something to grow. I&rsquo;ll be sure to let you k
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -928,12 +912,6 @@ to get one head of lettuce or something to grow. I&rsquo;ll be sure to let you k
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -962,7 +940,7 @@ to get one head of lettuce or something to grow. I&rsquo;ll be sure to let you k
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -166,22 +166,22 @@ Posting this mainly for my auxiliary brain.</p>
 <p>I cloned this repo:
 <a href="https://github.com/aws-samples/aws-xray-kubernetes">https://github.com/aws-samples/aws-xray-kubernetes</a></p>
 <p>Build the AWS Xray image:</p>
-<pre><code>cd xray-daemon/
+<pre tabindex="0"><code>cd xray-daemon/
 docker build -t xray-daemon:latest .
 </code></pre><p>THIS OUT OF DATE! try this: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image">https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image</a></p>
 <p>Create an AWS ECR repo:</p>
-<pre><code>aws ecr create-repository --repository-name xray-daemon
+<pre tabindex="0"><code>aws ecr create-repository --repository-name xray-daemon
 </code></pre><p>Login via docker:</p>
-<pre><code>aws ecr get-login --no-include-email
+<pre tabindex="0"><code>aws ecr get-login --no-include-email
 </code></pre><p>That command spits out a command which you can run that will log you into docker ^</p>
 <p>Tag and push the image there:</p>
-<pre><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
+<pre tabindex="0"><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 </code></pre><p>You should now be able to see the image in the AWS ECR console</p>
 <p>Update <code>aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml</code>:</p>
 <p>Change the image value to the image you just pushed</p>
 <p>deploy it:</p>
-<pre><code>kubectl apply -f xray-k8s-daemonset.yaml
+<pre tabindex="0"><code>kubectl apply -f xray-k8s-daemonset.yaml
 </code></pre>
         </div>
         
@@ -282,6 +282,12 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
       
       
       
@@ -392,12 +398,6 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -427,7 +427,7 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

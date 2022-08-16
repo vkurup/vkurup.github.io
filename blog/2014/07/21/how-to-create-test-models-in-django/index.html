@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
 
     
     
@@ -167,7 +167,7 @@ that model in your <code>models.py</code> file, then Django will think that it i
 load it whenever you (or your users) call <code>syncdb</code>. That&rsquo;s bad.</p>
 <p>The <a href="https://code.djangoproject.com/ticket/7835#comment:24">solution</a> is to create it in a <code>tests.py</code>
 file within your Django app. If it&rsquo;s not in <code>models.py</code>, Django won&rsquo;t load it during <code>syncdb</code>.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
 <span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
 
 <span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
@@ -184,7 +184,7 @@ test files collected in a tests package. If you try to create a model in <code>t
 this approach fails because Django tries to create the model in an application named <code>tests</code>, but
 there is no such app in INSTALLED_APPS. The solution is to set <code>app_label</code> to the name of your app
 in an inner Meta class.</p>
-<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
 <span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
 
 <span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
@@ -306,6 +306,12 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
       
       
       <li class="post">
+        <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2021/12/26/usb-c-lint/">USB-C lint</a>
       </li>
       
@@ -412,12 +418,6 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/09/23/composting/">Composting</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -447,7 +447,7 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2021 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>
