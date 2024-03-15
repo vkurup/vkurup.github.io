@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 16 Aug 2022 18:36:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2024 20:51:00 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The key to happiness is to do things that don&#39;t make you happy</title>
+      <link>https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</link>
+      <pubDate>Thu, 14 Mar 2024 20:51:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m not sure that title is an exact quote, but I thought I heard &lt;a href=&#34;https://peterattiamd.com/arthurbrooks2/&#34;&gt;Arthur Brooks say something like that as he was interviewed on a Peter Attia podcast&lt;/a&gt;. At least that&amp;rsquo;s what I took from whatever he said. His point was that the common advice to &amp;ldquo;follow your bliss&amp;rdquo; is misguided. When faced with choices, you shouldn&amp;rsquo;t choose the easy thing, you should choose the hard thing. I&amp;rsquo;m not sure that any of this is revolutionary, but that title sure is kinda surprising to me, and I think it makes a lot of sense.&lt;/p&gt;
+&lt;p&gt;What would have made me happy this evening? Certainly way low on that list is writing this blog post. As you can tell if you follow my blogging (ha!), I clearly don&amp;rsquo;t like to write in public. The easy thing, the thing that my brain was telling me to do because it promised me happiness, was to sit down and scroll through my phone, or pick up my Kindle and read a novel, or basically do anything that was not me trying to &lt;strong&gt;create&lt;/strong&gt; something. The hard thing, the thing I knew would be painful, was to scribble down this post because I know it will never be as good as the post that is in my brain. Taking this idea in my brain, which is perfect because nobody else can see it, and trying to put it on the page here&amp;hellip; well that is scary and painful and I know people will wonder why I&amp;rsquo;d even think this was worth thinking, let alone sharing with the world. But in the long run, doing this activity of taking ideas in my brain, and working with them on the page, especially in public is clearly going to be better for me than leaving them in my brain. It will lead to me being a happier person.&lt;/p&gt;
+&lt;p&gt;Doing the thing that won&amp;rsquo;t make me happy is the key to happiness.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Three tips on visiting Italy!</title>
@@ -720,70 +732,6 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
   &lt;span class=&#34;caption-text&#34;&gt;Oak City Mile 2018&lt;/span&gt;
 &lt;/span&gt;
 
-</description>
-    </item>
-    
-    <item>
-      <title>My Nest Journey</title>
-      <link>https://vkurup.github.io/blog/2018/12/02/my-nest-journey/</link>
-      <pubDate>Sun, 02 Dec 2018 23:33:53 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2018/12/02/my-nest-journey/</guid>
-      <description>&lt;p&gt;I got 2 &lt;a href=&#34;https://amzn.to/2zE10T1&#34;&gt;Nest E thermostats&lt;/a&gt; because Duke Energy was having a sale around
-Black Friday. I didn&amp;rsquo;t have any strong motivation to have a Nest. The idea of a smart home is cool,
-but most &amp;lsquo;smart&amp;rsquo; things nowadays have ended up being more work than benefit. Anyway, for $75 each, I
-thought it was worth a try. We have 2 thermostats so I decided to install the upstairs thermostat
-first. The process started off smooth and easy. I like that they provide a back plate, which I
-didn&amp;rsquo;t even notice until my trusty assistant, Kavi, pointed it out. My existing Honeywell thermostat
-is rectangular and if I just put the small circular Nest in its place, there would be a big chunk of
-unpainted real estate on the wall. Having the back plate prevented this from being a &amp;lsquo;replace
-thermostat, and learn how to patch and paint the wall&amp;rsquo; project. The online
-&lt;a href=&#34;https://nest.com/support/article/How-to-tell-if-your-heating-and-cooling-system-will-work-with-the-Nest-Thermostat#works/?mode=guide&#34;&gt;Nest compatibility checker&lt;/a&gt;
-and the paper instruction manual (which includes stickers to label the existing wires) are also nice
-touches. That all gave me the (misguided?) confidence that even I could do this. A study confidence
-which lasted until I flipped the circuit breaker back on and &amp;hellip;. nothing happened. According to the
-manual, the Nest was supposed to turn on, say Hi, and then walk me through the set up process. But
-it remained dead as a doorknob. I pulled it off the wall and plugged it in via USB (a nice
-troubleshooting feauture). It turned on and then when I placed it back on the wall, it complained
-that it was not getting enough power from the R wire. The error code was E195. When I looked at the
-&amp;lsquo;Technical Info&amp;rsquo;, it reported that the R wire was only providing 2-3 volts, while it needed 24. I
-chatted up Nest support, which took about 30 minutes to connect on a Friday night. The
-representative was responsive and useful. They eventually recommended trying to disconnect the C
-(common) wire. For a reason I still can&amp;rsquo;t explain, this brought the voltage on the R wire from 2-3
-volts up to 35 volts, and my Nest was working.&lt;/p&gt;
-&lt;p&gt;Having tasted the sweet nectar of success, I then tried to swap my second Nest in for my downstairs
-thermostat. I made a huge mistake here. It had been easy to identify the circuit breaker for my
-upstairs furnance because it was labelled, &amp;ldquo;Up Furnace&amp;rdquo;. But there was nothing labelling the
-downstairs furnace. I switched off the circuit breaker that I thought was responsible for the
-downstairs HVAC, but in hindsight, I think I got the wrong one (and since it was warm out and the
-heater wasn&amp;rsquo;t running, I didn&amp;rsquo;t notice because nothing was running in the first place). Anyway, I
-walked through the rest of the instructions and again got to the point where the Nest was supposed
-to power on, but it didn&amp;rsquo;t. So I powered it on via USB and placed it back on the wall.
-Unfortunately, this time I was getting only 0.01 volts from the R line. Still, I was hoping that the
-&amp;lsquo;disconnect the C wire&amp;rsquo; trick would work again. Unfortunately, disconnecting the C wire did nothing.
-I walked through things with Customer Service chat. Again, they were helpful (rather than just
-spouting cookbook-type basic info), but in the end, they didn&amp;rsquo;t have a recommendation that would fix
-things. They suggested that I get a voltmeter and test the voltage output at the various wires. I do
-not have a voltmeter and felt that I was getting in over my head, so instead I put in some calls to
-HVAC service companies, but since it was the weekend and this wasn&amp;rsquo;t urgent, I was resigned to
-having no heat over the weekend. I watched a few Youtube videos of HVAC repairs, some of which were
-quite entertaining. Eventually, I tried to reconnect my old Honeywell thermostat and was surprised
-and intrigued when this ALSO failed. It made me think that I messed something up somehow. The only
-thing I could think of was that since I hit the wrong circuit breaker, there was live current in the
-wires. While moving them from the Honeywell to the Nest, perhaps I touched 2 wires together causing
-the system to short circuit. I don&amp;rsquo;t remember noticing a spark or anything, but that was my best
-guess. I eventually watched enough videos to give myself confidence that I could open up the HVAC
-and find the electrical panel. I did that successfully (after turning off the CORRECT circuit
-breaker, and also pulling out the pull out switch next to the furnace). After cleaning out a ton of
-cobwebs, I found the LED light on the electrical panel was off (even after connecting the circuits
-temporarily). I searched the panel and found a 3-amp E fuse (like the kind I&amp;rsquo;ve seen in automobile
-fuseboxes). I pulled it out and sure enough, it was blown. It looked like the &amp;lsquo;bad fuse&amp;rsquo; in this
-&lt;a href=&#34;https://www.yourmechanic.com/article/how-to-check-fuses-by-rocco-lovetere&#34;&gt;photo&lt;/a&gt;. Off to Home
-Depot, I purchased 2 replacements for 3 dollars, and then replaced the busted fuse with the new one.
-I flipped the circuit breaker and put the pull-in switch back in. The first encouraging sign was
-that the red LED light on the electrical panel turned on. I went inside and, joy of joys, the Nest
-was booting up and showed 35V via the R wire. So, I guess the bottom line is that I need to be more
-careful when I&amp;rsquo;m at the circuit breaker box.&lt;/p&gt;
 </description>
     </item>
     

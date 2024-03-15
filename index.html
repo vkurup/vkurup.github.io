@@ -144,6 +144,33 @@
         
 
 <header>
+  <p class="meta">Mar 14, 2024
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/happiness/">happiness </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+  </h1>
+</header>
+
+        
+          <p>I&rsquo;m not sure that title is an exact quote, but I thought I heard <a href="https://peterattiamd.com/arthurbrooks2/">Arthur Brooks say something like that as he was interviewed on a Peter Attia podcast</a>. At least that&rsquo;s what I took from whatever he said. His point was that the common advice to &ldquo;follow your bliss&rdquo; is misguided. When faced with choices, you shouldn&rsquo;t choose the easy thing, you should choose the hard thing. I&rsquo;m not sure that any of this is revolutionary, but that title sure is kinda surprising to me, and I think it makes a lot of sense.</p>
+<p>What would have made me happy this evening? Certainly way low on that list is writing this blog post. As you can tell if you follow my blogging (ha!), I clearly don&rsquo;t like to write in public. The easy thing, the thing that my brain was telling me to do because it promised me happiness, was to sit down and scroll through my phone, or pick up my Kindle and read a novel, or basically do anything that was not me trying to <strong>create</strong> something. The hard thing, the thing I knew would be painful, was to scribble down this post because I know it will never be as good as the post that is in my brain. Taking this idea in my brain, which is perfect because nobody else can see it, and trying to put it on the page here&hellip; well that is scary and painful and I know people will wonder why I&rsquo;d even think this was worth thinking, let alone sharing with the world. But in the long run, doing this activity of taking ideas in my brain, and working with them on the page, especially in public is clearly going to be better for me than leaving them in my brain. It will lead to me being a happier person.</p>
+<p>Doing the thing that won&rsquo;t make me happy is the key to happiness.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 16, 2022
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/#disqus_thread">Comments</a>
@@ -641,58 +668,6 @@ isn&rsquo;t for you. You&rsquo;ll need the OBI202 (which was out of stock when I
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Aug 17, 2020
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/django/">django </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
-  </h1>
-</header>
-
-        
-          <p>I worked on adding tests to some Django forms today and I was reminded that Django forms
-operate in two <em>modes</em>. I think of them as the GET mode and the POST mode. The GET mode
-displays the form and the POST mode processes the data that you supply to the form. I
-don&rsquo;t know why, but I often forget that. Instead, I sometimes treat them as a normal
-Python class, especially when I&rsquo;m creating automated tests for them. I instantiate
-the class (<code>form = MyForm()</code>) and then just call any of its methods and make sure they
-return the right values or achieve the correct side effects. The form that I was working
-with today had a couple features. The first was that it provided some helper functions
-to the template so that the template could display the form properly. Those are in the
-GET mode. So I did something like:</p>
-<pre tabindex="0"><code>user = create_my_special_user()
-form = MyForm(user=user)
-self.assertTrue(form.is_user_special())
-</code></pre><p>And that worked as I expected. The second feature of my custom form was that it cleaned
-the data in a particular way. So I did:</p>
-<pre tabindex="0"><code>form = MyForm(user=user)
-cleaned_data = form.clean()
-self.assertEqual(cleaned_data, expected_data)
-</code></pre><p>Instead of passing, the test blew up:</p>
-<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
-</code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
-(normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
-then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
-<pre tabindex="0"><code>form = MyForm(user=user, data={})
-cleaned_data = form.clean()
-self.assertEqual(cleaned_data, expected_data)
-</code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
-the form you are testing, GET or POST.</p>
-
-        
-      </article>
-      
       
       
 
@@ -844,6 +819,12 @@ the form you are testing, GET or POST.</p>
       
       
       <li class="post">
+        <a href="/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
       </li>
       
@@ -950,12 +931,6 @@ the form you are testing, GET or POST.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/12/02/my-nest-journey/">My Nest Journey</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -984,7 +959,7 @@ the form you are testing, GET or POST.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

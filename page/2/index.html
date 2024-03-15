@@ -144,6 +144,58 @@
         
 
 <header>
+  <p class="meta">Aug 17, 2020
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/django/">django </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
+  </h1>
+</header>
+
+        
+          <p>I worked on adding tests to some Django forms today and I was reminded that Django forms
+operate in two <em>modes</em>. I think of them as the GET mode and the POST mode. The GET mode
+displays the form and the POST mode processes the data that you supply to the form. I
+don&rsquo;t know why, but I often forget that. Instead, I sometimes treat them as a normal
+Python class, especially when I&rsquo;m creating automated tests for them. I instantiate
+the class (<code>form = MyForm()</code>) and then just call any of its methods and make sure they
+return the right values or achieve the correct side effects. The form that I was working
+with today had a couple features. The first was that it provided some helper functions
+to the template so that the template could display the form properly. Those are in the
+GET mode. So I did something like:</p>
+<pre tabindex="0"><code>user = create_my_special_user()
+form = MyForm(user=user)
+self.assertTrue(form.is_user_special())
+</code></pre><p>And that worked as I expected. The second feature of my custom form was that it cleaned
+the data in a particular way. So I did:</p>
+<pre tabindex="0"><code>form = MyForm(user=user)
+cleaned_data = form.clean()
+self.assertEqual(cleaned_data, expected_data)
+</code></pre><p>Instead of passing, the test blew up:</p>
+<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
+</code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
+(normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
+then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
+<pre tabindex="0"><code>form = MyForm(user=user, data={})
+cleaned_data = form.clean()
+self.assertEqual(cleaned_data, expected_data)
+</code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
+the form you are testing, GET or POST.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jan 27, 2020
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/#disqus_thread">Comments</a>
@@ -606,46 +658,6 @@ careful when I&rsquo;m at the circuit breaker box.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Sep 23, 2018
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2018/09/23/composting/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/garden/">garden </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2018/09/23/composting/">Composting</a>
-  </h1>
-</header>
-
-        
-          <p>Guess what, we&rsquo;re composting now! I told you was
-<a href="/blog/2018/09/22/starting-a-garden">going to be a gardener</a>, so now you know I&rsquo;m serious. For oh so many years,
-every Friday, we&rsquo;d haul the garbage and recycling out and I&rsquo;d think to myself, &ldquo;Wow, we&rsquo;d have like no
-garbage at all if we were composting.&rdquo; It&rsquo;s only taken a few years of thinking that, week in and
-week out, to get me to try. Actually, that&rsquo;s not even true. It was still way down on my future to-do
-list until I got a cheap copy of
-<a href="https://amzn.to/2xyqbWb">&ldquo;The Complete Idiot&rsquo;s Guide to Composting&rdquo;</a>. Thank you, <a href="https://www.bookbub.com/welcome">BookBub</a>! (As if
-I needed any other incentive to buy and read more books). But honestly, the book was excellent in
-that it made me think that yes, even I could compost. So shortly after finishing it, I headed down
-to the Orange County Solid Waste Center and purchased an
-<a href="https://www.earthmachine.com/contact.php">Earth Machine compost bin</a> for fifty bucks, and made the kids set it up near the
-screen porch. We&rsquo;ve been throwing all our copious kitchen scraps for the past 2 weeks. So far, all
-that has happened is that a bunch of fruit flies think we&rsquo;re awesome neighbors and seem to have
-moved in for the long haul. But I&rsquo;m hoping that some composting starts happening soon. It&rsquo;s supposed
-to be easy as pie, but I&rsquo;m secretly worried that I&rsquo;m missing something, oh, like maybe skills or
-talent. But our garbage bin sure is lighter!</p>
-
-        
-      </article>
-      
       
       
 
@@ -800,6 +812,12 @@ talent. But our garbage bin sure is lighter!</p>
       
       
       <li class="post">
+        <a href="/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
       </li>
       
@@ -906,12 +924,6 @@ talent. But our garbage bin sure is lighter!</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/12/02/my-nest-journey/">My Nest Journey</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -940,7 +952,7 @@ talent. But our garbage bin sure is lighter!</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

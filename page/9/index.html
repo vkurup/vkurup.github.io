@@ -144,6 +144,58 @@
         
 
 <header>
+  <p class="meta">Nov 5, 2010
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/11/05/making-blog-posting-easier/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/elisp/">elisp </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/emacs/">emacs </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/11/05/making-blog-posting-easier/">Making blog posting easier</a>
+  </h1>
+</header>
+
+        
+          <p>Another piece of advice that I&rsquo;ve heard over and over again is to make
+things easier. <a href="http://sachachua.com/blog/2010/09/how-to-be-dispensable-and-why-you-should-document-and-automate-yourself-out-of-a-job/">Automate!</a>
+In that vein, I learned a little elisp in order to make it easier to
+create a new blog post. I create my posts in emacs, but I often cut
+and paste the YAML header from a previous post, which is tedious and
+time-consuming. Here is my new posting function:</p>
+<pre><code>(defun vk-blogpost (title)
+  &quot;Create a new blog post.&quot;
+  (interactive &quot;sPost Title: &quot;)
+  (let ((slug (replace-regexp-in-string &quot; &quot; &quot;-&quot; (downcase title))))
+    (find-file (concat &quot;~/web/kurup.org/_posts/&quot;
+                       (format-time-string &quot;%Y-%m-%d&quot;)
+                       &quot;-&quot; slug &quot;.markdown&quot;))
+    (insert &quot;---\n&quot;)
+    (insert &quot;date: &quot; (format-time-string &quot;%Y/%m/%d %H:%M:%S&quot;) &quot;\n&quot;)
+    (insert &quot;layout: post\n&quot;)
+    (insert &quot;title: &quot; title &quot;\n&quot;)
+    (insert &quot;categories: \n&quot;)
+    (insert &quot;---\n\n&quot;)))
+</code></pre>
+<p>After asking me for a title, it creates a new file and massages the
+title to create a
+<a href="http://en.wikipedia.org/wiki/Slug_(web_publishing)">slug</a>. It
+automatically enters the date of the post, both in the filename and
+in the YAML header. This took me about an hour to write, mostly in
+googling elisp commands. Hopefully, it will save time in the long run,
+but even if it doesn&rsquo;t, it was fun to write :-)</p>
+<p>Any feedback on my primitive elisp would be appreciated!</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Nov 4, 2010
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2010/11/04/advice-on-writing/#disqus_thread">Comments</a>
@@ -626,77 +678,6 @@ cares.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 20, 2010
-     - 3 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/kino/">kino </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/video/">video </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/">My video editing process</a>
-  </h1>
-</header>
-
-        
-          <p>I use <a href="http://www.kinodv.org/">kino</a> to edit the
-<a href="http://youtube.com/vkurup1">videos that we take of the kids</a>. I haven&rsquo;t
-found a Linux program which was as nice as iMovie was on the Mac, but kino
-is pretty good. It&rsquo;s easy to splice and reconnect video clips together. It
-has nice special effects, though my needs are pretty simple. It&rsquo;s able to
-export in plenty of formats, possibly too many, for my simple mind. But,
-I&rsquo;ve figured it out and have a stable process for getting video from camera
-to youtube.</p>
-<p>I have 3 camcorders - a <a href="http://www.theflip.com/">Flip</a>, my Canon digital
-camera, and a Panasonic DVD camcorder. I can just copy the AVI files
-directly off the Flip and the Canon&rsquo;s SD card. The Panasonic records all of
-the video clips into a single file with a .VRO extension. I found a great
-utility called <a href="http://www.pixelbeat.org/programs/dvd-vr/">dvd-vr</a>, which
-reads that file and splits it into individual AVI files. Once I have a
-directory full of AVI files from the various camcorders, I use
-<a href="http://www.gnu.org/software/emacs/">emacs</a> to rename them consistently. I
-open up 2 buffers: an editable dired buffer (<code>wdired-change-to-wdired-mode</code>)
-of the movies directory, and a shell buffer in that same directory. I run a
-macro which takes the first file in the directory, plays it via an mplayer
-command in the shell buffer and then renames the file using the
-date/timestamp of the file. The macro leaves the cursor in a spot where I
-can enter a brief description of the video and then run the macro again to
-do the next video. It works pretty well. I then batch convert them to DV
-format, which is what Kino accepts. Finally, I launch Kino and edit the
-files, add titles, export them to AVI again, and then upload them to
-youtube.</p>
-<p>I did this today and ran into a problem with kino. The video played at
-breakneck speed and there was no audio. Google helped me figure out that
-this was a problem between PulseAudio and kino. Kino is no longer actively
-developed. The lead developer considers it stable and finished and he&rsquo;s
-moved on to other endeavors, which is perfectly understandable. He&rsquo;s
-however, taken the time to describe
-<a href="http://www.kinodv.org/article/view/173/1/13/">a workaround</a>. He recommends
-running <code>padsp kino</code> which routes all audio requests from kino to
-pulseaudio. This worked, but the audio had a lot of feedback. I found an
-even better
-<a href="http://ubuntuforums.org/showpost.php?p=8367831&amp;postcount=7">workaround on the ubuntu forums</a>. Use
-<code>pasuspender kino</code>, which suspends all PulseAudio activity, gives kino
-direct access to audio devices, and then resumes PulseAudio once kino has
-quit. This worked with perfect audio quality, though of course, audio from
-any other program gets muted completely.</p>
-<p>I am still on the lookout for a better video editing solution on
-Linux. Eventually, I&rsquo;d like to make DVDs of the hundreds of little clips
-that I have. They don&rsquo;t need to be fancy, but I would like to have some
-basic menus and they need to work on standard DVD players. I&rsquo;ve started
-doing a little research on this, so will post once I&rsquo;ve tried some things
-out.</p>
-
-        
-      </article>
-      
       
       
 
@@ -851,6 +832,12 @@ out.</p>
       
       
       <li class="post">
+        <a href="/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
       </li>
       
@@ -957,12 +944,6 @@ out.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/12/02/my-nest-journey/">My Nest Journey</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -991,7 +972,7 @@ out.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

@@ -144,6 +144,63 @@
         
 
 <header>
+  <p class="meta">Jun 29, 2003
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/06/29/me-vs.-daemontools/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/daemontools/">daemontools </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/06/29/me-vs.-daemontools/">me vs. daemontools</a>
+  </h1>
+</header>
+
+        
+          <p>I have a love/hate relationship with <a href="http://cr.yp.to/daemontools.html">daemontools</a>. It&rsquo;s powerful way to manage services (like web servers and mail servers), but it sometimes doesn&rsquo;t act the way I expect it to.</p>
+<p>Today, I tried to set up <a href="http://cr.yp.to/qmail.html">qmail-pop3d</a>. I set up a directory called <code>/var/qmail/supervise/qmail-pop3d</code> and put a file named &lsquo;run&rsquo; inside it. This contained:</p>
+<pre><code>#!/bin/sh
+PATH=/var/qmail/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin
+export PATH
+
+tcpserver -H -R 0 pop-3 
+/var/qmail/bin/qmail-popup vkurup.acornhosting.net 
+/home/vpopmail/bin/vchkpw /var/qmail/bin/qmail-pop3d Maildir &amp;
+</code></pre>
+<p>Then I connected the run script to my /service directory</p>
+<pre><code># ln -s /var/qmail/supervise/qmail-pop3d /service
+</code></pre>
+<p>Then I checked to see if it was running:</p>
+<pre><code># svstat /service/qmail-pop3d
+/service/qmail-pop3d: up (pid 13524) 0 seconds
+</code></pre>
+<p>Hmmm&hellip; up 0 seconds. That&rsquo;s not right - it should be at least 5 or 6 seconds (I can&rsquo;t type <strong>that</strong> fast). That usually means that the service is repeatedly failing and restarting itself.</p>
+<p>ps shows that qmail-pop3d is running, but trying to connect to port 110 doesn&rsquo;t work:</p>
+<pre><code>$ telnet localhost 110
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection timed out
+</code></pre>
+<p>And now I&rsquo;m stuck. Nothing is getting logged to the qmail-pop3d logs. After some headbanging, I do another <code>ps -ax</code> and this time notice a process called readproctitle:</p>
+<pre><code>11919 ?        S      0:05 readproctitle service errors: ...lready used?tcpserve
+r: fatal: unable to bind: address already used?tcpserver: fatal: unable to bind:
+ address already used?tcpserver: fatal: unable to bind: address already used?tcp
+server: fatal: unable to bind: address already used?tcpserver: fatal: unable to 
+bind: address already used?tcpserver: fatal: unable to bind: address already use
+d?tcpserver: fatal: unable to bind: address already used?
+</code></pre>
+<p>What&rsquo;s that? I look it up and find that <a href="http://cr.yp.to/daemontools/readproctitle.html">readproctitle</a> is a kind of scrolling-log for daemontools which shows up when you run <code>ps</code>. So, it looks like <code>qmail-pop3d</code> failing because it&rsquo;s trying to bind port 110 even though it&rsquo;s already been bound. So this makes me thing that <code>qmail-pop3d</code> isn&rsquo;t failing, but that it&rsquo;s running over and over again. And then I look back at my run script and look at that pesky little &lsquo;&amp;&rsquo; at the end. Doh! That tells the process to detach once it starts. It starts normally, then detaches. Once it detaches, daemontools thinks it&rsquo;s down, so it tries to start it again. (At least that&rsquo;s the way I understand it). Getting rid of the &lsquo;&amp;&rsquo; and adding &lsquo;exec&rsquo; to the beginning fixes it and everything works now.</p>
+<p>Me: 1 Daemontools: 2123</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jun 28, 2003
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2003/06/28/compiling-vpopmail/#disqus_thread">Comments</a>
@@ -577,31 +634,6 @@ Kerala.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Feb 1, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/02/01/snow/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/snow/">snow </a><a class="label" href="https://vkurup.github.io/categories/new-york-city/">new-york-city </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/02/01/snow/">Snow!</a>
-  </h1>
-</header>
-
-        
-          <p>It&rsquo;s <a href="http://kurup.org/photo/album?album_id=5325">snowing in NYC</a>. Really hard.</p>
-
-        
-      </article>
-      
       
       
 
@@ -756,6 +788,12 @@ Kerala.</p>
       
       
       <li class="post">
+        <a href="/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
       </li>
       
@@ -862,12 +900,6 @@ Kerala.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/12/02/my-nest-journey/">My Nest Journey</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -896,7 +928,7 @@ Kerala.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

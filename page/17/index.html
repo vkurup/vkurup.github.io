@@ -144,6 +144,48 @@
         
 
 <header>
+  <p class="meta">Feb 17, 2006
+     - 3 minute read 
+     - <a href="https://vkurup.github.io/blog/2006/02/17/pound-update-kills-my-website/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a><a class="label" href="https://vkurup.github.io/categories/pound/">pound </a><a class="label" href="https://vkurup.github.io/categories/debian/">debian </a><a class="label" href="https://vkurup.github.io/categories/troubleshooting/">troubleshooting </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2006/02/17/pound-update-kills-my-website/">Pound update kills my website</a>
+  </h1>
+</header>
+
+        
+          <p>No one but me noticed, I&rsquo;m sure, but my website was down for part of yesterday. Don&rsquo;t worry, refunds to paying customers are on their way :-)</p>
+<p>What happened? I was doing my regular debian <!-- raw HTML omitted -->apt-get upgrade<!-- raw HTML omitted --> and the reverse proxy that I use, <a href="http://www.apsis.ch/pound/">pound</a>, got updated. The upgrade was a pretty significant one. Pound 2.0 changed the way that it expects configuration files to be formatted. Unfortunately, the Debian update didn&rsquo;t mention this, so the new version of pound tried to read my old config file, got confused and shut down. Without a reverse proxy, there&rsquo;s no way to get to my site from the outside.</p>
+<p>I thought it would be simple to rewrite the config file to match the new format, but it took longer than I expected. Most of the changes were easy. The new format requires string parameters to be enclosed in double-quotes. Some of the parameters which used to be global (like ExtendedHTTP and WebDAV) were renamed and moved into non-global sections. There were a few other minor changes which make the config file easier to understand.</p>
+<p>Unfortunately, fixing all of that still didn&rsquo;t get Pound working. There were still 2 problems. First was that the internal port number was being shown to the web browser. If you typed in &ldquo;<a href="http://kurup.org">http://kurup.org</a>&rdquo;, the browser would show &ldquo;<a href="http://kurup.org:8001/%22">http://kurup.org:8001/&quot;</a> in the Location bar. This only occured when the backend server returned 30x redirection status&rsquo;s. Based on my config, Pound was supposed to be rewriting the Location header to avoid this problem. I found the solution to this one <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-01/1136458627000#1136458627000">here</a>. Scroll down to Robert Segall&rsquo;s (the author of Pound) second reply. He says:</p>
+<blockquote>
+<p>The conditions for changing the Location header are:</p>
+<ul>
+<li>Change30x is set (value 1) for the Service in question</li>
+<li>the response is one of 301, 302, 303 or 307</li>
+<li>a Host header was seen in the original request</li>
+<li>the Location header, after DNS resolution, points either to the same address as the one Pound is using to accept the request (aka the ListenHTTP/ListenHTTPS), or to the back-end that issued this response</li>
+</ul>
+</blockquote>
+<p>Everything was being fulfilled except the last one, specifically the &lsquo;After DNS resolution&rsquo; part. When I do a <!-- raw HTML omitted -->nslookup kurup.org<!-- raw HTML omitted --> on my server, it returns 66.98.222.124. The address I was using in the config file was 127.0.0.1 (localhost). Since these didn&rsquo;t match, Pound was not rewriting the header. I changed my pound config to listen on 66.98.222.124 and that problem was fixed.</p>
+<p>The final problem was that pound stopped redirecting requests to the other virtual servers on my machine. Whenever a request would come in, pound would crash with the following message in syslog:</p>
+<pre><code>Feb 17 08:11:10 vkurup pound: MONITOR: worker exited on signal 11, restarting... 
+</code></pre>
+<p>The only difference between the config for kurup.org and the other virtual servers was that I had a SESSION parameter in kurup.org. I introduced a SESSION parameter into the other servers and <em>surprise</em>, they started working too. I finally found the reason <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-02/1139101111000#1139101111000">here.</a> I assume that will be fixed in the next release.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Feb 16, 2006
      - 5 minute read 
      - <a href="https://vkurup.github.io/blog/2006/02/16/creating-a-blog-application-using-the-openacs-content-repository/#disqus_thread">Comments</a>
@@ -690,31 +732,6 @@ my performance, but not in VFINX&rsquo;s.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 20, 2005
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2005/12/20/editing-as-root-in-emacs/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a><a class="label" href="https://vkurup.github.io/categories/emacs/">emacs </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2005/12/20/editing-as-root-in-emacs/">Editing as root in emacs</a>
-  </h1>
-</header>
-
-        
-          <p>I&rsquo;ve been using emacs for 7 years and I just learned today that you can edit files as root while you&rsquo;re logged into emacs as an unprivileged user. Using sudo, of course. The details are <a href="http://lists.gnu.org/archive/html/emacs-wiki-discuss/2005-12/msg00014.html">here</a>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -869,6 +886,12 @@ my performance, but not in VFINX&rsquo;s.</p>
       
       
       <li class="post">
+        <a href="/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
       </li>
       
@@ -975,12 +998,6 @@ my performance, but not in VFINX&rsquo;s.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2018/12/02/my-nest-journey/">My Nest Journey</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1009,7 +1026,7 @@ my performance, but not in VFINX&rsquo;s.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2022 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>
