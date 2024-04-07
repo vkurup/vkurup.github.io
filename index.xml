@@ -8,10 +8,29 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 06 Apr 2024 19:17:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2024 08:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Links 2024-04-07</title>
+      <link>https://vkurup.github.io/blog/2024/04/07/links-2024-04-07/</link>
+      <pubDate>Sun, 07 Apr 2024 08:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://vkurup.github.io/blog/2024/04/07/links-2024-04-07/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://peterattiamd.com/muscle-fiber-shape-and-resistance-training/&#34;&gt;Old people can build muscle&lt;/a&gt;. Sorry,
+this one is behind a paywall, but it basically describes a study that showed that muscle
+SFI decreased in old people (ages 60-79) with resistance training. Muscle SFI (shape
+factor index) represents how close the cross-sectional shape of your muscle is to the
+shape of a circle, where 1.00 is a circle and the lower the number, the better it is.
+I&amp;rsquo;d never heard of that metric before. But the good news is that in this study, both
+young and old people were able to decrease their SFI by the same amount over the study
+period.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Links 2024-04-06</title>
@@ -664,44 +683,6 @@ changed the front matter, and then fixed a few octopress plugins I was using to 
 &lt;li&gt;Update my About page and Computers page&lt;/li&gt;
 &lt;li&gt;&amp;hellip; oh, maybe write more!&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Running</title>
-      <link>https://vkurup.github.io/running/</link>
-      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/running/</guid>
-      <description>&lt;p&gt;Hi, I&amp;rsquo;m a runner and have been for almost 30 years now. I suppose I&amp;rsquo;m
-only going to get slower from here on in, so I thought I should list
-all my PR&amp;rsquo;s so that I can brag while I can.&lt;/p&gt;
-&lt;p&gt;Here are my &lt;a href=&#34;https://vkurup.github.io/categories/running/&#34;&gt;blog posts about running&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;prs&#34;&gt;PRs&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;           | Age &amp;lt;= 30 | Age &amp;gt; 30 |
------------+-----------+----------+
- 800m      |      2:12 |      N/A |
- 1 mile    |      5:07 |     5:44 |
- 2 mile    |     11:06 |      N/A |
- 5K        |     18:36 |    23:02 |
- 13.1 mile |       N/A |  1:41:56 |
- 26.2 mile |   5:13:30 |  4:28:09 |
- ----------+-----------+----------+
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;marathons&#34;&gt;Marathons:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;2005 NYC: 4:28&lt;/li&gt;
-&lt;li&gt;2003 Marine Corps: 5:07&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.marathonguide.com/results/browse.cfm?MIDD=67001022&amp;amp;Gen=B&amp;amp;Begin=24183&amp;amp;End=24282&amp;amp;Max=27870&#34;&gt;2000 Chicago&lt;/a&gt;: 5:13&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;most-miles-in-a&#34;&gt;Most miles in a:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;week:&lt;/li&gt;
-&lt;li&gt;month:&lt;/li&gt;
-&lt;li&gt;year:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;strava&#34;&gt;Strava:&lt;/h3&gt;
-&lt;!-- raw HTML omitted --&gt;
 </description>
     </item>
     

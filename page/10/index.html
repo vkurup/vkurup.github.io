@@ -144,6 +144,92 @@
         
 
 <header>
+  <p class="meta">Aug 2, 2010
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2010/08/02/ubuntu-bluetooth-workaround/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2010/08/02/ubuntu-bluetooth-workaround/">Ubuntu Bluetooth Workaround</a>
+  </h1>
+</header>
+
+        
+          <p>I use bluetooth to transfer podcasts from my laptop to my Palm Centro. A
+Palm Centro is like an iPhone or a Droid, except less <strong>smart</strong>-like and
+more <strong>phone</strong>-like. This worked beautifully but broke when I upgraded to
+<a href="http://www.ubuntu.com/desktop/get-ubuntu/download">Ubuntu</a> 10.04 (Lucid
+Lynx). There are 2 bugs involved. First, the bluetooth daemon
+(<code>/usr/sbin/bluetoothd</code>) never gets started. Second, there&rsquo;s no easy way to
+start the file transfer daemon automatically (<code>/usr/bin/dund</code>). This used
+to work automatically, but now it doesn&rsquo;t. I&rsquo;ve tried to fiddle with <code>udev</code>
+rules, but have been unsuccessful. I&rsquo;ve reported the 2 bugs, but haven&rsquo;t
+had any response
+yet. <a href="https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/589464">(bluetoothd bug)</a>
+<a href="https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/559538">(dund bug)</a></p>
+<p>My workaround is a shell script which starts those those daemons if they
+are not running:</p>
+<h4 id="vk-bluetooth-startsh">vk-bluetooth-start.sh</h4>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+</span><span style="color:#719e07"></span>    
+<span style="color:#268bd2">BLUETOOTH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;bluetoothd&#39;</span>
+<span style="color:#268bd2">DUN</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;dund&#39;</span>
+    
+<span style="color:#586e75"># first start bluetoothd</span>
+<span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$BLUETOOTH</span> &gt; /dev/null
+<span style="color:#719e07">then</span>
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198"> is running.&#34;</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198">...&#34;</span>
+    /usr/bin/sudo /usr/sbin/bluetoothd -u &amp;&gt; /dev/null
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+<span style="color:#719e07">fi</span>
+    
+<span style="color:#586e75"># then start dund</span>
+<span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$DUN</span> &gt; /dev/null
+<span style="color:#719e07">then</span>
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198"> is running.&#34;</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198">...&#34;</span>
+    /usr/bin/sudo /usr/bin/dund --listen --persist --msdun call centro
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+<span style="color:#719e07">fi</span>
+</code></pre></div><p>And here&rsquo;s my script which transfers the files to my phone. It uses
+<a href="http://packages.ubuntu.com/lucid/pilot-link">pilot-link</a>, which I had to
+compile from source due to a
+<a href="https://bugs.launchpad.net/ubuntu/+source/pilot-link/+bug/592916">bug in the way that the Ubuntu version addresses large SD cards</a>. This
+should be fixed in the next version of Ubuntu.</p>
+<h4 id="vk-transfer-podcastssh">vk-transfer-podcasts.sh</h4>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
+</span><span style="color:#719e07"></span>    
+<span style="color:#268bd2">output</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span>pilot-xfer -p net:any -D /Kingston/AUDIO -i *.mp3 2&gt;&amp;1<span style="color:#719e07">)</span>
+<span style="color:#268bd2">errors</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span> | grep -c <span style="color:#2aa198">&#34;ERROR:&#34;</span><span style="color:#719e07">)</span>
+    
+<span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#268bd2">$errors</span> -gt <span style="color:#2aa198">0</span> <span style="color:#719e07">]</span> ; <span style="color:#719e07">then</span>
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;failure (count: </span><span style="color:#268bd2">$errors</span><span style="color:#2aa198">)&#34;</span>
+    <span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span>
+<span style="color:#719e07">else</span>
+    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;success, removing files from laptop...&#34;</span>
+    /bin/rm -I <span style="color:#268bd2">$HOME</span>/*.mp3
+    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+<span style="color:#719e07">fi</span>
+</code></pre></div><p>If you&rsquo;re wondering why I use a slow protocol like bluetooth to transfer
+large files to an SD card, rather than just ejecting the SD card and
+inserting it into the laptop, well&hellip; you haven&rsquo;t tried to access the SD
+card on a Palm Centro. #paininthe&amp;^@!</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jul 29, 2010
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2010/07/29/hospitalist-notes-1/#disqus_thread">Comments</a>
@@ -735,67 +821,6 @@ going to be a great year for me and my family.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Oct 9, 2009
-     - 3 minute read 
-     - <a href="https://vkurup.github.io/blog/2009/10/09/found-the-carolina-north-trail/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a><a class="label" href="https://vkurup.github.io/categories/zen/">zen </a><a class="label" href="https://vkurup.github.io/categories/happiness/">happiness </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2009/10/09/found-the-carolina-north-trail/">Found the Carolina North trail</a>
-  </h1>
-</header>
-
-        
-          <p>When Mala and I started looking for homes, we listed on a yellow notepad
-all the things that were important to us. Like most little notes in my
-life, it got lost. I found it a few days after we moved into our home and
-was pleasantly surprised that we had gotten everything on our list, except
-a lake view. Not bad, and there&rsquo;s a lake about a half mile from our
-door. One of the things on that list that we &ldquo;kinda&rdquo; got was &ldquo;running
-trails nearby&rdquo;. I say &ldquo;kinda&rdquo; because there is a trail which is just behind
-the back of our property, but I wouldn&rsquo;t call it a running trail. It is a
-paved trail which runs behind the houses in our neighborhood and extends
-about 1 mile in total length. It is mostly through woods or along the lake,
-so it&rsquo;s nice, but it&rsquo;s not a running trail. A running trail is not
-paved. More importantly, a running trail goes for miles and miles, so that
-you can feel like you are away from (sub)urban life.</p>
-<p>So this was one of those things on our &ldquo;list&rdquo; that I would say we checked
-off, but, not really, you know?</p>
-<p>I <a href="http://twitter.com/vkurup/status/4533018776">went for a run</a> recently
-and I can now say with certainty that this is my dream house. That paved
-running trail which I had been so ambivalent about eventually ends at a
-main road. And that&rsquo;s where I thought it ended. On Thursday, I crossed the
-road and found a little mowed path which takes you to the local high
-school. And then you take a right and WOW! A huge forest with a 10 foot
-wide rock and dirt trail opens up in front of you. I started down this
-trail, expecting it to end at someone&rsquo;s private property, but it kept going
-and going and going. It ran next to a bubbling stream with water clear
-enough to see the river&rsquo;s bottom. There were countless little paths snaking
-away from the main one. I just kept running and it just got more and more
-beautiful. I wish I had brought my camera. It felt like a religious
-experience. I couldn&rsquo;t believe that this beautiful, seemingly endless trail</p>
-<ul>
-<li>the type of trail that I would have driven miles to get to in the past -
-was in my backyard. I ended up running 11 miles, which is longer than I
-have run since moving to North Carolina. I can&rsquo;t wait to run there
-again. This is just another example of how I am the luckiest man in the
-world. I always wanted to live in a house near trails like this, but didn&rsquo;t
-think it was possible, so I settled for a little &ldquo;running trail&rdquo;. Just my
-luck, it turns out to be the trail of my dreams :-)</li>
-</ul>
-
-        
-      </article>
-      
       
       
 
@@ -950,10 +975,16 @@ luck, it turns out to be the trail of my dreams :-)</li>
       
       
       <li class="post">
-        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+      </li>
       
       
       
@@ -1055,12 +1086,6 @@ luck, it turns out to be the trail of my dreams :-)</li>
       
       <li class="post">
         <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/hugo/">Hugo</a>
       </li>
       
       

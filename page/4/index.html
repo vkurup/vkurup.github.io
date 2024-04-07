@@ -144,6 +144,67 @@
         
 
 <header>
+  <p class="meta">Jul 22, 2014
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2014/07/22/pygments-on-arch-linux/">Pygments on Arch Linux</a>
+  </h1>
+</header>
+
+        
+          <p>I wrote my first blog post in a little while (ok, ok&hellip; 18 months) yesterday and when I tried to
+generate the post, it failed. Silently failed, which is the worst kind of failure. I&rsquo;m still not
+sure why it was silent, but I eventually was able to force it to show me an error message:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
+</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `</span>get_header<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>timeout<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">68</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`timeout&#39;
+</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:206:in `</span>mentos<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:189:in `highlight&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>pygments_code<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">24</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pygments&#39;
+</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/pygments_code.rb:14:in `</span>highlight<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:37:in `block in render_code_block&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>backtick_code_block<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">13</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`gsub&#39;
+</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:13:in `</span>render_code_block<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/octopress_filters.rb:12:in `pre_filter&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>octopress_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">28</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
+</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:112:in `</span>block <span style="color:#719e07">in</span> pre_render<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:111:in `each&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>post_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">111</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
+</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:166:in `</span>do_layout<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:195:in `render&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">200</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`block in render&#39;
+</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `</span>each<span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `render&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">41</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`process&#39;
+</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/bin/jekyll:264:in `</span><span style="color:#719e07">&lt;</span>top (required)<span style="color:#719e07">&gt;</span><span style="color:#2aa198">&#39;
+</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/bin/jekyll:23:in `load&#39;</span>
+	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>bin<span style="color:#719e07">/</span><span style="color:#2aa198">jekyll</span>:<span style="color:#2aa198">23</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`&lt;main&gt;&#39;
+</span></code></pre></div><p>Professor Google tells me that this happens when you try to
+<a href="https://github.com/tmm1/pygments.rb/issues/45">run the pygments.rb library in a Python 3 environment</a>.
+(pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
+Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
+default. No, I don&rsquo;t want to check how long ago that was.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
+<span style="color:#719e07">(</span>my_blog<span style="color:#719e07">)</span>$ bundle <span style="color:#b58900">exec</span> rake generate
+</code></pre></div><p>So now I&rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
+it&rsquo;s time to switch blog tools again&hellip;</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jul 21, 2014
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/#disqus_thread">Comments</a>
@@ -931,77 +992,6 @@ to account for those changes.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Oct 15, 2012
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2012/10/15/emacs-autocomplete-stumbles-on-yasnippet/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/emacs/">emacs </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2012/10/15/emacs-autocomplete-stumbles-on-yasnippet/">Emacs Autocomplete stumbles on yasnippet</a>
-  </h1>
-</header>
-
-        
-          <p><a href="http://cx4a.org/software/auto-complete/">Autocomplete Mode</a> is an
-Emacs mode that tries to guess what word you&rsquo;re typing and provide
-auto-completion. Recently, it started failing in simple scenarios.</p>
-<p>It can use various &lsquo;sources&rsquo; to try to figure out what you&rsquo;re about to
-type. The simplest source is <code>ac-source-dictionary</code> which is a simple
-list of words. If you start typing any of those words, it will try to
-autocomplete them for you. Normally, you&rsquo;d put those words in a file,
-with each word on a separate line, but for testing purposes, you can
-also add them manually using an elisp function. Here&rsquo;s the test that
-failed for me:</p>
-<pre><code>(add-to-list 'ac-user-dictionary &quot;foobar@example.com&quot;)
-</code></pre>
-<p>That adds the email address to the dictionary. Then, typing &lsquo;foo&rsquo; in
-any buffer, should offer to autocomplete the entire email address.
-Unfortunately, it wasn&rsquo;t working.</p>
-<p>To debug, I typed &lsquo;foo&rsquo; and then did <code>M-x auto-complete</code>, which forces
-auto-complete to look for a completion. This resulted in an error in
-the Minibuffer:</p>
-<pre><code>ac-yasnippet-candidates: Symbol's function definition is void: yas/current-snippet-table
-</code></pre>
-<p>This led me to check which &lsquo;sources&rsquo; autocomplete was trying to use:
-<code>C-h v ac-sources</code></p>
-<pre><code>(ac-source-features ac-source-functions ac-source-yasnippet
- ac-source-variables ac-source-symbols ac-source-abbrev
- ac-source-dictionary ac-source-words-in-same-mode-buffers)
-</code></pre>
-<p>So, autocomplete is looking through each one of those sources, trying
-to find possible words I might be typing. The third one is called
-<code>ac-source-yasnippet</code>, which seems to be where my error is coming
-from.</p>
-<p>So, I looked into the yasnippet source code and found that, indeed,
-there was no function named <code>yas/current-snippet-table</code>. That function
-has been renamed to <code>yas--get-snippets-table</code> in version 0.8.0, but
-autocomplete is still relying on the old function name. (RANT: Don&rsquo;t
-rename functions that others might be using without providing some
-kind of alias, at least temporarily) I looked at the code for
-<a href="https://github.com/auto-complete/auto-complete">autosnippet on github</a>
-and noted that the latest version has been fixed to use the new code,
-but it hasn&rsquo;t yet been released on MELPA. Until it is, the quick
-solution is to remove <code>ac-source-yasnippet</code> from <code>ac-sources</code>.</p>
-<pre><code>(delq 'ac-source-yasnippet ac-sources)
-</code></pre>
-<p>Then typing &lsquo;foo&rsquo; autocompletes to &lsquo;<a href="mailto:foobar@example.com">foobar@example.com</a>&rsquo;.</p>
-<p>It seems that autocomplete should be more forgiving of errors in any
-specific &lsquo;source&rsquo;, passing it up to use other sources. Alternatively,
-it should fail loudly when there&rsquo;s an error, so that I can know to fix
-or remove the offending &lsquo;source&rsquo;.</p>
-
-        
-      </article>
-      
       
       
 
@@ -1156,10 +1146,16 @@ or remove the offending &lsquo;source&rsquo;.</p>
       
       
       <li class="post">
-        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+      </li>
       
       
       
@@ -1261,12 +1257,6 @@ or remove the offending &lsquo;source&rsquo;.</p>
       
       <li class="post">
         <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/hugo/">Hugo</a>
       </li>
       
       

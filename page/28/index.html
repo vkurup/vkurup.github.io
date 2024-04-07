@@ -144,6 +144,48 @@
         
 
 <header>
+  <p class="meta">Jul 5, 2003
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2003/07/05/more-mail-woes/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a><a class="label" href="https://vkurup.github.io/categories/mail/">mail </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2003/07/05/more-mail-woes/">More Mail Woes</a>
+  </h1>
+</header>
+
+        
+          <p>I spent most of this afternoon struggling with a mail issue and I didn&rsquo;t find it documented well anywhere else, so I&rsquo;m going to write about it here in the hopes that it might help someone else.</p>
+<p><strong>What I was trying to do:</strong> Setup qmail + vpopmail + courier imap for imap and pop3d</p>
+<p><strong>Problem I was having:</strong> For some users, checking POP3 mail would work for a while (about 5 minutes), but then would fail:</p>
+<pre><code>      Jul  5 00:30:34 vkurup pop3d: LOGIN FAILED, ip=[::ffff:68.173.27.35]
+      Jul  5 00:30:34 vkurup pop3d: Disconnected, ip=[::ffff:68.173.27.35]
+</code></pre>
+<p>The failure would only happen for users who had vpopmail accounts <strong>and</strong> shell accounts. Users who have only vpopmail accounts were fine.</p>
+<p>Eventually, after much searching, I found this <a href="http://bluedot.net/mail/archive/read.php?f=2&amp;i=10881&amp;t=10880">message</a> which advised to configure courier-imap with <code>--without-authdaemon</code>. This solved my problem.</p>
+<p>According to the author of courier-imap, <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=2388144&amp;forum_id=33081">this problem is solved in newer versions of vpopmail</a>, but he mentions version 5.3.38 and I could only find version 5.3.20, so I didn&rsquo;t try that fix.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jul 2, 2003
      - 1 minute read 
      - <a href="https://vkurup.github.io/blog/2003/07/02/core-mac-os-x-and-unix-programming/#disqus_thread">Comments</a>
@@ -604,37 +646,6 @@ don&rsquo;t-make-me-think usability of the Mac.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Mar 3, 2003
-     - 1 minute read 
-     - <a href="https://vkurup.github.io/blog/2003/03/03/my-brother-is-so-cool/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2003/03/03/my-brother-is-so-cool/">My brother is so cool</a>
-  </h1>
-</header>
-
-        
-          <p>I&rsquo;ve been meaning to put this pic up for a while. That&rsquo;s me in back,
-with my super-cool brother and his even-cooler Harley Davidson
-VRod. It was about 40 degrees F and despite sitting in back and
-despite having the warm helmet, I was still freezing. I can&rsquo;t imagine
-what Manu was feeling. Halfway through the ride, I asked him, but his
-face was too frozen to talk. :-)</p>
-<!-- raw HTML omitted -->
-
-        
-      </article>
-      
       
       
 
@@ -789,10 +800,16 @@ face was too frozen to talk. :-)</p>
       
       
       <li class="post">
-        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
+      </li>
       
       
       
@@ -894,12 +911,6 @@ face was too frozen to talk. :-)</p>
       
       <li class="post">
         <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/hugo/">Hugo</a>
       </li>
       
       
