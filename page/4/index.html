@@ -144,6 +144,74 @@
         
 
 <header>
+  <p class="meta">Jul 21, 2014
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/django/">django </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/">How to create test models in Django</a>
+  </h1>
+</header>
+
+        
+          <p>It&rsquo;s occasionally useful to be able to create a Django model class in your unit test suite. Let&rsquo;s
+say you&rsquo;re building a library which creates an
+<a href="https://docs.djangoproject.com/en/dev/topics/db/models/#abstract-base-classes">abstract model</a>
+which your users will want to subclass. There&rsquo;s no need for your library to subclass it, but your
+library should still test that you can create a subclass and test out its features. If you create
+that model in your <code>models.py</code> file, then Django will think that it is a real part of your library and
+load it whenever you (or your users) call <code>syncdb</code>. That&rsquo;s bad.</p>
+<p>The <a href="https://code.djangoproject.com/ticket/7835#comment:24">solution</a> is to create it in a <code>tests.py</code>
+file within your Django app. If it&rsquo;s not in <code>models.py</code>, Django won&rsquo;t load it during <code>syncdb</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
+
+<span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
+
+<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
+    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
+
+<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
+    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
+        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
+
+</code></pre></div><p>A problem with this solution is that I rarely use a single <code>tests.py</code> file. Instead we use multiple
+test files collected in a tests package. If you try to create a model in <code>tests/test_foo.py</code>, then
+this approach fails because Django tries to create the model in an application named <code>tests</code>, but
+there is no such app in INSTALLED_APPS. The solution is to set <code>app_label</code> to the name of your app
+in an inner Meta class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
+
+<span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
+
+<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
+    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
+
+    <span style="color:#719e07">class</span> <span style="color:#268bd2">Meta</span>:
+        app_label <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;myappname&#39;</span>
+
+<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
+    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
+        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
+
+</code></pre></div><p>Oh, and I almost forgot&hellip; if you use <a href="http://south.readthedocs.org/en/latest/index.html">South</a>,
+this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>False</code> in your settings file.</p>
+<p>Comments and corrections welcome!</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jan 21, 2013
      - 6 minute read 
      - <a href="https://vkurup.github.io/blog/2013/01/21/peanut-allergy-a-personal-clinical-review/#disqus_thread">Comments</a>
@@ -934,70 +1002,6 @@ or remove the offending &lsquo;source&rsquo;.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Oct 14, 2012
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2012/10/14/ive-gone-to-the-dark-side/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/computers/">computers </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2012/10/14/ive-gone-to-the-dark-side/">I&#39;ve gone to the dark side</a>
-  </h1>
-</header>
-
-        
-          <p>I was a huge Apple fan growing up and IBM was Apple&rsquo;s enemy. Buying an
-IBM computer would have been unthinkable.</p>
-<p>Well, the unthinkable has happened. Of course IBM doesn&rsquo;t make laptops
-anymore, but their computers live on under the Lenovo name. I am the
-proud owner of a new <a href="http://shop.lenovo.com/us/laptops/thinkpad/t-series/t420s">Lenovo Thinkpad T420S</a>. I
-love this computer. It&rsquo;s an ugly black boxy thing, but it&rsquo;s light (4
-lbs), quiet and speedy. And the keyboard is just pure awesome. That&rsquo;s
-the main reason that I bought the T420S as opposed to the current T430
-line. The new line has the chicklet keyboard that is being used on all
-laptops these days. The T420 is the last one with the old-fashioned
-clicky keyboard, which I love.</p>
-<p>I also feel very lucky to get the deal that I got. I bought it from
-<a href="http://outlet.lenovo.com">Lenovo&rsquo;s Outlet store</a>, which had about
-thirty T420s&rsquo;s in stock when I was shopping. This one was about half
-the price of the others, by my estimation. It&rsquo;s so underpriced that
-I&rsquo;m wondering if I&rsquo;m missing an obvious flaw, but I don&rsquo;t see it.
-(Please let me know if you do!)</p>
-<p>Here&rsquo;s a comparison between the specs of my computer compared to one
-that was available at the Outlet store on October 4th, 2012:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The RAM is better on the other model, but Windows 7 Professional is an
-upgrade on my model. I don&rsquo;t really understand why mine was so cheap,
-but I&rsquo;m pretty happy about it!</p>
-<p>I added another 4G of RAM, moved Windows to a VirtualBox image and
-installed Arch Linux with Xmonad. It takes about 10 seconds to get
-from the BIOS screen to a working computer. I&rsquo;ll post some info on my
-setup in a future post.</p>
-
-        
-      </article>
-      
       
       
 
@@ -1083,6 +1087,8 @@ setup in a future post.</p>
   
   
   
+  
+  
 
   
   
@@ -1091,7 +1097,7 @@ setup in a future post.</p>
 
   
   
-  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/32/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -1150,10 +1156,16 @@ setup in a future post.</p>
       
       
       <li class="post">
-        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+      </li>
       
       
       
@@ -1255,12 +1267,6 @@ setup in a future post.</p>
       
       <li class="post">
         <a href="/blog/2019/11/17/hugo/">Hugo</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/04/08/avik-730/">Avik 7:30</a>
       </li>
       
       

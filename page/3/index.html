@@ -144,6 +144,56 @@
         
 
 <header>
+  <p class="meta">Dec 20, 2018
+     - 2 minute read 
+     - <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/">Triangle Race Series</a>
+  </h1>
+</header>
+
+        
+          <p>When we made our 2018 goals last year, Kavi, Anika and I all had some running-related goals. I don&rsquo;t
+remember offhand exactly what each of our goals were, but I think we all wanted to run more races,
+because well, races are fun! I somehow stumbled on the
+<a href="http://www.precisionrace.com/triangle-race-series2/">Triangle Race Series</a>. It&rsquo;s a series of a couple dozen races
+throughout the year around the Triangle, so we signed up for a few. They keep standings based on
+participation and placement. You get 5 points for running a race, and more if you place in your
+age/gender division. We ran about 4 or 5 of the races. I hadn&rsquo;t really thought about the series at
+all recently since I injured my right Achilles in July and haven&rsquo;t run at all since then. Getting
+old really is a bummer. Anyways, I checked the website today and they have posted the
+<a href="http://www.precisionrace.com/s/Series_Rank_Report_Race25_Cash_v9_2Races-xzxt.pdf">final 2018 results</a>. I got
+6th place in my &ldquo;not-quite-old-fogey&rdquo; division! Not bad, huh? Yeah, I know&hellip; it&rsquo;s mostly a
+participation award, but still, I&rsquo;m proud. But wait! That&rsquo;s not even the best part. I&rsquo;m even more
+proud of Kavi and Anika. They are both in the 0-19 age group, so get to compete against teenagers.
+Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the female 0-19 division!</p>
+
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/oak-city-mile-2018.jpg" title="Oak City Mile 2018" alt="Oak City Mile 2018">
+  <span class="caption-text">Oak City Mile 2018</span>
+</span>
+
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Dec 2, 2018
      - 5 minute read 
      - <a href="https://vkurup.github.io/blog/2018/12/02/my-nest-journey/#disqus_thread">Comments</a>
@@ -655,74 +705,6 @@ it&rsquo;s time to switch blog tools again&hellip;</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 21, 2014
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/django/">django </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2014/07/21/how-to-create-test-models-in-django/">How to create test models in Django</a>
-  </h1>
-</header>
-
-        
-          <p>It&rsquo;s occasionally useful to be able to create a Django model class in your unit test suite. Let&rsquo;s
-say you&rsquo;re building a library which creates an
-<a href="https://docs.djangoproject.com/en/dev/topics/db/models/#abstract-base-classes">abstract model</a>
-which your users will want to subclass. There&rsquo;s no need for your library to subclass it, but your
-library should still test that you can create a subclass and test out its features. If you create
-that model in your <code>models.py</code> file, then Django will think that it is a real part of your library and
-load it whenever you (or your users) call <code>syncdb</code>. That&rsquo;s bad.</p>
-<p>The <a href="https://code.djangoproject.com/ticket/7835#comment:24">solution</a> is to create it in a <code>tests.py</code>
-file within your Django app. If it&rsquo;s not in <code>models.py</code>, Django won&rsquo;t load it during <code>syncdb</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
-<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
-
-<span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
-    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
-
-</code></pre></div><p>A problem with this solution is that I rarely use a single <code>tests.py</code> file. Instead we use multiple
-test files collected in a tests package. If you try to create a model in <code>tests/test_foo.py</code>, then
-this approach fails because Django tries to create the model in an application named <code>tests</code>, but
-there is no such app in INSTALLED_APPS. The solution is to set <code>app_label</code> to the name of your app
-in an inner Meta class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
-<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
-
-<span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
-    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
-
-    <span style="color:#719e07">class</span> <span style="color:#268bd2">Meta</span>:
-        app_label <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;myappname&#39;</span>
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
-
-</code></pre></div><p>Oh, and I almost forgot&hellip; if you use <a href="http://south.readthedocs.org/en/latest/index.html">South</a>,
-this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>False</code> in your settings file.</p>
-<p>Comments and corrections welcome!</p>
-
-        
-      </article>
-      
       
       
 
@@ -808,6 +790,8 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
   
   
   
+  
+  
 
   
   
@@ -816,7 +800,7 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
 
   
   
-  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/32/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -875,10 +859,16 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
       
       
       <li class="post">
-        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+      </li>
       
       
       
@@ -980,12 +970,6 @@ this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>Fa
       
       <li class="post">
         <a href="/blog/2019/11/17/hugo/">Hugo</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/04/08/avik-730/">Avik 7:30</a>
       </li>
       
       

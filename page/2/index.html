@@ -144,6 +144,43 @@
         
 
 <header>
+  <p class="meta">Dec 9, 2020
+     - 1 minute read 
+     - <a href="https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://vkurup.github.io/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://vkurup.github.io/categories/ubuntu/">ubuntu </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/">Deleting old snaps</a>
+  </h1>
+</header>
+
+        
+          <p>Copy this script into <code>~/bin/</code>:</p>
+<pre tabindex="0"><code>#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -ex
+
+LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        sudo snap remove &quot;$snapname&quot; --revision=&quot;$revision&quot;
+    done
+</code></pre><p>Found on
+<a href="https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html">https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html</a> and
+slightly edited.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 21, 2020
      - 2 minute read 
      - <a href="https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/#disqus_thread">Comments</a>
@@ -599,56 +636,6 @@ His brand new watch, and a 7:30 alarm.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 20, 2018
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/running/">running </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2018/12/20/triangle-race-series/">Triangle Race Series</a>
-  </h1>
-</header>
-
-        
-          <p>When we made our 2018 goals last year, Kavi, Anika and I all had some running-related goals. I don&rsquo;t
-remember offhand exactly what each of our goals were, but I think we all wanted to run more races,
-because well, races are fun! I somehow stumbled on the
-<a href="http://www.precisionrace.com/triangle-race-series2/">Triangle Race Series</a>. It&rsquo;s a series of a couple dozen races
-throughout the year around the Triangle, so we signed up for a few. They keep standings based on
-participation and placement. You get 5 points for running a race, and more if you place in your
-age/gender division. We ran about 4 or 5 of the races. I hadn&rsquo;t really thought about the series at
-all recently since I injured my right Achilles in July and haven&rsquo;t run at all since then. Getting
-old really is a bummer. Anyways, I checked the website today and they have posted the
-<a href="http://www.precisionrace.com/s/Series_Rank_Report_Race25_Cash_v9_2Races-xzxt.pdf">final 2018 results</a>. I got
-6th place in my &ldquo;not-quite-old-fogey&rdquo; division! Not bad, huh? Yeah, I know&hellip; it&rsquo;s mostly a
-participation award, but still, I&rsquo;m proud. But wait! That&rsquo;s not even the best part. I&rsquo;m even more
-proud of Kavi and Anika. They are both in the 0-19 age group, so get to compete against teenagers.
-Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the female 0-19 division!</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/oak-city-mile-2018.jpg" title="Oak City Mile 2018" alt="Oak City Mile 2018">
-  <span class="caption-text">Oak City Mile 2018</span>
-</span>
-
-
-        
-      </article>
-      
       
       
 
@@ -734,6 +721,8 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
   
   
   
+  
+  
 
   
   
@@ -742,7 +731,7 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
 
   
   
-  <a href="/page/31/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
+  <a href="/page/32/" aria-label="Last"><i class="fa fa-angle-double-right fa-lg"></i></a>
   
 
 </div>
@@ -801,10 +790,16 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
       
       
       <li class="post">
-        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+        <a href="/blog/2024/04/06/links-2024-04-06/">Links 2024-04-06</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/03/16/cory-doctorow-rabbit-hole/">Cory Doctorow Rabbit Hole</a>
+      </li>
       
       
       
@@ -906,12 +901,6 @@ Kavi got 3rd place in the male 0-19 division, and Anika got 1st place in the fem
       
       <li class="post">
         <a href="/blog/2019/11/17/hugo/">Hugo</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/04/08/avik-730/">Avik 7:30</a>
       </li>
       
       
