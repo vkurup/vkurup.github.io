@@ -55,7 +55,7 @@
     <header role="banner">
 <hgroup>
   
-  <h1><a href="https://vkurup.github.io/">Vinod Kurup</a></h1>
+  <h1><a href="https://kurup.com/">Vinod Kurup</a></h1>
     <h2>Hospitalist/programmer in search of the meaning of life</h2>
 </hgroup></header>
 
@@ -66,17 +66,17 @@
   <select onchange="location = this.value;">
     <option value="">Navigate…</option>
     
-    <option value="https://vkurup.github.io/">» Blog</option>
+    <option value="https://kurup.com/">» Blog</option>
     
-    <option value="https://vkurup.github.io/about/">» About Me</option>
+    <option value="https://kurup.com/about/">» About Me</option>
     
-    <option value="https://vkurup.github.io/post/">» Archives</option>
+    <option value="https://kurup.com/post/">» Archives</option>
     
-    <option value="https://vkurup.github.io/categories/">» Categories</option>
+    <option value="https://kurup.com/categories/">» Categories</option>
     
-    <option value="https://vkurup.github.io/medicine/">» Medicine</option>
+    <option value="https://kurup.com/medicine/">» Medicine</option>
     
-    <option value="https://vkurup.github.io/running/">» Running</option>
+    <option value="https://kurup.com/running/">» Running</option>
     
   </select>
 </fieldset>
@@ -86,27 +86,27 @@
   
   
   
-  <li><a href="https://vkurup.github.io/" title="Blog">Blog</a></li>
+  <li><a href="https://kurup.com/" title="Blog">Blog</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/about/" title="About Me" >About Me</a></li>
+  <li><a href="https://kurup.com/about/" title="About Me" >About Me</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/post/" title="Archives" >Archives</a></li>
+  <li><a href="https://kurup.com/post/" title="Archives" >Archives</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/categories/" title="Categories" >Categories</a></li>
+  <li><a href="https://kurup.com/categories/" title="Categories" >Categories</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/medicine/" title="Medicine" >Medicine</a></li>
+  <li><a href="https://kurup.com/medicine/" title="Medicine" >Medicine</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/running/" title="Running" >Running</a></li>
+  <li><a href="https://kurup.com/running/" title="Running" >Running</a></li>
   
   
 </ul>
@@ -114,7 +114,7 @@
 <ul class="subscription">
   
   
-  <a href="https://vkurup.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
+  <a href="https://kurup.com/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
   
   
 </ul>
@@ -123,7 +123,7 @@
 <form action="https://www.google.com/search" method="get" target="_blank">
   <fieldset role="search">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-    <input type="hidden" name="q" value="site:https://vkurup.github.io/" />
+    <input type="hidden" name="q" value="site:https://kurup.com/" />
   </fieldset>
 </form>
 
@@ -144,17 +144,83 @@
         
 
 <header>
-  <p class="meta">Aug 2, 2010
+  <p class="meta">Aug 5, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/08/02/ubuntu-bluetooth-workaround/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/08/05/maps-are-functions-too/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/linux/">linux </a>
+      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/08/02/ubuntu-bluetooth-workaround/">Ubuntu Bluetooth Workaround</a>
+    <a href="https://kurup.com/blog/2010/08/05/maps-are-functions-too/">Maps are functions, too</a>
+  </h1>
+</header>
+
+        
+          <p>Braindump time. Here&rsquo;s what I&rsquo;ve read about clojure in the past few days. I don&rsquo;t understand what this means yet, but maybe someday I will:</p>
+<blockquote>
+<p>Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure
+that calls to Java can avoid reflection.</p>
+</blockquote>
+<p>There are multiple languages that target the JVM (besides Java, of
+course). It seems that there are 2 classes of languages. Ported languages
+such as JRuby and Jython aim to be identical to their base languages
+(Ruby &amp; Python). Native languages such as Clojure and Groovy are meant to
+target the JVM natively without satisfying any desire to be identical to
+another language. Native languages have the advantage that they only have 1
+set of libraries to use, so you don&rsquo;t get stuck between two languages.</p>
+<p>I installed clojure 1.0 from the ubuntu repositories, but promptly
+uninstalled it once I found
+<a href="http://github.com/technomancy/leiningen">leiningen</a>. Leiningen is a build
+tool for clojure. You can easily create a new project and specify its
+dependencies and leiningen will download those dependencies, including a
+full version of clojure for each project. You can have 1 project using
+leiningen 1.0 and another using version 1.2 sitting right next to it. That
+seems smart!</p>
+<p>I installed <a href="http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Emacs">clojure-mode on emacs</a>.</p>
+<p>Right now, I&rsquo;m working my way through the
+<a href="http://github.com/relevance/labrepl">labrepl</a> project. It&rsquo;s an interactive
+tutorial and REPL (read-eval-print-loop) where you can run the examples in
+the tutotial.</p>
+<p>It&rsquo;s always important to know how to find help:</p>
+<ul>
+<li><code>(doc blah)</code> gives documentation about blah.</li>
+<li><code>(find-doc &quot;blah&quot;)</code> searches for documentation.</li>
+<li><code>(javadoc blah)</code> opens Java docs in your browser</li>
+<li><code>(show java.util.Date)</code> shows method signatures</li>
+</ul>
+<p>Here&rsquo;s something cool: Maps are associative arrays. Here&rsquo;s a simple one:</p>
+<pre><code>(def me {:first-name &quot;Vinod&quot;, :last-name &quot;Kurup&quot;})
+</code></pre>
+<p>To get the data, you use the <code>get</code> function, like you would in other languages:</p>
+<pre><code>(get me :first-name) -&gt; &quot;Vinod&quot;
+</code></pre>
+<p>But, maps and keywords are functions as well, so you can do:</p>
+<pre><code>(me :first-name) -&gt; &quot;Vinod&quot;
+(:last-name me) -&gt; &quot;Kurup&quot;
+</code></pre>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Aug 2, 2010
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2010/08/02/ubuntu-bluetooth-workaround/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2010/08/02/ubuntu-bluetooth-workaround/">Ubuntu Bluetooth Workaround</a>
   </h1>
 </header>
 
@@ -232,15 +298,15 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
 <header>
   <p class="meta">Jul 29, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/29/hospitalist-notes-1/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/29/hospitalist-notes-1/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/medicine/">medicine </a><a class="label" href="https://vkurup.github.io/categories/hospitalist/">hospitalist </a>
+      - <a class="label" href="https://kurup.com/categories/medicine/">medicine </a><a class="label" href="https://kurup.com/categories/hospitalist/">hospitalist </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/29/hospitalist-notes-1/">Hospitalist Notes 1</a>
+    <a href="https://kurup.com/blog/2010/07/29/hospitalist-notes-1/">Hospitalist Notes 1</a>
   </h1>
 </header>
 
@@ -278,15 +344,15 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
 <header>
   <p class="meta">Jul 27, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/27/my-anti-writing-cycle/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/27/my-anti-writing-cycle/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/writing/">writing </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a><a class="label" href="https://vkurup.github.io/categories/blog/">blog </a>
+      - <a class="label" href="https://kurup.com/categories/writing/">writing </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a><a class="label" href="https://kurup.com/categories/blog/">blog </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/27/my-anti-writing-cycle/">My Anti-Writing Cycle</a>
+    <a href="https://kurup.com/blog/2010/07/27/my-anti-writing-cycle/">My Anti-Writing Cycle</a>
   </h1>
 </header>
 
@@ -332,15 +398,15 @@ cares.</p>
 <header>
   <p class="meta">Jul 20, 2010
      - 3 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/20/my-video-editing-process/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/kino/">kino </a><a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/video/">video </a>
+      - <a class="label" href="https://kurup.com/categories/kino/">kino </a><a class="label" href="https://kurup.com/categories/linux/">linux </a><a class="label" href="https://kurup.com/categories/video/">video </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/">My video editing process</a>
+    <a href="https://kurup.com/blog/2010/07/20/my-video-editing-process/">My video editing process</a>
   </h1>
 </header>
 
@@ -403,15 +469,15 @@ out.</p>
 <header>
   <p class="meta">Jul 19, 2010
      - 4 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/19/stock-market-timing/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/19/stock-market-timing/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/investing/">investing </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/python/">python </a>
+      - <a class="label" href="https://kurup.com/categories/investing/">investing </a><a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/python/">python </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/19/stock-market-timing/">Stock Market Timing</a>
+    <a href="https://kurup.com/blog/2010/07/19/stock-market-timing/">Stock Market Timing</a>
   </h1>
 </header>
 
@@ -516,15 +582,15 @@ in buy mode or sell mode. It uses the excellent <a href="http://www.goldb.org/ys
 <header>
   <p class="meta">Jul 18, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/18/first-steps-with-clojure/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/18/first-steps-with-clojure/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a>
+      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/18/first-steps-with-clojure/">First Steps with Clojure</a>
+    <a href="https://kurup.com/blog/2010/07/18/first-steps-with-clojure/">First Steps with Clojure</a>
   </h1>
 </header>
 
@@ -598,15 +664,15 @@ has pointed to me to a few options. I&rsquo;ll probably read one of these next:<
 <header>
   <p class="meta">Jul 17, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/17/getting-some-clojure/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/17/getting-some-clojure/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/programming/">programming </a><a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a>
+      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/17/getting-some-clojure/">Getting some clojure</a>
+    <a href="https://kurup.com/blog/2010/07/17/getting-some-clojure/">Getting some clojure</a>
   </h1>
 </header>
 
@@ -646,15 +712,15 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
 <header>
   <p class="meta">Jul 16, 2010
      - 3 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/16/inotify/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/16/inotify/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/linux/">linux </a><a class="label" href="https://vkurup.github.io/categories/unix/">unix </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a>
+      - <a class="label" href="https://kurup.com/categories/linux/">linux </a><a class="label" href="https://kurup.com/categories/unix/">unix </a><a class="label" href="https://kurup.com/categories/sysadmin/">sysadmin </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/16/inotify/">inotify</a>
+    <a href="https://kurup.com/blog/2010/07/16/inotify/">inotify</a>
   </h1>
 </header>
 
@@ -728,15 +794,15 @@ GNOME notification using <code>notify-send</code>:</p>
 <header>
   <p class="meta">Jul 15, 2010
      - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/07/15/playdoh/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2010/07/15/playdoh/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/family/">family </a><a class="label" href="https://vkurup.github.io/categories/parenting/">parenting </a>
+      - <a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/parenting/">parenting </a>
     
   </p>
   <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/07/15/playdoh/">PlayDoh</a>
+    <a href="https://kurup.com/blog/2010/07/15/playdoh/">PlayDoh</a>
   </h1>
 </header>
 
@@ -773,50 +839,6 @@ what I want.</p>
 <p>KAVI: oh.</p>
 <p>DADDY: What do you want?</p>
 <p>KAVI: Playdoh.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 3, 2010
-     - 2 minute read 
-     - <a href="https://vkurup.github.io/blog/2010/01/03/happy-new-year/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://vkurup.github.io/categories/life/">life </a><a class="label" href="https://vkurup.github.io/categories/family/">family </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://vkurup.github.io/blog/2010/01/03/happy-new-year/">Happy New Year</a>
-  </h1>
-</header>
-
-        
-          <p>This is going to be a great year. I was working on New Year&rsquo;s Eve. My shift
-was supposed to end at midnight, which meant that I would normally be home
-around 12:30 AM, but my colleague let me out early since the ER was
-unusually light. I got home at 11:55 PM, so I was able to kiss my beautiful
-wife as the new year began. If that&rsquo;s not an auspicious start to a year, I
-don&rsquo;t know what one would be.</p>
-<p>I am so lucky. I have a great job, which is getting better all the time. I
-work hard, but I get some pretty good karmic rewards. It&rsquo;s not perfect and
-maybe someday I&rsquo;ll rant about the pitfalls of being a hospitalist, but it&rsquo;s
-certainly better than my life was as a primary care doctor.</p>
-<p>I live in a beautiful house where I feel comfortable and &ldquo;at home&rdquo;. I have
-a loving extended family who, thankfully, are all pretty happy and healthy.</p>
-<p>Most importantly, I have an amazing wife and 2 darling children who can
-lift my heart into the heavens just by looking at me a certain way. They
-can also make me feel completely unfit to be a father sometimes, but I
-guess that&rsquo;s part of being a father. I have so much to teach them and they
-have so much to teach me.</p>
-<p>This is starting to feel like a &ldquo;Thanksgiving&rdquo; post rather than a &ldquo;New
-Year&rsquo;s&rdquo; post. The bottom line is that I have a great feeling that this is
-going to be a great year for me and my family.</p>
 
         
       </article>
@@ -975,10 +997,16 @@ going to be a great year for me and my family.</p>
       
       
       <li class="post">
-        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+      </li>
       
       
       
@@ -1083,12 +1111,6 @@ going to be a great year for me and my family.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1117,7 +1139,7 @@ going to be a great year for me and my family.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

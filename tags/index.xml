@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Vinod Kurup</title>
-    <link>https://vkurup.github.io/tags/</link>
+    <link>https://kurup.com/tags/</link>
     <description>Recent content in Tags on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster><atom:link href="https://vkurup.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster><atom:link href="https://kurup.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

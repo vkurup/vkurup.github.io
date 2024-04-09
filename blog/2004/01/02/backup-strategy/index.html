@@ -55,7 +55,7 @@
     <header role="banner">
 <hgroup>
   
-  <h1><a href="https://vkurup.github.io/">Vinod Kurup</a></h1>
+  <h1><a href="https://kurup.com/">Vinod Kurup</a></h1>
     <h2>Hospitalist/programmer in search of the meaning of life</h2>
 </hgroup></header>
 
@@ -66,17 +66,17 @@
   <select onchange="location = this.value;">
     <option value="">Navigate…</option>
     
-    <option value="https://vkurup.github.io/">» Blog</option>
+    <option value="https://kurup.com/">» Blog</option>
     
-    <option value="https://vkurup.github.io/about/">» About Me</option>
+    <option value="https://kurup.com/about/">» About Me</option>
     
-    <option value="https://vkurup.github.io/post/">» Archives</option>
+    <option value="https://kurup.com/post/">» Archives</option>
     
-    <option value="https://vkurup.github.io/categories/">» Categories</option>
+    <option value="https://kurup.com/categories/">» Categories</option>
     
-    <option value="https://vkurup.github.io/medicine/">» Medicine</option>
+    <option value="https://kurup.com/medicine/">» Medicine</option>
     
-    <option value="https://vkurup.github.io/running/">» Running</option>
+    <option value="https://kurup.com/running/">» Running</option>
     
   </select>
 </fieldset>
@@ -86,27 +86,27 @@
   
   
   
-  <li><a href="https://vkurup.github.io/" title="Blog">Blog</a></li>
+  <li><a href="https://kurup.com/" title="Blog">Blog</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/about/" title="About Me" >About Me</a></li>
+  <li><a href="https://kurup.com/about/" title="About Me" >About Me</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/post/" title="Archives" >Archives</a></li>
+  <li><a href="https://kurup.com/post/" title="Archives" >Archives</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/categories/" title="Categories" >Categories</a></li>
+  <li><a href="https://kurup.com/categories/" title="Categories" >Categories</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/medicine/" title="Medicine" >Medicine</a></li>
+  <li><a href="https://kurup.com/medicine/" title="Medicine" >Medicine</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/running/" title="Running" >Running</a></li>
+  <li><a href="https://kurup.com/running/" title="Running" >Running</a></li>
   
   
 </ul>
@@ -114,7 +114,7 @@
 <ul class="subscription">
   
   
-  <a href="https://vkurup.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
+  <a href="https://kurup.com/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
   
   
 </ul>
@@ -123,7 +123,7 @@
 <form action="https://www.google.com/search" method="get" target="_blank">
   <fieldset role="search">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-    <input type="hidden" name="q" value="site:https://vkurup.github.io/" />
+    <input type="hidden" name="q" value="site:https://kurup.com/" />
   </fieldset>
 </form>
 
@@ -140,12 +140,12 @@
 
 <header>
   <p class="meta">Jan 2, 2004
-     - 8 minute read 
-     - <a href="https://vkurup.github.io/blog/2004/01/02/backup-strategy/#disqus_thread">Comments</a>
+     - 10 minute read 
+     - <a href="https://kurup.com/blog/2004/01/02/backup-strategy/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/rsync/">rsync </a><a class="label" href="https://vkurup.github.io/categories/sysadmin/">sysadmin </a><a class="label" href="https://vkurup.github.io/categories/backup/">backup </a>
+      - <a class="label" href="https://kurup.com/categories/rsync/">rsync </a><a class="label" href="https://kurup.com/categories/sysadmin/">sysadmin </a><a class="label" href="https://kurup.com/categories/backup/">backup </a>
     
   </p>
   <h1 class="entry-title">
@@ -198,15 +198,102 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 </code></pre>
 <p>To get the proper command to put in your command=&quot;&quot; statement, run your rsync command with an unrestricted SSH key first (i.e. just copy the id_rsa.pub to authorized_keys2). When you run the rsync command on your Mac, do a <code>ps auxw | grep rsync</code> on the server machine. The command that you see listed is the command that goes in the key.</p>
 <p>After reading MarkD&rsquo;s article, the one thing I might change is to tar up the data on the Linux server that needs its user/group info preserved (<code>/etc</code>, <code>/root</code>, and <code>/usr/local</code>) and then store that on the server in my user&rsquo;s home directory. I then wouldn&rsquo;t have to rsync as root, so it would simplify things. The drawback is that anytime anything changed in any of those directories, I&rsquo;d be backing up the entire directories again. Hopefully this would be mitigated by the fact that they wouldn&rsquo;t change often and since they&rsquo;re mostly text files, they compress well.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div id="comment-box">
+<h2>Comments from old site</h2>
+<div class="one-comment">
+<p><b>Yeah, baby</b></p>
+<p>
+Great minds do thing alike :-)  ours too.
+</p>
+<p>
+I added a pointer to this from my rsync backup page, since I like your
+concise description of tar and rsync, plus the other root-related
+issues.  I found I haven't had to touch /etc since Cathy already set
+up networking, and all my junk is running from daemontools.  Back when
+I was colocating my machine, I would have loved to learn that trick
+though.  Rebuilding the /etc configs from scratch in a disaster
+recovery mode is a huge royal pain.
+</p>
+<p>
+I wish I had set something like this up *years* ago.  Entirely too
+easy, and it seems to work.
+</p>
+<address class="signature">
+<span class="author">Mark Dalrymple</span>
+<span class="date">2004-01-04 19:57:05</span>
+</address>
+</div>
+<div class="one-comment">
+<p><b>HFS+ aware rsync</b></p>
+<p>
+I'm setting this up on my LAN to do some nightly backups between Macs.
+It should be noted that the rsync included with Mac OS X isn't HFS+
+aware.  Not a big deal for backups from Linux, etc., but if you want
+to absolutely get everything on a Mac, probably worth it to download
+Rsyncx (check versiontracker.com) or if you are a darwinports user,
+you can do the following:
+</p>
+<p>
+sudo port install hfsrsync
+</p>
+<p>
+and use the "hfsrsync" command as you would the rsync command in the
+instructions above.  Rsyncx actually moves the original rsync command
+to orig_rsync and places itself as the rsync command, so after
+downloading and installing it, you could use the instructions
+unaltered.
+</p>
+<address class="signature">
+<span class="author">Walter McGinnis</span>
+<span class="date">2005-03-30 13:27:54</span>
+</address>
+</div>
+<div class="my-comment">
+<p><b>Thanks Walter</b></p>
+<p>
+I'm currently using Carbon Copy Cloner to backup my mac to an external
+firewire, but I'll probably want to switch to hfsrsync at some
+point. Thanks for the pointer!
+</p>
+<address class="signature">
+<span class="author">Vinod Kurup</span>
+<span class="date">2005-09-15 11:00:44</span>
+</address>
+</div>
+<div class="one-comment">
+<p><b>rsync exclude file syntax</b></p>
+<p>
+Thanks for the explanation. Googling rsync exclude did not give me
+what I was looking for -- syntax for the exclude file. man rsync
+doesn't explain it very well either
+</p>
+<address class="signature">
+<span class="author">Patrick Greenwood</span>
+<span class="date">2006-09-07 10:04:30</span>
+</address>
+</div>
+<div class="one-comment">
+<p><b>will this work</b></p>
+<p>
+Hi there,
+</p>
+<p>
+i am totally new to backup of filesystem and i am suppose to propose a
+backup strategy for a school assignment.
+</p>
+<p>
+i have a solaris 9.0 run filesystem of 9TB
+</p>
+<p>
+can i implement Rsync as the backup strategy? would it be sufficient?
+thanks for advice :)
+</p>
+<address class="signature">
+<span class="author">Unregistered Visitor</span>
+<span class="date">2007-02-07 09:46:47</span>
+</address>
+</div>
+</div>
 
         </div>
         
@@ -224,11 +311,11 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://vkurup.github.io/blog/2003/12/17/im-back/" title="I&#39;m back!">I&#39;m back!</a>
+        <a class="basic-alignment left" href="https://kurup.com/blog/2003/12/17/im-back/" title="I&#39;m back!">I&#39;m back!</a>
     
 
     
-      <a class="basic-alignment right" href="https://vkurup.github.io/blog/2004/01/05/open-source-saved-my-photos/" title="Open Source saved my photos!">Open Source saved my photos!</a>
+      <a class="basic-alignment right" href="https://kurup.com/blog/2004/01/05/open-source-saved-my-photos/" title="Open Source saved my photos!">Open Source saved my photos!</a>
     
   </p>
   
@@ -309,10 +396,16 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       
       
       <li class="post">
-        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+      </li>
       
       
       
@@ -417,12 +510,6 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -452,7 +539,7 @@ ssh-rsa AAAAB....&lt;snip&gt; ...t8= root@Vinod-Kurups-Computer.local.
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

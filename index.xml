@@ -2,23 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vinod Kurup</title>
-    <link>https://vkurup.github.io/</link>
+    <link>https://kurup.com/</link>
     <description>Recent content on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 07 Apr 2024 08:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Apr 2024 21:46:00 +0000</lastBuildDate>
     
-        <atom:link href="https://vkurup.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://kurup.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Choosing To Run</title>
+      <link>https://kurup.com/blog/2024/04/08/choosing-to-run/</link>
+      <pubDate>Mon, 08 Apr 2024 21:46:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://kurup.com/blog/2024/04/08/choosing-to-run/</guid>
+      <description>&lt;p&gt;Title: &lt;a href=&#34;https://amzn.to/4amn3wW&#34;&gt;Choosing To Run&lt;/a&gt; by Des Linden&lt;/p&gt;
+&lt;p&gt;Why: It&amp;rsquo;s a running book and who isn&amp;rsquo;t inspired by Des Linden?&lt;/p&gt;
+&lt;p&gt;Review:
+This autobiography was a page turner that I read during a car ride back from Florida. (Don&amp;rsquo;t worry, I wasn&amp;rsquo;t driving). I&amp;rsquo;m a sucker for running books and this was a great one, mostly because Des Linden is so down-to-earth that you just want to root for her through every obstacle. I also love what a vivid, detailed memory she has of her races. It allowed me to go back to watch the 2018 Boston marathon videos, in particular, and feel like I was in her mind, and in the mind of the runners around her.&lt;/p&gt;
+&lt;p&gt;I was a bit confused initially by the alternating chapter approach, but it build up suspense about her 2018 performance, which I guess was the point. As a doctor, I was frustrated with her for ignoring the straightforward medical advice that she was getting, though it is understandable given her situation, and her concerns about doping in sports. And to her credit, she researched her conditions thoroughly and made the right decisions. As I was reading her symptoms I immediately wondered if she was hypothyroid, and now I wonder if she actually had burned-out Graves, with her mild exopthalmos. Anyway, enough pop-diagnosis. The book is excellent and I would read more by her if she ever writes another book.&lt;/p&gt;
+&lt;p&gt;Favorite quote from the book:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;The grind&amp;rdquo; meant something positive to me: a challenge to embrace repetition and approach it creatively. It annoyed me when I heard &amp;ldquo;the grind&amp;rdquo; used in a pejorative way. Sure, it could be tedious, but it was a choice. Go off and do something else if you hate it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Preach!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Links 2024-04-07</title>
-      <link>https://vkurup.github.io/blog/2024/04/07/links-2024-04-07/</link>
+      <link>https://kurup.com/blog/2024/04/07/links-2024-04-07/</link>
       <pubDate>Sun, 07 Apr 2024 08:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2024/04/07/links-2024-04-07/</guid>
+      <guid>https://kurup.com/blog/2024/04/07/links-2024-04-07/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://peterattiamd.com/muscle-fiber-shape-and-resistance-training/&#34;&gt;Old people can build muscle&lt;/a&gt;. Sorry,
@@ -43,10 +62,10 @@ period.&lt;/p&gt;
     
     <item>
       <title>Links 2024-04-06</title>
-      <link>https://vkurup.github.io/blog/2024/04/06/links-2024-04-06/</link>
+      <link>https://kurup.com/blog/2024/04/06/links-2024-04-06/</link>
       <pubDate>Sat, 06 Apr 2024 19:17:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2024/04/06/links-2024-04-06/</guid>
+      <guid>https://kurup.com/blog/2024/04/06/links-2024-04-06/</guid>
       <description>&lt;p&gt;I can&amp;rsquo;t seem to find things on the web as well as I used to. I blame &lt;a href=&#34;https://pluralistic.net/2024/04/04/teach-me-how-to-shruggie/#kagi&#34;&gt;Google being
 enshittified&lt;/a&gt;, but
 whatever the reason, I&amp;rsquo;m going to post links here. Not sure of the tempo or format but I
@@ -76,20 +95,20 @@ Someday I&amp;rsquo;d like to try this out for all the family photos and videos 
     
     <item>
       <title>Cory Doctorow Rabbit Hole</title>
-      <link>https://vkurup.github.io/blog/2024/03/16/cory-doctorow-rabbit-hole/</link>
+      <link>https://kurup.com/blog/2024/03/16/cory-doctorow-rabbit-hole/</link>
       <pubDate>Sat, 16 Mar 2024 20:59:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2024/03/16/cory-doctorow-rabbit-hole/</guid>
+      <guid>https://kurup.com/blog/2024/03/16/cory-doctorow-rabbit-hole/</guid>
       <description>&lt;p&gt;I just went down a Cory Doctorow rabbit hole. It started from a link in &lt;a href=&#34;https://austinkleon.com/newsletter/&#34;&gt;Austin Kleon&amp;rsquo;s newsletter&lt;/a&gt; to &lt;a href=&#34;https://pluralistic.net/2021/05/09/the-memex-method/&#34;&gt;Doctorow&amp;rsquo;s post about his blog being his version of a commonplace book or a Memex&lt;/a&gt;. I remember Doctorow as being one of the early famous bloggers and an early crusader against unending copyright, but I haven&amp;rsquo;t really paid much attention to him since those early days. I distinctly remember when his first book, &amp;ldquo;Down and Out in the Magic Kingdom&amp;rdquo; was released for free on the internet. I remember it being surprising because he was &amp;ldquo;just a blogger&amp;rdquo; and now he was writing a real book. I was intrigued by some of the ideas in it. Like the concept of Whuffie, which was a social status indicator that everyone could see floating above your head, so that you knew who was important and who was a loser. With augmented reality, this might come true sooner than we think. I actually couldn&amp;rsquo;t initially remember the name of the book so I had to look through his &lt;a href=&#34;https://craphound.com/shop/&#34;&gt;book list&lt;/a&gt; to find it, and then saw that he&amp;rsquo;s written like 20 books now, many which look really interesting, so my to-read list just grew a bit. I also found his article about &lt;a href=&#34;https://pluralistic.net/2023/01/21/potemkin-ai/&#34;&gt;enshittification&lt;/a&gt;, which I think is one of the best essays I&amp;rsquo;ve seen in recent years. I&amp;rsquo;ve heard the term a lot, but didn&amp;rsquo;t realize that he had coined it. That article is another reason that I&amp;rsquo;ve started to write again, here on a page that I own.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The key to happiness is to do things that don&#39;t make you happy</title>
-      <link>https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</link>
+      <link>https://kurup.com/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</link>
       <pubDate>Thu, 14 Mar 2024 20:51:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</guid>
+      <guid>https://kurup.com/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m not sure that title is an exact quote, but I thought I heard &lt;a href=&#34;https://peterattiamd.com/arthurbrooks2/&#34;&gt;Arthur Brooks say something like that as he was interviewed on a Peter Attia podcast&lt;/a&gt;. At least that&amp;rsquo;s what I took from whatever he said. His point was that the common advice to &amp;ldquo;follow your bliss&amp;rdquo; is misguided. When faced with choices, you shouldn&amp;rsquo;t choose the easy thing, you should choose the hard thing. I&amp;rsquo;m not sure that any of this is revolutionary, but that title sure is kinda surprising to me, and I think it makes a lot of sense.&lt;/p&gt;
 &lt;p&gt;What would have made me happy this evening? Certainly way low on that list is writing this blog post. As you can tell if you follow my blogging (ha!), I clearly don&amp;rsquo;t like to write in public. The easy thing, the thing that my brain was telling me to do because it promised me happiness, was to sit down and scroll through my phone, or pick up my Kindle and read a novel, or basically do anything that was not me trying to &lt;strong&gt;create&lt;/strong&gt; something. The hard thing, the thing I knew would be painful, was to scribble down this post because I know it will never be as good as the post that is in my brain. Taking this idea in my brain, which is perfect because nobody else can see it, and trying to put it on the page here&amp;hellip; well that is scary and painful and I know people will wonder why I&amp;rsquo;d even think this was worth thinking, let alone sharing with the world. But in the long run, doing this activity of taking ideas in my brain, and working with them on the page, especially in public is clearly going to be better for me than leaving them in my brain. It will lead to me being a happier person.&lt;/p&gt;
 &lt;p&gt;Doing the thing that won&amp;rsquo;t make me happy is the key to happiness.&lt;/p&gt;
@@ -98,11 +117,11 @@ Someday I&amp;rsquo;d like to try this out for all the family photos and videos 
     
     <item>
       <title>Three tips on visiting Italy!</title>
-      <link>https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/</link>
+      <link>https://kurup.com/blog/2022/08/16/three-tips-on-visiting-italy/</link>
       <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2022/08/16/three-tips-on-visiting-italy/</guid>
-      <description>&lt;p&gt;Today, I have a guest post for you from a &lt;a href=&#34;https://vkurup.github.io/blog/2019/04/08/avik-730/&#34;&gt;very famous author&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://kurup.com/blog/2022/08/16/three-tips-on-visiting-italy/</guid>
+      <description>&lt;p&gt;Today, I have a guest post for you from a &lt;a href=&#34;https://kurup.com/blog/2019/04/08/avik-730/&#34;&gt;very famous author&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;by-avik-kurup&#34;&gt;By: Avik Kurup&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re going to visit Italy, I believe that these three tips will make you have an amazing trip.&lt;/p&gt;
 &lt;p&gt;First and foremost, visit Florence, Rome, Venice, and Cinque Terre. Florence has delicious food and the best gelato out of all of these places. Rome has the best pizza. Also, the colosseum and the forum are important and fun sites to see there. In Venice they have incredible pasta and seafood and many places to ride on boats.&lt;/p&gt;
@@ -114,10 +133,10 @@ Someday I&amp;rsquo;d like to try this out for all the family photos and videos 
     
     <item>
       <title>USB-C lint</title>
-      <link>https://vkurup.github.io/blog/2021/12/26/usb-c-lint/</link>
+      <link>https://kurup.com/blog/2021/12/26/usb-c-lint/</link>
       <pubDate>Sun, 26 Dec 2021 08:36:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2021/12/26/usb-c-lint/</guid>
+      <guid>https://kurup.com/blog/2021/12/26/usb-c-lint/</guid>
       <description>&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
 &lt;p&gt;The USB-C cord kept falling out of my Android phone. It started happening in the car. A
 little bump while driving would make the cord fall out. Then it started happening even
@@ -161,10 +180,10 @@ weird and revelatory to me.&lt;/p&gt;
     
     <item>
       <title>Loving the frame.work laptop</title>
-      <link>https://vkurup.github.io/blog/2021/11/27/loving-the-frame.work-laptop/</link>
+      <link>https://kurup.com/blog/2021/11/27/loving-the-frame.work-laptop/</link>
       <pubDate>Sat, 27 Nov 2021 19:52:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2021/11/27/loving-the-frame.work-laptop/</guid>
+      <guid>https://kurup.com/blog/2021/11/27/loving-the-frame.work-laptop/</guid>
       <description>&lt;p&gt;I have a new &lt;a href=&#34;https://frame.work/products/laptop-diy-edition&#34;&gt;favorite laptop&lt;/a&gt;. I needed
 a new non-work laptop and Linux is my OS of choice. It has been for at least a decade,
 but recently that favoritism has been cemented since I chose to use a Macbook Pro for
@@ -186,7 +205,7 @@ devices. Frame.work is fighting against that trend.&lt;/p&gt;
 
 
 &lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/frame-work-unboxed.jpg&#34; title=&#34;Frame.work laptop contents&#34; alt=&#34;Frame.work laptop contents&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://kurup.com/images/frame-work-unboxed.jpg&#34; title=&#34;Frame.work laptop contents&#34; alt=&#34;Frame.work laptop contents&#34;&gt;
   &lt;span class=&#34;caption-text&#34;&gt;Frame.work laptop contents&lt;/span&gt;
 &lt;/span&gt;
 
@@ -205,7 +224,7 @@ where it gets installed, which points to detailed instructions.&lt;/p&gt;
 
 
 &lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/frame-work-insides.jpg&#34; title=&#34;Frame.work laptop insides&#34; alt=&#34;Frame.work laptop insides&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://kurup.com/images/frame-work-insides.jpg&#34; title=&#34;Frame.work laptop insides&#34; alt=&#34;Frame.work laptop insides&#34;&gt;
   &lt;span class=&#34;caption-text&#34;&gt;Frame.work laptop insides&lt;/span&gt;
 &lt;/span&gt;
 
@@ -226,7 +245,7 @@ my needs (though there are gripes and workarounds on the forums about this).&lt;
 
 
 &lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/frame-work.jpg&#34; title=&#34;Frame.work laptop&#34; alt=&#34;Frame.work laptop&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://kurup.com/images/frame-work.jpg&#34; title=&#34;Frame.work laptop&#34; alt=&#34;Frame.work laptop&#34;&gt;
   &lt;span class=&#34;caption-text&#34;&gt;Frame.work laptop&lt;/span&gt;
 &lt;/span&gt;
 
@@ -238,10 +257,10 @@ around!&lt;/p&gt;
     
     <item>
       <title>First Post of 2021</title>
-      <link>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</link>
+      <link>https://kurup.com/blog/2021/05/09/first-post-of-2021/</link>
       <pubDate>Sun, 09 May 2021 19:14:52 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2021/05/09/first-post-of-2021/</guid>
+      <guid>https://kurup.com/blog/2021/05/09/first-post-of-2021/</guid>
       <description>&lt;p&gt;Hi loyal reader(s)! It is nearly halfway through 2021 and this is my first post of the
 year. And writing on this here blog was one of my 2021 resolutions, so I guess that was
 a complete failure. Although, maybe I can make up for it by actually writing more
@@ -269,10 +288,10 @@ been running and meditating and gardening, all with minimal success.&lt;/p&gt;
     
     <item>
       <title>Advent of Code Elixir Day 1</title>
-      <link>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</link>
+      <link>https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/</link>
       <pubDate>Sat, 12 Dec 2020 12:11:04 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/12/12/advent-of-code-elixir-day-1/</guid>
+      <guid>https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/</guid>
       <description>&lt;p&gt;There&amp;rsquo;s this cool thing called Advent of Code, described best
 &lt;a href=&#34;https://adventofcode.com/2020/about&#34;&gt;here&lt;/a&gt;. I found out about it while reading my
 &lt;a href=&#34;https://cpbotha.net/2020/12/12/weekly-head-voices-211-table-mountain-run-ish/&#34;&gt;favorite weekly weblog&lt;/a&gt;
@@ -340,10 +359,10 @@ to create cool puzzles like this.&lt;/p&gt;
     
     <item>
       <title>Install multiple python versions using pyenv</title>
-      <link>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</link>
+      <link>https://kurup.com/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</link>
       <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</guid>
+      <guid>https://kurup.com/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv&lt;/a&gt; is awesome and has changed the way that I manage
 my Python environments. One tiny annoyance is that it takes a looong time to install
 each Python version, which of course makes sense, since it has to download and compile
@@ -374,24 +393,24 @@ version if it&amp;rsquo;s not already installed&lt;/p&gt;
     
     <item>
       <title>Disk Space Hogs</title>
-      <link>https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/</link>
+      <link>https://kurup.com/blog/2020/12/10/disk-space-hogs/</link>
       <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/12/10/disk-space-hogs/</guid>
+      <guid>https://kurup.com/blog/2020/12/10/disk-space-hogs/</guid>
       <description>&lt;p&gt;Find disk space hogs:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo du -h -d 3 / | grep &amp;quot;^[0-9.]*G&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;hellip; which helped me find the command in
-&lt;a href=&#34;https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/&#34;&gt;yesterday&amp;rsquo;s post&lt;/a&gt;. You can add directories
+&lt;a href=&#34;https://kurup.com/blog/2020/12/09/deleting-old-snaps/&#34;&gt;yesterday&amp;rsquo;s post&lt;/a&gt;. You can add directories
 after the slash to drill down to your heart&amp;rsquo;s content.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Deleting old snaps</title>
-      <link>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</link>
+      <link>https://kurup.com/blog/2020/12/09/deleting-old-snaps/</link>
       <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/12/09/deleting-old-snaps/</guid>
+      <guid>https://kurup.com/blog/2020/12/09/deleting-old-snaps/</guid>
       <description>&lt;p&gt;Copy this script into &lt;code&gt;~/bin/&lt;/code&gt;:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/bash
 # Removes old revisions of snaps
@@ -410,11 +429,11 @@ slightly edited.&lt;/p&gt;
     
     <item>
       <title>Using an OBi110 for VOIP service</title>
-      <link>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</link>
+      <link>https://kurup.com/blog/2020/08/21/using-an-obi110-for-voip-service/</link>
       <pubDate>Fri, 21 Aug 2020 19:45:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/08/21/using-an-obi110-for-voip-service/</guid>
-      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+      <guid>https://kurup.com/blog/2020/08/21/using-an-obi110-for-voip-service/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.amazon.com/Obihai-OBi110-Service-Telephone-Adapter/dp/B0045RMEPI/ref=as_li_ss_il?cv_ct_cx=obi110&amp;dchild=1&amp;keywords=obi110&amp;pd_rd_i=B0045RMEPI&amp;pd_rd_r=a3b6c935-3201-4201-bbc6-7d29bbd1c366&amp;pd_rd_w=Ef8IC&amp;pd_rd_wg=nizgM&amp;pf_rd_p=13bf9bc7-d68d-44c3-9d2e-647020f56802&amp;pf_rd_r=A41ZB6SM3B7MVPHCSCCT&amp;psc=1&amp;qid=1598054979&amp;sr=1-1-791c2399-d602-4248-afbb-8a79de2d236f&amp;linkCode=li3&amp;tag=vinodkurupshomep&amp;linkId=235aa511a32550f5368ef9f5910b2806&amp;language=en_US&#34; target=&#34;_blank&#34;&gt;&lt;img border=&#34;0&#34; src=&#34;https://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;ASIN=B0045RMEPI&amp;Format=_SL250_&amp;ID=AsinImage&amp;MarketPlace=US&amp;ServiceVersion=20070822&amp;WS=1&amp;tag=vinodkurupshomep&amp;language=en_US&#34; &gt;&lt;/a&gt;&lt;img src=&#34;https://ir-na.amazon-adsystem.com/e/ir?t=vinodkurupshomep&amp;language=en_US&amp;l=li3&amp;o=1&amp;a=B0045RMEPI&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; style=&#34;border:none !important; margin:0px !important;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I set up an OBi110 device to provide a landline at home. OK, it&amp;rsquo;s not a land line, it&amp;rsquo;s
 a VOIP (Voice Over Internet Protocol) line, but it performs a similar function. We&amp;rsquo;ve
 always had a landline. Our cell phone coverage is spotty at times and ever since Mala
@@ -465,10 +484,10 @@ isn&amp;rsquo;t for you. You&amp;rsquo;ll need the OBI202 (which was out of stoc
     
     <item>
       <title>Django forms have 2 modes</title>
-      <link>https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/</link>
+      <link>https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/</link>
       <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/08/17/django-forms-have-2-modes/</guid>
+      <guid>https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/</guid>
       <description>&lt;p&gt;I worked on adding tests to some Django forms today and I was reminded that Django forms
 operate in two &lt;em&gt;modes&lt;/em&gt;. I think of them as the GET mode and the POST mode. The GET mode
 displays the form and the POST mode processes the data that you supply to the form. I
@@ -502,10 +521,10 @@ the form you are testing, GET or POST.&lt;/p&gt;
     
     <item>
       <title>AWS Xray brain dump</title>
-      <link>https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/</link>
+      <link>https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/</link>
       <pubDate>Mon, 27 Jan 2020 17:00:32 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2020/01/27/aws-xray-brain-dump/</guid>
+      <guid>https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/</guid>
       <description>&lt;p&gt;These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
 Posting this mainly for my auxiliary brain.&lt;/p&gt;
 &lt;p&gt;First, set up an IAM role that allows nodes to access xray.&lt;/p&gt;
@@ -535,10 +554,10 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
     
     <item>
       <title>We have always lived in the castle</title>
-      <link>https://vkurup.github.io/blog/2019/12/11/we-have-always-lived-in-the-castle/</link>
+      <link>https://kurup.com/blog/2019/12/11/we-have-always-lived-in-the-castle/</link>
       <pubDate>Wed, 11 Dec 2019 20:00:44 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2019/12/11/we-have-always-lived-in-the-castle/</guid>
+      <guid>https://kurup.com/blog/2019/12/11/we-have-always-lived-in-the-castle/</guid>
       <description>&lt;p&gt;At school, Kavi is reading
 &lt;a href=&#34;https://amzn.to/2PctnQm&#34;&gt;&amp;ldquo;We have always lived in the castle&amp;rdquo;&lt;/a&gt;, by Shirley Jackson. I
 read her short story,
@@ -583,10 +602,10 @@ satisfaction.&lt;/li&gt;
     
     <item>
       <title>Open Borders</title>
-      <link>https://vkurup.github.io/blog/2019/11/27/open-borders/</link>
+      <link>https://kurup.com/blog/2019/11/27/open-borders/</link>
       <pubDate>Wed, 27 Nov 2019 19:01:59 -0500</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2019/11/27/open-borders/</guid>
+      <guid>https://kurup.com/blog/2019/11/27/open-borders/</guid>
       <description>&lt;p&gt;I just finished &lt;a href=&#34;https://amzn.to/35FoTXV&#34;&gt;Open Borders&lt;/a&gt;, a graphic novel about immigration policy.
 (Not 2 things that normally occupy the same sentence)&lt;/p&gt;
 &lt;p&gt;It was an excellent presentation of a position that I&amp;rsquo;ve always felt to be morally correct, in my
@@ -599,10 +618,10 @@ have this opportunity? This book shatters many of the myths that allowing open b
     
     <item>
       <title>Deep Survival Déjà Vu</title>
-      <link>https://vkurup.github.io/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</link>
+      <link>https://kurup.com/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</link>
       <pubDate>Mon, 18 Nov 2019 19:16:24 -0500</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</guid>
+      <guid>https://kurup.com/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/</guid>
       <description>&lt;p&gt;Whenever I come across a book that I want to read, I add it to my &lt;a href=&#34;https://www.goodreads.com/user/show/3158304-vinod-kurup&#34;&gt;Goodreads&lt;/a&gt; to-read list. This list,
 of course, is always growing. I&amp;rsquo;m very slowly coming to terms with the fact that I will never make
 it through this list and that someday I will die, with unread books on my to-read list. Horrors! The
@@ -619,7 +638,7 @@ Kindle when it went on sale recently:&lt;/p&gt;
 
 
 &lt;span class=&#34;caption-wrapper &#34;&gt;
-  &lt;img class=&#34;caption&#34; src=&#34;https://vkurup.github.io/images/deep-forget.png&#34; title=&#34;Knocking off a to-read&#34; alt=&#34;Knocking off a to-read&#34;&gt;
+  &lt;img class=&#34;caption&#34; src=&#34;https://kurup.com/images/deep-forget.png&#34; title=&#34;Knocking off a to-read&#34; alt=&#34;Knocking off a to-read&#34;&gt;
   &lt;span class=&#34;caption-text&#34;&gt;Knocking off a to-read&lt;/span&gt;
 &lt;/span&gt;
 
@@ -627,7 +646,7 @@ Kindle when it went on sale recently:&lt;/p&gt;
 is bothering me. It felt very &lt;em&gt;familiar&lt;/em&gt;. Maybe that is what happened&amp;hellip; I read a teaser for the book in
 a magazine article or something, and that is why I added it to my to-read list last year.&lt;/p&gt;
 &lt;p&gt;And then yesterday, while I was converting the blog from Octopress to Hugo, I had to fix up some
-posts, so I ended up looking through a bunch of my old posts, including&amp;hellip;. &lt;a href=&#34;https://vkurup.github.io/blog/2007/04/15/deep-survival/&#34;&gt;my book review of Deep Survival&lt;/a&gt;.&lt;/p&gt;
+posts, so I ended up looking through a bunch of my old posts, including&amp;hellip;. &lt;a href=&#34;https://kurup.com/blog/2007/04/15/deep-survival/&#34;&gt;my book review of Deep Survival&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s a weird feeling to read a review about a book that I&amp;rsquo;ve been wanting to read for over a year,
 written by a 12 year younger version of yourself.&lt;/p&gt;
 </description>
@@ -635,10 +654,10 @@ written by a 12 year younger version of yourself.&lt;/p&gt;
     
     <item>
       <title>Ports and networks</title>
-      <link>https://vkurup.github.io/blog/2019/11/17/ports-and-networks/</link>
+      <link>https://kurup.com/blog/2019/11/17/ports-and-networks/</link>
       <pubDate>Sun, 17 Nov 2019 18:48:24 -0500</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2019/11/17/ports-and-networks/</guid>
+      <guid>https://kurup.com/blog/2019/11/17/ports-and-networks/</guid>
       <description>&lt;p&gt;Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
 I&amp;rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&amp;rsquo;t seem
 to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
@@ -649,49 +668,10 @@ explained that most sites will not allow their sites to be accessed via IP addre
 &lt;p&gt;I still haven&amp;rsquo;t figured out why I can&amp;rsquo;t access the blog running in my container, but I think Kavi&amp;rsquo;s
 learning more about networking than I ever did (and I&amp;rsquo;m hoping that he&amp;rsquo;ll be able to debug these
 issues for me&amp;hellip; soon enough)&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;https://media.giphy.com/media/YcVwQaBOtGGAw/giphy.gif&#34;&gt;
 &lt;p&gt;UPDATE: I figured it out. Hugo&amp;rsquo;s server was listening on localhost inside the container, when it
 needed to be listening on 0.0.0.0. Adding that as a &lt;code&gt;--bind&lt;/code&gt; parameter fixed the issue (though I had
 to also add &lt;code&gt;--baseURL&lt;/code&gt; and &lt;code&gt;--appendPort=false&lt;/code&gt; params, which saddened me.)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://vkurup.github.io/blog/2019/11/17/hugo/</link>
-      <pubDate>Sun, 17 Nov 2019 15:22:24 -0500</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2019/11/17/hugo/</guid>
-      <description>&lt;p&gt;I moved my blog from Octopress to &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; today. I had been &lt;a href=&#34;https://kurup.org/blog/2014/07/22/pygments-on-arch-linux/&#34;&gt;slightly unhappy with Octopress for a while now&lt;/a&gt;, but
-mainly I just wanted something new to play with. Hugo is MUCH faster than Octopress was:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;vkurup@caktus020:~/dev/kurup.org&lt;span style=&#34;color:#719e07&#34;&gt;(&lt;/span&gt;master&lt;span style=&#34;color:#719e07&#34;&gt;)&lt;/span&gt; $ hugo
-
-                   | EN   
-+------------------+-----+
-  Pages            | &lt;span style=&#34;color:#2aa198&#34;&gt;669&lt;/span&gt;  
-  Paginator pages  |  &lt;span style=&#34;color:#2aa198&#34;&gt;29&lt;/span&gt;  
-  Non-page files   |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
-  Static files     | &lt;span style=&#34;color:#2aa198&#34;&gt;426&lt;/span&gt;  
-  Processed images |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
-  Aliases          |   &lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;  
-  Sitemaps         |   &lt;span style=&#34;color:#2aa198&#34;&gt;1&lt;/span&gt;  
-  Cleaned          |   &lt;span style=&#34;color:#2aa198&#34;&gt;0&lt;/span&gt;  
-
-Total in &lt;span style=&#34;color:#2aa198&#34;&gt;808&lt;/span&gt; ms
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is nice to generate my entire site in less than a second.&lt;/p&gt;
-&lt;p&gt;But I still liked the style and theme of my old site, so I was happy to find that &lt;a href=&#34;https://themes.gohugo.io/hugo-octopress/&#34;&gt;someone had already built an Octopress theme for Hugo&lt;/a&gt;. I promptly
-stole his work and customized a few things here and there to make it look (nearly) exactly like my
-old site did. Yay! Thanks to &lt;a href=&#34;https://parsiya.net/&#34;&gt;Parsia&lt;/a&gt; for building that theme. I&amp;rsquo;ve also
-subscribed to his RSS feed because his site looks pretty interesting.&lt;/p&gt;
-&lt;p&gt;Moving my content wasn&amp;rsquo;t easy, but it wasn&amp;rsquo;t hard. I mainly just copied the old markdown posts over,
-changed the front matter, and then fixed a few octopress plugins I was using to work with Hugo.&lt;/p&gt;
-&lt;p&gt;Future steps:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Switch from Disqus to something self-hosted&lt;/li&gt;
-&lt;li&gt;Generate the HTML on the server rather than having the HTML in git&lt;/li&gt;
-&lt;li&gt;Update my About page and Computers page&lt;/li&gt;
-&lt;li&gt;&amp;hellip; oh, maybe write more!&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jekyll on Vinod Kurup</title>
-    <link>https://vkurup.github.io/categories/jekyll/</link>
+    <link>https://kurup.com/categories/jekyll/</link>
     <description>Recent content in jekyll on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 19 Sep 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Sep 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bye Bye Wordpress</title>
-      <link>https://vkurup.github.io/blog/2009/09/19/bye-bye-wordpress/</link>
+      <link>https://kurup.com/blog/2009/09/19/bye-bye-wordpress/</link>
       <pubDate>Sat, 19 Sep 2009 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2009/09/19/bye-bye-wordpress/</guid>
+      <guid>https://kurup.com/blog/2009/09/19/bye-bye-wordpress/</guid>
       <description>This site has undergone another transformation. I&amp;rsquo;ve ditched Wordpress and am now using a tool called Jekyll. It&amp;rsquo;s a program that runs on my laptop and generates static files from a bunch of templates. I then upload the static files to my server. Wordpress, like any dynamic software, has security risks. Especially since it&amp;rsquo;s such a popular blog app, it&amp;rsquo;s always under attack. I don&amp;rsquo;t have the time or interest to keep up with updates, especially since my blogging is so low-profile.</description>
     </item>
     

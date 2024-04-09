@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>open-source on Vinod Kurup</title>
-    <link>https://vkurup.github.io/categories/open-source/</link>
+    <link>https://kurup.com/categories/open-source/</link>
     <description>Recent content in open-source on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 24 Nov 2002 00:00:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Nov 2002 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Medicine</title>
-      <link>https://vkurup.github.io/blog/2002/11/24/open-source-medicine/</link>
+      <link>https://kurup.com/blog/2002/11/24/open-source-medicine/</link>
       <pubDate>Sun, 24 Nov 2002 00:00:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2002/11/24/open-source-medicine/</guid>
+      <guid>https://kurup.com/blog/2002/11/24/open-source-medicine/</guid>
       <description>I wrote up a little intro piece on the use of open source software in medical applications (PDF). HTML below&amp;hellip;
 Improving the communication of patient information is the key to improving healthcare quality and efficiency. In most health care organizations, written records are the main conduit of this information, yet they are notoriously illegible and difficult to browse. Reviewing past problems and past interventions is time-consuming, if not impossible. The record is used mostly as a one-way device for the clinician to record data.</description>
     </item>

@@ -55,7 +55,7 @@
     <header role="banner">
 <hgroup>
   
-  <h1><a href="https://vkurup.github.io/">Vinod Kurup</a></h1>
+  <h1><a href="https://kurup.com/">Vinod Kurup</a></h1>
     <h2>Hospitalist/programmer in search of the meaning of life</h2>
 </hgroup></header>
 
@@ -66,17 +66,17 @@
   <select onchange="location = this.value;">
     <option value="">Navigate…</option>
     
-    <option value="https://vkurup.github.io/">» Blog</option>
+    <option value="https://kurup.com/">» Blog</option>
     
-    <option value="https://vkurup.github.io/about/">» About Me</option>
+    <option value="https://kurup.com/about/">» About Me</option>
     
-    <option value="https://vkurup.github.io/post/">» Archives</option>
+    <option value="https://kurup.com/post/">» Archives</option>
     
-    <option value="https://vkurup.github.io/categories/">» Categories</option>
+    <option value="https://kurup.com/categories/">» Categories</option>
     
-    <option value="https://vkurup.github.io/medicine/">» Medicine</option>
+    <option value="https://kurup.com/medicine/">» Medicine</option>
     
-    <option value="https://vkurup.github.io/running/">» Running</option>
+    <option value="https://kurup.com/running/">» Running</option>
     
   </select>
 </fieldset>
@@ -86,27 +86,27 @@
   
   
   
-  <li><a href="https://vkurup.github.io/" title="Blog">Blog</a></li>
+  <li><a href="https://kurup.com/" title="Blog">Blog</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/about/" title="About Me" >About Me</a></li>
+  <li><a href="https://kurup.com/about/" title="About Me" >About Me</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/post/" title="Archives" >Archives</a></li>
+  <li><a href="https://kurup.com/post/" title="Archives" >Archives</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/categories/" title="Categories" >Categories</a></li>
+  <li><a href="https://kurup.com/categories/" title="Categories" >Categories</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/medicine/" title="Medicine" >Medicine</a></li>
+  <li><a href="https://kurup.com/medicine/" title="Medicine" >Medicine</a></li>
   
   
   
-  <li><a href="https://vkurup.github.io/running/" title="Running" >Running</a></li>
+  <li><a href="https://kurup.com/running/" title="Running" >Running</a></li>
   
   
 </ul>
@@ -114,7 +114,7 @@
 <ul class="subscription">
   
   
-  <a href="https://vkurup.github.io/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
+  <a href="https://kurup.com/index.xml" target="_blank" type="application/rss+xml" title="RSS"><i class="fa fa-rss fa-lg"></i></a>
   
   
 </ul>
@@ -123,7 +123,7 @@
 <form action="https://www.google.com/search" method="get" target="_blank">
   <fieldset role="search">
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-    <input type="hidden" name="q" value="site:https://vkurup.github.io/" />
+    <input type="hidden" name="q" value="site:https://kurup.com/" />
   </fieldset>
 </form>
 
@@ -141,11 +141,11 @@
 <header>
   <p class="meta">Nov 29, 2011
      - 5 minute read 
-     - <a href="https://vkurup.github.io/blog/2011/11/29/on-factoring-large-numbers/#disqus_thread">Comments</a>
+     - <a href="https://kurup.com/blog/2011/11/29/on-factoring-large-numbers/#disqus_thread">Comments</a>
 
     
     
-      - <a class="label" href="https://vkurup.github.io/categories/clojure/">clojure </a><a class="label" href="https://vkurup.github.io/categories/math/">math </a><a class="label" href="https://vkurup.github.io/categories/programming/">programming </a>
+      - <a class="label" href="https://kurup.com/categories/clojure/">clojure </a><a class="label" href="https://kurup.com/categories/math/">math </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
     
   </p>
   <h1 class="entry-title">
@@ -163,7 +163,7 @@ enough. Every time I start to listen to a show, I&rsquo;m certain that I&rsquo;m
 not going to be interested and within a minute I&rsquo;m trapped and can&rsquo;t
 stop listening. It&rsquo;s that good. A <a href="http://www.thisamericanlife.org/radio-archives/episode/450/so-crazy-it-just-might-work">recent show was about people who people who pursued crazy ideas</a>.
 The first story was about a mathematician named <a href="http://en.wikipedia.org/wiki/Frank_Nelson_Cole">Frank Nelson Cole</a>. <a href="http://en.wikipedia.org/wiki/Mersenne_prime#History">Marin Mersenne</a> had
-claimed in the 17th century that 2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1 was a prime
+claimed in the 17th century that 2<sup>67</sup>-1 was a prime
 number. He was prominent enough that the claim was felt to be accepted
 wisdom and there was certainly no way to test the claim in the days
 before computers. That&rsquo;s a big honking number:
@@ -176,7 +176,7 @@ another large number and then started to multiply them together. It
 took a while, but by the time he started to get towards the solution,
 the crowd of mathematicians understood that he was proving that he had
 found two numbers whose product was the famous &ldquo;prime&rdquo; number
-2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1. As he came close to finishing, the anticipation
+2<sup>67</sup>-1. As he came close to finishing, the anticipation
 peaked and cheering began. He finished the calculation and sat down,
 never speaking a word.</p>
 <p>Stories like that give me the chills. Can you imagine how excited he
@@ -192,7 +192,7 @@ went about it. The REPL is such a fun way to explore things like this:</p>
 <ol>
 <li>
 <p>I need a range of numbers which I&rsquo;ll then test one-by-one to see if
-they divide into 2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1 evenly.</p>
+they divide into 2<sup>67</sup>-1 evenly.</p>
 <pre><code> user=&gt; (def n 18)
  #'user/n
  user=&gt; (range 2 n)
@@ -201,7 +201,7 @@ they divide into 2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1 evenly.
 </li>
 <li>
 <p>I need a way to take a square root.  (There&rsquo;s no need to check
-numbers higher than the square root of 2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1)</p>
+numbers higher than the square root of 2<sup>67</sup>-1)</p>
 <pre><code> user=&gt; (Math/sqrt n)
  4.242640687119285
 </code></pre>
@@ -255,7 +255,7 @@ function:</p>
 </code></pre>
 </li>
 <li>
-<p>Now let&rsquo;s get our big number (2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1)</p>
+<p>Now let&rsquo;s get our big number (2<sup>67</sup>-1)</p>
 <pre><code> user=&gt; (dec (Math/pow 2 67))
  1.4757395258967641E20
 </code></pre>
@@ -279,7 +279,7 @@ let&rsquo;s try it:</p>
 </li>
 <li>
 <p>OK, that didn&rsquo;t work. It clearly found way too many roots, because
-2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1 was an approximation. We have to use BigIntegers which have
+2<sup>67</sup>-1 was an approximation. We have to use BigIntegers which have
 appropriate precision even with large numbers.</p>
 <pre><code> user=&gt; (def two67minus1 (dec (.pow (BigInteger. &quot;2&quot;) 67)))
  #'user/two67minus1
@@ -303,7 +303,7 @@ difference, check their type.</p>
 </code></pre>
 </li>
 <li>
-<p>Cool!!! It works! Those are the roots of 2<!-- raw HTML omitted -->67<!-- raw HTML omitted -->-1. How long did that
+<p>Cool!!! It works! Those are the roots of 2<sup>67</sup>-1. How long did that
 take to compute? (We need <code>doall</code> to make the <code>time</code> command wait
 for all of the values to be calculated, otherwise it will return
 after the first value is calculated. This has something to do with
@@ -338,11 +338,11 @@ had a simple error? Just amazing&hellip;</p>
 
   <p class="meta">
     
-        <a class="basic-alignment left" href="https://vkurup.github.io/blog/2011/11/12/clojurescript-and-phonegap/" title="ClojureScript and PhoneGap">ClojureScript and PhoneGap</a>
+        <a class="basic-alignment left" href="https://kurup.com/blog/2011/11/12/clojurescript-and-phonegap/" title="ClojureScript and PhoneGap">ClojureScript and PhoneGap</a>
     
 
     
-      <a class="basic-alignment right" href="https://vkurup.github.io/blog/2012/08/03/blogging-again/" title="Blogging Again">Blogging Again</a>
+      <a class="basic-alignment right" href="https://kurup.com/blog/2012/08/03/blogging-again/" title="Blogging Again">Blogging Again</a>
     
   </p>
   
@@ -423,10 +423,16 @@ had a simple error? Just amazing&hellip;</p>
       
       
       <li class="post">
-        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/07/links-2024-04-07/">Links 2024-04-07</a>
+      </li>
       
       
       
@@ -531,12 +537,6 @@ had a simple error? Just amazing&hellip;</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -566,7 +566,7 @@ had a simple error? Just amazing&hellip;</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://vkurup.github.io/license/">License</a> -
+  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

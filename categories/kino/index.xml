@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kino on Vinod Kurup</title>
-    <link>https://vkurup.github.io/categories/kino/</link>
+    <link>https://kurup.com/categories/kino/</link>
     <description>Recent content in kino on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 20 Jul 2010 20:51:00 +0000</lastBuildDate><atom:link href="https://vkurup.github.io/categories/kino/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2010 20:51:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/kino/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My video editing process</title>
-      <link>https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/</link>
+      <link>https://kurup.com/blog/2010/07/20/my-video-editing-process/</link>
       <pubDate>Tue, 20 Jul 2010 20:51:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://vkurup.github.io/blog/2010/07/20/my-video-editing-process/</guid>
+      <guid>https://kurup.com/blog/2010/07/20/my-video-editing-process/</guid>
       <description>I use kino to edit the videos that we take of the kids. I haven&amp;rsquo;t found a Linux program which was as nice as iMovie was on the Mac, but kino is pretty good. It&amp;rsquo;s easy to splice and reconnect video clips together. It has nice special effects, though my needs are pretty simple. It&amp;rsquo;s able to export in plenty of formats, possibly too many, for my simple mind. But, I&amp;rsquo;ve figured it out and have a stable process for getting video from camera to youtube.</description>
     </item>
     
