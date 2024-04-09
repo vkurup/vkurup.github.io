@@ -8,10 +8,23 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 08 Apr 2024 21:46:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2024 19:03:00 +0000</lastBuildDate>
     
         <atom:link href="https://kurup.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CivilWarLand in Bad Decline</title>
+      <link>https://kurup.com/blog/2024/04/09/civilwarland-in-bad-decline/</link>
+      <pubDate>Tue, 09 Apr 2024 19:03:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://kurup.com/blog/2024/04/09/civilwarland-in-bad-decline/</guid>
+      <description>&lt;p&gt;Title: &lt;a href=&#34;https://amzn.to/3PQopIg&#34;&gt;CivilWarLand in Bad Decline&lt;/a&gt; by George Saunders&lt;/p&gt;
+&lt;p&gt;Why: A co-worker recommended and I vaguely remember liking Lincoln in the Bardo&lt;/p&gt;
+&lt;p&gt;Review:
+It is a series of short stories, all with the thread of being set in various near-future dystopias with flawed characters. It&amp;rsquo;s definitely on the weird/absurd side of things. Parts of it reminded me of The Stand or Station 11, two books I really liked. Parts were humorous and parts were absolutely disgusting, but throughout, it shed a light on human nature, even in those weird circumstances. I wouldn&amp;rsquo;t read it again, but I&amp;rsquo;m glad it and I added Pastoralia to my to-read list.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Choosing To Run</title>
@@ -649,29 +662,6 @@ a magazine article or something, and that is why I added it to my to-read list l
 posts, so I ended up looking through a bunch of my old posts, including&amp;hellip;. &lt;a href=&#34;https://kurup.com/blog/2007/04/15/deep-survival/&#34;&gt;my book review of Deep Survival&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s a weird feeling to read a review about a book that I&amp;rsquo;ve been wanting to read for over a year,
 written by a 12 year younger version of yourself.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ports and networks</title>
-      <link>https://kurup.com/blog/2019/11/17/ports-and-networks/</link>
-      <pubDate>Sun, 17 Nov 2019 18:48:24 -0500</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://kurup.com/blog/2019/11/17/ports-and-networks/</guid>
-      <description>&lt;p&gt;Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
-I&amp;rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&amp;rsquo;t seem
-to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
-(&amp;ldquo;localhost:1313&amp;rdquo;) and then I showed the results of &lt;code&gt;netstat -ant&lt;/code&gt; to prove that something should be
-listening on that port. And we got the IP address for google.com and then put that in Chrome&amp;rsquo;s URL
-bar with &lt;code&gt;:80&lt;/code&gt; at the end of it, and magically, it worked. (Other websites did not work, and I
-explained that most sites will not allow their sites to be accessed via IP address).&lt;/p&gt;
-&lt;p&gt;I still haven&amp;rsquo;t figured out why I can&amp;rsquo;t access the blog running in my container, but I think Kavi&amp;rsquo;s
-learning more about networking than I ever did (and I&amp;rsquo;m hoping that he&amp;rsquo;ll be able to debug these
-issues for me&amp;hellip; soon enough)&lt;/p&gt;
-&lt;img src=&#34;https://media.giphy.com/media/YcVwQaBOtGGAw/giphy.gif&#34;&gt;
-&lt;p&gt;UPDATE: I figured it out. Hugo&amp;rsquo;s server was listening on localhost inside the container, when it
-needed to be listening on 0.0.0.0. Adding that as a &lt;code&gt;--bind&lt;/code&gt; parameter fixed the issue (though I had
-to also add &lt;code&gt;--baseURL&lt;/code&gt; and &lt;code&gt;--appendPort=false&lt;/code&gt; params, which saddened me.)&lt;/p&gt;
 </description>
     </item>
     

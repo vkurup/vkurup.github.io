@@ -144,6 +144,34 @@
         
 
 <header>
+  <p class="meta">Apr 9, 2024
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2024/04/09/civilwarland-in-bad-decline/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/book-review/">book-review </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2024/04/09/civilwarland-in-bad-decline/">CivilWarLand in Bad Decline</a>
+  </h1>
+</header>
+
+        
+          <p>Title: <a href="https://amzn.to/3PQopIg">CivilWarLand in Bad Decline</a> by George Saunders</p>
+<p>Why: A co-worker recommended and I vaguely remember liking Lincoln in the Bardo</p>
+<p>Review:
+It is a series of short stories, all with the thread of being set in various near-future dystopias with flawed characters. It&rsquo;s definitely on the weird/absurd side of things. Parts of it reminded me of The Stand or Station 11, two books I really liked. Parts were humorous and parts were absolutely disgusting, but throughout, it shed a light on human nature, even in those weird circumstances. I wouldn&rsquo;t read it again, but I&rsquo;m glad it and I added Pastoralia to my to-read list.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Apr 8, 2024
      - 2 minute read 
      - <a href="https://kurup.com/blog/2024/04/08/choosing-to-run/#disqus_thread">Comments</a>
@@ -547,92 +575,6 @@ been running and meditating and gardening, all with minimal success.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 12, 2020
-     - 2 minute read 
-     - <a href="https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/elixir/">elixir </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
-  </h1>
-</header>
-
-        
-          <p>There&rsquo;s this cool thing called Advent of Code, described best
-<a href="https://adventofcode.com/2020/about">here</a>. I found out about it while reading my
-<a href="https://cpbotha.net/2020/12/12/weekly-head-voices-211-table-mountain-run-ish/">favorite weekly weblog</a>
-and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
-on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
-my code for Day 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
-</span><span style="color:#2aa198">      633216
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
-    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
-</span><span style="color:#2aa198">      68348924
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
-    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
-
-    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
-</span><span style="color:#2aa198">  partner in the list that sums to `goal`.
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
-    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
-    get_file()
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
-  <span style="color:#719e07">end</span>
-</code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
-<a href="https://github.com/vkurup/aoc-elixir/">https://github.com/vkurup/aoc-elixir/</a> I feel like this could have been done more
-efficiently with recursion, but I am not comfortable enough with recursion to know
-how&hellip;</p>
-<p>A sincere thanks to <a href="http://was.tl/">Eric Wastl</a> for spending the enormous time and energy
-to create cool puzzles like this.</p>
-
-        
-      </article>
-      
       
       
 
@@ -784,10 +726,16 @@ to create cool puzzles like this.</p>
       
       
       <li class="post">
-        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
+        <a href="/blog/2024/04/09/civilwarland-in-bad-decline/">CivilWarLand in Bad Decline</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
+      </li>
       
       
       
@@ -889,12 +837,6 @@ to create cool puzzles like this.</p>
       
       <li class="post">
         <a href="/blog/2019/11/27/open-borders/">Open Borders</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/">Deep Survival Déjà Vu</a>
       </li>
       
       

@@ -144,6 +144,92 @@
         
 
 <header>
+  <p class="meta">Dec 12, 2020
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/elixir/">elixir </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2020/12/12/advent-of-code-elixir-day-1/">Advent of Code Elixir Day 1</a>
+  </h1>
+</header>
+
+        
+          <p>There&rsquo;s this cool thing called Advent of Code, described best
+<a href="https://adventofcode.com/2020/about">here</a>. I found out about it while reading my
+<a href="https://cpbotha.net/2020/12/12/weekly-head-voices-211-table-mountain-run-ish/">favorite weekly weblog</a>
+and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
+on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
+my code for Day 1:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
+</span><span style="color:#2aa198">
+</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
+</span><span style="color:#2aa198">      633216
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
+    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+
+    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
+    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
+  <span style="color:#719e07">end</span>
+
+  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
+</span><span style="color:#2aa198">
+</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
+</span><span style="color:#2aa198">      68348924
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
+    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+
+    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
+    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
+
+    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
+  <span style="color:#719e07">end</span>
+
+  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
+</span><span style="color:#2aa198">  partner in the list that sums to `goal`.
+</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
+    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+  <span style="color:#719e07">end</span>
+
+  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
+    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
+  <span style="color:#719e07">end</span>
+
+  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
+    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
+    get_file()
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
+    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
+  <span style="color:#719e07">end</span>
+</code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
+<a href="https://github.com/vkurup/aoc-elixir/">https://github.com/vkurup/aoc-elixir/</a> I feel like this could have been done more
+efficiently with recursion, but I am not comfortable enough with recursion to know
+how&hellip;</p>
+<p>A sincere thanks to <a href="http://was.tl/">Eric Wastl</a> for spending the enormous time and energy
+to create cool puzzles like this.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Dec 11, 2020
      - 2 minute read 
      - <a href="https://kurup.com/blog/2020/12/11/install-multiple-python-versions-using-pyenv/#disqus_thread">Comments</a>
@@ -569,44 +655,6 @@ written by a 12 year younger version of yourself.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Nov 17, 2019
-     - 2 minute read 
-     - <a href="https://kurup.com/blog/2019/11/17/ports-and-networks/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2019/11/17/ports-and-networks/">Ports and networks</a>
-  </h1>
-</header>
-
-        
-          <p>Kavi was looking over my shoulder as I tried to get my blog working in a local Docker container.
-I&rsquo;ve gotten to the point that the site seems to be up and running in the container, but I can&rsquo;t seem
-to get to it from my laptop. So, he wondered why I was putting port 1313 in my URL bar
-(&ldquo;localhost:1313&rdquo;) and then I showed the results of <code>netstat -ant</code> to prove that something should be
-listening on that port. And we got the IP address for google.com and then put that in Chrome&rsquo;s URL
-bar with <code>:80</code> at the end of it, and magically, it worked. (Other websites did not work, and I
-explained that most sites will not allow their sites to be accessed via IP address).</p>
-<p>I still haven&rsquo;t figured out why I can&rsquo;t access the blog running in my container, but I think Kavi&rsquo;s
-learning more about networking than I ever did (and I&rsquo;m hoping that he&rsquo;ll be able to debug these
-issues for me&hellip; soon enough)</p>
-<img src="https://media.giphy.com/media/YcVwQaBOtGGAw/giphy.gif">
-<p>UPDATE: I figured it out. Hugo&rsquo;s server was listening on localhost inside the container, when it
-needed to be listening on 0.0.0.0. Adding that as a <code>--bind</code> parameter fixed the issue (though I had
-to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, which saddened me.)</p>
-
-        
-      </article>
-      
       
       
 
@@ -761,10 +809,16 @@ to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, w
       
       
       <li class="post">
-        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
+        <a href="/blog/2024/04/09/civilwarland-in-bad-decline/">CivilWarLand in Bad Decline</a>
       </li>
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/08/choosing-to-run/">Choosing To Run</a>
+      </li>
       
       
       
@@ -866,12 +920,6 @@ to also add <code>--baseURL</code> and <code>--appendPort=false</code> params, w
       
       <li class="post">
         <a href="/blog/2019/11/27/open-borders/">Open Borders</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/11/18/deep-survival-d%C3%A9j%C3%A0-vu/">Deep Survival Déjà Vu</a>
       </li>
       
       
