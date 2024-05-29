@@ -144,6 +144,103 @@
         
 
 <header>
+  <p class="meta">Nov 3, 2010
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2010/11/03/a-sad-day-for-this-wisconsinite/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/news/">news </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2010/11/03/a-sad-day-for-this-wisconsinite/">A sad day for this Wisconsinite</a>
+  </h1>
+</header>
+
+        
+          <p><a href="http://www.russfeingold.org/">Russ Feingold</a> lost his U.S. Senate
+race. I haven&rsquo;t been following Wisconsin politics since I left 14
+years ago, but this makes me sad. The last time that I really cared
+about the U.S. political landscape was 1992. I was 21 and in college
+at the University of Wisconsin and was voting for the first time. Bill
+Clinton was generating excitement, especially on college campuses, but
+I was more interested in Russ Feingold&rsquo;s campaign. He was a no-name
+state senator, running against incumbent Bob Kasten. He seemed honest,
+funny and down-to-earth. He painted his campaign promises on his
+garage door so that everyone would be able to hold him to them. I
+remember people saying that if he won, he&rsquo;d change. The amazing thing
+is that he didn&rsquo;t. In 3 terms in the Senate, he has continued to stay
+humble, while also crossing the aisle at times and voting against
+popular, but misguided policies like the Patriot Act.</p>
+<p>After the 1992 election, I remember thinking that real change was
+coming. I know that the main reason that I was so excited in 1992 was
+because it was my first time being a part of the political process. Of
+course, as we all know, not much ever changes in U.S. politics. I&rsquo;ve
+come to realize and accept that. Russ Feingold was an exception and
+seeing him lose, despite having lived up to his high standards, makes
+me sad.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Sep 16, 2010
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2010/09/16/rotating-videos/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/video/">video </a><a class="label" href="https://kurup.com/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2010/09/16/rotating-videos/">Rotating videos</a>
+  </h1>
+</header>
+
+        
+          <p>I found out how to rotate video today. I often take video with my
+Canon SD870, but I mistakenly take it in portrait mode. I don&rsquo;t
+realize this until I&rsquo;m editing the video and then I have to decide if
+I want to subject my adoring youtube fans to the torture of having to
+turn their heads sideways to see how cute Kavi and Anika are.</p>
+<p>I found <a href="http://www.hanselman.com/blog/HowToRotateAnAVIOrMPEGFileTakenInPortrait.aspx">this link</a>
+which gives the <code>mencoder</code> command to rotate the video. Unfortunately,
+it didn&rsquo;t work with the AVI files that my Canon SD870 create. I think
+this camera creates slightly corrupt AVI files. I say &ldquo;slightly&rdquo;
+because they&rsquo;re still viewable, but mplayer always reports the total
+time as &ldquo;0:00&rdquo;, even while the elapsed time marches along
+correctly. Well, today, I found a way to fix the AVI files.</p>
+<pre><code>mencoder -ovc copy -oac copy input.avi -o output.avi
+</code></pre>
+<p>This just creates a new AVI, copying the video and audio from the
+original. Now, mplayer reports the correct total time. Then, to rotate
+the video:</p>
+<pre><code>mencoder -ovc lavc -lavcopts vcodec=mjpeg -vf rotate=1 \
+         -oac copy output.avi -o rotated.avi
+</code></pre>
+<p>And here&rsquo;s your reward for reading along:</p>
+<p><object width="480" height="385"><param name="movie"
+value="http://www.youtube.com/v/QIC21_XaAJ0?fs=1&amp;hl=en_US"></param><param
+name="allowFullScreen" value="true"></param><param
+name="allowscriptaccess" value="always"></param><embed
+src="http://www.youtube.com/v/QIC21_XaAJ0?fs=1&amp;hl=en_US"
+type="application/x-shockwave-flash" allowscriptaccess="always"
+allowfullscreen="true" width="480" height="385"></embed></object></p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Aug 25, 2010
      - 2 minute read 
      - <a href="https://kurup.com/blog/2010/08/25/html5-up-and-running/#disqus_thread">Comments</a>
@@ -671,136 +768,6 @@ in buy mode or sell mode. It uses the excellent <a href="http://www.goldb.org/ys
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 18, 2010
-     - 2 minute read 
-     - <a href="https://kurup.com/blog/2010/07/18/first-steps-with-clojure/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2010/07/18/first-steps-with-clojure/">First Steps with Clojure</a>
-  </h1>
-</header>
-
-        
-          <p>As mentioned yesterday, I&rsquo;m teaching myself clojure. I started by trying to
-install it.</p>
-<pre><code>vinod@ike$ aptitude install clojure
-</code></pre>
-<p>Ubuntu has packaged version 1.0.0 of clojure. I always default to the
-OS-installed version of programs, just for ease of maintenance. The current
-stable version of clojure is 1.1 and it appears that 1.2 is in beta. I have
-no idea what has been changed in 1.1 or 1.2, but I&rsquo;m going to try to get
-along using 1.0.0 and update only if I need to for a specific reason.</p>
-<p>I then read through the
-<a href="http://www.moxleystratton.com/article/clojure/for-non-lisp-programmers">tutorial for non-lisp programmers</a>,
-which succinctly describes the basics of the language.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Everything in
-lisp is either an atom or a list. Atoms include numbers, booleans, strings,
-symbols, keywords and the nil value. Lists (delimited by parentheses <code>()</code>)
-are the basic data structure, but include representations such as vectors
-(delimited by square brackets <code>[]</code>) and maps (delimited by curly brackets
-<code>{}</code>). Clojure programs are themselves simply lists, which leads to the
-power of lisp-like languages because code and data are interchangeable.</p>
-<p>You use <code>def</code> to create variables and <code>defn</code> to create functions. The
-language includes loops and conditional statements, just like any other
-useful language. Only <code>false</code> and <code>nil</code> are <em>false</em> in clojure; zero (0),
-and the empty string (&quot;&quot;) are <em>true</em>, unlike a lot of languages.</p>
-<p>The interesting part is the integration with Java. To instantiate a java
-object, simply call <code>new</code>:</p>
-<pre><code>user=&gt; (new java.util.Date)
-#&lt;Date Sun Jul 18 16:20:54 EDT 2010&gt;
-</code></pre>
-<p>To call object methods or get instance/class variables, use the dot &ldquo;.&rdquo;
-method.</p>
-<pre><code>user=&gt; (. (new java.util.Date) (toString))
-&quot;Sun Jul 18 16:24:09 EDT 2010&quot;
-
-user=&gt; (. Integer MAX_VALUE)
-2147483647
-</code></pre>
-<p>The article contains this interesting quote:</p>
-<blockquote>
-<p>Sequences are in a sense, the core of idiomatic Clojure
-programming. Understand sequences and the forms that work with them, and
-you will have cleared one of the biggest hurdles in writing significant
-Clojure programs.</p>
-</blockquote>
-<p>So, add that to my to-do list. Where to go next? A
-<a href="http://stackoverflow.com/questions/599519/which-tutorial-on-clojure-is-best">StackOverflow thread</a>
-has pointed to me to a few options. I&rsquo;ll probably read one of these next:</p>
-<ul>
-<li><a href="http://en.wikibooks.org/wiki/Learning_Clojure">http://en.wikibooks.org/wiki/Learning_Clojure</a></li>
-<li><a href="http://github.com/relevance/labrepl">http://github.com/relevance/labrepl</a></li>
-<li><a href="http://java.ociweb.com/mark/clojure/article.html">http://java.ociweb.com/mark/clojure/article.html</a></li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>I later read that this tutorial is out of date, so I may have to &ldquo;unlearn&rdquo; things later. It still comes up as the first hit on <a href="http://www.google.com/search?q=clojure+tutorial">Google for &ldquo;clojure tutorial&rdquo;</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jul 17, 2010
-     - 2 minute read 
-     - <a href="https://kurup.com/blog/2010/07/17/getting-some-clojure/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/clojure/">clojure </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2010/07/17/getting-some-clojure/">Getting some clojure</a>
-  </h1>
-</header>
-
-        
-          <p>Steve Yegge is one of my favorite bloggers. I read <a href="http://sites.google.com/site/steveyegge2/you-should-write-blogs">&ldquo;You Should Write Blogs&rdquo;</a> a
-long time ago and it is one of the main reasons that I still try to keep
-this blog going at all. He recently took a blogging hiatus and in his
-<a href="http://steve-yegge.blogspot.com/2010/07/blogger-finger.html">return post</a>,
-he left a little hint that he was interested in a programming language
-called <a href="http://clojure.org">clojure</a>.</p>
-<p>My programming skills have been rusting away (Darn those patients, always
-getting sick and stuff!), so I&rsquo;ve been looking for a little
-inspiration. I&rsquo;m hoping that clojure is it. I&rsquo;ve always wanted to learn
-lisp. I know a little elisp and scheme, but I&rsquo;ve never gotten comfortable
-with them. Clojure compiles code that runs on a JVM (java virtual
-machine). This gives you a lot of the &ldquo;power&rdquo; of java, namely the extensive
-libraries and the widespread platforms on which it will run. But instead of
-having to write java, you get to write in a dynamic, lisp-like language. At
-least that&rsquo;s how I understand it.</p>
-<p>Specifically, I hope that I&rsquo;ll eventually be able to create applications
-that run on android phones, which is a java environment. Smartphones are
-clearly going to be a huge part of the future, if not <strong>the way</strong> of the
-future. I don&rsquo;t see myself ever buying an iPhone and Mala already has a
-Droid Eris that I&rsquo;d be able to play with if I needed. (Didn&rsquo;t tell you
-that, did I Mala?) So&hellip; Android it is.</p>
-<p>Starting today, I&rsquo;m going to start reading about clojure and taking notes
-(and maybe even posting them!). I&rsquo;ve never been very good about taking
-notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/03/how-to-brain-dump-what-you-know/">need to learn</a>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -954,11 +921,23 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+        <a href="/blog/2024/05/28/weapons-of-math-destruction/">Weapons of Math Destruction</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2024/04/15/links-2024-04-15/">Links 2024-04-15</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+      </li>
       
       
       
@@ -1054,18 +1033,6 @@ notes, ever in my life. But, I clearly <a href="http://sachachua.com/blog/2010/0
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/12/11/we-have-always-lived-in-the-castle/">We have always lived in the castle</a>
       </li>
       
       

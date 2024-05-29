@@ -144,6 +144,145 @@
         
 
 <header>
+  <p class="meta">Jul 20, 2003
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2003/07/20/aolserver-cgi-errors/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/aolserver/">aolserver </a><a class="label" href="https://kurup.com/categories/web/">web </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2003/07/20/aolserver-cgi-errors/">AOLserver CGI errors</a>
+  </h1>
+</header>
+
+        
+          <p>Scenario: You&rsquo;re trying to run a CGI program under AOLserver and you see this in your error log:</p>
+<pre><code>19/Jul/2003:00:00:23     Error: exec /home/vinod/cgi-bin/mt: execve() failed: Permission denied
+19/Jul/2003:00:00:23     Error: waitpid(-3) failed: No child processes
+19/Jul/2003:00:00:23     Error: nscgi: wait for /home/vinod/cgi-bin/mt failed: No child processes
+</code></pre>
+<p>I&rsquo;m trying to run <code>/home/vinod/cgi-bin/mt/mt.cgi</code>. Why isn&rsquo;t this working? Because I need to tell AOLserver about each and every directory which might contain CGI programs.</p>
+<p>So I need to change my <code>nsd.tcl</code> from:</p>
+<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
+ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot; 
+ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot; 
+ns_param   Interps CGIinterps
+</code></pre>
+<p>to</p>
+<pre><code>ns_section &quot;ns/server/${server}/module/nscgi&quot;
+ns_param   map &quot;GET  /cgi-bin /home/${user_account}/cgi-bin/&quot;
+ns_param   map &quot;POST /cgi-bin /home/${user_account}/cgi-bin/&quot;
+ns_param   map &quot;GET  /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
+ns_param   map &quot;POST /cgi-bin/mt /home/${user_account}/cgi-bin/mt&quot; 
+ns_param   Interps CGIinterps
+</code></pre>
+<p>Problem solved. Further reading: <a href="http://jongriffin.com/static/consultant/nscgi">http://jongriffin.com/static/consultant/nscgi</a> -  sure wish I had read that before I started messing with ns_cgi.</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Jul 20, 2003
+     - 3 minute read 
+     - <a href="https://kurup.com/blog/2003/07/20/updating-from-cvs/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/openacs/">openacs </a><a class="label" href="https://kurup.com/categories/version-control/">version-control </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2003/07/20/updating-from-cvs/">Updating from CVS</a>
+  </h1>
+</header>
+
+        
+          <p>Here&rsquo;s the steps I take in order to update my site from the latest OpenACS CVS. All of this info comes from <a href="http://piskorski.com/docs/cvs-conventions.html">Andrew Piskorski&rsquo;s great CVS page</a> or from pages listed in his document.</p>
+<ol>
+<li>
+<p>Make sure that I&rsquo;ve committed all the local changes that I&rsquo;ve made.</p>
+<p>vinod:~$ cd web/kurup
+vinod:~/web/kurup$ cvs commit -m &ldquo;Fixed foo, bar and blah&rdquo;</p>
+</li>
+<li>
+<p>Go into the directory containing my OpenACS CVS checkout and grab the latest sources. I&rsquo;m using the <code>oacs-4-6</code> branch.</p>
+<p>vinod:~/web/kurup$ cd ~/web/openacs-4
+vinod:~/web/openacs-4$ cvs update -r oacs-4-6</p>
+</li>
+<li>
+<p>Import the code into a vendor branch. My repository name is <code>kurup</code>. <code>OpenACS</code> is the vendor tag.</p>
+<p>vinod:~/web/openacs-4$ cvs -d /var/lib/cvs \
+import -m &ldquo;importing latest OpenACS 4.6 branch&rdquo; <br>
+kurup OpenACS openacs-4-6-3-20030719</p>
+</li>
+<li>
+<p>This produces the usual CVS scroll and then a message like this:</p>
+<p>7 conflicts created by this import. Use the following command to help the merge:
+cvs -d /var/lib/cvs checkout -j&lt;prev_rel_tag&gt; \
+jopenacs-4-6-3-20030719 kurup</p>
+</li>
+<li>
+<p>Follow the instructions just given above. This will checkout a full set of code into the <code>kurup</code> directory, while simultaneously merging the new imported code in.</p>
+<p>vinod@vkurup:~/web/openacs-4$ cd
+vinod@vkurup:~$ mkdir tmp
+vinod@vkurup:~$ cd tmp
+vinod@vkurup:~/tmp$ cvs -d /var/lib/cvs checkout \
+-jOpenACS:yesterday <br>
+jopenacs-4-6-3-20030719 kurup</p>
+</li>
+<li>
+<p>Go through and fix all the conflicts. This is the part that I sometimes find confusing. How to find the files that have conflicts? The command in instruction #3 above will list conflict files with a C in front of the filename. Check each file that has a C in front of it. This is why I like to do this process inside an emacs shell, so that I can look over the output as needed. For example, one piece of my listing looked like this:</p>
+<p>U kurup/packages/lars-blogger/www/blog-oracle.xql
+U kurup/packages/lars-blogger/www/blog.adp
+C kurup/packages/lars-blogger/www/blog.tcl
+U kurup/packages/lars-blogger/www/calendar-oracle.xql</p>
+</li>
+</ol>
+<p>So, I need to check ~/tmp/kurup/packages/lars-blogger/www/blog.tcl, look for conflict markers and resolve any conflicts. Do this for every file marked &lsquo;C&rsquo; in your listing.</p>
+<ol start="7">
+<li>
+<p>Commit my work.</p>
+<p>vinod:~/tmp$ cd kurup
+vinod:~/tmp/kurup$ cvs commit <br>
+-m &ldquo;merged with openacs-4-6-3-20030719, conflicts resolved&rdquo;</p>
+</li>
+<li>
+<p>Blow away that tmp checkout</p>
+<p>vinod:~/tmp/kurup$ cd
+vinod:~$ rm -r tmp</p>
+</li>
+<li>
+<p>Update my local checkout</p>
+<p>vinod:~$ cd web/kurup
+vinod:~/web/kurup$ cvs update</p>
+</li>
+<li>
+<p>Restart my server.</p>
+<p>vinod:~$ svc -t /service/master</p>
+</li>
+<li>
+<p>Once the server is back up, I visit <code>http://kurup.org/acs-admin/apm</code> with my broswer and click on &lsquo;Install Packages&rsquo;. I look for any packages that are listed as &lsquo;Upgrade&rsquo;. Click on these packages and follow the instructions to perform any needed upgrades. This is always a touchy process because if the upgrade script errors out, your server may be left in an in-between state. Hope and pray liberally.</p>
+</li>
+<li>
+<p>Repeat as needed, maybe monthly, or whenever there&rsquo;s a new feature/bugfix available that you need.</p>
+</li>
+</ol>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jul 16, 2003
      - 2 minute read 
      - <a href="https://kurup.com/blog/2003/07/16/setting-up-wep/#disqus_thread">Comments</a>
@@ -517,62 +656,6 @@ make: *** [all-recursive-am] Error 2
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 24, 2003
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2003/06/24/pg-7.2-to-7.3/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/openacs/">openacs </a><a class="label" href="https://kurup.com/categories/postgresql/">postgresql </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2003/06/24/pg-7.2-to-7.3/">PG 7.2 to 7.3</a>
-  </h1>
-</header>
-
-        
-          <p>Not all of OpenACS is Postgres 7.3 compliant yet. OpenACS 5 is compliant and the core packages in OpenACS 4.6 are compliant, but some non-core packages haven&rsquo;t been fixed yet. Noncompliant packages will complain:</p>
-<pre><code>[24/Jun/2003:15:21:36][26623.196621][-conn:kurup::4] Error:  Ns_PgExec: result status: 7 message: ERROR:  Function  pa_collection__new(&quot;unknown&quot;, &quot;unknown&quot;, &quot;unknown&quot;, timestamp with time zone,  &quot;unknown&quot;, &quot;unknown&quot;, &quot;unknown&quot;) does not exist
-Unable to identify a function that satisfies the given argument types
-You may need to add explicit typecasts
-</code></pre>
-<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &lsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &lsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
-<p>Read more at <a href="http://openacs.org/forums/message-view?message_id=64527">Bart&rsquo;s posts in this thread</a>.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jun 24, 2003
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2003/06/24/psql-doesnt-like-tabs/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/postgresql/">postgresql </a><a class="label" href="https://kurup.com/categories/emacs/">emacs </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2003/06/24/psql-doesnt-like-tabs/">psql doesn&#39;t like tabs</a>
-  </h1>
-</header>
-
-        
-          <p>psql doesn&rsquo;t deal well with tabs. If you feed it a function that has tabs  in it, and then call that function, you&rsquo;ll often get this:  <code>ERROR:  parser: parse error at or near &quot;for&quot; at character 15</code>.  Thus, if you ever see this in your error log, it&rsquo;s time to <code>M-x untabify</code>.</p>
-
-        
-      </article>
-      
       
       
 
@@ -726,11 +809,23 @@ You may need to add explicit typecasts
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+        <a href="/blog/2024/05/28/weapons-of-math-destruction/">Weapons of Math Destruction</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2024/04/15/links-2024-04-15/">Links 2024-04-15</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+      </li>
       
       
       
@@ -826,18 +921,6 @@ You may need to add explicit typecasts
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/12/11/we-have-always-lived-in-the-castle/">We have always lived in the castle</a>
       </li>
       
       

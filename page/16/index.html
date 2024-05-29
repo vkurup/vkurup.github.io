@@ -144,6 +144,107 @@
         
 
 <header>
+  <p class="meta">Jun 12, 2006
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2006/06/12/doc-on-board/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/medicine/">medicine </a><a class="label" href="https://kurup.com/categories/magazine/">magazine </a><a class="label" href="https://kurup.com/categories/running/">running </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2006/06/12/doc-on-board/">Doc on Board</a>
+  </h1>
+</header>
+
+        
+          <p>Stop what you&rsquo;re doing and go buy the July 2006 issue of <a href="http://www.runnersworld.com">Runner&rsquo;s World</a>. Flip to page 49 and read the fine article by Scott Douglas on things a runner should discuss with their physician.</p>
+<p>Yep, the &ldquo;Vinod Kurup&rdquo; quoted is yours truly! I&rsquo;m really grateful to Scott for using me as a source and thus making my dream of being in Runner&rsquo;s World come true. :)</p>
+<p>Here&rsquo;s the <a href="http://www.runnersworld.com/article/0,5033,s6-78-0-0-9823,00.html">online version of the article</a>, but go check out the magazine because it&rsquo;s, you know, much cooler.</p>
+<p>Also check out <a href="http://www.scottdouglas.biz">Scott&rsquo;s site</a> for more
+interesting articles about running.</p>
+<div id="comment-box">
+<h2>Comments from old site</h2>
+<div class="one-comment">
+<p><b>Dr. Kurup</b></p>
+<p>
+You are freaking amazing!
+</p>
+<address class="signature">
+<span class="author">Unregistered Visitor</span>
+<span class="date">2006-07-09 17:05:45</span>
+</address>
+</div>
+</div>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">May 16, 2006
+     - 3 minute read 
+     - <a href="https://kurup.com/blog/2006/05/16/automated-testing-rules/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/programming/">programming </a><a class="label" href="https://kurup.com/categories/tcl/">tcl </a><a class="label" href="https://kurup.com/categories/testing/">testing </a><a class="label" href="https://kurup.com/categories/openacs/">openacs </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2006/05/16/automated-testing-rules/">Automated Testing Rules</a>
+  </h1>
+</header>
+
+        
+          <p>Automated testing is a good thing. For my running log application, I have a proc that creates a new log for a user, called rl::runner::new. If you happen to call it for a user who already has a log, it returns the already created log. When I created the proc way back when, I also created an automated test to make sure that creation worked and that redundant calls returned the orignal log.</p>
+<p>Over time, I added some code to make sure that users are given proper permissions on their log. Anytime you make a change, you should run your tests, but of course, I didn&rsquo;t :-) Well, today I did and my test now failed.</p>
+<p>Here is the relevant (edited) code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> runner_id <span style="color:#719e07">[</span><span style="color:#268bd2">db_nextval</span> acs_object_id_seq<span style="color:#719e07">]</span> 
+set ret_val <span style="color:#719e07">[</span><span style="color:#268bd2">db_exec_plsql</span> new_runner <span style="color:#719e07">{}]</span>
+<span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege admin
+<span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege write
+</code></pre></div><p>The error was happening in <code>permission::grant</code>. It was complaining that <code>$runner_id</code> wasn&rsquo;t a valid acs_object. What&rsquo;s going on? It looks like it should work. The problem is that I should be granting the permission on <code>ret_val</code>, not on <code>runner_id</code>. (Probably a bad choice of variable names). The first time a log is created, <code>db_exec_plsql</code> returns a value which happens to be the same as <code>runner_id</code>. The second time it&rsquo;s called, it returns a value which is <strong>different</strong> and <code>permission::grant</code> fails.</p>
+<p>I would never have caught this error until I tried to call <code>rl::runner::new</code> the second time on the same user. Which would make it one of those very difficult to track bugs. Automated testing saved me a lot of annoying debugging.</p>
+<p>That said, I wish OpenACS&rsquo;s testing facilities were better. I worked on a couple other bugs today and I&rsquo;m trying really hard to write tests to expose bugs before fixing them, but it&rsquo;s really a strain. Especially when you need to do a combination of black box and white box testing. I&rsquo;d like to make testing easier in OpenACS, but I&rsquo;m not sure if I have the brainpower :-)</p>
+<div id="comment-box">
+<h2>Comments from old site</h2>
+<div class="one-comment">
+<p><b>Improving Testing</b></p>
+<p>
+Vinod,
+</p>
+<p>
+There is definitely room for improvement. You can specify test
+dependency, I think, so you can create a test package environment,
+then run several tests using that setup. I haven't tried that yet, but
+it should help.
+</p>
+<p>
+Anothing thing to keep in mind is that testing can expose places in
+your code that might need to be decoupled. That is one of the
+advantages of testing, by thinking of how to run the code is isolation
+in the test, you can discover a better design :)
+</p>
+<address class="signature">
+<span class="author">Dave Bauer</span>
+<span class="date">2006-05-17 07:27:51</span>
+</address>
+</div>
+</div>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">May 14, 2006
      - 2 minute read 
      - <a href="https://kurup.com/blog/2006/05/14/new-features-coming-in-tcl-8.5/#disqus_thread">Comments</a>
@@ -587,115 +688,6 @@ blog</a> and beg for your code :-)
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Mar 21, 2006
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2006/03/21/finance.google.com/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/investing/">investing </a><a class="label" href="https://kurup.com/categories/google/">google </a><a class="label" href="https://kurup.com/categories/finance/">finance </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2006/03/21/finance.google.com/">finance.google.com</a>
-  </h1>
-</header>
-
-        
-          <p><a href="http://googleblog.blogspot.com/2006/03/spring-is-season-for-love-and-data.html">Google just launched it&rsquo;s new financial website</a>, <a href="http://finance.google.com">finance.google.com</a>. It combines a lot of information in 1 page and the adjustable graph at the top of a stock&rsquo;s page is just WAY cool. You can focus in on any period of time and see news &amp; reports from that period. They&rsquo;ve also added blog posts as a news source.</p>
-<p>It&rsquo;s the ideal place to get a quick snapshot of a stock. Lots of information in a very quick-loading page. The major missing item is dividend information. Hopefully it will be there soon.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Mar 18, 2006
-     - 3 minute read 
-     - <a href="https://kurup.com/blog/2006/03/18/brooklyn-half-marathon/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/brooklyn/">brooklyn </a><a class="label" href="https://kurup.com/categories/race/">race </a><a class="label" href="https://kurup.com/categories/running/">running </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2006/03/18/brooklyn-half-marathon/">Brooklyn Half Marathon</a>
-  </h1>
-</header>
-
-        
-          <p>It was cold out there today. I was wearing a long sleeve shirt, long pants, a headband and gloves, and I was still cold. I doubted whether I&rsquo;d be able to break 2 hours, like I&rsquo;d hoped. A mile into the race I was sure I wouldn&rsquo;t be able to do it. It felt like I was just running in place. As usual though, I eventually warmed up and felt pretty good.</p>
-<p>I planned to take the first 5 miles real easy and I came through in 47:28. Not bad. I wanted to do the next 5 miles in 45 minutes. I came through in 45:41. Not  bad. Finally, I wanted to really pick it up the last 5K (3.1 miles). I came through in 26:43, about 8:30 pace. Again, not bad. The last 3 miles seemed like it was all hills. Even the finish was on a hill! I finally saw the finish line, checked my watch and saw 1:59:13, and promptly took off like a crazy person.</p>
-<p>Final tally: 1:59:52!</p>
-<p>This is the first time I ran Brooklyn and I really liked it. We started on the boardwalk at Coney Island and ran along the beach for about 3 miles. Then, there was a long straight road stretch for about 5-6 miles and we finally finished with a few loops inside Prospect Park. They just need to flatten out some of those hills&hellip;</p>
-<p>Half marathons this year:</p>
-<ul>
-<li>Jan 28: 2:21:30 (10:48 pace) Manhattan</li>
-<li>Mar 18: 1:59:52 (9:09 pace) Brooklyn</li>
-</ul>
-<p>Scheduled:</p>
-<ul>
-<li>Jul 9: Bronx</li>
-<li>Aug 27: New York City</li>
-<li>Oct 1: Grete&rsquo;s Gallop</li>
-<li>Oct 15: Staten Island</li>
-</ul>
-<p><a href="http://derekrose.com/wp/?p=864">Read more race reports at Derek Rose&rsquo;s blog.</a></p>
-<div id="comment-box">
-<h2>Comments from old site</h2>
-<div class="one-comment">
-<p><b>good job</b></p>
-<p>
-Hey, looks like you made substantial headway since Manhattan half,
-that's great.  Nice race report.  And don't worry about the hills; the
-more you run them, the less high they seem.  (I'm lying of course!)
-that's my home training ground, so they seem like predictable friends
-to me...
-</p>
-<p>
-see you at Bronx Half I hope.
-</p>
-<address class="signature">
-<span class="author">Anonymous</span>
-<span class="date">2006-03-18 23:55:01</span>
-</address>
-</div>
-<div class="my-comment">
-<p><b>Thanks</b></p>
-<p>
-Lucky you - It must be nice to train in Prospect Park. I love the
-Bronx, but I haven't found a dependable course yet. I'm a mile away
-from Van Cortlandt park, but it doesn't have any runner-friendly loops
-like Prospect Park or Central Park. But it does have hills - I guess I
-should work there a bit more, huh?
-</p>
-<p>
-My Manhattan time is misleading because I didn't train at all for
-it. I was expecting the Manhattan half to be in August like it was
-last year, so I was slacking off in my running :-)
-</p>
-<p>
-How'd you do? See ya at the Bronx!
-</p>
-<address class="signature">
-<span class="author">Vinod Kurup</span>
-<span class="date">2006-03-19 08:22:50</span>
-</address>
-</div>
-</div>
-
-        
-      </article>
-      
       
       
 
@@ -849,11 +841,23 @@ How'd you do? See ya at the Bronx!
       
       
       
+      
+      
       <li class="post">
-        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+        <a href="/blog/2024/05/28/weapons-of-math-destruction/">Weapons of Math Destruction</a>
       </li>
       
       
+      
+      <li class="post">
+        <a href="/blog/2024/04/15/links-2024-04-15/">Links 2024-04-15</a>
+      </li>
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2024/04/14/my-fathers-paradise/">My Father&#39;s Paradise</a>
+      </li>
       
       
       
@@ -949,18 +953,6 @@ How'd you do? See ya at the Bronx!
       
       <li class="post">
         <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2019/12/11/we-have-always-lived-in-the-castle/">We have always lived in the castle</a>
       </li>
       
       

@@ -8,10 +8,43 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 14 Apr 2024 19:29:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2024 21:27:00 +0000</lastBuildDate>
     
         <atom:link href="https://kurup.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Weapons of Math Destruction</title>
+      <link>https://kurup.com/blog/2024/05/28/weapons-of-math-destruction/</link>
+      <pubDate>Tue, 28 May 2024 21:27:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://kurup.com/blog/2024/05/28/weapons-of-math-destruction/</guid>
+      <description>&lt;p&gt;Title: &lt;a href=&#34;https://amzn.to/3VkDzZt&#34;&gt;Weapons of Math Destruction&lt;/a&gt; by Cathy O&amp;rsquo;Neil&lt;/p&gt;
+&lt;p&gt;Subtitle: How Big Data Increases Inequality and Threatens Democracy&lt;/p&gt;
+&lt;p&gt;Why: A co-worker recommended it.&lt;/p&gt;
+&lt;p&gt;Review:
+Five stars for the content. Maybe deduct a half star for the organization. The first few chapters were powerful, laying out the case for how these data algorithms have gotten out of control. Some of the later chapters got repetitive, but I think the repetition could have been really useful, if it drilled into the readers heads exactly how to distinguish a bad used of math from a good one. Readers should be encouraged to analyze things in the wild on their own. I was also hoping for stronger calls to action, but was left just feeling kinda hopeless at the end of the book.&lt;/p&gt;
+&lt;p&gt;All that said, everyone should read this book. I love math and big data and its potential for good, but this book clearly lays out how those tools can lead to misery for all of us, but especially for the least fortunate and most oppressed among us. At scale, they turn into positive feedback loops which never correct. Just as a simplistic example, if a college is rated by how selective it is, and a high rating leads more people to apply, then it will, by definition get more selective over time, which will lead to an even higher rating, leading to a vicious cycle. Even more perniciously, if jobs use low credit scores to weed out applicants, then those most in need of a good job will be least likely to be able to secure one, which will lead to more financial difficulty, leading to a worse credit score and an even more vicious cycle. The worst part of these algorithms, is that they are opaque to everyone involved so it is impossible to fight back against their decisions. Just as another ridiculous example, drivers with clean accident records, but a poor credit score were quoted higher rates than convicted drunk drivers with good credit scores. The users of &amp;ldquo;big data&amp;rdquo; get so enamored with their algorithms that a poor proxy for risk (credit score) is given more weight than an actual risk (drunk driving).&lt;/p&gt;
+&lt;p&gt;Hopefully, society will begin to regulate this area and guide our use of these algorithms in a way that is beneficial to all members of society, especially the most disenfranchised portions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Links 2024-04-15</title>
+      <link>https://kurup.com/blog/2024/04/15/links-2024-04-15/</link>
+      <pubDate>Mon, 15 Apr 2024 08:00:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://kurup.com/blog/2024/04/15/links-2024-04-15/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://mtlynch.io/building-first-homelab-rack/&#34;&gt;Building a home server rack&lt;/a&gt;. I&amp;rsquo;ll probably never do this, but if I do, I&amp;rsquo;ll re-read this guide.  He explains things from a true beginner point of view, &lt;a href=&#34;https://mtlynch.io/building-first-homelab-rack/#cage-nuts-arent-supposed-to-hurt&#34;&gt;documenting his honest mistakes so that others don&amp;rsquo;t make them&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.manning.com/corporate-splash&#34;&gt;Manning has free software engineering books&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>My Father&#39;s Paradise</title>
@@ -583,70 +616,6 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
 &lt;p&gt;deploy it:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl apply -f xray-k8s-daemonset.yaml
 &lt;/code&gt;&lt;/pre&gt;</description>
-    </item>
-    
-    <item>
-      <title>We have always lived in the castle</title>
-      <link>https://kurup.com/blog/2019/12/11/we-have-always-lived-in-the-castle/</link>
-      <pubDate>Wed, 11 Dec 2019 20:00:44 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://kurup.com/blog/2019/12/11/we-have-always-lived-in-the-castle/</guid>
-      <description>&lt;p&gt;At school, Kavi is reading
-&lt;a href=&#34;https://amzn.to/2PctnQm&#34;&gt;&amp;ldquo;We have always lived in the castle&amp;rdquo;&lt;/a&gt;, by Shirley Jackson. I
-read her short story,
-&lt;a href=&#34;https://www.newyorker.com/magazine/1948/06/26/the-lottery&#34;&gt;&amp;ldquo;The Lottery&amp;rdquo;&lt;/a&gt;, in high school. I
-recall the main plot of the story, but I&amp;rsquo;m sure I have forgotten many details.
-What I &lt;strong&gt;haven&amp;rsquo;t&lt;/strong&gt; forgotten is the sense of shock I felt as the plot finally became
-clear. As I&amp;rsquo;m typing this, I wonder if that was more because I was young and new to
-being shocked, or whether it was really shocking. In any case, that feeling of being
-shocked by that story is deeply embedded inside me.&lt;/p&gt;
-&lt;p&gt;So I checked this book from the library and finished it today. It was dark and
-disturbing, reminiscent of &amp;ldquo;The Lottery&amp;rdquo;. There were many elements of foreshadowing.
-From the start, you wonder what Mary Katherine or her family did to sow such discontent
-among the villagers, and the answer comes slowly, in bits and pieces. I wondered why
-they had library books that they would never be able to return. In the end, I was sucked
-in and couldn&amp;rsquo;t put the book down until I figured it all out. Thankfully, it&amp;rsquo;s a short
-book.&lt;/p&gt;
-&lt;p&gt;Some random thoughts that my brain generated while reading this book (and that I&amp;rsquo;d
-prefer to remember someday):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;When Merrikat and Connie first enter their house after it was trashed by the village,
-Merrikat is not surprised that the library books are intact because it&amp;rsquo;s against the law
-to damage library property. I smiled.&lt;/li&gt;
-&lt;li&gt;The absurdity of Merrikat&amp;rsquo;s behavior at times struck me hard. The first time was when
-she threw a glass pitcher on the floor because she was upset by a visitor talking to her
-sister too much. I had to re-read that section a few times because it was written in an
-almost off-hand way, as if this was normal behavior. She continues to behave like that
-in bursts, and then the more absurd part becomes Connie&amp;rsquo;s calm reaction to these
-behaviors. Piece by piece, you get to understand more about how disturbed they are, and
-why.&lt;/li&gt;
-&lt;li&gt;Merrikat&amp;rsquo;s belief in magical powers that keep her safe are both hard to believe and
-comforting. I kept waiting for someone to say one of her three magic words, as if that
-was the only way that anything could go wrong.&lt;/li&gt;
-&lt;li&gt;I wanted Charles to be taught a lesson. I guess it happened, but a part of me wanted
-it to be more dramatic and more crushing. I&amp;rsquo;m a sucker for an evil character doing
-clearly evil things and then getting caught red-handed and punished. I know that&amp;rsquo;s
-simplistic, but I still like it and am a little disappointed when I don&amp;rsquo;t get that
-satisfaction.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I love the fact that I&amp;rsquo;m finding books to enjoy, thanks to my kids. Life is good.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Open Borders</title>
-      <link>https://kurup.com/blog/2019/11/27/open-borders/</link>
-      <pubDate>Wed, 27 Nov 2019 19:01:59 -0500</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://kurup.com/blog/2019/11/27/open-borders/</guid>
-      <description>&lt;p&gt;I just finished &lt;a href=&#34;https://amzn.to/35FoTXV&#34;&gt;Open Borders&lt;/a&gt;, a graphic novel about immigration policy.
-(Not 2 things that normally occupy the same sentence)&lt;/p&gt;
-&lt;p&gt;It was an excellent presentation of a position that I&amp;rsquo;ve always felt to be morally correct, in my
-heart of hearts. I am one of the few lucky ones who gets to be an American citizen just because of
-the fact that my parents took it on themselves to forge a better life for us. Why shouldn&amp;rsquo;t everyone
-have this opportunity? This book shatters many of the myths that allowing open borders makes things
-&amp;ldquo;worse&amp;rdquo; in any way for natives.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
