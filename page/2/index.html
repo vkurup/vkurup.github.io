@@ -144,6 +144,37 @@
         
 
 <header>
+  <p class="meta">Aug 16, 2022
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2022/08/16/three-tips-on-visiting-italy/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/travel/">travel </a><a class="label" href="https://kurup.com/categories/family/">family </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2022/08/16/three-tips-on-visiting-italy/">Three tips on visiting Italy!</a>
+  </h1>
+</header>
+
+        
+          <p>Today, I have a guest post for you from a <a href="/blog/2019/04/08/avik-730/">very famous author</a>.</p>
+<h3 id="by-avik-kurup">By: Avik Kurup</h3>
+<p>If you&rsquo;re going to visit Italy, I believe that these three tips will make you have an amazing trip.</p>
+<p>First and foremost, visit Florence, Rome, Venice, and Cinque Terre. Florence has delicious food and the best gelato out of all of these places. Rome has the best pizza. Also, the colosseum and the forum are important and fun sites to see there. In Venice they have incredible pasta and seafood and many places to ride on boats.</p>
+<p>Another important thing to know about visiting Italy is that you don’t want to drive. Cars are difficult to use because there are a lot of one way roads and confusing traffic lights. You will enjoy walking or going on a bike tour more. You can also use the train for longer distances.</p>
+<p>The last tip that will help you enjoy your trip to Italy is you should eat as much  pizza, pasta, and gelato as possible. Pizza in Italy has a crunchier crust and they put a ton of cheese. When you order pasta the bowl is humongous, but there is a small hole in the middle that is filled with pasta. It is way more than you think. I recommend the pasta bolognese. Italian gelato is fresh and inexpensive. You can get two flavors in a cup for $2.50!</p>
+<p>Clearly, Italy has fantastic sights to see and food to eat. If you follow these three tips you will have a great trip!</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Dec 26, 2021
      - 2 minute read 
      - <a href="https://kurup.com/blog/2021/12/26/usb-c-lint/#disqus_thread">Comments</a>
@@ -662,54 +693,6 @@ the form you are testing, GET or POST.</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 27, 2020
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/cheatsheet/">cheatsheet </a><a class="label" href="https://kurup.com/categories/aws/">aws </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/">AWS Xray brain dump</a>
-  </h1>
-</header>
-
-        
-          <p>These are very rough notes on how I got AWS Xray working in a kubernetes deployment.
-Posting this mainly for my auxiliary brain.</p>
-<p>First, set up an IAM role that allows nodes to access xray.</p>
-<p>Following this blog post:
-<a href="https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/">https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/</a></p>
-<p>I cloned this repo:
-<a href="https://github.com/aws-samples/aws-xray-kubernetes">https://github.com/aws-samples/aws-xray-kubernetes</a></p>
-<p>Build the AWS Xray image:</p>
-<pre tabindex="0"><code>cd xray-daemon/
-docker build -t xray-daemon:latest .
-</code></pre><p>THIS OUT OF DATE! try this: <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image">https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image</a></p>
-<p>Create an AWS ECR repo:</p>
-<pre tabindex="0"><code>aws ecr create-repository --repository-name xray-daemon
-</code></pre><p>Login via docker:</p>
-<pre tabindex="0"><code>aws ecr get-login --no-include-email
-</code></pre><p>That command spits out a command which you can run that will log you into docker ^</p>
-<p>Tag and push the image there:</p>
-<pre tabindex="0"><code>docker tag xray-daemon:latest AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
-docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
-</code></pre><p>You should now be able to see the image in the AWS ECR console</p>
-<p>Update <code>aws-xray-kubernetes/xray-daemon/xray-k8s-daemonset.yaml</code>:</p>
-<p>Change the image value to the image you just pushed</p>
-<p>deploy it:</p>
-<pre tabindex="0"><code>kubectl apply -f xray-k8s-daemonset.yaml
-</code></pre>
-        
-      </article>
-      
       
       
 
@@ -866,6 +849,12 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
       
       
       <li class="post">
+        <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/05/28/weapons-of-math-destruction/">Weapons of Math Destruction</a>
       </li>
       
@@ -969,12 +958,6 @@ docker push AWS-ACCOUNT-ID.dkr.ecr.us-east-1.amazonaws.com/xray-daemon:latest
       
       <li class="post">
         <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
       </li>
       
       

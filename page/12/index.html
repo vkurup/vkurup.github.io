@@ -144,6 +144,52 @@
         
 
 <header>
+  <p class="meta">Sep 21, 2009
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2009/09/21/speed-up-firefox-on-eeepc/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/linux/">linux </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2009/09/21/speed-up-firefox-on-eeepc/">Speed up Firefox on eeepc</a>
+  </h1>
+</header>
+
+        
+          <p>I&rsquo;m too weak to lug around my monstrous 7 pound laptop, so I bought a
+<a href="http://eeepc.asus.com/global/product1000.html">netbook</a>. It&rsquo;s an eeepc
+1000 and I love it. I use it for everything, except for processing the
+kids' videos and photos. I still use the desktop for that.</p>
+<p>The major issue that I&rsquo;ve had with it is that firefox seemed so slow. I
+tried other browsers, some which seemed faster, but I missed my firefox
+extensions. I googled and found that <a href="http://wiki.debian.org/DebianEeePC/TipsAndTricks#SpeedupsluggishIceweasel.2BAC8-Firefox3">others had the same issue</a>. There
+are 2 flash hard drives in the eeepc. The first is 8GB and contains the
+root filesystem. The second is 32GB and contains the <code>/home</code>
+partition. Apparently the 8GB drive is <strong>significantly</strong> faster than the
+32GB one. So the OS performs excellently since it&rsquo;s on the 8GB drive,
+anything that requires a lot of disk access from the 32GB drive slows
+down. Firefox&rsquo;s <code>.mozilla</code> configuration folder is mounted there by
+default.</p>
+<p>Moving the <code>.mozilla</code> folder to the 8GB drive has made web browsing speedy
+again. Here&rsquo;s how I did it. I&rsquo;m the only user on my system, so if you have
+multiple users, this will only fix the issue for one user.</p>
+<pre><code>sudo mkdir /usr/local/share/vinod-mozilla
+sudo chown vinod /usr/local/share/vinod-mozilla
+mv /home/vinod/.mozilla /usr/local/share/vinod-mozilla/
+ln -s /usr/local/share/vinod-mozilla/.mozilla /home/vinod/.mozilla
+</code></pre>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Sep 19, 2009
      - 2 minute read 
      - <a href="https://kurup.com/blog/2009/09/19/bye-bye-wordpress/#disqus_thread">Comments</a>
@@ -485,44 +531,6 @@ home. (Well&hellip; 3 miles long).</p>
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Dec 17, 2008
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2008/12/17/soon-there-will-be-two/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/baby/">baby </a><a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/life/">life </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2008/12/17/soon-there-will-be-two/">Soon there will be two</a>
-  </h1>
-</header>
-
-        
-          <p>Kavi has been getting bored being surrounded by adults all the time. He is very happy to announce that a sibling is on its way. We&rsquo;re calling it blueberry. If things go on schedule, blueberry will be born sometime in June, so we&rsquo;ll have 2 June babies, a couple years apart.</p>
-<p>Pregnancy has been uneventful, unless you count those recurrent waves of nausea and vomiting that Mala&rsquo;s been experiencing. Hopefully that will get better as we move into the second trimester.</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/blueberry-12wks-best.jpg" title="Blueberry 12 wks" alt="Blueberry 12 wks">
-  <span class="caption-text">Blueberry 12 wks</span>
-</span>
-
-
-        
-      </article>
-      
       
       
 
@@ -679,6 +687,12 @@ home. (Well&hellip; 3 miles long).</p>
       
       
       <li class="post">
+        <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/05/28/weapons-of-math-destruction/">Weapons of Math Destruction</a>
       </li>
       
@@ -782,12 +796,6 @@ home. (Well&hellip; 3 miles long).</p>
       
       <li class="post">
         <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
-      
-      <li class="post">
-        <a href="/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
       </li>
       
       

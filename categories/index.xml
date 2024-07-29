@@ -8,7 +8,16 @@
     <language>en-us</language>
     <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
     <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 28 May 2024 21:27:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jul 2024 13:41:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>travel</title>
+      <link>https://kurup.com/categories/travel/</link>
+      <pubDate>Sun, 28 Jul 2024 13:41:00 +0000</pubDate>
+      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
+      <guid>https://kurup.com/categories/travel/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>book-review</title>
       <link>https://kurup.com/categories/book-review/</link>
@@ -51,15 +60,6 @@
       <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
       <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/categories/family/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://kurup.com/categories/travel/</link>
-      <pubDate>Tue, 16 Aug 2022 18:36:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
-      <guid>https://kurup.com/categories/travel/</guid>
       <description></description>
     </item>
     
