@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>car on Vinod Kurup</title>
+    <title>Car on Vinod Kurup</title>
     <link>https://kurup.com/categories/car/</link>
-    <description>Recent content in car on Vinod Kurup</description>
+    <description>Recent content in Car on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 04 Feb 2011 21:43:53 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/car/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2011 21:43:53 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/car/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>I retract my previous tweet</title>
       <link>https://kurup.com/blog/2011/02/04/i-retract-my-previous-tweet/</link>
       <pubDate>Fri, 04 Feb 2011 21:43:53 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2011/02/04/i-retract-my-previous-tweet/</guid>
-      <description>I take it back. I was upset, OK? Never tweet when you&amp;rsquo;re upset. I&amp;rsquo;m writing this blog post to make up for it. See, a whole blog post. That definitely outweighs a tweet, right?
-Last week, my 1996 Altima died. The starter seemed to be firing, but the engine never turned over. We tried jumping it, but that didn&amp;rsquo;t work. I called a tow truck and then tweeted about how upset I was with the universe.</description>
+      <description>I take it back. I was upset, OK? Never tweet when you&amp;rsquo;re upset. I&amp;rsquo;m writing this blog post to make up for it. See, a whole blog post. That definitely outweighs a tweet, right?&#xA;Last week, my 1996 Altima died. The starter seemed to be firing, but the engine never turned over. We tried jumping it, but that didn&amp;rsquo;t work. I called a tow truck and then tweeted about how upset I was with the universe.</description>
     </item>
-    
   </channel>
 </rss>

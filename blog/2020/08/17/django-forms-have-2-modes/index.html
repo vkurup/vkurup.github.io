@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -177,7 +177,7 @@ the data in a particular way. So I did:</p>
 cleaned_data = form.clean()
 self.assertEqual(cleaned_data, expected_data)
 </code></pre><p>Instead of passing, the test blew up:</p>
-<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
+<pre tabindex="0"><code>AttributeError: &#39;MyForm&#39; object has no attribute &#39;cleaned_data&#39;
 </code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
 (normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
 then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
@@ -290,6 +290,12 @@ the form you are testing, GET or POST.</p>
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -396,12 +402,6 @@ the form you are testing, GET or POST.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -431,7 +431,7 @@ the form you are testing, GET or POST.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

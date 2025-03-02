@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -144,6 +144,60 @@
         
 
 <header>
+  <p class="meta">Jul 25, 2006
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2006/07/25/recurrent-dvt/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/medicine/">medicine </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2006/07/25/recurrent-dvt/">Recurrent DVT</a>
+  </h1>
+</header>
+
+        
+          <p>The duration of treatment for a deep venous thrombosis (DVT) is problematic. Most patients who have one will never have another one, yet those who do have a 5% risk of death due to their recurrent DVT. We need a simple test which separates one group from the other.</p>
+<p>This weeks JAMA (no link as issue is not online yet) reports on an article claiming that thrombin generation may be that test. Thrombin is one of the key factors in coagulation and the theory is that patients who generate excess amounts of thrombin are predisposed to developing blood clots. This cohort study showed that patients with peak thrombin generation below 400 nM had a 60% lower risk of developing a recurrent DVT over the course of about 5 years of follow up.</p>
+<p>The limiting feature of this study is that they excluded patients with Protein C deficiency, Protein S deficiency and SLE. They also excluded patients with cancer, recent pregnancy, recent trauma, or recent surgery.</p>
+<p>That means that before we use this test, we need to make sure that we&rsquo;ve excluded all of the above diagnoses first. That doesn&rsquo;t make it such a useful screening test. It would be useful to know is whether patients with Protein C deficiency (as an example) with low thrombin-generation values are at high risk for recurrent DVT. That is, does thrombin-generation trump Protein C deficiency, or vice versa.</p>
+<p>What I&rsquo;d like to have is a test that told me either 1) The patient is low risk or 2) The patient needs further testing. Then, I could do a simple test in all patients with DVT and only send the complicated hypercoagulable workup in patients who had a positive screening test. It seems like thrombin-generation may eventually be that test.</p>
+<p>Also in this issue of the journal is a nice quote from Thoreau:</p>
+<blockquote>
+<p>Write while the heat is in you &hellip; The writer who postpones the recording of his thoughts uses an iron which has cooled to burn a hole with. He cannot inflame the minds of his audience.</p>
+</blockquote>
+<p>Good advice, which I need to take more often.</p>
+<p>Reference: JAMA 2006-07-26 296:4 page 397</p>
+<div id="comment-box">
+<h2>Comments from old site</h2>
+<div class="one-comment">
+<p><b>Thoreau Shmoreau</b></p>
+<p>
+That quote always gets credited to Thoreau instead of me. I believe I
+told you two weeks ago to "blog more" which is a less flowery approach
+to Thoreau's basic sentiment. He's such a snooze anyway - has anybody
+really ever read all of Walden? ;)
+</p>
+<p>
+-M http://millatonkonogy.blogspot.com
+</p>
+<address class="signature">
+<span class="author">Milla Tonkonogy</span>
+<span class="date">2006-08-01 21:27:59</span>
+</address>
+</div>
+</div>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jul 24, 2006
      - 1 minute read 
      - <a href="https://kurup.com/blog/2006/07/24/bizjournal-inaccuracy/#disqus_thread">Comments</a>
@@ -239,11 +293,11 @@ You are freaking amazing!
           <p>Automated testing is a good thing. For my running log application, I have a proc that creates a new log for a user, called rl::runner::new. If you happen to call it for a user who already has a log, it returns the already created log. When I created the proc way back when, I also created an automated test to make sure that creation worked and that redundant calls returned the orignal log.</p>
 <p>Over time, I added some code to make sure that users are given proper permissions on their log. Anytime you make a change, you should run your tests, but of course, I didn&rsquo;t :-) Well, today I did and my test now failed.</p>
 <p>Here is the relevant (edited) code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> runner_id <span style="color:#719e07">[</span><span style="color:#268bd2">db_nextval</span> acs_object_id_seq<span style="color:#719e07">]</span> 
-set ret_val <span style="color:#719e07">[</span><span style="color:#268bd2">db_exec_plsql</span> new_runner <span style="color:#719e07">{}]</span>
-<span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege admin
-<span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege write
-</code></pre></div><p>The error was happening in <code>permission::grant</code>. It was complaining that <code>$runner_id</code> wasn&rsquo;t a valid acs_object. What&rsquo;s going on? It looks like it should work. The problem is that I should be granting the permission on <code>ret_val</code>, not on <code>runner_id</code>. (Probably a bad choice of variable names). The first time a log is created, <code>db_exec_plsql</code> returns a value which happens to be the same as <code>runner_id</code>. The second time it&rsquo;s called, it returns a value which is <strong>different</strong> and <code>permission::grant</code> fails.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#719e07">set</span> runner_id <span style="color:#719e07">[</span><span style="color:#268bd2">db_nextval</span> acs_object_id_seq<span style="color:#719e07">]</span> 
+</span></span><span style="display:flex;"><span>set ret_val <span style="color:#719e07">[</span><span style="color:#268bd2">db_exec_plsql</span> new_runner <span style="color:#719e07">{}]</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege admin
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">permission</span><span style="color:#719e07">::</span>grant <span style="color:#719e07">-</span>party_id <span style="color:#268bd2">$user_id</span> <span style="color:#719e07">-</span>object_id <span style="color:#268bd2">$runner_id</span> <span style="color:#719e07">-</span>privilege write
+</span></span></code></pre></div><p>The error was happening in <code>permission::grant</code>. It was complaining that <code>$runner_id</code> wasn&rsquo;t a valid acs_object. What&rsquo;s going on? It looks like it should work. The problem is that I should be granting the permission on <code>ret_val</code>, not on <code>runner_id</code>. (Probably a bad choice of variable names). The first time a log is created, <code>db_exec_plsql</code> returns a value which happens to be the same as <code>runner_id</code>. The second time it&rsquo;s called, it returns a value which is <strong>different</strong> and <code>permission::grant</code> fails.</p>
 <p>I would never have caught this error until I tried to call <code>rl::runner::new</code> the second time on the same user. Which would make it one of those very difficult to track bugs. Automated testing saved me a lot of annoying debugging.</p>
 <p>That said, I wish OpenACS&rsquo;s testing facilities were better. I worked on a couple other bugs today and I&rsquo;m trying really hard to write tests to expose bugs before fixing them, but it&rsquo;s really a strain. Especially when you need to do a combination of black box and white box testing. I&rsquo;d like to make testing easier in OpenACS, but I&rsquo;m not sure if I have the brainpower :-)</p>
 <div id="comment-box">
@@ -296,24 +350,24 @@ in the test, you can discover a better design :)
 
         
           <p>I was looking at the <a href="http://www.tcl.tk/man/tcl8.4/TclCmd/split.htm">Tcl 8.4 man page for &lsquo;split&rsquo;</a> and saw this example code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#586e75">## Split into fields on colons
-</span><span style="color:#586e75"></span><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
-<span style="color:#586e75">## Assign fields to variables and print some out...
-</span><span style="color:#586e75"></span><span style="color:#b58900">lassign</span> <span style="color:#268bd2">$fields</span> userName password uid grp longName homeDir shell
-</code></pre></div><p>It shows how to split a string using &lsquo;:&rsquo; as the delimiter. The interesting part is the &lsquo;lassign&rsquo; statement. I&rsquo;d never seen that before. I&rsquo;ve always done something annoying like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-tcl" data-lang="tcl"><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> userName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">0</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> password <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">1</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> uid <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">2</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> grp <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">3</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> longName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">4</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> homeDir <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">5</span><span style="color:#719e07">]</span>
-<span style="color:#719e07">set</span> shell <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">6</span><span style="color:#719e07">]</span>
-</code></pre></div><p>How could I have overlooked &lsquo;lassign&rsquo; all these years? After berating my idiocy for a few minutes, I tried &lsquo;lassign&rsquo; out and Tcl replied &lsquo;invalid command name&rsquo; . Turns out I&rsquo;m not as stupid as I thought. :-) &lsquo;lassign&rsquo; is new in Tcl 8.5 (but seems to have snuck in the backdoor of the 8.4 docs). I decided to see what else was <a href="http://www.tcl.tk/software/tcltk/8.5.html">coming in 8.5</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#586e75">## Split into fields on colons
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75">## Assign fields to variables and print some out...
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span><span style="color:#b58900">lassign</span> <span style="color:#268bd2">$fields</span> userName password uid grp longName homeDir shell
+</span></span></code></pre></div><p>It shows how to split a string using &lsquo;:&rsquo; as the delimiter. The interesting part is the &rsquo;lassign&rsquo; statement. I&rsquo;d never seen that before. I&rsquo;ve always done something annoying like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-tcl" data-lang="tcl"><span style="display:flex;"><span><span style="color:#719e07">set</span> fields <span style="color:#719e07">[</span><span style="color:#b58900">split</span> <span style="color:#268bd2">$rec</span> <span style="color:#2aa198">&#34;:&#34;</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> userName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">0</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> password <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">1</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> uid <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">2</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> grp <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">3</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> longName <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">4</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> homeDir <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">5</span><span style="color:#719e07">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">set</span> shell <span style="color:#719e07">[</span><span style="color:#b58900">lindex</span> <span style="color:#268bd2">$fields</span> <span style="color:#2aa198">6</span><span style="color:#719e07">]</span>
+</span></span></code></pre></div><p>How could I have overlooked &rsquo;lassign&rsquo; all these years? After berating my idiocy for a few minutes, I tried &rsquo;lassign&rsquo; out and Tcl replied &lsquo;invalid command name&rsquo; . Turns out I&rsquo;m not as stupid as I thought. :-) &rsquo;lassign&rsquo; is new in Tcl 8.5 (but seems to have snuck in the backdoor of the 8.4 docs). I decided to see what else was <a href="http://www.tcl.tk/software/tcltk/8.5.html">coming in 8.5</a>.</p>
 <ul>
 <li>Dictionaries. These are associative arrays which reportedly are better than Tcl arrays, but I&rsquo;m not sure why.</li>
 <li>** as an exponentiation operator</li>
-<li>Instead of doing: <code>if {[lsearch -exact $list $item] != -1}</code>, the new &lsquo;in&rsquo; operator lets you do <code>if {$item in $list}</code>. There&rsquo;s also a &lsquo;ni&rsquo; operator for &lsquo;not in&rsquo;.</li>
+<li>Instead of doing: <code>if {[lsearch -exact $list $item] != -1}</code>, the new &lsquo;in&rsquo; operator lets you do <code>if {$item in $list}</code>. There&rsquo;s also a &rsquo;ni&rsquo; operator for &rsquo;not in&rsquo;.</li>
 <li>Plenty of other stuff, none of which really caught my eye.</li>
 </ul>
 <p>Tcl 8.5 is still alpha, so I&rsquo;m sticking with 8.4 (and my annoying
@@ -610,44 +664,6 @@ Well the guilt trip worked!!  I will try and log in early and often!!
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Apr 10, 2006
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2006/04/10/big-island-hawaii/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/hawaii/">hawaii </a><a class="label" href="https://kurup.com/categories/vacation/">vacation </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2006/04/10/big-island-hawaii/">Big Island Hawai&#39;i</a>
-  </h1>
-</header>
-
-        
-          <p>We&rsquo;re back from a week in paradise and have the <a href="http://kurup.org/photo/album?album_id=61014">photos to prove it</a>. Thanks to Peary and Michelle for the warm hospitality in Honolulu. We thoroughly enjoyed every moment. The weather was perfect which was especially nice since it had rained for the 40 days prior to our arrival. Kalua pig is even better than it sounds.</p>
-
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="/images/waterfall-sm.jpg" title="Mala at Akaka Falls" alt="Mala at Akaka Falls">
-  <span class="caption-text">Mala at Akaka Falls</span>
-</span>
-
-<p>Oh yeah, and the <a href="http://www.cme.ucsf.edu/">conference</a> was great too :-)</p>
-
-        
-      </article>
-      
       
       
 
@@ -804,6 +820,12 @@ Well the guilt trip worked!!  I will try and log in early and often!!
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -910,12 +932,6 @@ Well the guilt trip worked!!  I will try and log in early and often!!
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -944,7 +960,7 @@ Well the guilt trip worked!!  I will try and log in early and often!!
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

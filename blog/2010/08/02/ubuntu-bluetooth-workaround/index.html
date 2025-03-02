@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -173,50 +173,50 @@ yet. <a href="https://bugs.launchpad.net/ubuntu/+source/bluez/+bug/589464">(blue
 <p>My workaround is a shell script which starts those those daemons if they
 are not running:</p>
 <h4 id="vk-bluetooth-startsh">vk-bluetooth-start.sh</h4>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>    
-<span style="color:#268bd2">BLUETOOTH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;bluetoothd&#39;</span>
-<span style="color:#268bd2">DUN</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;dund&#39;</span>
-    
-<span style="color:#586e75"># first start bluetoothd</span>
-<span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$BLUETOOTH</span> &gt; /dev/null
-<span style="color:#719e07">then</span>
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198"> is running.&#34;</span>
-<span style="color:#719e07">else</span>
-    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198">...&#34;</span>
-    /usr/bin/sudo /usr/sbin/bluetoothd -u &amp;&gt; /dev/null
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
-<span style="color:#719e07">fi</span>
-    
-<span style="color:#586e75"># then start dund</span>
-<span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$DUN</span> &gt; /dev/null
-<span style="color:#719e07">then</span>
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198"> is running.&#34;</span>
-<span style="color:#719e07">else</span>
-    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198">...&#34;</span>
-    /usr/bin/sudo /usr/bin/dund --listen --persist --msdun call centro
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
-<span style="color:#719e07">fi</span>
-</code></pre></div><p>And here&rsquo;s my script which transfers the files to my phone. It uses
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#719e07">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07"></span>    
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">BLUETOOTH</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;bluetoothd&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">DUN</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;dund&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># first start bluetoothd</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$BLUETOOTH</span> &gt; /dev/null
+</span></span><span style="display:flex;"><span><span style="color:#719e07">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198"> is running.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$BLUETOOTH</span><span style="color:#2aa198">...&#34;</span>
+</span></span><span style="display:flex;"><span>    /usr/bin/sudo /usr/sbin/bluetoothd -u &amp;&gt; /dev/null
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">fi</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># then start dund</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">if</span> ps ax | grep -v grep | grep <span style="color:#268bd2">$DUN</span> &gt; /dev/null
+</span></span><span style="display:flex;"><span><span style="color:#719e07">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198"> is running.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;Starting </span><span style="color:#268bd2">$DUN</span><span style="color:#2aa198">...&#34;</span>
+</span></span><span style="display:flex;"><span>    /usr/bin/sudo /usr/bin/dund --listen --persist --msdun call centro
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">fi</span>
+</span></span></code></pre></div><p>And here&rsquo;s my script which transfers the files to my phone. It uses
 <a href="http://packages.ubuntu.com/lucid/pilot-link">pilot-link</a>, which I had to
 compile from source due to a
 <a href="https://bugs.launchpad.net/ubuntu/+source/pilot-link/+bug/592916">bug in the way that the Ubuntu version addresses large SD cards</a>. This
 should be fixed in the next version of Ubuntu.</p>
 <h4 id="vk-transfer-podcastssh">vk-transfer-podcasts.sh</h4>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span>    
-<span style="color:#268bd2">output</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span>pilot-xfer -p net:any -D /Kingston/AUDIO -i *.mp3 2&gt;&amp;1<span style="color:#719e07">)</span>
-<span style="color:#268bd2">errors</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span> | grep -c <span style="color:#2aa198">&#34;ERROR:&#34;</span><span style="color:#719e07">)</span>
-    
-<span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#268bd2">$errors</span> -gt <span style="color:#2aa198">0</span> <span style="color:#719e07">]</span> ; <span style="color:#719e07">then</span>
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;failure (count: </span><span style="color:#268bd2">$errors</span><span style="color:#2aa198">)&#34;</span>
-    <span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span>
-<span style="color:#719e07">else</span>
-    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;success, removing files from laptop...&#34;</span>
-    /bin/rm -I <span style="color:#268bd2">$HOME</span>/*.mp3
-    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
-<span style="color:#719e07">fi</span>
-</code></pre></div><p>If you&rsquo;re wondering why I use a slow protocol like bluetooth to transfer
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#719e07">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07"></span>    
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">output</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span>pilot-xfer -p net:any -D /Kingston/AUDIO -i *.mp3 2&gt;&amp;1<span style="color:#719e07">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#268bd2">errors</span><span style="color:#719e07">=</span><span style="color:#719e07">$(</span><span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span> | grep -c <span style="color:#2aa198">&#34;ERROR:&#34;</span><span style="color:#719e07">)</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#719e07">if</span> <span style="color:#719e07">[</span> <span style="color:#268bd2">$errors</span> -gt <span style="color:#2aa198">0</span> <span style="color:#719e07">]</span> ; <span style="color:#719e07">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;failure (count: </span><span style="color:#268bd2">$errors</span><span style="color:#2aa198">)&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#268bd2">$output</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> -n <span style="color:#2aa198">&#34;success, removing files from laptop...&#34;</span>
+</span></span><span style="display:flex;"><span>    /bin/rm -I <span style="color:#268bd2">$HOME</span>/*.mp3
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#34;done.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">fi</span>
+</span></span></code></pre></div><p>If you&rsquo;re wondering why I use a slow protocol like bluetooth to transfer
 large files to an SD card, rather than just ejecting the SD card and
 inserting it into the laptop, well&hellip; you haven&rsquo;t tried to access the SD
 card on a Palm Centro. #paininthe&amp;^@!</p>
@@ -320,6 +320,12 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -430,12 +436,6 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -465,7 +465,7 @@ card on a Palm Centro. #paininthe&amp;^@!</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

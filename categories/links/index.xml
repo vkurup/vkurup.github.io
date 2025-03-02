@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>links on Vinod Kurup</title>
+    <title>Links on Vinod Kurup</title>
     <link>https://kurup.com/categories/links/</link>
-    <description>Recent content in links on Vinod Kurup</description>
+    <description>Recent content in Links on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 15 Apr 2024 08:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/links/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 Apr 2024 08:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/links/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Links 2024-04-15</title>
       <link>https://kurup.com/blog/2024/04/15/links-2024-04-15/</link>
       <pubDate>Mon, 15 Apr 2024 08:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2024/04/15/links-2024-04-15/</guid>
-      <description>  Building a home server rack. I&amp;rsquo;ll probably never do this, but if I do, I&amp;rsquo;ll re-read this guide. He explains things from a true beginner point of view, documenting his honest mistakes so that others don&amp;rsquo;t make them.
-  Manning has free software engineering books
-  </description>
+      <description>Building a home server rack. I&amp;rsquo;ll probably never do this, but if I do, I&amp;rsquo;ll re-read this guide. He explains things from a true beginner point of view, documenting his honest mistakes so that others don&amp;rsquo;t make them.&#xA;Manning has free software engineering books</description>
     </item>
-    
     <item>
       <title>Links 2024-04-07</title>
       <link>https://kurup.com/blog/2024/04/07/links-2024-04-07/</link>
       <pubDate>Sun, 07 Apr 2024 08:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2024/04/07/links-2024-04-07/</guid>
       <description>Old people can build muscle. Sorry, this one is behind a paywall, but it basically describes a study that showed that muscle SFI decreased in old people (ages 60-79) with resistance training. Muscle SFI (shape factor index) represents how close the cross-sectional shape of your muscle is to the shape of a circle, where 1.00 is a circle and the lower the number, the better it is. I&amp;rsquo;d never heard of that metric before.</description>
     </item>
-    
     <item>
       <title>Links 2024-04-06</title>
       <link>https://kurup.com/blog/2024/04/06/links-2024-04-06/</link>
       <pubDate>Sat, 06 Apr 2024 19:17:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2024/04/06/links-2024-04-06/</guid>
-      <description>I can&amp;rsquo;t seem to find things on the web as well as I used to. I blame Google being enshittified, but whatever the reason, I&amp;rsquo;m going to post links here. Not sure of the tempo or format but I guess I&amp;rsquo;ll figure that out.
-  Lydiard Lacing. I&amp;rsquo;ve been having trouble with my toes and someone mentioned that changing my lacing might help. I&amp;rsquo;ve tried Lydiard Lacing for a few weeks and it gives my toes a lot more room.</description>
+      <description>I can&amp;rsquo;t seem to find things on the web as well as I used to. I blame Google being enshittified, but whatever the reason, I&amp;rsquo;m going to post links here. Not sure of the tempo or format but I guess I&amp;rsquo;ll figure that out.&#xA;Lydiard Lacing. I&amp;rsquo;ve been having trouble with my toes and someone mentioned that changing my lacing might help. I&amp;rsquo;ve tried Lydiard Lacing for a few weeks and it gives my toes a lot more room.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>poetry on Vinod Kurup</title>
+    <title>Poetry on Vinod Kurup</title>
     <link>https://kurup.com/categories/poetry/</link>
-    <description>Recent content in poetry on Vinod Kurup</description>
+    <description>Recent content in Poetry on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 08 Apr 2019 21:19:53 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/poetry/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Apr 2019 21:19:53 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/poetry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Avik 7:30</title>
       <link>https://kurup.com/blog/2019/04/08/avik-730/</link>
       <pubDate>Mon, 08 Apr 2019 21:19:53 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2019/04/08/avik-730/</guid>
-      <description>&amp;ldquo;Here it comes!&amp;rdquo; His eyes light up.
-Slurps one last sip from his small cup.
-Then bounding from the kitchen table,
-Fast as lighting, he is able
-To trash his scraps and stow his dishes.
-He yells to Mom, &amp;ldquo;It was delicious!&amp;rdquo;
-One more breath then on the couch he lands.
-&amp;ldquo;What&amp;rsquo;s up?&amp;rdquo; says Mom. Dad shrugs his hands.
-Big brother also has no idea.
-Big sister sighs, &amp;ldquo;He&amp;rsquo;s a weird one I fear.</description>
+      <description>&amp;ldquo;Here it comes!&amp;rdquo; His eyes light up.&#xA;Slurps one last sip from his small cup.&#xA;Then bounding from the kitchen table,&#xA;Fast as lighting, he is able&#xA;To trash his scraps and stow his dishes.&#xA;He yells to Mom, &amp;ldquo;It was delicious!&amp;rdquo;&#xA;One more breath then on the couch he lands.&#xA;&amp;ldquo;What&amp;rsquo;s up?&amp;rdquo; says Mom. Dad shrugs his hands.&#xA;Big brother also has no idea.&#xA;Big sister sighs, &amp;ldquo;He&amp;rsquo;s a weird one I fear.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,42 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>django on Vinod Kurup</title>
+    <title>Django on Vinod Kurup</title>
     <link>https://kurup.com/categories/django/</link>
-    <description>Recent content in django on Vinod Kurup</description>
+    <description>Recent content in Django on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 17 Aug 2020 16:30:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Aug 2020 16:30:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django forms have 2 modes</title>
       <link>https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/</link>
       <pubDate>Mon, 17 Aug 2020 16:30:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/</guid>
       <description>I worked on adding tests to some Django forms today and I was reminded that Django forms operate in two modes. I think of them as the GET mode and the POST mode. The GET mode displays the form and the POST mode processes the data that you supply to the form. I don&amp;rsquo;t know why, but I often forget that. Instead, I sometimes treat them as a normal Python class, especially when I&amp;rsquo;m creating automated tests for them.</description>
     </item>
-    
     <item>
       <title>Using dynamic queries in a CBV</title>
       <link>https://kurup.com/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</link>
       <pubDate>Mon, 28 Jul 2014 22:08:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2014/07/28/using-dynamic-queries-in-a-cbv/</guid>
-      <description>Let&amp;rsquo;s play &amp;lsquo;Spot the bug&amp;rsquo;. We&amp;rsquo;re building a simple system that shows photos. Each photo has a publish_date and we should only show photos that have been published (i.e. their publish_date is in the past).
-class PhotoManager(models.Manager): def live(self, as_of=None): if as_of is None: as_of = timezone.now() return super().get_query_set().filter(publish_date__lte=as_of) And the view to show those photos:
-class ShowPhotosView(ListView): queryset = Hero.objects.live() Can you spot the bug? I sure didn&amp;rsquo;t&amp;hellip; until the client complained that newly published photos never showed up on the site.</description>
+      <description>Let&amp;rsquo;s play &amp;lsquo;Spot the bug&amp;rsquo;. We&amp;rsquo;re building a simple system that shows photos. Each photo has a publish_date and we should only show photos that have been published (i.e. their publish_date is in the past).&#xA;class PhotoManager(models.Manager): def live(self, as_of=None): if as_of is None: as_of = timezone.now() return super().get_query_set().filter(publish_date__lte=as_of) And the view to show those photos:&#xA;class ShowPhotosView(ListView): queryset = Hero.objects.live() Can you spot the bug? I sure didn&amp;rsquo;t&amp;hellip; until the client complained that newly published photos never showed up on the site.</description>
     </item>
-    
     <item>
       <title>How to create test models in Django</title>
       <link>https://kurup.com/blog/2014/07/21/how-to-create-test-models-in-django/</link>
       <pubDate>Mon, 21 Jul 2014 20:44:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2014/07/21/how-to-create-test-models-in-django/</guid>
       <description>It&amp;rsquo;s occasionally useful to be able to create a Django model class in your unit test suite. Let&amp;rsquo;s say you&amp;rsquo;re building a library which creates an abstract model which your users will want to subclass. There&amp;rsquo;s no need for your library to subclass it, but your library should still test that you can create a subclass and test out its features. If you create that model in your models.py file, then Django will think that it is a real part of your library and load it whenever you (or your users) call syncdb.</description>
     </item>
-    
   </channel>
 </rss>

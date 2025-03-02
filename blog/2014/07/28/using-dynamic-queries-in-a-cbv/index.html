@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -161,15 +161,15 @@
           <p>Let&rsquo;s play &lsquo;Spot the bug&rsquo;. We&rsquo;re building a simple system that shows photos. Each photo has a
 <code>publish_date</code> and we should only show photos that have been published (i.e. their <code>publish_date</code> is
 in the past).</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
-        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
-            as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
-        <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
-</code></pre></div><p>And the view to show those photos:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
+</span></span><span style="display:flex;"><span>            as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
+</span></span></code></pre></div><p>And the view to show those photos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+</span></span><span style="display:flex;"><span>    queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
+</span></span></code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
 showed up on the site. Restarting the server fixed the problem temporarily. The newly published
 photos would show up, but then any photos published after the server restart again failed to
 display.</p>
@@ -178,10 +178,10 @@ display.</p>
 <code>QuerySet</code>, but it&rsquo;s a <code>QuerySet</code> with <code>as_of</code> set to <code>timezone.now()</code> <em>WHEN THE SERVER STARTS UP</em>. That
 <code>as_of</code> value never gets updated, so newer photos never get captured in the query.</p>
 <p>There&rsquo;s probably multiple ways to fix this, but an easy one is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
+</span></span></code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
 <code>ShowPhotosView.get_queryset()</code> is called, which is when a request is made.</p>
 
         </div>
@@ -283,6 +283,12 @@ display.</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -393,12 +399,6 @@ display.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -428,7 +428,7 @@ display.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

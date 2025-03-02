@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -138,6 +138,33 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Mar 14, 2024
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/happiness/">happiness </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2024/03/14/the-key-to-happiness-is-to-do-things-that-dont-make-you-happy/">The key to happiness is to do things that don&#39;t make you happy</a>
+  </h1>
+</header>
+
+        
+          <p>I&rsquo;m not sure that title is an exact quote, but I thought I heard <a href="https://peterattiamd.com/arthurbrooks2/">Arthur Brooks say something like that as he was interviewed on a Peter Attia podcast</a>. At least that&rsquo;s what I took from whatever he said. His point was that the common advice to &ldquo;follow your bliss&rdquo; is misguided. When faced with choices, you shouldn&rsquo;t choose the easy thing, you should choose the hard thing. I&rsquo;m not sure that any of this is revolutionary, but that title sure is kinda surprising to me, and I think it makes a lot of sense.</p>
+<p>What would have made me happy this evening? Certainly way low on that list is writing this blog post. As you can tell if you follow my blogging (ha!), I clearly don&rsquo;t like to write in public. The easy thing, the thing that my brain was telling me to do because it promised me happiness, was to sit down and scroll through my phone, or pick up my Kindle and read a novel, or basically do anything that was not me trying to <strong>create</strong> something. The hard thing, the thing I knew would be painful, was to scribble down this post because I know it will never be as good as the post that is in my brain. Taking this idea in my brain, which is perfect because nobody else can see it, and trying to put it on the page here&hellip; well that is scary and painful and I know people will wonder why I&rsquo;d even think this was worth thinking, let alone sharing with the world. But in the long run, doing this activity of taking ideas in my brain, and working with them on the page, especially in public is clearly going to be better for me than leaving them in my brain. It will lead to me being a happier person.</p>
+<p>Doing the thing that won&rsquo;t make me happy is the key to happiness.</p>
+
+        
+      </article>
       
       <article>
         
@@ -396,57 +423,57 @@ been running and meditating and gardening, all with minimal success.</p>
 and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
 on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
 my code for Day 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
-</span><span style="color:#2aa198">      633216
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
-    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
-</span><span style="color:#2aa198">      68348924
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
-    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
-
-    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
-</span><span style="color:#2aa198">  partner in the list that sums to `goal`.
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
-    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
-    get_file()
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
-  <span style="color:#719e07">end</span>
-</code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      633216
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+</span></span><span style="display:flex;"><span>    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      68348924
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+</span></span><span style="display:flex;"><span>    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  partner in the list that sums to `goal`.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
+</span></span><span style="display:flex;"><span>    get_file()
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span></code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
 <a href="https://github.com/vkurup/aoc-elixir/">https://github.com/vkurup/aoc-elixir/</a> I feel like this could have been done more
 efficiently with recursion, but I am not comfortable enough with recursion to know
 how&hellip;</p>
@@ -491,14 +518,14 @@ were included in the <code>.python-version</code> file, which looked like this:<
 </code></pre><p>I didn&rsquo;t have all of these installed, so rather than doing <code>pyenv install 3.9.0</code> and
 then waiting a few minutes, and then repeating the process for each version, I wrote up
 this little script, which I named <code>pyinstall.sh</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
-<span style="color:#b58900">set</span> -ex
-
-<span style="color:#719e07">while</span> <span style="color:#b58900">read</span> version; <span style="color:#719e07">do</span>
-    pyenv install -s <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$version</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#719e07">done</span> &lt;.python-version
-</code></pre></div><p>Since <code>pyenv</code> is nice enough to include the <code>-s</code> flag which means &ldquo;skip if already
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#719e07">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
+</span></span><span style="display:flex;"><span><span style="color:#b58900">set</span> -ex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">while</span> <span style="color:#b58900">read</span> version; <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    pyenv install -s <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$version</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">done</span> &lt;.python-version
+</span></span></code></pre></div><p>Since <code>pyenv</code> is nice enough to include the <code>-s</code> flag which means &ldquo;skip if already
 installed&rdquo;, this can be run as many times as you want and it will only install the
 version if it&rsquo;s not already installed</p>
 
@@ -526,7 +553,7 @@ version if it&rsquo;s not already installed</p>
 
         
           <p>Find disk space hogs:</p>
-<pre tabindex="0"><code>sudo du -h -d 3 / | grep &quot;^[0-9.]*G&quot;
+<pre tabindex="0"><code>sudo du -h -d 3 / | grep &#34;^[0-9.]*G&#34;
 </code></pre><p>&hellip; which helped me find the command in
 <a href="/blog/2020/12/09/deleting-old-snaps/">yesterday&rsquo;s post</a>. You can add directories
 after the slash to drill down to your heart&rsquo;s content.</p>
@@ -560,9 +587,9 @@ after the slash to drill down to your heart&rsquo;s content.</p>
 # CLOSE ALL SNAPS BEFORE RUNNING THIS
 set -ex
 
-LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+LANG=en_US.UTF-8 snap list --all | awk &#39;/disabled/{print $1, $3}&#39; |
     while read snapname revision; do
-        sudo snap remove &quot;$snapname&quot; --revision=&quot;$revision&quot;
+        sudo snap remove &#34;$snapname&#34; --revision=&#34;$revision&#34;
     done
 </code></pre><p>Found on
 <a href="https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html">https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html</a> and
@@ -637,58 +664,6 @@ by putting a different number on your device (through voip.ms) and then pointing
 Voice at that number. Incoming calls would work fine in that way, but I&rsquo;m not sure about
 outgoing calls. If you want to seamlessly use Google Voice on an ATA device, then OBi110
 isn&rsquo;t for you. You&rsquo;ll need the OBI202 (which was out of stock when I was looking).</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Aug 17, 2020
-     - 2 minute read 
-     - <a href="https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/django/">django </a><a class="label" href="https://kurup.com/categories/programming/">programming </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2020/08/17/django-forms-have-2-modes/">Django forms have 2 modes</a>
-  </h1>
-</header>
-
-        
-          <p>I worked on adding tests to some Django forms today and I was reminded that Django forms
-operate in two <em>modes</em>. I think of them as the GET mode and the POST mode. The GET mode
-displays the form and the POST mode processes the data that you supply to the form. I
-don&rsquo;t know why, but I often forget that. Instead, I sometimes treat them as a normal
-Python class, especially when I&rsquo;m creating automated tests for them. I instantiate
-the class (<code>form = MyForm()</code>) and then just call any of its methods and make sure they
-return the right values or achieve the correct side effects. The form that I was working
-with today had a couple features. The first was that it provided some helper functions
-to the template so that the template could display the form properly. Those are in the
-GET mode. So I did something like:</p>
-<pre tabindex="0"><code>user = create_my_special_user()
-form = MyForm(user=user)
-self.assertTrue(form.is_user_special())
-</code></pre><p>And that worked as I expected. The second feature of my custom form was that it cleaned
-the data in a particular way. So I did:</p>
-<pre tabindex="0"><code>form = MyForm(user=user)
-cleaned_data = form.clean()
-self.assertEqual(cleaned_data, expected_data)
-</code></pre><p>Instead of passing, the test blew up:</p>
-<pre tabindex="0"><code>AttributeError: 'MyForm' object has no attribute 'cleaned_data'
-</code></pre><p>Why? Because the <code>clean()</code> method is called when you provide it with POST data
-(normally&hellip; there are also other ways to populate forms). If you don&rsquo;t supply it data,
-then <code>cleaned_data</code> doesn&rsquo;t get populated. The answer is to provide data to the form:</p>
-<pre tabindex="0"><code>form = MyForm(user=user, data={})
-cleaned_data = form.clean()
-self.assertEqual(cleaned_data, expected_data)
-</code></pre><p>And that works as expected. The reminder to myself is to always identify which mode of
-the form you are testing, GET or POST.</p>
 
         
       </article>
@@ -849,6 +824,12 @@ the form you are testing, GET or POST.</p>
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -955,12 +936,6 @@ the form you are testing, GET or POST.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -989,7 +964,7 @@ the form you are testing, GET or POST.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

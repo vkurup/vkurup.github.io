@@ -6,7 +6,6 @@
     <description>Recent content in Tags on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster><atom:link href="https://kurup.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kurup.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

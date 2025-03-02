@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>adventure on Vinod Kurup</title>
+    <title>Adventure on Vinod Kurup</title>
     <link>https://kurup.com/categories/adventure/</link>
-    <description>Recent content in adventure on Vinod Kurup</description>
+    <description>Recent content in Adventure on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sun, 15 Apr 2007 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/adventure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Apr 2007 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/adventure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deep Survival</title>
       <link>https://kurup.com/blog/2007/04/15/deep-survival/</link>
       <pubDate>Sun, 15 Apr 2007 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2007/04/15/deep-survival/</guid>
       <description>If you go on adventure trips, you should read &amp;ldquo;Deep Survival&amp;rdquo;, by Laurence Gonzales. I finished it on my marathon subway rides yesterday. It&amp;rsquo;s partly a voyeuristic look into how people do or don&amp;rsquo;t survive when bad things happen. This part is pure storytelling and who doesn&amp;rsquo;t love a good story? At times, the outdoorsy jargon made it hard for me to follow what exactly was going on, but on the whole I was sucked in, turning pages to see what happened to our poor characters.</description>
     </item>
-    
   </channel>
 </rss>

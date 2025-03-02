@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -201,25 +201,25 @@ Imperial (i.e. American) units and calculates a Body Mass Index. BMI
 is simply weight divided by the square of height, with units of
 kg/m<super>2</super>.</p>
 <p>Here&rsquo;s the CLJS file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">    (<span style="color:#268bd2">ns </span><span style="color:#268bd2">bmi</span>)
-    
-    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">height</span> [<span style="color:#268bd2">feet</span> <span style="color:#268bd2">inches</span>]
-      (<span style="color:#b58900">-&gt; </span><span style="color:#268bd2">feet</span> (<span style="color:#b58900">* </span><span style="color:#2aa198">12</span>) (<span style="color:#b58900">+ </span><span style="color:#268bd2">inches</span>) (<span style="color:#b58900">* </span><span style="color:#2aa198">2.54</span>) (<span style="color:#b58900">/ </span><span style="color:#2aa198">100</span>)))
-    
-    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">weight</span> [<span style="color:#268bd2">lbs</span>]
-      (<span style="color:#b58900">/ </span><span style="color:#268bd2">lbs</span> <span style="color:#2aa198">2.2</span>))
-    
-    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">bmi</span> [<span style="color:#268bd2">h</span> <span style="color:#268bd2">w</span>]
-      (<span style="color:#268bd2">js/Math.round</span> (<span style="color:#b58900">/ </span><span style="color:#268bd2">w</span> (<span style="color:#b58900">* </span><span style="color:#268bd2">h</span> <span style="color:#268bd2">h</span>))))
-    
-    (<span style="color:#268bd2">defn </span><span style="color:#719e07">^</span><span style="color:#2aa198">:export</span> <span style="color:#268bd2">alertDismissed</span> []
-      <span style="color:#268bd2">nil</span>)
-    
-    (<span style="color:#268bd2">defn </span><span style="color:#719e07">^</span><span style="color:#2aa198">:export</span> <span style="color:#268bd2">displaybmi</span> [<span style="color:#268bd2">form</span>]
-      (<span style="color:#719e07">let </span>[<span style="color:#268bd2">h</span> (<span style="color:#268bd2">height</span> (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.f.value</span>) (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.i.value</span>))
-            <span style="color:#268bd2">w</span> (<span style="color:#268bd2">weight</span> (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.l.value</span>))]
-        (<span style="color:#268bd2">js/navigator.notification.alert</span> (<span style="color:#268bd2">bmi</span> <span style="color:#268bd2">h</span> <span style="color:#268bd2">w</span>) <span style="color:#268bd2">hello.alertDismissed</span>)))
-</code></pre></div><p>Basically, we create simple functions to convert Imperial heights and
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-clojure" data-lang="clojure"><span style="display:flex;"><span>    (<span style="color:#268bd2">ns </span><span style="color:#268bd2">bmi</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">height</span> [<span style="color:#268bd2">feet</span> <span style="color:#268bd2">inches</span>]
+</span></span><span style="display:flex;"><span>      (<span style="color:#b58900">-&gt; </span><span style="color:#268bd2">feet</span> (<span style="color:#b58900">* </span><span style="color:#2aa198">12</span>) (<span style="color:#b58900">+ </span><span style="color:#268bd2">inches</span>) (<span style="color:#b58900">* </span><span style="color:#2aa198">2.54</span>) (<span style="color:#b58900">/ </span><span style="color:#2aa198">100</span>)))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">weight</span> [<span style="color:#268bd2">lbs</span>]
+</span></span><span style="display:flex;"><span>      (<span style="color:#b58900">/ </span><span style="color:#268bd2">lbs</span> <span style="color:#2aa198">2.2</span>))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#268bd2">defn </span><span style="color:#268bd2">bmi</span> [<span style="color:#268bd2">h</span> <span style="color:#268bd2">w</span>]
+</span></span><span style="display:flex;"><span>      (<span style="color:#268bd2">js/Math.round</span> (<span style="color:#b58900">/ </span><span style="color:#268bd2">w</span> (<span style="color:#b58900">* </span><span style="color:#268bd2">h</span> <span style="color:#268bd2">h</span>))))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#268bd2">defn </span><span style="color:#719e07">^</span><span style="color:#2aa198">:export</span> <span style="color:#268bd2">alertDismissed</span> []
+</span></span><span style="display:flex;"><span>      <span style="color:#268bd2">nil</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    (<span style="color:#268bd2">defn </span><span style="color:#719e07">^</span><span style="color:#2aa198">:export</span> <span style="color:#268bd2">displaybmi</span> [<span style="color:#268bd2">form</span>]
+</span></span><span style="display:flex;"><span>      (<span style="color:#719e07">let </span>[<span style="color:#268bd2">h</span> (<span style="color:#268bd2">height</span> (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.f.value</span>) (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.i.value</span>))
+</span></span><span style="display:flex;"><span>            <span style="color:#268bd2">w</span> (<span style="color:#268bd2">weight</span> (<span style="color:#268bd2">js/parseInt</span> <span style="color:#268bd2">form.l.value</span>))]
+</span></span><span style="display:flex;"><span>        (<span style="color:#268bd2">js/navigator.notification.alert</span> (<span style="color:#268bd2">bmi</span> <span style="color:#268bd2">h</span> <span style="color:#268bd2">w</span>) <span style="color:#268bd2">hello.alertDismissed</span>)))
+</span></span></code></pre></div><p>Basically, we create simple functions to convert Imperial heights and
 weights to metric values, calculate a BMI and then use <code>displaybmi</code> to
 parse form parameters, calculate the BMI and show that result in an
 Android notification popup. <code>alertDismissed</code> is a callback that gets
@@ -233,24 +233,24 @@ refer to the global JavaScript namespace. If you didn&rsquo;t include that
 prefix, the compiler would assume you meant a call in the local
 <code>bmi</code> namespace, which would obviously fail.</p>
 <p>Here&rsquo;s the HTML file (in <code>HelloPhoneGap/assets/www/</code>):</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#719e07">&lt;!DOCTYPE HTML&gt;</span>
-&lt;<span style="color:#268bd2">html</span>&gt;
-  &lt;<span style="color:#268bd2">head</span>&gt;
-    &lt;<span style="color:#268bd2">title</span>&gt;BMI calculator&lt;/<span style="color:#268bd2">title</span>&gt;
-    &lt;<span style="color:#268bd2">script</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text/javascript&#34;</span> charset<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;utf-8&#34;</span> src<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;phonegap-1.0.0.js&#34;</span>&gt;&lt;/<span style="color:#268bd2">script</span>&gt;
-    &lt;<span style="color:#268bd2">script</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text/javascript&#34;</span> charset<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;utf-8&#34;</span> src<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;bmi.js&#34;</span>&gt;&lt;/<span style="color:#268bd2">script</span>&gt;
-  &lt;/<span style="color:#268bd2">head</span>&gt;
-  &lt;<span style="color:#268bd2">body</span>&gt;
-    &lt;<span style="color:#268bd2">h1</span>&gt;BMI calculator&lt;/<span style="color:#268bd2">h1</span>&gt;
-
-    &lt;<span style="color:#268bd2">form</span>&gt;
-      Height: &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;f&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; ft. &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;i&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; in. &lt;<span style="color:#268bd2">br</span>&gt;
-      Weight: &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;l&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; lbs.&lt;<span style="color:#268bd2">br</span>&gt;
-      &lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;button&#34;</span> value<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;Calculate BMI&#34;</span> onclick<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;bmi.displaybmi(this.form)&#34;</span>&gt;
-    &lt;/<span style="color:#268bd2">form</span>&gt;
-   &lt;/<span style="color:#268bd2">body</span>&gt;
-&lt;/<span style="color:#268bd2">html</span>&gt;
-</code></pre></div><p>Now compile the CLJS and move the compiled JS file to
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#719e07">&lt;!DOCTYPE HTML&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#268bd2">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#268bd2">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#268bd2">title</span>&gt;BMI calculator&lt;/<span style="color:#268bd2">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#268bd2">script</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text/javascript&#34;</span> charset<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;utf-8&#34;</span> src<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;phonegap-1.0.0.js&#34;</span>&gt;&lt;/<span style="color:#268bd2">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#268bd2">script</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;text/javascript&#34;</span> charset<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;utf-8&#34;</span> src<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;bmi.js&#34;</span>&gt;&lt;/<span style="color:#268bd2">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#268bd2">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#268bd2">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#268bd2">h1</span>&gt;BMI calculator&lt;/<span style="color:#268bd2">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#268bd2">form</span>&gt;
+</span></span><span style="display:flex;"><span>      Height: &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;f&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; ft. &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;i&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; in. &lt;<span style="color:#268bd2">br</span>&gt;
+</span></span><span style="display:flex;"><span>      Weight: &lt;<span style="color:#268bd2">input</span> name<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;l&#34;</span> size<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;2&#34;</span>&gt; lbs.&lt;<span style="color:#268bd2">br</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#268bd2">input</span> type<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;button&#34;</span> value<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;Calculate BMI&#34;</span> onclick<span style="color:#719e07">=</span><span style="color:#2aa198">&#34;bmi.displaybmi(this.form)&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#268bd2">form</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;/<span style="color:#268bd2">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#268bd2">html</span>&gt;
+</span></span></code></pre></div><p>Now compile the CLJS and move the compiled JS file to
 <code>HelloPhoneGap/assets/www/</code></p>
 <pre><code>$ ./bin/cljsc bmi.cljs '{:optimizations :simple :pretty-print true}' &gt; bmi.js
 $ cp bmi.js ~/dev/HelloPhoneGap/assets/www/
@@ -386,6 +386,12 @@ provide.</p>
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -492,12 +498,6 @@ provide.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -527,7 +527,7 @@ provide.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

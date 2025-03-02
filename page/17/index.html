@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -138,6 +138,44 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Apr 10, 2006
+     - 1 minute read 
+     - <a href="https://kurup.com/blog/2006/04/10/big-island-hawaii/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/hawaii/">hawaii </a><a class="label" href="https://kurup.com/categories/vacation/">vacation </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2006/04/10/big-island-hawaii/">Big Island Hawai&#39;i</a>
+  </h1>
+</header>
+
+        
+          <p>We&rsquo;re back from a week in paradise and have the <a href="http://kurup.org/photo/album?album_id=61014">photos to prove it</a>. Thanks to Peary and Michelle for the warm hospitality in Honolulu. We thoroughly enjoyed every moment. The weather was perfect which was especially nice since it had rained for the 40 days prior to our arrival. Kalua pig is even better than it sounds.</p>
+
+
+
+
+
+
+
+<span class="caption-wrapper ">
+  <img class="caption" src="/images/waterfall-sm.jpg" title="Mala at Akaka Falls" alt="Mala at Akaka Falls">
+  <span class="caption-text">Mala at Akaka Falls</span>
+</span>
+
+<p>Oh yeah, and the <a href="http://www.cme.ucsf.edu/">conference</a> was great too :-)</p>
+
+        
+      </article>
       
       <article>
         
@@ -583,48 +621,6 @@ Thanks for the links.
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Feb 17, 2006
-     - 3 minute read 
-     - <a href="https://kurup.com/blog/2006/02/17/pound-update-kills-my-website/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/linux/">linux </a><a class="label" href="https://kurup.com/categories/sysadmin/">sysadmin </a><a class="label" href="https://kurup.com/categories/pound/">pound </a><a class="label" href="https://kurup.com/categories/debian/">debian </a><a class="label" href="https://kurup.com/categories/troubleshooting/">troubleshooting </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2006/02/17/pound-update-kills-my-website/">Pound update kills my website</a>
-  </h1>
-</header>
-
-        
-          <p>No one but me noticed, I&rsquo;m sure, but my website was down for part of yesterday. Don&rsquo;t worry, refunds to paying customers are on their way :-)</p>
-<p>What happened? I was doing my regular debian <code>apt-get upgrade</code> and the reverse proxy that I use, <a href="http://www.apsis.ch/pound/">pound</a>, got updated. The upgrade was a pretty significant one. Pound 2.0 changed the way that it expects configuration files to be formatted. Unfortunately, the Debian update didn&rsquo;t mention this, so the new version of pound tried to read my old config file, got confused and shut down. Without a reverse proxy, there&rsquo;s no way to get to my site from the outside.</p>
-<p>I thought it would be simple to rewrite the config file to match the new format, but it took longer than I expected. Most of the changes were easy. The new format requires string parameters to be enclosed in double-quotes. Some of the parameters which used to be global (like ExtendedHTTP and WebDAV) were renamed and moved into non-global sections. There were a few other minor changes which make the config file easier to understand.</p>
-<p>Unfortunately, fixing all of that still didn&rsquo;t get Pound working. There were still 2 problems. First was that the internal port number was being shown to the web browser. If you typed in &ldquo;<a href="http://kurup.org">http://kurup.org</a>&rdquo;, the browser would show &ldquo;<a href="http://kurup.org:8001/%22">http://kurup.org:8001/&quot;</a> in the Location bar. This only occured when the backend server returned 30x redirection status&rsquo;s. Based on my config, Pound was supposed to be rewriting the Location header to avoid this problem. I found the solution to this one <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-01/1136458627000#1136458627000">here</a>. Scroll down to Robert Segall&rsquo;s (the author of Pound) second reply. He says:</p>
-<blockquote>
-<p>The conditions for changing the Location header are:</p>
-<ul>
-<li>Change30x is set (value 1) for the Service in question</li>
-<li>the response is one of 301, 302, 303 or 307</li>
-<li>a Host header was seen in the original request</li>
-<li>the Location header, after DNS resolution, points either to the same address as the one Pound is using to accept the request (aka the ListenHTTP/ListenHTTPS), or to the back-end that issued this response</li>
-</ul>
-</blockquote>
-<p>Everything was being fulfilled except the last one, specifically the &lsquo;After DNS resolution&rsquo; part. When I do a <code>nslookup kurup.org</code> on my server, it returns 66.98.222.124. The address I was using in the config file was 127.0.0.1 (localhost). Since these didn&rsquo;t match, Pound was not rewriting the header. I changed my pound config to listen on 66.98.222.124 and that problem was fixed.</p>
-<p>The final problem was that pound stopped redirecting requests to the other virtual servers on my machine. Whenever a request would come in, pound would crash with the following message in syslog:</p>
-<pre><code>Feb 17 08:11:10 vkurup pound: MONITOR: worker exited on signal 11, restarting... 
-</code></pre>
-<p>The only difference between the config for kurup.org and the other virtual servers was that I had a SESSION parameter in kurup.org. I introduced a SESSION parameter into the other servers and <em>surprise</em>, they started working too. I finally found the reason <a href="http://www.apsis.ch/pound/pound_list/archive/2006/2006-02/1139101111000#1139101111000">here.</a> I assume that will be fixed in the next release.</p>
-
-        
-      </article>
-      
       
       
 
@@ -781,6 +777,12 @@ Thanks for the links.
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -887,12 +889,6 @@ Thanks for the links.
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -921,7 +917,7 @@ Thanks for the links.
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

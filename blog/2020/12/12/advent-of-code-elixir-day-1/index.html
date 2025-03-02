@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -164,57 +164,57 @@
 and so I&rsquo;ve decided to try my fledgling (maybe flailing is a better word?) Elixir skills
 on it. There are 2 puzzles each day (<code>day_1_0</code> and <code>day_1_1</code> are my solutions). Here&rsquo;s
 my code for Day 1:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elixir" data-lang="elixir">  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
-</span><span style="color:#2aa198">      633216
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
-    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
-</span><span style="color:#2aa198">
-</span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
-</span><span style="color:#2aa198">      68348924
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
-    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
-    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
-
-    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
-    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
-
-    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
-  <span style="color:#719e07">end</span>
-
-  @doc <span style="color:#2aa198">&#34;&#34;&#34;
-</span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
-</span><span style="color:#2aa198">  partner in the list that sums to `goal`.
-</span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
-  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
-    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
-  <span style="color:#719e07">end</span>
-
-  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
-    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
-    get_file()
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
-    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
-  <span style="color:#719e07">end</span>
-</code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elixir" data-lang="elixir"><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Find 2 numbers in file that sum to 2020 and return their product.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      iex&gt; Aoc.day_1_0()
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      633216
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> day_1_0 <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+</span></span><span style="display:flex;"><span>    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal)
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Find 3 numbers in file that sum to 2020 and return their product.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      iex&gt; Aoc.day_1_1()
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">      68348924
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> day_1_1 <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    goal <span style="color:#719e07">=</span> <span style="color:#2aa198">2020</span>
+</span></span><span style="display:flex;"><span>    list_of_nums <span style="color:#719e07">=</span> get_list_of_nums()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># find first number where there exists 2 other numbers that sum to `goal - x`</span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">=</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list_of_nums, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>    second_num <span style="color:#719e07">=</span> find_first_partner(list_of_nums, goal <span style="color:#719e07">-</span> first_num)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    first_num <span style="color:#719e07">*</span> second_num <span style="color:#719e07">*</span> (goal <span style="color:#719e07">-</span> first_num <span style="color:#719e07">-</span> second_num)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  @doc <span style="color:#2aa198">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  Given a `list` of integers, return the first number in that list which has a
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  partner in the list that sums to `goal`.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">def</span> find_first_partner(list, goal) <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>find(list, <span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>member?(list, goal <span style="color:#719e07">-</span> x) <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> get_file <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#268bd2">Path</span><span style="color:#719e07">.</span>join(<span style="color:#2aa198">&#34;data&#34;</span>, <span style="color:#2aa198">&#34;day1.txt&#34;</span>) <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">File</span><span style="color:#719e07">.</span>read!()
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#268bd2">defp</span> get_list_of_nums <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Split into lines, filter out empty lines, convert each to an integer</span>
+</span></span><span style="display:flex;"><span>    get_file()
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#34;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>filter(<span style="color:#719e07">fn</span> x <span style="color:#719e07">-&gt;</span> <span style="color:#268bd2">String</span><span style="color:#719e07">.</span>trim(x) <span style="color:#719e07">!=</span> <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#719e07">end</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">|&gt;</span> <span style="color:#268bd2">Enum</span><span style="color:#719e07">.</span>map(<span style="color:#719e07">&amp;</span><span style="color:#268bd2">String</span><span style="color:#719e07">.</span>to_integer<span style="color:#719e07">/</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">end</span>
+</span></span></code></pre></div><p>The code is also available in Github, which I&rsquo;ll update if I do find time to keep going:
 <a href="https://github.com/vkurup/aoc-elixir/">https://github.com/vkurup/aoc-elixir/</a> I feel like this could have been done more
 efficiently with recursion, but I am not comfortable enough with recursion to know
 how&hellip;</p>
@@ -320,6 +320,12 @@ to create cool puzzles like this.</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -430,12 +436,6 @@ to create cool puzzles like this.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -465,7 +465,7 @@ to create cool puzzles like this.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -173,14 +173,14 @@ were included in the <code>.python-version</code> file, which looked like this:<
 </code></pre><p>I didn&rsquo;t have all of these installed, so rather than doing <code>pyenv install 3.9.0</code> and
 then waiting a few minutes, and then repeating the process for each version, I wrote up
 this little script, which I named <code>pyinstall.sh</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#719e07">#!/bin/bash
-</span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
-<span style="color:#b58900">set</span> -ex
-
-<span style="color:#719e07">while</span> <span style="color:#b58900">read</span> version; <span style="color:#719e07">do</span>
-    pyenv install -s <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$version</span><span style="color:#2aa198">&#34;</span>
-<span style="color:#719e07">done</span> &lt;.python-version
-</code></pre></div><p>Since <code>pyenv</code> is nice enough to include the <code>-s</code> flag which means &ldquo;skip if already
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#719e07">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#719e07"></span><span style="color:#586e75"># Install all versions specified in .python-version</span>
+</span></span><span style="display:flex;"><span><span style="color:#b58900">set</span> -ex
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">while</span> <span style="color:#b58900">read</span> version; <span style="color:#719e07">do</span>
+</span></span><span style="display:flex;"><span>    pyenv install -s <span style="color:#2aa198">&#34;</span><span style="color:#268bd2">$version</span><span style="color:#2aa198">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">done</span> &lt;.python-version
+</span></span></code></pre></div><p>Since <code>pyenv</code> is nice enough to include the <code>-s</code> flag which means &ldquo;skip if already
 installed&rdquo;, this can be run as many times as you want and it will only install the
 version if it&rsquo;s not already installed</p>
 
@@ -283,6 +283,12 @@ version if it&rsquo;s not already installed</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -393,12 +399,6 @@ version if it&rsquo;s not already installed</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -428,7 +428,7 @@ version if it&rsquo;s not already installed</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

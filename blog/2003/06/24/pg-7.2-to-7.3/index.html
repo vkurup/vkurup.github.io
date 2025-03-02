@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -163,7 +163,7 @@
 Unable to identify a function that satisfies the given argument types
 You may need to add explicit typecasts
 </code></pre>
-<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &lsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &lsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
+<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &rsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &rsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
 <p>Read more at <a href="http://openacs.org/forums/message-view?message_id=64527">Bart&rsquo;s posts in this thread</a>.</p>
 
         </div>
@@ -265,6 +265,12 @@ You may need to add explicit typecasts
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -375,12 +381,6 @@ You may need to add explicit typecasts
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -410,7 +410,7 @@ You may need to add explicit typecasts
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

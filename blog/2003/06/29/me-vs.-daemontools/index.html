@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -189,7 +189,7 @@ server: fatal: unable to bind: address already used?tcpserver: fatal: unable to
 bind: address already used?tcpserver: fatal: unable to bind: address already use
 d?tcpserver: fatal: unable to bind: address already used?
 </code></pre>
-<p>What&rsquo;s that? I look it up and find that <a href="http://cr.yp.to/daemontools/readproctitle.html">readproctitle</a> is a kind of scrolling-log for daemontools which shows up when you run <code>ps</code>. So, it looks like <code>qmail-pop3d</code> failing because it&rsquo;s trying to bind port 110 even though it&rsquo;s already been bound. So this makes me thing that <code>qmail-pop3d</code> isn&rsquo;t failing, but that it&rsquo;s running over and over again. And then I look back at my run script and look at that pesky little &lsquo;&amp;&rsquo; at the end. Doh! That tells the process to detach once it starts. It starts normally, then detaches. Once it detaches, daemontools thinks it&rsquo;s down, so it tries to start it again. (At least that&rsquo;s the way I understand it). Getting rid of the &lsquo;&amp;&rsquo; and adding &lsquo;exec&rsquo; to the beginning fixes it and everything works now.</p>
+<p>What&rsquo;s that? I look it up and find that <a href="http://cr.yp.to/daemontools/readproctitle.html">readproctitle</a> is a kind of scrolling-log for daemontools which shows up when you run <code>ps</code>. So, it looks like <code>qmail-pop3d</code> failing because it&rsquo;s trying to bind port 110 even though it&rsquo;s already been bound. So this makes me thing that <code>qmail-pop3d</code> isn&rsquo;t failing, but that it&rsquo;s running over and over again. And then I look back at my run script and look at that pesky little &lsquo;&amp;&rsquo; at the end. Doh! That tells the process to detach once it starts. It starts normally, then detaches. Once it detaches, daemontools thinks it&rsquo;s down, so it tries to start it again. (At least that&rsquo;s the way I understand it). Getting rid of the &lsquo;&amp;&rsquo; and adding &rsquo;exec&rsquo; to the beginning fixes it and everything works now.</p>
 <p>Me: 1 Daemontools: 2123</p>
 
         </div>
@@ -291,6 +291,12 @@ d?tcpserver: fatal: unable to bind: address already used?
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -401,12 +407,6 @@ d?tcpserver: fatal: unable to bind: address already used?
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -436,7 +436,7 @@ d?tcpserver: fatal: unable to bind: address already used?
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

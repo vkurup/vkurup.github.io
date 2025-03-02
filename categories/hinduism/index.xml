@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hinduism on Vinod Kurup</title>
+    <title>Hinduism on Vinod Kurup</title>
     <link>https://kurup.com/categories/hinduism/</link>
-    <description>Recent content in hinduism on Vinod Kurup</description>
+    <description>Recent content in Hinduism on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Tue, 21 Sep 2004 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/hinduism/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Sep 2004 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/hinduism/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Harinamakirtanam</title>
       <link>https://kurup.com/blog/2004/09/21/harinamakirtanam/</link>
       <pubDate>Tue, 21 Sep 2004 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2004/09/21/harinamakirtanam/</guid>
       <description>My Dad&amp;rsquo;s book got reviewed in the Hindu (one of India&amp;rsquo;s national newspapers).</description>
     </item>
-    
   </channel>
 </rss>

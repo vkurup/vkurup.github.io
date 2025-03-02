@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -190,7 +190,7 @@ make: *** [all-recursive-am] Error 2
 60: primary key (pw_name, pw_domain ) &quot; 
 61: #endif
 </code></pre>
-<p>Looking around line 53, I see that line 54 and line 58 are missing backslashes - adding &lsquo;em back in fixes the error. The interesting thing to me is that version 5.2.1 has been out for over a year and, according to <a href="http://www.mail-archive.com/vchkpw@inter7.com/msg12238.html">an email on the vpopmail list</a>, this error still persists in more recent versions. How come this bug hasn&rsquo;t bitten anyone else? I suppose it&rsquo;s because the install docs recommend setting CLEAR_PASS (see line 42), which would cause the compiler to miss the bug. Or maybe I&rsquo;m just lucky</p>
+<p>Looking around line 53, I see that line 54 and line 58 are missing backslashes - adding &rsquo;em back in fixes the error. The interesting thing to me is that version 5.2.1 has been out for over a year and, according to <a href="http://www.mail-archive.com/vchkpw@inter7.com/msg12238.html">an email on the vpopmail list</a>, this error still persists in more recent versions. How come this bug hasn&rsquo;t bitten anyone else? I suppose it&rsquo;s because the install docs recommend setting CLEAR_PASS (see line 42), which would cause the compiler to miss the bug. Or maybe I&rsquo;m just lucky</p>
 
         </div>
         
@@ -291,6 +291,12 @@ make: *** [all-recursive-am] Error 2
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -401,12 +407,6 @@ make: *** [all-recursive-am] Error 2
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -436,7 +436,7 @@ make: *** [all-recursive-am] Error 2
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

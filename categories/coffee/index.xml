@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>coffee on Vinod Kurup</title>
+    <title>Coffee on Vinod Kurup</title>
     <link>https://kurup.com/categories/coffee/</link>
-    <description>Recent content in coffee on Vinod Kurup</description>
+    <description>Recent content in Coffee on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Wed, 04 Jan 2006 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2006 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Senseo Coffee Maker</title>
       <link>https://kurup.com/blog/2006/01/04/senseo-coffee-maker/</link>
       <pubDate>Wed, 04 Jan 2006 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2006/01/04/senseo-coffee-maker/</guid>
       <description>Oh, in my last post, I forgot to mention one other cause we supported - The New York Botanical Gardens. I don&amp;rsquo;t really think of it as charity, since we definitely get our money&amp;rsquo;s worth of enjoyment out of the park. In addition, the gardens gave their members a gift this year - the Phillips Senseo Coffee Maker. This is one of those Pod coffee makers. You stick in a coffee-pod and the machine shoots boiling water through the pod and into your coffee mug.</description>
     </item>
-    
   </channel>
 </rss>

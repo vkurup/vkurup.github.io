@@ -1,50 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>computers on Vinod Kurup</title>
+    <title>Computers on Vinod Kurup</title>
     <link>https://kurup.com/categories/computers/</link>
-    <description>Recent content in computers on Vinod Kurup</description>
+    <description>Recent content in Computers on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 27 Nov 2021 19:52:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/computers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Nov 2021 19:52:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/computers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Loving the frame.work laptop</title>
       <link>https://kurup.com/blog/2021/11/27/loving-the-frame.work-laptop/</link>
       <pubDate>Sat, 27 Nov 2021 19:52:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2021/11/27/loving-the-frame.work-laptop/</guid>
       <description>I have a new favorite laptop. I needed a new non-work laptop and Linux is my OS of choice. It has been for at least a decade, but recently that favoritism has been cemented since I chose to use a Macbook Pro for work. After 6 months with the Mac, I&amp;rsquo;m finally starting to feel productive with it, but it has been a painful re-learning (and un-learning) process. I still fondly return to my Linux machines at the end of the work day.</description>
     </item>
-    
     <item>
       <title>I&#39;ve gone to the dark side</title>
       <link>https://kurup.com/blog/2012/10/14/ive-gone-to-the-dark-side/</link>
       <pubDate>Sun, 14 Oct 2012 16:09:54 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2012/10/14/ive-gone-to-the-dark-side/</guid>
-      <description>I was a huge Apple fan growing up and IBM was Apple&amp;rsquo;s enemy. Buying an IBM computer would have been unthinkable.
-Well, the unthinkable has happened. Of course IBM doesn&amp;rsquo;t make laptops anymore, but their computers live on under the Lenovo name. I am the proud owner of a new Lenovo Thinkpad T420S. I love this computer. It&amp;rsquo;s an ugly black boxy thing, but it&amp;rsquo;s light (4 lbs), quiet and speedy.</description>
+      <description>I was a huge Apple fan growing up and IBM was Apple&amp;rsquo;s enemy. Buying an IBM computer would have been unthinkable.&#xA;Well, the unthinkable has happened. Of course IBM doesn&amp;rsquo;t make laptops anymore, but their computers live on under the Lenovo name. I am the proud owner of a new Lenovo Thinkpad T420S. I love this computer. It&amp;rsquo;s an ugly black boxy thing, but it&amp;rsquo;s light (4 lbs), quiet and speedy.</description>
     </item>
-    
     <item>
       <title>My Computers</title>
       <link>https://kurup.com/blog/2003/04/02/my-computers/</link>
       <pubDate>Wed, 02 Apr 2003 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2003/04/02/my-computers/</guid>
       <description>My introduction to computers came when I was about 6 or 7 years old - I can&amp;rsquo;t quite remember exactly when&amp;hellip; Venu Mammen (my uncle) brought home a terminal from work. It looked like a typewriter, but it had 2 suction-cup-thingys where you could attach a phone headset. (Phone headsets were pretty much all the same shape back then). Venu Mammen issued some magical command and then up on the screen came the most amazing phrase.</description>
     </item>
-    
     <item>
       <title>R.I.P.</title>
       <link>https://kurup.com/blog/2002/09/22/r.i.p./</link>
       <pubDate>Sun, 22 Sep 2002 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2002/09/22/r.i.p./</guid>
       <description>Bad news! My Powerbook G3 went kaput yesterday. After a day or so of troubleshooting, I&amp;rsquo;m blaming it on a dead Power Management Unit. I bought it used in 1999 and have been using it heavily since. It&amp;rsquo;s lived in 7 apartments with me (yup, 7!) from Boston to Green Bay to Minneapolis to Boston (again!) and now to NYC. I still think that 4-5 years is way too short a lifespan for a computer, especially since it was meeting my needs in every other way.</description>
     </item>
-    
   </channel>
 </rss>

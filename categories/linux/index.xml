@@ -1,149 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on Vinod Kurup</title>
+    <title>Linux on Vinod Kurup</title>
     <link>https://kurup.com/categories/linux/</link>
-    <description>Recent content in linux on Vinod Kurup</description>
+    <description>Recent content in Linux on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Fri, 11 Dec 2020 20:57:39 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Dec 2020 20:57:39 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install multiple python versions using pyenv</title>
       <link>https://kurup.com/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</link>
       <pubDate>Fri, 11 Dec 2020 20:57:39 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2020/12/11/install-multiple-python-versions-using-pyenv/</guid>
       <description>pyenv is awesome and has changed the way that I manage my Python environments. One tiny annoyance is that it takes a looong time to install each Python version, which of course makes sense, since it has to download and compile each version on your machine. But it&amp;rsquo;s not a big deal, since you generally just do this once and then not again until you really need to upgrade to a different Python version.</description>
     </item>
-    
     <item>
       <title>Disk Space Hogs</title>
       <link>https://kurup.com/blog/2020/12/10/disk-space-hogs/</link>
       <pubDate>Thu, 10 Dec 2020 16:48:35 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2020/12/10/disk-space-hogs/</guid>
-      <description>Find disk space hogs:
-sudo du -h -d 3 / | grep &amp;quot;^[0-9.]*G&amp;quot; &amp;hellip; which helped me find the command in yesterday&amp;rsquo;s post. You can add directories after the slash to drill down to your heart&amp;rsquo;s content.</description>
+      <description>Find disk space hogs:&#xA;sudo du -h -d 3 / | grep &amp;#34;^[0-9.]*G&amp;#34; &amp;hellip; which helped me find the command in yesterday&amp;rsquo;s post. You can add directories after the slash to drill down to your heart&amp;rsquo;s content.</description>
     </item>
-    
     <item>
       <title>Deleting old snaps</title>
       <link>https://kurup.com/blog/2020/12/09/deleting-old-snaps/</link>
       <pubDate>Wed, 09 Dec 2020 16:41:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2020/12/09/deleting-old-snaps/</guid>
-      <description>Copy this script into ~/bin/:
-#!/bin/bash # Removes old revisions of snaps # CLOSE ALL SNAPS BEFORE RUNNING THIS set -ex LANG=en_US.UTF-8 snap list --all | awk &#39;/disabled/{print $1, $3}&#39; | while read snapname revision; do sudo snap remove &amp;quot;$snapname&amp;quot; --revision=&amp;quot;$revision&amp;quot; done Found on https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html and slightly edited.</description>
+      <description>Copy this script into ~/bin/:&#xA;#!/bin/bash # Removes old revisions of snaps # CLOSE ALL SNAPS BEFORE RUNNING THIS set -ex LANG=en_US.UTF-8 snap list --all | awk &amp;#39;/disabled/{print $1, $3}&amp;#39; | while read snapname revision; do sudo snap remove &amp;#34;$snapname&amp;#34; --revision=&amp;#34;$revision&amp;#34; done Found on https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html and slightly edited.</description>
     </item>
-    
     <item>
       <title>Fixing wireless on eeePC</title>
       <link>https://kurup.com/blog/2011/09/08/fixing-wireless-on-eeepc/</link>
       <pubDate>Thu, 08 Sep 2011 21:58:48 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2011/09/08/fixing-wireless-on-eeepc/</guid>
-      <description>I have an ASUS eeePC 1000, running Ubuntu 10.10. Wireless worked flawlessly at home, which is where I use it 99% of the time. On our most recent trip, however, it wasn&amp;rsquo;t working. It couldn&amp;rsquo;t connect to a WPA-secured network. Here are the relevant error messages:
-NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0/wireless): association took too long. NetworkManager[770]: &amp;lt;warn&amp;gt; (wlan0): link timed out. NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0) failed for access point (linksys) NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0) failed.</description>
+      <description>I have an ASUS eeePC 1000, running Ubuntu 10.10. Wireless worked flawlessly at home, which is where I use it 99% of the time. On our most recent trip, however, it wasn&amp;rsquo;t working. It couldn&amp;rsquo;t connect to a WPA-secured network. Here are the relevant error messages:&#xA;NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0/wireless): association took too long. NetworkManager[770]: &amp;lt;warn&amp;gt; (wlan0): link timed out. NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0) failed for access point (linksys) NetworkManager[770]: &amp;lt;warn&amp;gt; Activation (wlan0) failed.</description>
     </item>
-    
     <item>
       <title>Openshot Video Editor</title>
       <link>https://kurup.com/blog/2011/08/10/openshot-video-editor/</link>
       <pubDate>Wed, 10 Aug 2011 15:30:08 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2011/08/10/openshot-video-editor/</guid>
       <description>Ever since my Dad brought home an Apple IIe back in 1980, I&amp;rsquo;ve been a huge Apple fan. The design of my website back in the mid 90&amp;rsquo;s was a ripoff of the Mac OS 9 System menu. (I found a later version on the Wayback Machine. I had swapped out the Apple icon for the icon of the startup I was working with at the time.) I loved OS X for a while, especially on my 12&amp;quot; Aluminum powerbook.</description>
     </item>
-    
     <item>
       <title>Autopoint</title>
       <link>https://kurup.com/blog/2010/11/05/autopoint/</link>
       <pubDate>Fri, 05 Nov 2010 15:09:06 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2010/11/05/autopoint/</guid>
-      <description>If you get this error message:
-Can&#39;t exec &amp;quot;autopoint&amp;quot;: No such file or directory at /usr/share/autoconf/Autom4te/FileUtils.pm  Then, you need to install autopoint:
-sudo aptitude install autopoint  I ran into this while building ledger today and had never needed to do that before. The error that acprep provides is even more cryptic:
-Automatically preparing build ... Warning: autoreconf failed  Then, I ran autogen.sh and the autpoint error showed up.</description>
+      <description>If you get this error message:&#xA;Can&#39;t exec &amp;quot;autopoint&amp;quot;: No such file or directory at /usr/share/autoconf/Autom4te/FileUtils.pm Then, you need to install autopoint:&#xA;sudo aptitude install autopoint I ran into this while building ledger today and had never needed to do that before. The error that acprep provides is even more cryptic:&#xA;Automatically preparing build ... Warning: autoreconf failed Then, I ran autogen.sh and the autpoint error showed up.</description>
     </item>
-    
     <item>
       <title>Rotating videos</title>
       <link>https://kurup.com/blog/2010/09/16/rotating-videos/</link>
       <pubDate>Thu, 16 Sep 2010 09:09:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2010/09/16/rotating-videos/</guid>
-      <description>I found out how to rotate video today. I often take video with my Canon SD870, but I mistakenly take it in portrait mode. I don&amp;rsquo;t realize this until I&amp;rsquo;m editing the video and then I have to decide if I want to subject my adoring youtube fans to the torture of having to turn their heads sideways to see how cute Kavi and Anika are.
-I found this link which gives the mencoder command to rotate the video.</description>
+      <description>I found out how to rotate video today. I often take video with my Canon SD870, but I mistakenly take it in portrait mode. I don&amp;rsquo;t realize this until I&amp;rsquo;m editing the video and then I have to decide if I want to subject my adoring youtube fans to the torture of having to turn their heads sideways to see how cute Kavi and Anika are.&#xA;I found this link which gives the mencoder command to rotate the video.</description>
     </item>
-    
     <item>
       <title>Ubuntu Bluetooth Workaround</title>
       <link>https://kurup.com/blog/2010/08/02/ubuntu-bluetooth-workaround/</link>
       <pubDate>Mon, 02 Aug 2010 21:40:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2010/08/02/ubuntu-bluetooth-workaround/</guid>
       <description>I use bluetooth to transfer podcasts from my laptop to my Palm Centro. A Palm Centro is like an iPhone or a Droid, except less smart-like and more phone-like. This worked beautifully but broke when I upgraded to Ubuntu 10.04 (Lucid Lynx). There are 2 bugs involved. First, the bluetooth daemon (/usr/sbin/bluetoothd) never gets started. Second, there&amp;rsquo;s no easy way to start the file transfer daemon automatically (/usr/bin/dund). This used to work automatically, but now it doesn&amp;rsquo;t.</description>
     </item>
-    
     <item>
       <title>My video editing process</title>
       <link>https://kurup.com/blog/2010/07/20/my-video-editing-process/</link>
       <pubDate>Tue, 20 Jul 2010 20:51:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2010/07/20/my-video-editing-process/</guid>
       <description>I use kino to edit the videos that we take of the kids. I haven&amp;rsquo;t found a Linux program which was as nice as iMovie was on the Mac, but kino is pretty good. It&amp;rsquo;s easy to splice and reconnect video clips together. It has nice special effects, though my needs are pretty simple. It&amp;rsquo;s able to export in plenty of formats, possibly too many, for my simple mind. But, I&amp;rsquo;ve figured it out and have a stable process for getting video from camera to youtube.</description>
     </item>
-    
     <item>
       <title>inotify</title>
       <link>https://kurup.com/blog/2010/07/16/inotify/</link>
       <pubDate>Fri, 16 Jul 2010 21:01:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2010/07/16/inotify/</guid>
-      <description>incron seems to be a pretty neat tool. It&amp;rsquo;s cron-for-file-activities. Cron is a common unix tool that allows you to run any command at a specified time. It&amp;rsquo;s immensely useful for running anything that you want to occur on a regular basis: backups, daily reminder emails, downloading podcasts, etc. If you&amp;rsquo;ve used unix to any significant extent, you&amp;rsquo;ve used cron.
-incron takes that cron metaphor and applies it to file activity.</description>
+      <description>incron seems to be a pretty neat tool. It&amp;rsquo;s cron-for-file-activities. Cron is a common unix tool that allows you to run any command at a specified time. It&amp;rsquo;s immensely useful for running anything that you want to occur on a regular basis: backups, daily reminder emails, downloading podcasts, etc. If you&amp;rsquo;ve used unix to any significant extent, you&amp;rsquo;ve used cron.&#xA;incron takes that cron metaphor and applies it to file activity.</description>
     </item>
-    
     <item>
       <title>Speed up Firefox on eeepc</title>
       <link>https://kurup.com/blog/2009/09/21/speed-up-firefox-on-eeepc/</link>
       <pubDate>Mon, 21 Sep 2009 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2009/09/21/speed-up-firefox-on-eeepc/</guid>
-      <description>I&amp;rsquo;m too weak to lug around my monstrous 7 pound laptop, so I bought a netbook. It&amp;rsquo;s an eeepc 1000 and I love it. I use it for everything, except for processing the kids&#39; videos and photos. I still use the desktop for that.
-The major issue that I&amp;rsquo;ve had with it is that firefox seemed so slow. I tried other browsers, some which seemed faster, but I missed my firefox extensions.</description>
+      <description>I&amp;rsquo;m too weak to lug around my monstrous 7 pound laptop, so I bought a netbook. It&amp;rsquo;s an eeepc 1000 and I love it. I use it for everything, except for processing the kids&amp;rsquo; videos and photos. I still use the desktop for that.&#xA;The major issue that I&amp;rsquo;ve had with it is that firefox seemed so slow. I tried other browsers, some which seemed faster, but I missed my firefox extensions.</description>
     </item>
-    
     <item>
       <title>clamz to the rescue</title>
       <link>https://kurup.com/blog/2009/07/04/clamz-to-the-rescue/</link>
       <pubDate>Sat, 04 Jul 2009 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2009/07/04/clamz-to-the-rescue/</guid>
       <description>Kottke linked to some great deals on classical music at amazon. In order to download them, you need to have the amazon mp3 downloader installed. They now offer a Debian (linux) version, but I couldn&amp;rsquo;t get it working. It&amp;rsquo;s meant for an older version of Debian, but it doesn&amp;rsquo;t recognize the newer versions of the libraries installed on my system. I thought about doing some fancy apt-getting to try to get the right versions, but just thinking about that made my head throb.</description>
     </item>
-    
     <item>
       <title>Pound update kills my website</title>
       <link>https://kurup.com/blog/2006/02/17/pound-update-kills-my-website/</link>
       <pubDate>Fri, 17 Feb 2006 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2006/02/17/pound-update-kills-my-website/</guid>
-      <description>No one but me noticed, I&amp;rsquo;m sure, but my website was down for part of yesterday. Don&amp;rsquo;t worry, refunds to paying customers are on their way :-)
-What happened? I was doing my regular debian apt-get upgrade and the reverse proxy that I use, pound, got updated. The upgrade was a pretty significant one. Pound 2.0 changed the way that it expects configuration files to be formatted. Unfortunately, the Debian update didn&amp;rsquo;t mention this, so the new version of pound tried to read my old config file, got confused and shut down.</description>
+      <description>No one but me noticed, I&amp;rsquo;m sure, but my website was down for part of yesterday. Don&amp;rsquo;t worry, refunds to paying customers are on their way :-)&#xA;What happened? I was doing my regular debian apt-get upgrade and the reverse proxy that I use, pound, got updated. The upgrade was a pretty significant one. Pound 2.0 changed the way that it expects configuration files to be formatted. Unfortunately, the Debian update didn&amp;rsquo;t mention this, so the new version of pound tried to read my old config file, got confused and shut down.</description>
     </item>
-    
     <item>
       <title>Wireless on LinuxPPC</title>
       <link>https://kurup.com/blog/2000/12/10/wireless-on-linuxppc/</link>
       <pubDate>Sun, 10 Dec 2000 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2000/12/10/wireless-on-linuxppc/</guid>
       <description>I&amp;rsquo;ve coaxed my wireless card to work on LinuxPPC. Read how I did it. This link is now gone because it&amp;rsquo;s obsolete&amp;hellip;. vinod.</description>
     </item>
-    
   </channel>
 </rss>

@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -144,6 +144,63 @@
         
 
 <header>
+  <p class="meta">Jun 29, 2003
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2003/06/29/me-vs.-daemontools/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/daemontools/">daemontools </a><a class="label" href="https://kurup.com/categories/sysadmin/">sysadmin </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2003/06/29/me-vs.-daemontools/">me vs. daemontools</a>
+  </h1>
+</header>
+
+        
+          <p>I have a love/hate relationship with <a href="http://cr.yp.to/daemontools.html">daemontools</a>. It&rsquo;s powerful way to manage services (like web servers and mail servers), but it sometimes doesn&rsquo;t act the way I expect it to.</p>
+<p>Today, I tried to set up <a href="http://cr.yp.to/qmail.html">qmail-pop3d</a>. I set up a directory called <code>/var/qmail/supervise/qmail-pop3d</code> and put a file named &lsquo;run&rsquo; inside it. This contained:</p>
+<pre><code>#!/bin/sh
+PATH=/var/qmail/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin
+export PATH
+
+tcpserver -H -R 0 pop-3 
+/var/qmail/bin/qmail-popup vkurup.acornhosting.net 
+/home/vpopmail/bin/vchkpw /var/qmail/bin/qmail-pop3d Maildir &amp;
+</code></pre>
+<p>Then I connected the run script to my /service directory</p>
+<pre><code># ln -s /var/qmail/supervise/qmail-pop3d /service
+</code></pre>
+<p>Then I checked to see if it was running:</p>
+<pre><code># svstat /service/qmail-pop3d
+/service/qmail-pop3d: up (pid 13524) 0 seconds
+</code></pre>
+<p>Hmmm&hellip; up 0 seconds. That&rsquo;s not right - it should be at least 5 or 6 seconds (I can&rsquo;t type <strong>that</strong> fast). That usually means that the service is repeatedly failing and restarting itself.</p>
+<p>ps shows that qmail-pop3d is running, but trying to connect to port 110 doesn&rsquo;t work:</p>
+<pre><code>$ telnet localhost 110
+Trying 127.0.0.1...
+telnet: Unable to connect to remote host: Connection timed out
+</code></pre>
+<p>And now I&rsquo;m stuck. Nothing is getting logged to the qmail-pop3d logs. After some headbanging, I do another <code>ps -ax</code> and this time notice a process called readproctitle:</p>
+<pre><code>11919 ?        S      0:05 readproctitle service errors: ...lready used?tcpserve
+r: fatal: unable to bind: address already used?tcpserver: fatal: unable to bind:
+ address already used?tcpserver: fatal: unable to bind: address already used?tcp
+server: fatal: unable to bind: address already used?tcpserver: fatal: unable to 
+bind: address already used?tcpserver: fatal: unable to bind: address already use
+d?tcpserver: fatal: unable to bind: address already used?
+</code></pre>
+<p>What&rsquo;s that? I look it up and find that <a href="http://cr.yp.to/daemontools/readproctitle.html">readproctitle</a> is a kind of scrolling-log for daemontools which shows up when you run <code>ps</code>. So, it looks like <code>qmail-pop3d</code> failing because it&rsquo;s trying to bind port 110 even though it&rsquo;s already been bound. So this makes me thing that <code>qmail-pop3d</code> isn&rsquo;t failing, but that it&rsquo;s running over and over again. And then I look back at my run script and look at that pesky little &lsquo;&amp;&rsquo; at the end. Doh! That tells the process to detach once it starts. It starts normally, then detaches. Once it detaches, daemontools thinks it&rsquo;s down, so it tries to start it again. (At least that&rsquo;s the way I understand it). Getting rid of the &lsquo;&amp;&rsquo; and adding &rsquo;exec&rsquo; to the beginning fixes it and everything works now.</p>
+<p>Me: 1 Daemontools: 2123</p>
+
+        
+      </article>
+      
+      <article>
+        
+        
+
+<header>
   <p class="meta">Jun 28, 2003
      - 2 minute read 
      - <a href="https://kurup.com/blog/2003/06/28/compiling-vpopmail/#disqus_thread">Comments</a>
@@ -191,7 +248,7 @@ make: *** [all-recursive-am] Error 2
 60: primary key (pw_name, pw_domain ) &quot; 
 61: #endif
 </code></pre>
-<p>Looking around line 53, I see that line 54 and line 58 are missing backslashes - adding &lsquo;em back in fixes the error. The interesting thing to me is that version 5.2.1 has been out for over a year and, according to <a href="http://www.mail-archive.com/vchkpw@inter7.com/msg12238.html">an email on the vpopmail list</a>, this error still persists in more recent versions. How come this bug hasn&rsquo;t bitten anyone else? I suppose it&rsquo;s because the install docs recommend setting CLEAR_PASS (see line 42), which would cause the compiler to miss the bug. Or maybe I&rsquo;m just lucky</p>
+<p>Looking around line 53, I see that line 54 and line 58 are missing backslashes - adding &rsquo;em back in fixes the error. The interesting thing to me is that version 5.2.1 has been out for over a year and, according to <a href="http://www.mail-archive.com/vchkpw@inter7.com/msg12238.html">an email on the vpopmail list</a>, this error still persists in more recent versions. How come this bug hasn&rsquo;t bitten anyone else? I suppose it&rsquo;s because the install docs recommend setting CLEAR_PASS (see line 42), which would cause the compiler to miss the bug. Or maybe I&rsquo;m just lucky</p>
 
         
       </article>
@@ -221,7 +278,7 @@ make: *** [all-recursive-am] Error 2
 Unable to identify a function that satisfies the given argument types
 You may need to add explicit typecasts
 </code></pre>
-<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &lsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &lsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
+<p>It is looking for a function with <code>timestamp with time zone</code> as one of its parameters, but most OpenACS pl/pgsql functions were defined as accepting <code>timestamp</code>. In PG 7.3, <code>timestamp</code> means &rsquo;timestamp <strong>without</strong> timezone&rsquo;. <code>timestamptz</code> means &rsquo;timestamp <strong>with</strong> timezone&rsquo;. So, the quick fix, is to change <code>timestamp</code> to <code>timestamptz</code>.</p>
 <p>Read more at <a href="http://openacs.org/forums/message-view?message_id=64527">Bart&rsquo;s posts in this thread</a>.</p>
 
         
@@ -364,7 +421,7 @@ adventure games&hellip; Despite this failure, I was hooked on computers.</p>
 computer had a whole 1K of RAM, and if you filled up the
 RAM - no need to worry. Just hook it up to any handy portable cassette
 recorder and you could save all the information you&rsquo;d ever need (well,
-about 20K or so). I think my brother wrote a &lsquo;number guessing&rsquo; program&hellip; I
+about 20K or so). I think my brother wrote a &rsquo;number guessing&rsquo; program&hellip; I
 was so impressed.  He saved the program on a cassette tape and I still
 remember trying to listen to the tape on the cassette player, half
 expecting it to speak, &ldquo;Guess a number from 1 to 100.&rdquo; No luck, though -
@@ -598,31 +655,6 @@ nice pictures you added.thanks.rajatrajaji
         
       </article>
       
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Feb 1, 2003
-     - 1 minute read 
-     - <a href="https://kurup.com/blog/2003/02/01/snow/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/snow/">snow </a><a class="label" href="https://kurup.com/categories/new-york-city/">new-york-city </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2003/02/01/snow/">Snow!</a>
-  </h1>
-</header>
-
-        
-          <p>It&rsquo;s <a href="http://kurup.org/photo/album?album_id=5325">snowing in NYC</a>. Really hard.</p>
-
-        
-      </article>
-      
       
       
 
@@ -779,6 +811,12 @@ nice pictures you added.thanks.rajatrajaji
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -885,12 +923,6 @@ nice pictures you added.thanks.rajatrajaji
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -919,7 +951,7 @@ nice pictures you added.thanks.rajatrajaji
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

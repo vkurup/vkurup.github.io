@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>snow on Vinod Kurup</title>
+    <title>Snow on Vinod Kurup</title>
     <link>https://kurup.com/categories/snow/</link>
-    <description>Recent content in snow on Vinod Kurup</description>
+    <description>Recent content in Snow on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Sat, 01 Feb 2003 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/snow/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Feb 2003 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/snow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Snow!</title>
       <link>https://kurup.com/blog/2003/02/01/snow/</link>
       <pubDate>Sat, 01 Feb 2003 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2003/02/01/snow/</guid>
       <description>It&amp;rsquo;s snowing in NYC. Really hard.</description>
     </item>
-    
   </channel>
 </rss>

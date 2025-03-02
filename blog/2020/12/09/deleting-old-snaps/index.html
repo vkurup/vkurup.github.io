@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -164,9 +164,9 @@
 # CLOSE ALL SNAPS BEFORE RUNNING THIS
 set -ex
 
-LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+LANG=en_US.UTF-8 snap list --all | awk &#39;/disabled/{print $1, $3}&#39; |
     while read snapname revision; do
-        sudo snap remove &quot;$snapname&quot; --revision=&quot;$revision&quot;
+        sudo snap remove &#34;$snapname&#34; --revision=&#34;$revision&#34;
     done
 </code></pre><p>Found on
 <a href="https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html">https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html</a> and
@@ -271,6 +271,12 @@ slightly edited.</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -381,12 +387,6 @@ slightly edited.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -416,7 +416,7 @@ slightly edited.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

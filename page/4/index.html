@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -138,6 +138,46 @@
   <div id="content">
     <div class="blog-index">
       
+      
+      <article>
+        
+        
+
+<header>
+  <p class="meta">Sep 23, 2018
+     - 2 minute read 
+     - <a href="https://kurup.com/blog/2018/09/23/composting/#disqus_thread">Comments</a>
+
+    
+    
+      - <a class="label" href="https://kurup.com/categories/family/">family </a><a class="label" href="https://kurup.com/categories/garden/">garden </a>
+    
+  </p>
+  <h1 class="entry-title">
+    <a href="https://kurup.com/blog/2018/09/23/composting/">Composting</a>
+  </h1>
+</header>
+
+        
+          <p>Guess what, we&rsquo;re composting now! I told you was
+<a href="/blog/2018/09/22/starting-a-garden">going to be a gardener</a>, so now you know I&rsquo;m serious. For oh so many years,
+every Friday, we&rsquo;d haul the garbage and recycling out and I&rsquo;d think to myself, &ldquo;Wow, we&rsquo;d have like no
+garbage at all if we were composting.&rdquo; It&rsquo;s only taken a few years of thinking that, week in and
+week out, to get me to try. Actually, that&rsquo;s not even true. It was still way down on my future to-do
+list until I got a cheap copy of
+<a href="https://amzn.to/2xyqbWb">&ldquo;The Complete Idiot&rsquo;s Guide to Composting&rdquo;</a>. Thank you, <a href="https://www.bookbub.com/welcome">BookBub</a>! (As if
+I needed any other incentive to buy and read more books). But honestly, the book was excellent in
+that it made me think that yes, even I could compost. So shortly after finishing it, I headed down
+to the Orange County Solid Waste Center and purchased an
+<a href="https://www.earthmachine.com/contact.php">Earth Machine compost bin</a> for fifty bucks, and made the kids set it up near the
+screen porch. We&rsquo;ve been throwing all our copious kitchen scraps for the past 2 weeks. So far, all
+that has happened is that a bunch of fruit flies think we&rsquo;re awesome neighbors and seem to have
+moved in for the long haul. But I&rsquo;m hoping that some composting starts happening soon. It&rsquo;s supposed
+to be easy as pie, but I&rsquo;m secretly worried that I&rsquo;m missing something, oh, like maybe skills or
+talent. But our garbage bin sure is lighter!</p>
+
+        
+      </article>
       
       <article>
         
@@ -286,35 +326,35 @@ than my laptop.</p>
 because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
 on a regular basis. These queries had been slow for days with no recent inserts or updates, so
 certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">315777</span>.<span style="color:#2aa198">051</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">vacuum</span> <span style="color:#719e07">analyze</span>;
-<span style="color:#719e07">VACUUM</span>
-Time: <span style="color:#2aa198">11377035</span>.<span style="color:#2aa198">096</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</span> ms
-</code></pre></div><p>Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&rsquo;t autovacuum
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">count</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75">----------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">315777</span>.<span style="color:#2aa198">051</span> ms
+</span></span><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">vacuum</span> <span style="color:#719e07">analyze</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">VACUUM</span>
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">11377035</span>.<span style="color:#2aa198">096</span> ms
+</span></span><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">count</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75">----------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</span> ms
+</span></span></code></pre></div><p>Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&rsquo;t autovacuum
 automatically doing this for us. (I mean it has the phrase &lsquo;auto&rsquo; in its name!!!)</p>
 <p>I&rsquo;ve found this great article on
 <a href="https://blog.2ndquadrant.com/autovacuum-tuning-basics/">autovacuum basics</a> which led me to do this query:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
-       relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
-<span style="color:#586e75">---------------------+------------+------------+-------------------------------
-</span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_filetracker   <span style="color:#719e07">|</span>         <span style="color:#2aa198">41</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">13</span> <span style="color:#2aa198">02</span>:<span style="color:#2aa198">00</span>:<span style="color:#2aa198">47</span>.<span style="color:#2aa198">802633</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_ncvhis        <span style="color:#719e07">|</span>          <span style="color:#2aa198">0</span> <span style="color:#719e07">|</span>
- voter_ncvoter       <span style="color:#719e07">|</span>   <span style="color:#2aa198">12336616</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">06</span> <span style="color:#2aa198">13</span>:<span style="color:#2aa198">20</span>:<span style="color:#2aa198">30</span>.<span style="color:#2aa198">073426</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_badlinerange  <span style="color:#719e07">|</span>        <span style="color:#2aa198">404</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">04</span><span style="color:#719e07">-</span><span style="color:#2aa198">10</span> <span style="color:#2aa198">05</span>:<span style="color:#2aa198">44</span>:<span style="color:#2aa198">39</span>.<span style="color:#2aa198">949193</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
-(<span style="color:#2aa198">5</span> <span style="color:#719e07">rows</span>)
-</code></pre></div><p>So those 2 large tables haven&rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
+</span></span><span style="display:flex;"><span>       relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
+</span></span><span style="display:flex;"><span><span style="color:#586e75">---------------------+------------+------------+-------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_filetracker   <span style="color:#719e07">|</span>         <span style="color:#2aa198">41</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">13</span> <span style="color:#2aa198">02</span>:<span style="color:#2aa198">00</span>:<span style="color:#2aa198">47</span>.<span style="color:#2aa198">802633</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_ncvhis        <span style="color:#719e07">|</span>          <span style="color:#2aa198">0</span> <span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span> voter_ncvoter       <span style="color:#719e07">|</span>   <span style="color:#2aa198">12336616</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">06</span> <span style="color:#2aa198">13</span>:<span style="color:#2aa198">20</span>:<span style="color:#2aa198">30</span>.<span style="color:#2aa198">073426</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_badlinerange  <span style="color:#719e07">|</span>        <span style="color:#2aa198">404</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">04</span><span style="color:#719e07">-</span><span style="color:#2aa198">10</span> <span style="color:#2aa198">05</span>:<span style="color:#2aa198">44</span>:<span style="color:#2aa198">39</span>.<span style="color:#2aa198">949193</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">5</span> <span style="color:#719e07">rows</span>)
+</span></span></code></pre></div><p>So those 2 large tables haven&rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
 row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&rsquo;ll figure out
 what&rsquo;s going on.</p>
 
@@ -389,15 +429,15 @@ am TOTALLY watching that.</p>
           <p>Let&rsquo;s play &lsquo;Spot the bug&rsquo;. We&rsquo;re building a simple system that shows photos. Each photo has a
 <code>publish_date</code> and we should only show photos that have been published (i.e. their <code>publish_date</code> is
 in the past).</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
-        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
-            as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
-        <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
-</code></pre></div><p>And the view to show those photos:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">PhotoManager</span>(models<span style="color:#719e07">.</span>Manager):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">live</span>(<span style="color:#268bd2">self</span>, as_of<span style="color:#719e07">=</span><span style="color:#cb4b16">None</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> as_of <span style="color:#719e07">is</span> <span style="color:#cb4b16">None</span>:
+</span></span><span style="display:flex;"><span>            as_of <span style="color:#719e07">=</span> timezone<span style="color:#719e07">.</span>now()
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> <span style="color:#b58900">super</span>()<span style="color:#719e07">.</span>get_query_set()<span style="color:#719e07">.</span>filter(publish_date__lte<span style="color:#719e07">=</span>as_of)
+</span></span></code></pre></div><p>And the view to show those photos:</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+</span></span><span style="display:flex;"><span>    queryset <span style="color:#719e07">=</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
+</span></span></code></pre></div><p>Can you spot the bug? I sure didn&rsquo;t&hellip; until the client complained that newly published photos never
 showed up on the site. Restarting the server fixed the problem temporarily. The newly published
 photos would show up, but then any photos published after the server restart again failed to
 display.</p>
@@ -406,10 +446,10 @@ display.</p>
 <code>QuerySet</code>, but it&rsquo;s a <code>QuerySet</code> with <code>as_of</code> set to <code>timezone.now()</code> <em>WHEN THE SERVER STARTS UP</em>. That
 <code>as_of</code> value never gets updated, so newer photos never get captured in the query.</p>
 <p>There&rsquo;s probably multiple ways to fix this, but an easy one is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
-</code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">ShowPhotosView</span>(ListView):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">get_queryset</span>(<span style="color:#268bd2">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> Hero<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>live()
+</span></span></code></pre></div><p>Now, instead of the queryset being instantiated at server start-up, it&rsquo;s instantiated only when
 <code>ShowPhotosView.get_queryset()</code> is called, which is when a request is made.</p>
 
         
@@ -444,16 +484,16 @@ Finally, a sane way to create a presentation :)</li>
 <li><a href="https://github.com/syohex/emacs-anzu">Anzu</a>: Improves incremental search. Anzu shows the number
 of matches found, and how many matches remain in the document.
 
-
-
-
-
-
-
-<span class="caption-wrapper ">
-  <img class="caption" src="https://github.com/syohex/emacs-anzu/raw/master/image/anzu.gif" title="Anzu in action" alt="Anzu in action">
-  <span class="caption-text">Anzu in action</span>
-</span>
+  
+  
+  
+  
+  
+  
+  <span class="caption-wrapper ">
+    <img class="caption" src="https://github.com/syohex/emacs-anzu/raw/master/image/anzu.gif" title="Anzu in action" alt="Anzu in action">
+    <span class="caption-text">Anzu in action</span>
+  </span>
 </li>
 <li><a href="http://from-the-cloud.com/en/emacs/2013/01/28_emacs-as-a-django-ide-with-python-djangoel.html">Emacs as a Django IDE</a>:
 I tried this out briefly, but didn&rsquo;t end up sticking with it. It seemed too heavyweight.
@@ -498,39 +538,39 @@ to read through this someday!</li>
           <p>I wrote my first blog post in a little while (ok, ok&hellip; 18 months) yesterday and when I tried to
 generate the post, it failed. Silently failed, which is the worst kind of failure. I&rsquo;m still not
 sure why it was silent, but I eventually was able to force it to show me an error message:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
-</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `</span>get_header<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>timeout<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">68</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`timeout&#39;
-</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:206:in `</span>mentos<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:189:in `highlight&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>pygments_code<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">24</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pygments&#39;
-</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/pygments_code.rb:14:in `</span>highlight<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:37:in `block in render_code_block&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>backtick_code_block<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">13</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`gsub&#39;
-</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:13:in `</span>render_code_block<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/octopress_filters.rb:12:in `pre_filter&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>octopress_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">28</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
-</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:112:in `</span>block <span style="color:#719e07">in</span> pre_render<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:111:in `each&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>post_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">111</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
-</span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:166:in `</span>do_layout<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:195:in `render&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">200</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`block in render&#39;
-</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `</span>each<span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `render&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">41</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`process&#39;
-</span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/bin/jekyll:264:in `</span><span style="color:#719e07">&lt;</span>top (required)<span style="color:#719e07">&gt;</span><span style="color:#2aa198">&#39;
-</span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/bin/jekyll:23:in `load&#39;</span>
-	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>bin<span style="color:#719e07">/</span><span style="color:#2aa198">jekyll</span>:<span style="color:#2aa198">23</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`&lt;main&gt;&#39;
-</span></code></pre></div><p>Professor Google tells me that this happens when you try to
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>pygments<span style="color:#719e07">.</span>rb<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">.</span><span style="color:#2aa198">4</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>pygments<span style="color:#719e07">/</span>popen<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">354</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`rescue in get_header&#39;: Failed to get header. (MentosError)
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:335:in `</span>get_header<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:232:in `block in mentos&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>timeout<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">68</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`timeout&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:206:in `</span>mentos<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.4/lib/pygments/popen.rb:189:in `highlight&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>pygments_code<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">24</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pygments&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/pygments_code.rb:14:in `</span>highlight<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:37:in `block in render_code_block&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>backtick_code_block<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">13</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`gsub&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/backtick_code_block.rb:13:in `</span>render_code_block<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/octopress_filters.rb:12:in `pre_filter&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>octopress_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">28</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:112:in `</span>block <span style="color:#719e07">in</span> pre_render<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:111:in `each&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/</span>dev<span style="color:#719e07">/</span>kurup<span style="color:#719e07">.</span>org<span style="color:#719e07">/</span>plugins<span style="color:#719e07">/</span>post_filters<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">111</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`pre_render&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/dev/kurup.org/plugins/post_filters.rb:166:in `</span>do_layout<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:195:in `render&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">200</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`block in render&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `</span>each<span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/site.rb:199:in `render&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>ruby<span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">1</span><span style="color:#719e07">/</span>gems<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">-</span><span style="color:#2aa198">0</span><span style="color:#719e07">.</span><span style="color:#2aa198">12</span><span style="color:#719e07">.</span><span style="color:#2aa198">0</span><span style="color:#719e07">/</span>lib<span style="color:#719e07">/</span>jekyll<span style="color:#719e07">/</span>site<span style="color:#719e07">.</span>rb:<span style="color:#2aa198">41</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`process&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75">	from /home/vinod/.rbenv/versions/1.9.3-p286/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/bin/jekyll:264:in `</span><span style="color:#719e07">&lt;</span>top (required)<span style="color:#719e07">&gt;</span><span style="color:#2aa198">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">	from /home/vinod/.rbenv/versions/1.9.3-p286/bin/jekyll:23:in `load&#39;</span>
+</span></span><span style="display:flex;"><span>	from <span style="color:#dc322f">/home/</span>vinod<span style="color:#719e07">/.</span>rbenv<span style="color:#719e07">/</span>versions<span style="color:#719e07">/</span><span style="color:#2aa198">1</span><span style="color:#719e07">.</span><span style="color:#2aa198">9</span><span style="color:#719e07">.</span><span style="color:#2aa198">3</span><span style="color:#719e07">-</span>p286<span style="color:#719e07">/</span>bin<span style="color:#719e07">/</span><span style="color:#2aa198">jekyll</span>:<span style="color:#2aa198">23</span><span style="color:#2aa198">:in</span> <span style="color:#586e75">`&lt;main&gt;&#39;
+</span></span></span></code></pre></div><p>Professor Google tells me that this happens when you try to
 <a href="https://github.com/tmm1/pygments.rb/issues/45">run the pygments.rb library in a Python 3 environment</a>.
 (pygments.rb is a Ruby wrapper around the Python Pygments library). The fix is to run the code in a
 Python2 virtualenv. I guess the last time I updated my blog, Arch still had Python2 as the system
 default. No, I don&rsquo;t want to check how long ago that was.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
-<span style="color:#719e07">(</span>my_blog<span style="color:#719e07">)</span>$ bundle <span style="color:#b58900">exec</span> rake generate
-</code></pre></div><p>So now I&rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkvirtualenv -p <span style="color:#586e75">`</span>which python2<span style="color:#586e75">`</span> my_blog
+</span></span><span style="display:flex;"><span><span style="color:#719e07">(</span>my_blog<span style="color:#719e07">)</span>$ bundle <span style="color:#b58900">exec</span> rake generate
+</span></span></code></pre></div><p>So now I&rsquo;m running a Ruby command in a Ruby environment (rbenv) inside a Python 2 virtualenv. Maybe
 it&rsquo;s time to switch blog tools again&hellip;</p>
 
         
@@ -565,39 +605,37 @@ that model in your <code>models.py</code> file, then Django will think that it i
 load it whenever you (or your users) call <code>syncdb</code>. That&rsquo;s bad.</p>
 <p>The <a href="https://code.djangoproject.com/ticket/7835#comment:24">solution</a> is to create it in a <code>tests.py</code>
 file within your Django app. If it&rsquo;s not in <code>models.py</code>, Django won&rsquo;t load it during <code>syncdb</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
-<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
-
-<span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
-    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
-
-</code></pre></div><p>A problem with this solution is that I rarely use a single <code>tests.py</code> file. Instead we use multiple
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+</span></span><span style="display:flex;"><span><span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">from</span> .models <span style="color:#719e07">import</span> MyAbstractModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
+</span></span><span style="display:flex;"><span>    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
+</span></span></code></pre></div><p>A problem with this solution is that I rarely use a single <code>tests.py</code> file. Instead we use multiple
 test files collected in a tests package. If you try to create a model in <code>tests/test_foo.py</code>, then
 this approach fails because Django tries to create the model in an application named <code>tests</code>, but
 there is no such app in INSTALLED_APPS. The solution is to set <code>app_label</code> to the name of your app
 in an inner Meta class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
-<span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
-
-<span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
-    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
-
-    <span style="color:#719e07">class</span> <span style="color:#268bd2">Meta</span>:
-        app_label <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;myappname&#39;</span>
-
-<span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
-    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
-        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
-
-</code></pre></div><p>Oh, and I almost forgot&hellip; if you use <a href="http://south.readthedocs.org/en/latest/index.html">South</a>,
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">from</span> django.db <span style="color:#719e07">import</span> models
+</span></span><span style="display:flex;"><span><span style="color:#719e07">from</span> django.test <span style="color:#719e07">import</span> TestCase
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">from</span> ..models <span style="color:#719e07">import</span> MyAbstractModel
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">MyTestModel</span>(MyAbstractModel):
+</span></span><span style="display:flex;"><span>    name <span style="color:#719e07">=</span> models<span style="color:#719e07">.</span>CharField(max_length<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">class</span> <span style="color:#268bd2">Meta</span>:
+</span></span><span style="display:flex;"><span>        app_label <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;myappname&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">class</span> <span style="color:#268bd2">AbstractTest</span>(TestCase):
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">def</span> <span style="color:#268bd2">test_my_test_model</span>(<span style="color:#268bd2">self</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#268bd2">self</span><span style="color:#719e07">.</span>assertTrue(MyTestModel<span style="color:#719e07">.</span>objects<span style="color:#719e07">.</span>create(name<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;foo&#39;</span>))
+</span></span></code></pre></div><p>Oh, and I almost forgot&hellip; if you use <a href="http://south.readthedocs.org/en/latest/index.html">South</a>,
 this might not work, unless you set <code>SOUTH_TESTS_MIGRATE</code> to <code>False</code> in your settings file.</p>
 <p>Comments and corrections welcome!</p>
 
@@ -750,67 +788,6 @@ Clin Immunol. 2009:123:417-423.
 <a href="http://eutils.ncbi.nlm.nih.gov/entrez/eutils/erss.cgi?rss_guid=1t7jLQ--MCbUSbgzXRNqEMLPWIMWlZiqoEMdLvUTNUIFZ-UsA4">medline feed URL</a>
 that I monitor which should show new studies or reviews related to
 this topic.</p>
-
-        
-      </article>
-      
-      <article>
-        
-        
-
-<header>
-  <p class="meta">Jan 17, 2013
-     - 3 minute read 
-     - <a href="https://kurup.com/blog/2013/01/17/priorities-and-gtd/#disqus_thread">Comments</a>
-
-    
-    
-      - <a class="label" href="https://kurup.com/categories/gtd/">gtd </a>
-    
-  </p>
-  <h1 class="entry-title">
-    <a href="https://kurup.com/blog/2013/01/17/priorities-and-gtd/">Priorities and GTD</a>
-  </h1>
-</header>
-
-        
-          <p>Pre-GTD task management systems recommended that you assign a priority
-to each task. When looking at a list of tasks, you then choose the
-ones with the highest priority. David Allen (author of GTD) includes
-&lsquo;priority&rsquo; as one of the things that you should consider when you are
-deciding what to do, but only after you have considered context, time
-available, and energy available. Which makes sense. As Merlin Mann
-says, it doesn&rsquo;t matter if mowing your lawn is your highest priority
-when you&rsquo;re sitting in an airplane. Only if you&rsquo;re in the right
-context with the right amount of time and the right amount of energy,
-should you consider which of the remaining available tasks is highest
-priority.</p>
-<p>The risk, though, is that there are so many little &lsquo;easy&rsquo; tasks that I
-could do instead of important, &lsquo;hard&rsquo; tasks. I&rsquo;m also really good at
-convincing myself that I don&rsquo;t have the energy available to do harder
-tasks when I really should. So when I get back into GTD, I process all
-the things hiding in the back of my brain which leads to the creation
-of lots of simple tasks. Google this, buy that, throw away the other
-thing. But the two things that I really want to be doing more are
-writing and programming. Both of those take blocks of uninterrupted
-time and effort, so I end up subconsciously shying away from them. I
-actually feel better about it, too, because now I have all these other
-tasks that I can do instead. So, I feel productive, even when ignoring
-the more important things that I should be doing. I&rsquo;m moving more
-efficiently, but in the wrong direction.</p>
-<p>I&rsquo;ve avoided that a little bit this time by doing a little bit of
-prioritization each night before I go to bed. I look through my todo
-list and pick about 3-5 things that I want to get done the next day. I
-tag those with the &lsquo;today&rsquo; tag and then the next morning I look at
-that list and start working on those things before doing anything
-else. I&rsquo;ve heard this
-<a href="http://gettingresults.com/wiki/The_Rule_of_3">trick</a> from a lot of
-people before, so I don&rsquo;t remember who I heard it from first.</p>
-<p>So far it&rsquo;s been effective for me. The problem always starts again
-though when I go back on service, because then I can only really focus
-on one thing and that is getting my work done at the hospital. We&rsquo;ll
-see if I can somehow figure out a way to get at least one non-work
-thing done on each of those days.</p>
 
         
       </article>
@@ -971,6 +948,12 @@ thing done on each of those days.</p>
       
       
       <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
+      
+      
+      
+      <li class="post">
         <a href="/blog/2024/07/28/zion-national-park-favorites/">Zion National Park Favorites</a>
       </li>
       
@@ -1077,12 +1060,6 @@ thing done on each of those days.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -1111,7 +1088,7 @@ thing done on each of those days.</p>
   </div>
 </div>
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>

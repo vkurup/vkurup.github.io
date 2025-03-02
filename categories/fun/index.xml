@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>fun on Vinod Kurup</title>
+    <title>Fun on Vinod Kurup</title>
     <link>https://kurup.com/categories/fun/</link>
-    <description>Recent content in fun on Vinod Kurup</description>
+    <description>Recent content in Fun on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Thu, 12 Jan 2006 00:00:00 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/fun/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2006 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/fun/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mr. Songflower Man</title>
       <link>https://kurup.com/blog/2006/01/12/mr.-songflower-man/</link>
       <pubDate>Thu, 12 Jan 2006 00:00:00 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2006/01/12/mr.-songflower-man/</guid>
       <description>This story about a creative music teacher in Syracuse, NY made me smile out loud.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>aws on Vinod Kurup</title>
+    <title>Aws on Vinod Kurup</title>
     <link>https://kurup.com/categories/aws/</link>
-    <description>Recent content in aws on Vinod Kurup</description>
+    <description>Recent content in Aws on Vinod Kurup</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vinod@kurup.com (Vinod Kurup, MD)</managingEditor>
-    <webMaster>vinod@kurup.com (Vinod Kurup, MD)</webMaster>
-    <lastBuildDate>Mon, 27 Jan 2020 17:00:32 +0000</lastBuildDate><atom:link href="https://kurup.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jan 2020 17:00:32 +0000</lastBuildDate>
+    <atom:link href="https://kurup.com/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS Xray brain dump</title>
       <link>https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/</link>
       <pubDate>Mon, 27 Jan 2020 17:00:32 +0000</pubDate>
-      <author>vinod@kurup.com (Vinod Kurup, MD)</author>
       <guid>https://kurup.com/blog/2020/01/27/aws-xray-brain-dump/</guid>
-      <description>These are very rough notes on how I got AWS Xray working in a kubernetes deployment. Posting this mainly for my auxiliary brain.
-First, set up an IAM role that allows nodes to access xray.
-Following this blog post: https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/
-I cloned this repo: https://github.com/aws-samples/aws-xray-kubernetes
-Build the AWS Xray image:
-cd xray-daemon/ docker build -t xray-daemon:latest . THIS OUT OF DATE! try this: https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image
-Create an AWS ECR repo:
-aws ecr create-repository --repository-name xray-daemon Login via docker:</description>
+      <description>These are very rough notes on how I got AWS Xray working in a kubernetes deployment. Posting this mainly for my auxiliary brain.&#xA;First, set up an IAM role that allows nodes to access xray.&#xA;Following this blog post: https://aws.amazon.com/blogs/compute/application-tracing-on-kubernetes-with-aws-x-ray/&#xA;I cloned this repo: https://github.com/aws-samples/aws-xray-kubernetes&#xA;Build the AWS Xray image:&#xA;cd xray-daemon/ docker build -t xray-daemon:latest . THIS OUT OF DATE! try this: https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html#xray-daemon-ecs-image&#xA;Create an AWS ECR repo:&#xA;aws ecr create-repository --repository-name xray-daemon Login via docker:</description>
     </item>
-    
   </channel>
 </rss>

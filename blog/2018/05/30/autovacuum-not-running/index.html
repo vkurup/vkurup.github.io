@@ -41,7 +41,7 @@
     <meta name="author" content="Vinod Kurup, MD">
 
     
-    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="generator" content="Hugo 0.123.7">
 
     
     
@@ -167,35 +167,35 @@ than my laptop.</p>
 because my understanding was that the autovacuum process in PostgreSQL would be taking care of that
 on a regular basis. These queries had been slow for days with no recent inserts or updates, so
 certainly autovacuum should have caught up to them by now. But, I tried it anyway and lo and behold:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">315777</span>.<span style="color:#2aa198">051</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">vacuum</span> <span style="color:#719e07">analyze</span>;
-<span style="color:#719e07">VACUUM</span>
-Time: <span style="color:#2aa198">11377035</span>.<span style="color:#2aa198">096</span> ms
-db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
-  <span style="color:#719e07">count</span>
-<span style="color:#586e75">----------
-</span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
-(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
-Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</span> ms
-</code></pre></div><p>Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&rsquo;t autovacuum
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">count</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75">----------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">315777</span>.<span style="color:#2aa198">051</span> ms
+</span></span><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">vacuum</span> <span style="color:#719e07">analyze</span>;
+</span></span><span style="display:flex;"><span><span style="color:#719e07">VACUUM</span>
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">11377035</span>.<span style="color:#2aa198">096</span> ms
+</span></span><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> <span style="color:#719e07">count</span>(<span style="color:#719e07">*</span>) <span style="color:#719e07">from</span> voter_ncvoter;
+</span></span><span style="display:flex;"><span>  <span style="color:#719e07">count</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75">----------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> <span style="color:#2aa198">12336571</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">1</span> <span style="color:#719e07">row</span>)
+</span></span><span style="display:flex;"><span>Time: <span style="color:#2aa198">4300</span>.<span style="color:#2aa198">107</span> ms
+</span></span></code></pre></div><p>Woah, that worked! Sure, it took 3+ hours to run ANALYZE, but wow. So, why isn&rsquo;t autovacuum
 automatically doing this for us. (I mean it has the phrase &lsquo;auto&rsquo; in its name!!!)</p>
 <p>I&rsquo;ve found this great article on
 <a href="https://blog.2ndquadrant.com/autovacuum-tuning-basics/">autovacuum basics</a> which led me to do this query:</p>
-<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
-       relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
-<span style="color:#586e75">---------------------+------------+------------+-------------------------------
-</span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_filetracker   <span style="color:#719e07">|</span>         <span style="color:#2aa198">41</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">13</span> <span style="color:#2aa198">02</span>:<span style="color:#2aa198">00</span>:<span style="color:#2aa198">47</span>.<span style="color:#2aa198">802633</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_ncvhis        <span style="color:#719e07">|</span>          <span style="color:#2aa198">0</span> <span style="color:#719e07">|</span>
- voter_ncvoter       <span style="color:#719e07">|</span>   <span style="color:#2aa198">12336616</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">06</span> <span style="color:#2aa198">13</span>:<span style="color:#2aa198">20</span>:<span style="color:#2aa198">30</span>.<span style="color:#2aa198">073426</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
- voter_badlinerange  <span style="color:#719e07">|</span>        <span style="color:#2aa198">404</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">04</span><span style="color:#719e07">-</span><span style="color:#2aa198">10</span> <span style="color:#2aa198">05</span>:<span style="color:#2aa198">44</span>:<span style="color:#2aa198">39</span>.<span style="color:#2aa198">949193</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
-(<span style="color:#2aa198">5</span> <span style="color:#719e07">rows</span>)
-</code></pre></div><p>So those 2 large tables haven&rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>db<span style="color:#719e07">=&gt;</span> <span style="color:#719e07">select</span> relname, n_live_tup, last_autoanalyze <span style="color:#719e07">from</span> pg_stat_all_tables <span style="color:#719e07">where</span> relname <span style="color:#719e07">like</span> <span style="color:#2aa198">&#39;voter_%&#39;</span>;
+</span></span><span style="display:flex;"><span>       relname       <span style="color:#719e07">|</span> n_live_tup <span style="color:#719e07">|</span>       last_autoanalyze
+</span></span><span style="display:flex;"><span><span style="color:#586e75">---------------------+------------+------------+-------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#586e75"></span> voter_changetracker <span style="color:#719e07">|</span>  <span style="color:#2aa198">306689271</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span> <span style="color:#2aa198">04</span>:<span style="color:#2aa198">59</span>:<span style="color:#2aa198">08</span>.<span style="color:#2aa198">503876</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_filetracker   <span style="color:#719e07">|</span>         <span style="color:#2aa198">41</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">13</span> <span style="color:#2aa198">02</span>:<span style="color:#2aa198">00</span>:<span style="color:#2aa198">47</span>.<span style="color:#2aa198">802633</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_ncvhis        <span style="color:#719e07">|</span>          <span style="color:#2aa198">0</span> <span style="color:#719e07">|</span>
+</span></span><span style="display:flex;"><span> voter_ncvoter       <span style="color:#719e07">|</span>   <span style="color:#2aa198">12336616</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">05</span><span style="color:#719e07">-</span><span style="color:#2aa198">06</span> <span style="color:#2aa198">13</span>:<span style="color:#2aa198">20</span>:<span style="color:#2aa198">30</span>.<span style="color:#2aa198">073426</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span> voter_badlinerange  <span style="color:#719e07">|</span>        <span style="color:#2aa198">404</span> <span style="color:#719e07">|</span> <span style="color:#2aa198">2018</span><span style="color:#719e07">-</span><span style="color:#2aa198">04</span><span style="color:#719e07">-</span><span style="color:#2aa198">10</span> <span style="color:#2aa198">05</span>:<span style="color:#2aa198">44</span>:<span style="color:#2aa198">39</span>.<span style="color:#2aa198">949193</span><span style="color:#719e07">+</span><span style="color:#2aa198">00</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#2aa198">5</span> <span style="color:#719e07">rows</span>)
+</span></span></code></pre></div><p>So those 2 large tables haven&rsquo;t been ANALYZEd in weeks, despite the fact that we import a 10 million
 row CSV once every week. This is the end of my debugging road, for now. Hopefully, I&rsquo;ll figure out
 what&rsquo;s going on.</p>
 
@@ -298,6 +298,12 @@ what&rsquo;s going on.</p>
     <ul id="recent_posts">
       
       
+      
+      
+      
+      <li class="post">
+        <a href="/blog/2025/03/02/red-team-blues/">Red Team Blues</a>
+      </li>
       
       
       
@@ -408,12 +414,6 @@ what&rsquo;s going on.</p>
       </li>
       
       
-      
-      <li class="post">
-        <a href="/blog/2020/08/21/using-an-obi110-for-voip-service/">Using an OBi110 for VOIP service</a>
-      </li>
-      
-      
     </ul>
   </section>
   
@@ -443,7 +443,7 @@ what&rsquo;s going on.</p>
 </div>
 
 <footer role="contentinfo">
-  <p>Copyright &copy; 2024 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
+  <p>Copyright &copy; 2025 Vinod Kurup, MD - <a href="https://kurup.com/license/">License</a> -
     <span class="credit">Powered by <a target="_blank" href="https://gohugo.io">Hugo</a> and <a target="_blank" href="https://github.com/parsiya/hugo-octopress/">Hugo-Octopress</a> theme.
   </p>
 </footer>
